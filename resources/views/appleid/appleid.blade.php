@@ -1,100 +1,133 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Các thẻ meta và liên kết tới CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>AppleID Web {{ $appname }}</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif; /* Change the font for better compatibility */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.5rem; /* Adjusted font size for mobile */
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem; /* Adjusted font size for mobile */
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62;
+            border-color: #545b62;
+        }
+    </style>
+    <script>
+        function copyTextToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            const selected =
+                document.getSelection().rangeCount > 0
+                    ? document.getSelection().getRangeAt(0)
+                    : false;
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            if (selected) {
+                document.getSelection().removeAllRanges();
+                document.getSelection().addRange(selected);
+            }
+
+            // Show success alert using SweetAlert2
+            Swal.fire({
+                icon: 'success',
+                title: 'Copied to clipboard!',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        function copyUsernameToClipboard() {
+            const username = document.getElementById('username').innerText;
+            copyTextToClipboard(username);
+        }
+
+        function copyPasswordToClipboard() {
+            const password = document.getElementById('password').innerText;
+            copyTextToClipboard(password);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Lấy AppleID Web {{ $appname }}</h1>
+            <div class="text-center">
+                <p><strong>Số lần lấy còn lại:</strong> {{ $appleidlimit }}</p>
+                <p><strong>Trạng thái:</strong> {{ $statusid }}</p>
+                <p><strong>Username:</strong> <span id="username">{{ $username }}</span></p>
+                <p><strong>Password:</strong> <span id="password">{{ $password }}</span></p>
+                <button onclick="copyUsernameToClipboard()" class="btn btn-primary">Copy Username</button>
+                <button onclick="copyPasswordToClipboard()" class="btn btn-primary">Copy Password</button>
+                <p><strong>Lưu ý:</strong> App Shadowrocket và Quantumult X đều nằm trong mục gia đình nhé</p>
+                <hr> <!-- Horizontal line -->
+                @if (!empty($quantumultx))
+                    <p><strong>Quantumult X:</strong> Bấm vào để tải Quantumult X</p>
+                    <button onclick="window.location.href='{{ $quantumultx }}'" class="btn btn-primary">Tải Quantumult X</button>
+                    <p><strong>Lưu ý:</strong> Nhớ tải Quantumult X trong tài khoản trước rồi xoá đi và tải lại ở đây thì mới không bị Build đỏ nhé</p>
+                @endif
+                <a href="/#/dashboard" class="btn btn-secondary">Trang chủ</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,199 +1,189 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-HR+cPpQxssZF9I1FbcbEIuRJusTjfjyuVmCC3VvUbAzhhadQU0zgKeLXuaKrS4xKJNLBbCKDIpU8
-FL+ZlFw35/4ixbAH4Nxt6hy0PkyBjWgqMHq+zQTxrmSjJTtven0Hi7BbQjgCUveTpJ9PkvGa+0GX
-KA0RdB0WSZixAxXPi7QT99DCoQQXku0Hp+W6sV/hWqpMrkq3cMreBdJl89QLVIerogSubAfzgtQt
-IazDCKQ9+j7FDD9GIXwhOwekOOkRjVmFnaxjT6sP8GW/HmruFzvhsY1kJrGmP9jeNWkCx8EMVoMp
-2e9v0VQdlS37KtNg0zQ/AaMlW6gWFhIUJapbmbpGoWYmko+6mQL/kcv0tFNaEzR7jgb/3DTMD5ik
-knW7Z0DTP972Hs35f5SpCaRJ+QYbsqr2IZsA2EH0Z1XunGOYuM/wMYZj23qj4L79ZOZo6kjsZnON
-NTnjonmSa2YhEiVdfIC0JTd0NfjIVcIbG95nxPHwVCV94cOYFLcIf69uK1fH6em7Chej4lILYvKT
-uXRijLydeafkwSA+34ESovPL/ZXTiNuc632QEJ0eJnwshtsLVIhXdJN2/XZFKORryGgOVlVuSwj5
-MQY18BtuYBp451ks0/3OAynJwd1tXwY1B348G79dlQfiJCCjDyzZd11wvKAJaFwpQumupX+Hj+s3
-+x0C8Ifowl/oa5TF5tKMDFnmh14Q1+DMZ+IvcN+ohcQIeycDpJWFwq5ikKx0UB2rWkOj4wqFc7uQ
-GjMhOPidvAn3mKMnP/dLop9rcGSpejxF6fXVQXSWGKuH9Gw8K2I9c3XuChior1ymKPC2Y2umTjk+
-N1lL9SpaOYD8GffQN7HHRfrRBvxuGIrj0IHsHLYE1ZG9QPas0exIxxFglj0eknRLFgzy+ktpv3vQ
-04h9G9MD7Jfc+L5uP7E3m7Xj5IGwSgWCy9SWZHol3ktLwng6Cu7czpbQkVfmuvDkS/UBQ1fdjCbe
-n82GfwL+WwZBFODvrmnWSIt/XJLy9Z6n9E6MPZBUcn08zUviBT/ZmLREDkvnTimXdaPCoH1JQ85T
-ycZddSZQlnNYh9Jb2C9ddDtHSAn/wIjGYGe2H4NzjfTnZ2nY7Wth+5xsmt/9CMXZcA+KGzZ1YAoi
-go7x+FzQwVmMMAbOsgqhmVEaUMs64YtiZ8btpeuWFkPnirHCc9Wecj8AT6NVaJNCiLtmZL1j4kRu
-2p17Nhm4V1yM5wn8gviGyWL6ZHgy8xjNoQ9kksVzV7kqQjQ62F9xGXT8eqQk4eqszoMveIScR8nu
-NRA5vJCGyr2QFljzUCPB7Z20nvV1L3xNry1CTYtmdZUhh8aitySvKYxj+CZLKQhVYjUp1n3jlhIy
-ZpXNHnjI/v0BuCVeLUXBMpPBPqRGlWOK1/RJeyA2hnHFtFXYSsrr+3is3NRLxuPn6qT7ma7EGU89
-nkUu87HcoNZhmNd8S2B5MiEPg+aaIKOjXUBhkMuOfmnqj0EkDMAZcKVi3Ue5Jrzmlzex8CC+D11G
-EL+sIXvhdgIbIrw2pyiX1ZVg1aGkrmrsa6KL25edfZVWleC8SsEzIjkTmSrWZ94cELH2bodaT1RG
-n+LRBZd+BvKYHVTysuFzj4GnVpeThQT+4asubdv1eLzMWFt5Pz7R3kXgXSlonlrlgg0SpgkVftCM
-3Lsy0WieFrKEPg56Wew8f09/o/4tjKohFcNSJx8STYfvgACzcEUWivzcgHETDmwFetjh6JPDX1+x
-G5bW+oJKDlBfoCceainqhFKxKGhr1JxsZtJd4GgQ2JWeiB+FJhHRUQyHQt5/575hfIM9RiuYisYx
-57Or8y2dbxklymVc8s+7VQC9wXE4ih+B06cjqcEgoZ0XwGHtxOB0qjbA5grWpGnFNVPnmsRH9rCx
-7Xj14Et0OpCMGLABX/dGf20f3GbpRATDqobvfn5Uo8MNbI59ZLifliAg/hPb5z/TjKRHtoM3D1dn
-7a5O6qASx+FKNeAA8FUnIYODJHKd7Md8ogcxMGjddPr17dMnRXa6eTEcgfyhHurTWcOQKIB/k23i
-OBuFdyXTCgJF+OR6UIIgckP97lsvl7Tywh12/trj4Wl2XzZyvJwmPgWsAFtNStjKXPDM7M6K/bCd
-Q8jrVE8wwmsv7h8it+rx1YKeF/ACadmpbs7rOziqRPlhWdnPfDILoIr4qJAzJGL8tJtWxWaUKoRk
-eMwmP2XpjVsXCcW7Yfmxax+mJuszB9n+4tqCGRpvYFTtyIGTmOyoGMCB2U8WhmgOcjETkxVw7iY3
-l0f6wmt8ln6LIbx/jqF1h2nUbwTkOpIBK8gDoR1MefvoAn9g7UFKmCQkNDObbeitoegti3B/pByD
-DK7jiBCCdOi8ae2aBQOj8EoYZmPxWILqSSoUUrSXnms3FvolDOeN7X0R+orYqa0bIwRzWkesKMRq
-uHKaUp99NOAjv1m8FLIbM/nKtqTxxTjgJh2zJMNBNYTpQ3FsUEkxTwlrK3kEHSWFRv/0gVNj0wts
-2lDcLAOeJtht429HKjckYL+X5rE0YUXe3HHYEAcTixwr+vrKBgo1rBxxXxzN3QQkocXTThlOYH78
-N1v1aCb+l4Efm2E54DSNVMudlWbUuu3c7TMtRI5lbPWNYF9FzfcXURNbChiZ2BWTlWGzhgL7qDWR
-iGIHDmKoZ7va7CZ/AfbCA4a1pc9HxJAkYM0BVABi0NJFiA4M2cGqkRJvPkN1aw7eLQitnU3q2ji/
-XZuBXsOj4U89+hXKpEXA0AXcThnSmb9CiMxPHEoNiMV//64cekxX838z6uDW15dfDWCoPnSUcKP0
-kgfJJaSjDRobulU3VpSmvAGL4fUGB5f+jH/AOvsDokbSJ8ghLjzEy7aX9WnMzF7h9ttdD/32Wv9i
-mEkUq+2eg7kaJBkdv22UTwaUxVlIds9SFljDseBURPD+0BTc+eETiMMVDQ8RH0dZ5oYb13LlFuwi
-D+94b+H6R1OTbLydIeOHpK2XStzrP3JIAX0t+8r9dDT9EQ9w9HFH15ROY6Nhov1zJSic8192tV3N
-MFET+lQRCnNp3D9bSVHGB6RLa6iEsZOHZ8UBnd5t+bPoJ2t/s6mTBVTUPGfZa0119pqnyzrlTXLF
-NRYa4AslGcD+GybR0zBGdQv1+sKKqSYSRD6RVnL/II+WdrPeMxWkDGZJmbXyG1D+g5Jhobq1RzdI
-/sOGV4OJiy8lSlZFtXmIEoTXVoe/riByehdwkSwJwutcYAhsE9AWieD8nir3kSs1AQxtnON6AWaY
-7ZN8VFD2Inwjs6MdRtmwGoi4N6w7fwMMza2m/ZfWx49+3GHI3UiF7DZgNpjsXvj8KzNBD9L/lXO8
-QKHa7jVE8NA2xQDJwIjtwIWlmfbWWHFaPh09nAsEQrBLahn0YcRC01quTwTpi9az/kKhv/FgkinI
-+pgLffiaSG6vaIaq0vDDnvJ7CgQRh1k1PXRxMeDV2Z9y4W86LHjOtm9n4Pti7ZtZX4UtUkq3om8o
-jACmM8RpPVkmlQs9JtszBR882Z1Mwklm0KS6O4SFRzS5SrEId5S7PYoee8rwzgJK9R43cLekOssz
-RwDsaJOfDLY601D+RnYUxMl96YLCb0QIncTroH4BI5g3DCI09Ul0Uv/F4k16f5e2Dbcdw59jlCYO
-vuGXKDpOEFIQuycYIWj1aZu7GHxZEyDC8SMHMq9p9pgwM6MKdF6aFYRFHokqfSB/AEBrB83psAd+
-gi74vq46gxS/zXLPFTHncalfhSIVr80nrA4YXwO342oCTEklFsWzF+0hj1Ay1Tvc/ydedPV8aBV8
-5hZ+sPgUvgoTavjyyRSOUwTmRw5Mmr47fS7IGH0RfuNVvVQZP5sXdiXAMzeHVjdW2UBEo2040KfG
-lsYvB4VYGxzryMzZ7bhFZcwMMd7nYH0/XdObTNNPzxviaJH3gk5pGXuWsZanbEsRa41ICwjiO4YT
-Akg2zeiEmIzbIwqA0TS6hnLQoHOE+j8KHaAWmJGcXq340YX/IkRNjYC9OJqXkDBpJpRFZAv2LYYX
-0iRzbtvzhlzeFXRUEh1rUGuDJuhJnywNtpuSKOplNGfIW+Pw18uS1A5WS1yWYTmnXzTtUniXEPv8
-tjdG/F4Qrd5qcWxpcpCrHIWBotTMkZ7PRzbb1fHZtiPSwBrrFsg8vCpVq+Vtm/Vk+UuuGtGI8CuX
-J4Xa5O/sJOdk7jtXtjxLjHPnHQJUBRpoY/z4x7pFgOIAVkyD2bDef8kMEootTbrDV7MNoaaChQlN
-JgIf9NhL/prwYT4gcn1GLkzH6xZEx0OiVFWeu0sC6+ulSxRzjhuhntPAHUdDOwSeLcuZy1FV0zcu
-i0py28soDBFxu3/17D2hQ/b/q5OM0lkEUx4POdf5INKQfo1ulGPiYuYfJ93Rtp4VpbO23WlqzxD6
-Zc0kmTPlfJ2lSUD7S3WoccHX4LwZ6B3BbpalT25QYyMZyRcqPyn+xKLgsnZTW6TI/DLD0ofq85LD
-spUMYJjRJ6HZEEzgo7KgwgPkw7N8L3cy3iFOImItIVCtDocFldb5cxm2wyE/b60mSjGnG3az0Tzm
-bDxAufdP69PBu76DxxPNa7IAAK7QXni/fee+W5THgHNVqV8itzce7i5NXskG3ugTls+dOhjFiPl8
-YAWYc/kwpimOiN6UXwLzBekDbn3Ymomse/CujkjUpWZhYxwjAbWg6IDqLOPpas7tmUm3R6KloaWm
-5Kg/fjnU6ueWqc1AKHox1RLAnSYV/30cQvYMPD+4K1f7q2r2k9dxtSRlHlcVawDUMgI+wlWTgSMf
-+ebxLGFMAA/OPUvyiKCCg2LE7mAvHagdlpg1tnH+/yNlgg0HHBgdmKjlYW7h0zPJHrHNAsznlh8s
-1wHDY4Qz0nsy1hVunlymf65TyYgpUIRLCTtjn+D2BOlVxYEtU4Zde7SHQiKkZ49zBYxeuMvOL3Ub
-DufA6Q4bB/7RLLvffciiau8f7zr0IDfUxjUqMGL22Z9CuZ4rCfD+7A4jt7DWjERJ4zL3A3QGySUn
-R8mXcY4AnOezwvi78XBfcIhyiXz4+m7bRvG+SdLGMYZLzPXXKq6qdB6CHceszgRKHbZ4QPVSPqo9
-En1Cs9KNEii/Gow8/2P/pRlgXCQby/kZyO7bP8J8OMJImzWTPck2KvzjLmAb7ewLLKKPI9EQHlUu
-bsXHR04cnRE6JvaarEf+k9HYMrdSJoBClEnoBVfbM8KnhqW/wU44twPlOKNQftLZEUACTbPZgHnk
-m/N4lgpfKM9SxW+n6WXqVodh2QPZBRSP/JD1YE8FT+jwiykgCjxxT7WWa9G91tUbqMHTF/FK3zPq
-1rdGKfG5lh74jEbHmLcExk3Hgs0BpPPUqiBQl56jpV3uZpf4HbXIMt6GZZ5sjOYWq5rGPTMjkCqL
-kEFf8NuzUEEtHjpL43zMpa2ZPBnhDU2OJLs3OLn3xQKR57c+ZyCoBMQSVEUVFP9LQfddQDRZ674d
-HOaOrJhdY8ZvsWiqW7sSnIofZMx2LRYMVwJ7699R0GTe5Fq/ZfErT/+c0dFth2yUj1QSv7+mqbIh
-OPqThgTJwmFZPckIBfL28p6rzIQ9rN6mP0m8/EUp8R8Qm+XLsUBhlrgGbMiSU73GtSONEpakPbnk
-szdmw64x4W5CRNPf4Fhl/xd/aPSMI9OX3v0+dBiOxH53rTk+gkjp4p3ZC+IWG3UzGprk7ixCsPEy
-BPwnvMl3Tm1NO7pK6+/lYJ7FGL3GxlUVEo06gpJO/lLoOzDJBiA9ndXB9tug7Y/lGzbpzVqWEHuq
-lFv9A7kezDKmVerIZETNLPtbOcT4No4w8nyuwiUt1aK6rSFyuv2mgdbbheCf9yJImzsCjp0Nij+z
-8nhXXYgGb6WAaazI/ru5V5B3bp8W70dc/aTxu/nqAxk0oh31V7YwaDep/9jHVBKUZ7pvFkdQqt6X
-c88pJg3e2kRzI8sENYzNoyemyweeU+KPWLmNzQ4uWmLxs+Tvmu11K7BhRRXsVgTWkbxhslVQNkPW
-Oyh7Z7i9GLzQ9v1zLHxp63hRSsUoG0f/fNptjT6XCKhN302vghaW7JIfA1VhFa1c1f49YQ3C4KLc
-57X/La3nkZtbqYtiJwfKDhyGCqu9n9etVGOc4MuCmaBW5ZED7ynDEGw1eAv10YXX1KobjnoAhRwa
-sj5kD67r4I4OCYiOmVp86GVOrXDaOW/WhVsF5fKCxarBGdsfgptNkpt/9M2ltVOIm1AVkneYojmA
-H9P2r56YO4J4LePPz/t1GXQ5hvobrbZ8GZvZlKRUoXFear8cOoBMzptTf/HWhEp6pqxw4ucacNSN
-YjU7LPLTHDS8uq64H+VDHWnnJGMeRRkC+l2583/brAbpAyrg8tYr4e6n2bBTnEGtvrPVEBi3SmcQ
-i5S+AcDDEnU5V3/Eh+SZ+kxOSzGIQevKlL8bIauMZm+auj3LNQ9nigOzPPhJnFXRglLprFbdsW7k
-dm4asmp0PC94SUJOBCcbfLfCseAjVrj59ityXa8erOhQVI56Pp6jl6c+nzgvEhEtIZ2WgXvAaohB
-mDqJavEkyfXsWOluVl+RwrVIgOD9DVJ5UT86AeQ8GtuKl3lMw6+rbmr1JmFkVo6hc5+PNM7EtwQs
-FoBksvzNZ3BNOHI8kMW+I5V2PN8GrpAgC88wNeO7AafntMyAON071H5+lNYSKjADzQb8ilsyxbzD
-pagWlCCFNlsGGt4cSG+UonWEANZs4sFUBGLdQ9mJrL4ASmz0Nro6zk11DbIw0nni1ZaNVPRBTR75
-WJyS7OMW+HFvs63voRnBSWLjvLNH2EXjtTKYbR4zl7pM9cNfA65SwsxhKqneliCetL1yK+OH9GdB
-s6kCNj44iEuLXFiPFaRRvXZsiByMw6pkH9Lozvqh1E3F/Biz3Sy/zWGOULXZRhlQjS4nPSE0LK/g
-nPPGsHswg5bYaox1ukKZXMpywtVv/DNWZfzv8uxAXcy+Rg3iIi4IaS3DIh+txBwmuABPNszu7/Y6
-K3iwyoWpeMMbjBVLlxrE4krhWdcOBjNlZ5k7kuB9GMsN2vsM6Qcz2r3h9Fz+w44rtV6ODbOhEx2U
-d2ZeWihKJVYbqq+cRntOY8Y1YKETZZYx6t4rH9WCZBn9oLP/tpYN1fRGGr9QcYINTLMjbtxmVMSZ
-1WPaTUvsTHqZRshCeUWpbuunwQ9dLTlV0NATtA5pjF9w7CYRlBo2kmi+ElzecRttfNzBoU7nVEI9
-LYzbfxatgClAIpWoWvOE1X+M7Q653NeqYaSKR7ejMDM1FUSw/V0Iv+FnvlZWxSIWmWyRs8IF1Ilr
-KVOPgbYxxgwUu+ES+m9mZ/K6AfgxPbQqb0MHM6MJgUN7bMYl3mQE3/uAlnFpnvmISJUZEI9F7AUX
-woZyG/kv6sw52OySd8/iQgSMGNrAjDKQwYQyJG8x9lkwjjZrdxRq830zzD+u42apWr9HkeQuGqD3
-FHg9adSlgN9QKuqmlCzICLKQ5t5NapiUxJ7zEjkqUsWDrRUr5K5ckzh48bTUz3URx2hlLA+2GphW
-0ZsS3/h33+rsWxmhBscUtVAkAAu3XjNxhFawvUK6UZwp1Wjr407vnSjQtyflZtwaYJH2ri/HrwZa
-Za+HKyxlQDAhWbOxqAbCGhFZ9GyX2UCSlOQ8iNobRq9JsaxrGPQ7zJM+Td2AHOTbP5HGPbxceY7V
-Ujrt1AzPfocZCqnKWVm7PbgIKEVt1ZWs/R3bGf8x4Ja2oDsN+mCLXnWekR3k3h0T2GTih7M/0jiW
-Db7aDVW3wXapKSnKtTKcBcHZ+sFfghTsuXg4Ok+OXpDmmlEPoDxnCAw4Ei/2dFFYrdMBTCE0OQXC
-lgLgR/6pHvxW/YIcIT96sjtTBF5sYd7iSycBpa09lp6G/S2m5rJ1e9DIAZ3LcklyKxGH+//iMK5T
-+wWidSAPrFYp5oMWlDO3+1UvHGYD1M3WbInMrZAKcvrUgiGX9/9nqEV2RlOt04NtS2Jq0vun3qEe
-mRGMHjgi0ocb5ULTTB/AdQX3ge5iGjSaQt7Jm2ZsWetKkJ4Y1mJy3TwClzNMJXvijcT8S55a2+Sh
-d5bpx5mpf1sTahEJ9yGu9i3iLmy7TQFEe/KgCgRVpp7TfK5vy8b+p4eIJ6Gg77nw6oV/8MC/sZcU
-IoJVSMlAzKm7n7oncPZ4qS2DP0Wx8gT9VLNkq56PfEAnKUrixKl5pGl0aJRCMwDHQe68LepiIi3X
-NSCsDLYevoXlNT7aknuYFMlxr/tNeMXx73tvb2m//dsbWKyKV1bRSznMONMaYwfn7nJTPRaJPY7i
-49uYTAGftIUTPG4WGxjvbZa75YOKHyuQMGpsH87u1AXU8Mz+NWHJ66h/yDs1R01so4nwHbqvr9lR
-jsuQ7fCGYRd96fK7mX4oTgCrSbw7kWNLM3jQEtrxgdmiACYdBHb7Ke1oq0f394MD9gS2LgKqSolO
-9rvsp3uqIRvW+Tydrpa+m6IHf49NQfi5nnne8LbHuBGVJoWmwLpDQHJoJxzPqGySBpek1u2QQoCS
-9Hxj7uAEccWn2XaFik3tVpuVgqehwyQnZe2XgSvf7yc7q8k0V1jvS1YKuFZ9J7FfNmYAyUM34+aY
-jX9SrgWwsrQSXbSdWjRwlNApBBPdbPQ3f7oXsti6sZEhTpZLYaaRTVoqFw0jXAf9Nxj027tu1PKu
-U3O6majTzaVc2Y5EtqbvDTM4Uv1591lKkD8rydVJCROl3lLPE8QabjZJFH/KH5ao7A+HkSfFEOLc
-sEpSW5HsM+uEWj4BjUm5fHhhq1wuNaNsaYjcq+SAW2YXm8IfrrCmg8lqhvpytXZOItx5NuAXIhEr
-0Nm3pl7y+8YMM0GLlO6scBamVEcwzBvC99tkGhoHUPyWSrErtIVKNyb4MEK+KDTqGa/g7s7C5em7
-JqfgN5MbXGlOYdHhaMMxQgaMr4lKGbWLsXF3NCkxmPZsYpYvVLW0scCaxHplAQKYVrPwu5ZQYDn0
-5VkbDqc2W8wAvtZYy7tG/fosfp0AiBglXw7yRzfn/n8m7OO5WopZax5uUFMhU1TTtnANhzeu8Lt1
-CLysWLIWaBE2Ph0ibX30hHOV0k7Kgi8eezNWjrQ//JEx2yoqBM3pN4DL3wu0+HH76xzgxQ+3fMG2
-MdPuIfBurK8VcbeEee2+45QJNRS2vmZwQHs9fufR9uoGEL6f24a3HiBwNoDGEYVhiOB2uwitV5sA
-kGY1XukpDMkANb1ScbPj3+TAgBFdBjtWQeZCcz+rPAWUlDauJIgj0orEj9NiYNOGe3+FDR2ifVpN
-hjF8UOBgmeLMjMYOVVDddZOrSrhT30HkISM4lCOxRt56ZxKf0p3AvrzpEpE/zhq5x8jzzGgUgnnL
-xKw6UzEo87/xzqsM6LlHEnVwPLTiK7OvEneo8H2i1SjF3jnMfQC9W8Oex5PNuuV0YSFrK/BPwDe4
-GwhWa1q5xfB4pEcAm+wFyIGXJH7lladfk07ncaZAJVP5SJDUZk2dTWyBYvMneA1D+YPnMQW/Kr82
-uOGBAbPmhbHhsg4rUDu+DY45wR1nHwEEg6XuPeIgANOVkxTlZMepzMf7NXcDk77J0CSxHsoElvZl
-FTcFvfeVyhIZIwFbHGulAcvCHEZSMFR+mb0drhty9hy1Ravqt+TeL5PCuuP42iPvaC8AYoz3upfI
-I+7V1KEHraadqr8IqMC9UhEArZfffJJmq6c0ofN0tjS/Q/zJfJVDnxS9YOLj7oi1FvSJp4YrMtMo
-YLoaWXawvUVS8Kv5CsBaLQpTrvdRfkeXj0pV1R+yjdKgj4TDsXJSJerjCNvAXV7PoWn/H8WqLYAa
-Rc9oKLn5g7uYWKGWdPUo11caRuC7fKUWfUuDUynGnQannaFQUZTh22ewK+RX6t2OUSMMbNlaRe89
-/ydhn7g09f9xZHvPVIQsqrCdfTiHO6z2G8PoseswCUUKRFrB9IaFaPrsaZkwkVCsb+zRsgx5NkC5
-BALiX3EKeuLOnG1yrV+9PJSaqZ5lZuzkVEfBVfpBMxl5onuGtWMu2QleRyLghfrufL7+32a1jf75
-uyC04X897Hlr6eUXbfuwXy0EIDN7nLI4nMpq2WEeoQ/tQbqjYIyBuRyk+L4h+gKiL4zUrP26Wjon
-8CLZlbe4Agwg6tVWc9naDsHf4SAy9ybsmtYaHr1l4kfenygGUXKAOJ6Vx39beelf2ZhpeksSzar1
-saIZ5h0NIkFmyIXCmaIFlCRsGJW+U+OULz0a9MT7LHYhXkIVJTO4DfU1C3OYKNWx5WDy1EdxOIw4
-Dedv4OTIE4YrzXF57bI73t8w4sjkxVbnpoJx/SpvPuvAGQInN0hGmACTCuYRtr0qZuUA3pvGJugw
-MXDnh8qWdKQfnA6UcV5Btcu7Xu/uH1yDL0ZVSFp/gH0LK3i5Cd9Nuuc2JQ/rFb2/kgbUTeUxCdkp
-hWk4fuU87zGIoILdHp97pfi/8FZ/BTLINOmsiwvx7wDd5qH8Wc2o6jBnU0mxDMoigiP3znPxhlEt
-445GtrVhahynsxFoadK/X2QhgI43qq5YOQJUmyMb2i4QYyRYm4pAL/yt2qbHPlhYsg/ZOBoJ9+v9
-z0g7fkpcmCN29mq1JApGoe4gVdtrXes3UHVpakTNglcaJWrOme5Wxv6KpYewgohja8w+822Sf9rj
-AjH6/+PAs3EiDiUTQR8q+Ccm6HMyYhfh9ir6+qWRPXoJW9/JMoBGXco88y6SodjN4a6uSIOHGpS7
-UckzBLytPNDctYdJhWU64Fz0XCI+4XrrHqDgIXBKmhK2WL1slr5CTwPGEW77+RmuqyaeFevool/M
-2hYTzfYdN0syCCpf+99FJ7S3IUJcAbxCMqeKbCPTjgs3Z/jfrRolfwLOdGUErU+Pset7qwAb7M4m
-CNI9T82kd5hXWX4m5fxodJZajUFVqR3KxsnKXrWHr8ViLLz8kXRyoC+oDBWvMBuQHLb+Nt1Ois6I
-0l0P2NVCps7bAec1nFqriCgf7sd9mr0cqq4VJf2B7MeCEM19D9HHEvNUbdYZ9SBfzkDnluYH0CB7
-7t69TbjYSnwWox/U5XqgSoxDI0mGImgU8OX6Q+YRy6qNu7muxx6Lyl4R1yEpWPfLjmspKESd2FrQ
-GrDqUd9JdNzUcOtsi1YLWlpCDHPz8sp+KuSZ5G5argoD4bJEfYYDV+MUYFfgWs/v7flhVkbooXPm
-fJAWKSHurmqQ7CjFk08rwh9cc/VLzAPFsIFUor8TVIKKFO+5ds3qBaJxbqxeahBk8sEc89dwJxdj
-+Hqp9tS/XuH8lcnZWXWK1IWKBFRgw0LOK7275YwFO2vOXgr/bbSc2z9SUPdS1MX7xSbJqRucPzYi
-R1ADIsnBbczyCHgn/7cND8eNAhuQrjkjkSOl30lCpi9t6SC6TWZjm5xhvjDdA+7n07Cpr74LVHGg
-QBXSPPjWV8Ns5UXhH+vNNYgM3SyjTdf+GVybIp/emsR4+csS8Xt+xzmxQLEwZTdUD2X/1L71OOqj
-p1z5TVZa/WvH0kZEEn/j0/uA81hvrkjfmsmUqiOQi6zydKO7Zy4PAlTIjnkmBcb2rQyfw7zo0AXt
-mmnlr1Yr9NrwoNlIcEZPaxnnSs1b0ROEDxOdfEMwodgo+gpdBPzQ4NoAIvweVkgc8XKqSSOQbrqG
-mzVgaJ+qGmI8zGsy8awsWz9nj54dgB/9IaCl/fTn2rzgylrtD3Srlm6CXwg0IytEZoGuvA202724
-oqmA2L6dct5lG7ZT1dZ69On8/F+e/SxvpabuK+i4Scx045GhXriF1RyvJfGWCNfcDcjrYqu9/wny
-pcY5+evU9TKBT4/x6U8ERv7Ehe0vfoJNxXSwX4tSWqlHen0PdtHDYkKl5RQq0Vm3sKUUOeB3qCFl
-hU4aPDKQeaOdRzxgKg9qwmLOdjvOlsierWoHUbj0VKhNyOqHDSAf6adAObOZMs8gSDJGN9vWBMuW
-NDwS4HMHkkcnbGca/Us2TAN1FUYiFK60vQp6gRo1XyjTNqehqqTutQv0PdlZfGQePyGMgWsyxDzR
-z6d58QA2RwNvgaGwyr/EDRkcBtc9fqrvqKyjAhtdGiQasWOLAOMe8D8Ijfd0uRoxsamX04CezuWc
-PpS1D/9cchYpcyHyMcNSPBKLr9fpNlhEpdTAbQ4pjCfCCinrSjlhJBTZWkxY+VQdxnDmALKXZk95
-S5Is/BdpoO/eRoXtfRXA8C2Y2PxKPywPPK7tTJIEJm1N3vTZVz813l7Tb3QNGrQqYws1rth2txTu
-S81priub+xTkGmRRnOJwR50ae35K13A7SiIWeSvsPBJOBncwn+jysH0vDKDTErhn9JFgiZRoPJ+x
-HBZqzRX3KmHyf09eNlcuiPvJvnnVxZ6Tt4t/N674JdRkoJ67JQhiSV/rRMdBMiC+cXwVq0zU1Woi
-E50K4es4L7nOuGyJPUyvRsUx/QmI2U8Mn6z8xQ6gNXME8IeBEaiIPgnYmh4Wtf/2rp1hvmmsNj3g
-AQszkWq0Ndzo2Coj6A+9kbCGES56JYb6eW9YYedTkIL5k5w94kTR2JCAlVhutE5HfJgvFUyBj+2s
-Qb7Dz5iVGhcCB/cW40eCtn+tjC1khExDoPnTHfqBz4nbBFMyjuanUurHWqSxxUZkQ+TrBWW3qKJq
-/vR0Rv4b8NIrSajYkMCNGF9fZaYQv8rZ1LuhPLouxNq4EPeF6zZ49D7g0BEf22aPmhuYM142Z7kP
-Er53KObr823QhQh1RgSQPhxm/YhFSIMsly540W1dcTjrbcQSd5LQu80XB2ZijVnA/9zgyV11TiFT
-+/lFSCZ1f8Kl0IOfBZCJWx8d8W76kJbwMzKJZ8ed1zcyyR/iG+SG158RW+EG8Ytw+AePg3jvCg9H
-CNImCksZ6xPzHV3QZneACosG7+6bNWU0Y6hm+iqnIu5gW5PwTpfyt2aNrR3omnp/dD5nPvNyyx/Y
-LcvdoclyOdvsgBTqaCrlC1mpIFZoIBKYsiwLrjD5m8YWXdspVYaDR9iCyCS3E6/AWF8wFiZXR1ig
-5yhU0DaFPBkC1LborQ4dnTVkz6Ch7EjqTWH3A3cH8zwUxCPh8W6nSqRcAwqQOy3WeTH48GhUeEP8
-AdOVTw7YHz46W9QVQkXqMvEhHQAumX2/lZgOPgEc4aiPE04iZeJBWlyLKFkIn++ibMKaJ3YSdCQT
-mdaQVGuePdhoDVpswW1Q2kGOFSIcdYrGp4unQbu38xbcnzR13kCXtSF4hPeLMONf1eyI4+c08VTl
-rygjOGxQsJ2lMapmm6X4lKtv5hX6gqTkVLotCnN0MH7EW/5mFrfqa77Wba10Xwm4W3CEXNG+R242
-JdCkVyj8azTwS1vkNjqCucXLk2oUdQtTM+nyZcGwWp+Uf3ahPv2NsAVc+OZx6XejwKloqymViY60
-fwHp5iiIAdDDfwVUPGxteA2fs0CsOPa+Z88jZ94RVHyw7BseZFs2YqjWO0eLFQ2DjnAgiJ8kbbGH
-iztSDWbthu4sSO15cpEEAtWU/B6I+QJYOUrC1YOzJe5JXVWhbuwfHJstMl6EZcsXLnkCM64f05Mg
-4fC+IMfel+IFIPRHJq5dAwzmbhkNlHafkCyxsgnhSLC6e0AZnGgcFwXHGBQSMQZtAOPRGrg5dx7o
-a3BxOV+hG0MPosEvoS9SJfB5oxjPqcbGiFJ3hY2CiHvHDs/BqPG0zPPY0jlYVFqj60rzUzgKLbEF
-GxBGGcLL2TsKO8KN+vsy/4/ixnXlLS5SZvTWmpAVEerx8T6pLeNiFXHw4YCQONL+vxrLAcKbZvOX
-dmQ8UEr627ez3CmAyO2hDbi7MztP5iGUwiVdM8DmslNJZUcVEl2+BxKCfprsVrkae2Wljt0npcSk
-3odt7/dcf7k54XZCqzCAOFowUzf84AnYB00U/neAu/Tm5W5NEqBApdvbWs1P5W0zVr9C05SRoJ29
-2bxqoZroeOHjElw29tD/8x5AgxAIj6Xsp0i0LBGJUO3Rm9/K0Sq8DZAuZaSCwMJSVJ7WIbqmS20T
-jSly7jcWMqrMO0OHIf70+hQYYBExkbkJWJLsh5oME/RA2VTxYcigvNqhWxxZNls/kQkbtuH4sqhh
-lKCw+rbVtmPi9uaS6/XugEJj3GXzXRqAN+cglLF9064CJ7PrErtRFohSrkAxqXrjHkAc9MGVPiGq
-bQZX8xFw1icbGDnXOdE9agnlGYDTu1HjWhm3MjJnyqWaRvRSiYXEQzaQ4lGO4aOQRcuMykfMQqh/
-8qRLCW8/hxAAvSG4IASXR3UeKlyJDoXfxV6hYOvVHfXdlcT1hImsc2GkXc+R7sGHcrhP1EFz6orw
-/jGGMFGb3ZFuIVULUy710GfsP5lz/CEXc1uPH7sF6+EIPDa/djXvFeb1KjVU8W5i8ewrkDlf+3eF
-AZSMvDVNU0uWTfQCsBkIl7oIGyIP9kqtaQ+HR5y7Q6+owGILmCq2WEI4pGKbn57f1pIPbnyG2v0s
-IwcQGwYwrP6s51C30gXjaatNBUbHLguloPRhWQM/a4RKsQnovfdZpmUSJRIMo5UCsr/cqUgsxkHq
-51qU00L4oHF+aydviqYKNizHniWmIodwqmH7IGAzhObBMWncUHgfmYAmyBWNuNQQGItDVPn/Ldej
-mCbPfNp+SrrCa1ZN6/y/kwZ5ezNKbUgDS/EA8roQlGnvsCBFaM8q8MsJ5xJqwHTC5PV5jJLkfDIF
-bz8X4feeiOEorDMmSmtCRUR5R8pwVDf7pi9h4JcYVf4XIuTh8Qae+U43HRRpr477p5xgq8quqO+z
-ceUFZa7IoRQ5i9TFANngxkbPJpVSgIUVMY4Mh5V93FXMBJuUZSG1K/7fI2n6+hVScYBpEilvoDvZ
-TY+ncXT65afTH5TlYrT/MGYELiazY8A6wA7t3R+t2Jt4
+<!DOCTYPE html>
+<html lang="vi-VN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{$name}}{{__("Mã xác thực Email")}}</title>
+    <style type="text/css">
+        root {
+            color-scheme: light;
+        }
+
+        img {
+            ax-width: 100%;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: none;
+            width: 100% !important;
+            height: 100%;
+            line-height: 1.6em;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        @media only screen and (max-width: 640px) {
+            body {
+                padding: 0 !important;
+            }
+
+            h1 {
+                font-weight: 800 !important;
+                margin: 20px 0 5px !important;
+            }
+
+
+            h2 {
+                font-weight: 800 !important;
+                margin: 20px 0 5px !important;
+            }
+
+            h3 {
+                font-weight: 800 !important;
+                margin: 20px 0 5px !important;
+            }
+
+            h4 {
+                font-weight: 800 !important;
+                margin: 20px 0 5px !important;
+            }
+
+            h1 {
+                font-size: 22px !important;
+            }
+
+            h2 {
+                font-size: 18px !important;
+            }
+
+            h3 {
+                font-size: 16px !important;
+            }
+
+            .container {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            .content {
+                padding: 0 !important;
+            }
+
+            .content-wrap {
+                padding: 10px !important;
+            =
+            }
+
+            .invoice {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body itemscope itemtype="https://schema.org/EmailMessage"
+      style="font-family: 'Helvetica Neue=',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; background-color: #fff; margin: 0;"
+      bgcolor="#fff">
+
+<table class="body-wrap"
+       style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background-color: #fff; margin: 0;"
+       bgcolor="#fff">
+    <tbody>
+    <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+        <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0;"
+            valign="top">
+        </td>
+        <td class="container" width="600"
+            style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto;"
+            valign="top">
+            <div class="content"
+                 style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 20px;">
+                <table class="main" width="100%" cellpadding="0" cellspacing="0"
+                       style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; border-radius: 3px; background-color: #fff; margin: 0; box-shadow: 0 0 60px 0 #bbc4d1;"
+                       bgcolor="#fff">
+                    <tbody>
+                    <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                        <td class="alert alert-warning"
+                            style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 32px; font-weight: bold; vertical-align: top; color: #fff; font-weight: 700; text-align: center; border-radius: 3px 3px 0 0; background-image: linear-gradient(to right, #0096FF 10%, #2F5DFF 45%, #4F35FF 100%); margin: 0; padding: 70px 20px;"
+                            align="center" bgcolor="#0073ba" valign="top">
+                            <h2>{{$name}}</h2>
+                        </td>
+                    </tr>
+                    <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                        <td class="content-wrap"
+                            style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 20px;"
+                            valign="top">
+                            <table width="100%" cellpadding="0" cellspacing="0"
+                                   style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                <tbody>
+                                <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                    <td class="content-block"
+                                        style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 34px; vertical-align: top; line-height: 1em; margin: 0; padding: 20px 0 30px;"
+                                        valign="top">
+                                        Xác thực Email
+                                    </td>
+                                </tr>
+                                <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                    <td class="content-block"
+                                        style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 16px; color: #222222; vertical-align: top; margin: 0; padding: 0 0 20px;"
+                                        valign="top">
+                                        Vui lòng điền mã xác thực sau để hoàn tất việc xác thực email (có hiệu lực trong 5 phút)
+                                    </td>
+                                </tr>
+                                <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                    <td class="content-block"
+                                        style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 36px; font-weight: bold; text-align: center; color: #111111; vertical-align: top; line-height: 1.6em; margin: 0; padding: 0 0 20px;"
+                                        valign="top">
+                                        {{$code}}
+                                    </td>
+                                </tr>
+                                <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                    <td class="content-block"
+                                        style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 12px; color: #757575; vertical-align: top; margin: 0; padding: 0 0 20px;"
+                                        valign="top">
+                                        (Email này được gửi tự động bởi hệ thống, vui lòng không trả lời)
+                                    </td>
+                                </tr>
+                                <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                    <td class="content-block"
+                                        style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; text-align: center; vertical-align: top; margin: 0; padding: 0 0 20px;"
+                                        valign="top">
+                                        <a href="{{$url}}" class="btn-primary" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 18px !important; color: #fff
+                                                ; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 6px; text-transform: capitalize; background-color: #111111; margin: 0; border-color: #111111; border-style: solid; border-width: 4px 130px;"
+                                           rel="noopener" target="_blank">Đăng nhập</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="footer"
+                     style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; clear: both; color: #999; margin: 0; padding: 20px;">
+                    <table width="100%"
+                           style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                        <tbody>
+                        <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                            <td class="aligncenter content-block"
+                                style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 12px; vertical-align: top; color: #999; text-align: center; margin: 0; padding: 0;"
+                                align="center" valign="top">
+                                © {{$name}}. Đã đăng ký Bản quyền.
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>

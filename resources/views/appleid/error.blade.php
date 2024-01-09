@@ -1,43 +1,63 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Các thẻ meta và liên kết tới CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Lỗi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .error-container {
+            text-align: center;
+            margin-top: 10vh;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62;
+            border-color: #545b62;
+        }
+
+        @media (max-width: 767px) {
+            .error-container {
+                margin-top: 5vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Lỗi</h1>
+        <p>{{ $message }}</p>
+    </div>
+    <div class="text-center mt-4">
+        <a href="/#/dashboard" class="btn btn-secondary">Trang chủ</a>
+    </div>
+</body>
+</html>
