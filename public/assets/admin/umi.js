@@ -22360,20 +22360,13 @@
 				})), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "Phương Thức Reset Lưu Lượng"), p.a.createElement(c.a, {
-					placeholder: "Vui lòng chọn phương thức đặt lại dung lượng",
+					for: "example-text-input-alt"
+				}, "Phương thức đặt lại lưu lượng"), p.a.createElement(c.a, {
 					style: {
 						width: "100%"
 					},
-					value: this.state.record.reset_traffic_method,
-					onChange: e => {
-						this.setState({
-							record: d()({}, this.state.record, {
-								reset_traffic_method: e
-							})
-						})
-					}
+					defaultValue: parseInt(t.reset_traffic_method),
+					onChange: e => this.formChange("reset_traffic_method", e)
 				}, p.a.createElement(c.a.Option, {
 					key: null,
 					value: null
