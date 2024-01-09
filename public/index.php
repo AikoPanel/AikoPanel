@@ -1,60 +1,38 @@
-<?php
-
-/**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylor@laravel.com>
- */
-
-define('LARAVEL_START', microtime(true));
-
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| our application. We just need to utilize it! We'll simply require it
-| into the script here so that we don't have to worry about manual
-| loading any of our classes later on. It feels great to relax.
-|
-*/
-
-require __DIR__.'/../vendor/autoload.php';
-
-/*
-|--------------------------------------------------------------------------
-| Turn On The Lights
-|--------------------------------------------------------------------------
-|
-| We need to illuminate PHP development, so let us turn on the lights.
-| This bootstraps the framework and gets it ready for use, then it
-| will load up this application so that we can run it and send
-| the responses back to the browser and delight our users.
-|
-*/
-
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request
-| through the kernel, and send the associated response back to
-| the client's browser allowing them to enjoy the creative
-| and wonderful application we have prepared for them.
-|
-*/
-
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-
-$response->send();
-
-$kernel->terminate($request, $response);
+<?php //002cd
+if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
+?>
+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
+m4OQ/G==

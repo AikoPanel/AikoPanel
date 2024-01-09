@@ -1,133 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Các thẻ meta và liên kết tới CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>AppleID Web {{ $appname }}</title>
-    <style>
-        body {
-            background-color: #f4f4f4;
-            font-family: 'Arial', sans-serif; /* Change the font for better compatibility */
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .card {
-            background-color: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 1.5rem; /* Adjusted font size for mobile */
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            font-size: 1rem; /* Adjusted font size for mobile */
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-primary, .btn-secondary {
-            width: 100%;
-            margin-bottom: 0.5rem;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
-        }
-
-        .btn-secondary:hover {
-            background-color: #545b62;
-            border-color: #545b62;
-        }
-    </style>
-    <script>
-        function copyTextToClipboard(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            el.setAttribute('readonly', '');
-            el.style.position = 'absolute';
-            el.style.left = '-9999px';
-            document.body.appendChild(el);
-            const selected =
-                document.getSelection().rangeCount > 0
-                    ? document.getSelection().getRangeAt(0)
-                    : false;
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            if (selected) {
-                document.getSelection().removeAllRanges();
-                document.getSelection().addRange(selected);
-            }
-
-            // Show success alert using SweetAlert2
-            Swal.fire({
-                icon: 'success',
-                title: 'Copied to clipboard!',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
-
-        function copyUsernameToClipboard() {
-            const username = document.getElementById('username').innerText;
-            copyTextToClipboard(username);
-        }
-
-        function copyPasswordToClipboard() {
-            const password = document.getElementById('password').innerText;
-            copyTextToClipboard(password);
-        }
-    </script>
-</head>
-<body>
-    <div class="container">
-        <div class="card">
-            <h1>Lấy AppleID Web {{ $appname }}</h1>
-            <div class="text-center">
-                <p><strong>Số lần lấy còn lại:</strong> {{ $appleidlimit }}</p>
-                <p><strong>Trạng thái:</strong> {{ $statusid }}</p>
-                <p><strong>Username:</strong> <span id="username">{{ $username }}</span></p>
-                <p><strong>Password:</strong> <span id="password">{{ $password }}</span></p>
-                <button onclick="copyUsernameToClipboard()" class="btn btn-primary">Copy Username</button>
-                <button onclick="copyPasswordToClipboard()" class="btn btn-primary">Copy Password</button>
-                <p><strong>Lưu ý:</strong> App Shadowrocket và Quantumult X đều nằm trong mục gia đình nhé</p>
-                <hr> <!-- Horizontal line -->
-                @if (!empty($quantumultx))
-                    <p><strong>Quantumult X:</strong> Bấm vào để tải Quantumult X</p>
-                    <button onclick="window.location.href='{{ $quantumultx }}'" class="btn btn-primary">Tải Quantumult X</button>
-                    <p><strong>Lưu ý:</strong> Nhớ tải Quantumult X trong tài khoản trước rồi xoá đi và tải lại ở đây thì mới không bị Build đỏ nhé</p>
-                @endif
-                <a href="/#/dashboard" class="btn btn-secondary">Trang chủ</a>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<?php //002cd
+if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
+?>
+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

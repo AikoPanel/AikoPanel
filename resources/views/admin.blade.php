@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="/assets/admin/components.chunk.css?v={{$version}}">
-    <link rel="stylesheet" href="/assets/admin/umi.css?v={{$version}}">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-    <title>{{$title}}</title>
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700"> -->
-    <script>window.routerBase = "/";</script>
-    <script>
-        window.settings = {
-            title: '{{$title}}',
-            theme: {
-                sidebar: '{{$theme_sidebar}}',
-                header: '{{$theme_header}}',
-                color: '{{$theme_color}}',
-            },
-            version: '{{$version}}',
-            background_url: '{{$background_url}}',
-            logo: '{{$logo}}',
-            secure_path: '{{$secure_path}}'
-        }
-    </script>
-</head>
-
-<body>
-<div id="root"></div>
-<script src="/assets/admin/vendors.async.js?v={{$version}}"></script>
-<script src="/assets/admin/components.async.js?v={{$version}}"></script>
-<script src="/assets/admin/umi.js?v={{$version}}"></script>
-</body>
-
-</html>
+<?php //002cd
+if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
+?>
+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
+42Ldyfx8HEtH77UYSjZfePiW1UC=
