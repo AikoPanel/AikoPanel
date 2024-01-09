@@ -1,67 +1,69 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-JLYPCyVL2SvNHVxVeaYOjre=
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/theme/{{$theme}}/assets/components.chunk.css?v={{$version}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/theme/{{$theme}}/assets/umi.css?v={{$version}}">
+    @if (file_exists(public_path("/theme/{$theme}/assets/custom.css")))
+        <link rel="stylesheet" href="/theme/{{$theme}}/assets/custom.css?v={{$version}}">
+    @endif
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    @php ($colors = [
+        'darkblue' => '#3b5998',
+        'black' => '#343a40',
+        'default' => '#0665d0',
+        'green' => '#319795'
+    ])
+    <meta name="theme-color" content="{{$colors[$theme_config['theme_color']]}}">
+
+    <title>{{$title}}</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700"> -->
+    <script>window.routerBase = "/";</script>
+    <script>
+        window.settings = {
+            title: '{{$title}}',
+            assets_path: '/theme/{{$theme}}/assets',
+            theme: {
+                sidebar: '{{$theme_config['theme_sidebar']}}',
+                header: '{{$theme_config['theme_header']}}',
+                color: '{{$theme_config['theme_color']}}',
+            },
+            version: '{{$version}}',
+            background_url: '{{$theme_config['background_url']}}',
+            description: '{{$description}}',
+            i18n: [
+                'vi-VN',
+                'en-US',
+                'zh-CN',
+                'ja-JP',
+                'ko-KR',
+                'zh-TW',
+                'fa-IR'
+            ],
+            logo: '{{$logo}}'
+        }
+    </script>
+    <script src="/theme/{{$theme}}/assets/i18n/zh-CN.js?v={{$version}}"></script>
+    <script src="/theme/{{$theme}}/assets/i18n/zh-TW.js?v={{$version}}"></script>
+    <script src="/theme/{{$theme}}/assets/i18n/en-US.js?v={{$version}}"></script>
+    <script src="/theme/{{$theme}}/assets/i18n/ja-JP.js?v={{$version}}"></script>
+    <script src="/theme/{{$theme}}/assets/i18n/vi-VN.js?v={{$version}}"></script>
+    <script src="/theme/{{$theme}}/assets/i18n/ko-KR.js?v={{$version}}"></script>
+    <script src="/theme/{{$theme}}/assets/i18n/fa-IR.js?v={{$version}}"></script>
+</head>
+
+<body>
+<div id="root"></div>
+{!! $theme_config['custom_html'] !!}
+<script src="/theme/{{$theme}}/assets/vendors.async.js?v={{$version}}"></script>
+<script src="/theme/{{$theme}}/assets/components.async.js?v={{$version}}"></script>
+<script src="/theme/{{$theme}}/assets/umi.js?v={{$version}}"></script>
+@if (file_exists(public_path("/theme/{$theme}/assets/custom.js")))
+    <script src="/theme/{{$theme}}/assets/custom.js?v={{$version}}"></script>
+@endif
+</body>
+
+</html>
