@@ -5474,6 +5474,7 @@
 					t = e.site,
 					statistics = e.statistics,
 					n = e.invite,
+					staff = e.staff,
 					r = e.subscribe,
 					l = e.frontend,
 					advanced = e.advanced,
@@ -5979,6 +5980,44 @@
 					placeholder: "",
 					defaultValue: r.overdue_custom_message,
 					onChange: e => this.set("subscribe", "overdue_custom_message", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Nhân viên",
+					key: "staff"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thông tin thanh toán",
+					description: "Cài đặt thông tin thanh toán của cho nhân viên"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Tên tài khoản",
+					defaultValue: staff.name_account,
+					onChange: e => this.set("staff", "name_account", e.target.value)
+				}),f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Số tài khoản",
+					defaultValue: staff.number_account,
+					onChange: e => this.set("staff", "number_account", e.target.value)
+				}),f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Từ khoá thanh toán (Keyword)",
+					defaultValue: staff.keyword_account,
+					onChange: e => this.set("staff", "keyword_account", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Giới hạn tạo tài khoản của nhân viên",
+					description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: staff.limit_generate_account,
+					onChange: e => this.set("staff", "limit_generate_account", e.target.value)
 				})))), f.a.createElement(s.a.TabPane, {
 					tab: "Mời & Thanh toán",
 					key: "invite"
@@ -17047,6 +17086,7 @@
 				site: {},
 				statistics: {},
 				subscribe: {},
+				staff: {},
 				frontend: {},
 				server: {},
 				email: {},

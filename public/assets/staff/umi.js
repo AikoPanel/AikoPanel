@@ -14717,20 +14717,7 @@
 		t.default = {
 			name: "config",
 			state: a()({}, {
-				invite: {},
-				site: {},
-				subscribe: {},
-				frontend: {},
-				server: {},
-				email: {},
-				telegram: {},
-				app: {},
-				safe: {},
-				tabs: "site",
-				fetchLoading: !1,
-				emailTemplate: [],
-				themeTemplate: [],
-				setTelegramWebhookLoading: !1
+				staff: {},
 			}),
 			reducers: {
 				setState(e, t) {
@@ -85861,11 +85848,15 @@
 			}
 			componentDidMount() {
 				this.props.dispatch({
-						type: "order/fetch"
-					}),
-					this.props.dispatch({
-						type: "plan/fetch"
-					})
+					type: "order/fetch"
+				}),
+				this.props.dispatch({
+					type: "plan/fetch"
+				}),
+				this.props.dispatch({
+					type: "config/fetch",
+					key: "staff"
+				})
 			}
 			update(e, t, n) {
 				this.props.dispatch({
@@ -85887,6 +85878,7 @@
 					n = e.fetchLoading,
 					r = e.pagination,
 					a = e.filter,
+					cfg = this.props.config.staff,
 					m = [{
 						title: "# Số Đơn Hàng",
 						dataIndex: "trade_no",
