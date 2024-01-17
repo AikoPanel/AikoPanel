@@ -85855,7 +85855,6 @@
 				}),
 				this.props.dispatch({
 					type: "config/fetch",
-					key: "staff"
 				})
 			}
 			update(e, t, n) {
@@ -85874,11 +85873,11 @@
 			}
 			render() {
 				var e = this.props.order,
+					cfg = this.props.config.staff,
 					t = e.orders,
 					n = e.fetchLoading,
 					r = e.pagination,
 					a = e.filter,
-					cfg = this.props.config.staff,
 					m = [{
 						title: "# Số Đơn Hàng",
 						dataIndex: "trade_no",
