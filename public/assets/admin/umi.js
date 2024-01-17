@@ -6016,8 +6016,8 @@
 					size: "large",
 					type: "number",
 					placeholder: "Vui lòng nhập",
-					defaultValue: staff.limit_generate_account,
-					onChange: e => this.set("staff", "limit_generate_account", e.target.value)
+					defaultValue: staff.staff_generate_user_limit,
+					onChange: e => this.set("staff", "staff_generate_user_limit", e.target.value)
 				})))), f.a.createElement(s.a.TabPane, {
 					tab: "Mời & Thanh toán",
 					key: "invite"
