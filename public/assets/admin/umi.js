@@ -5534,6 +5534,16 @@
 					defaultValue: t.app_url,
 					onChange: e => this.set("site", "app_url", e.target.value)
 				})), f.a.createElement(m, {
+					title: "Địa chỉ Website - Web Phụ (Nếu có)",
+					description: "Hỗ trợ nhiều địa chỉ URL, nếu có nhiều địa chỉ URL, vui lòng sử dụng dấu phẩy để phân tách"
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+					defaultValue: t.sub_domain,
+					onChange: e => this.set("site", "sub_domain", e.target.value)
+				})), f.a.createElement(m, {
 					title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
 					description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
 				}, f.a.createElement(c.a, {
@@ -6012,7 +6022,7 @@
 					title: "Giới hạn tạo tài khoản của nhân viên",
 					description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
 				}, f.a.createElement(a.a, {
-					addonAfter: "Giây",
+					addonAfter: "Account/day",
 					size: "large",
 					type: "number",
 					placeholder: "Vui lòng nhập",
@@ -6914,7 +6924,7 @@
 					onChange: e => this.set("advanced", "advanced_singbox_config", e.target.value)
 				}, f.a.createElement("option", {
 					value: "default"
-				}, "Mặc định (default)"),f.a.createElement("option", {
+				}, "Mặc định (default) - Since sing-box v1.8.0"),f.a.createElement("option", {
 					value: "aiko"
 				}, "Aiko ( Since sing-box 1.8.0 ) - Config"),f.a.createElement("option", {
 					value: "xb"
