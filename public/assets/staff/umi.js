@@ -85855,6 +85855,7 @@
 				}),
 				this.props.dispatch({
 					type: "config/fetch",
+					key: "staff"
 				})
 			}
 			update(e, t, n) {
