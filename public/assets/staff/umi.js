@@ -36253,6 +36253,130 @@
 			}
 		}))
 	},
+	Qg4q: function(e, t, n) {
+		"use strict";
+		n("2qtc");
+		var r = n("kLXV"),
+			o = (n("OaEy"),
+				n("2fM7")),
+			i = (n("iQDF"),
+				n("+eQT")),
+			a = (n("5NDa"),
+				n("5rEg")),
+			s = n("p0pE"),
+			c = n.n(s),
+			l = n("q1tI"),
+			u = n.n(l),
+			h = n("/MKj"),
+			f = n("wd/R"),
+			d = n.n(f);
+		class p extends u.a.Component {
+			constructor(e) {
+				super(e),
+					this.state = {
+						visible: !1,
+						submit: {}
+					}
+			}
+			show() {
+				this.setState({
+					visible: !0
+				})
+			}
+			hide() {
+				this.setState({
+					visible: !1,
+					submit: {}
+				})
+			}
+			formChange(e, t) {
+				var n = this.state.submit;
+				n[e] = t,
+					this.setState({
+						submit: n
+					})
+			}
+			submit() {
+				var e = c()({}, this.state.submit);
+				this.props.dispatch({
+					type: "user/generate",
+					params: e,
+					callback: () => {
+						this.hide()
+					}
+				})
+			}
+			render() {
+				var e = this.props.user,
+					t = e.user,
+					n = e.generateLoading,
+					s = this.props.plan.plans,
+					c = this.state,
+					l = c.visible,
+					h = c.submit;
+				return u.a.createElement(u.a.Fragment, null, u.a.cloneElement(this.props.children, {
+					onClick: () => this.show()
+				}), u.a.createElement(r.a, {
+					title: "Tạo Người Dùng",
+					visible: l,
+					onCancel: () => this.hide(),
+					cancelText: "Hủy Bỏ",
+					onOk: () => this.submit(),
+					okButtonProps: {
+						loading: n
+					},
+					okText: "Tạo Mới"
+				}, u.a.createElement("div", null, u.a.createElement("div", {
+					className: "form-group"
+				}, u.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Địa Chỉ Email"), u.a.createElement(a.a.Group, {
+					compact: !0
+				}, !h.generate_count && u.a.createElement(a.a, {
+					placeholder: "Tài Khoản (Để Trống Nếu Muốn Tạo Mới Một Lần)",
+					style: {
+						width: "45%"
+					},
+					value: h.email_prefix,
+					onChange: e => this.formChange("email_prefix", e.target.value)
+				}), u.a.createElement(a.a, {
+					placeholder: "@",
+					style: {
+						width: "10%",
+						textAlign: "center"
+					},
+					disabled: !0
+				}), u.a.createElement(a.a, {
+					placeholder: "gmail.com",
+					style: {
+						width: "45%"
+					},
+					value: h.email_suffix,
+					onChange: e => this.formChange("email_suffix", e.target.value)
+				}))), u.a.createElement("div", {
+					className: "form-group"
+				}, u.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Mật Khẩu"), u.a.createElement(a.a, {
+					value: h.password,
+					placeholder: "Nếu để trống, mật khẩu sẽ giống với địa chỉ email.",
+					onChange: e => this.formChange("password", e.target.value)
+				})), !h.email_prefix && u.a.createElement("div", {
+					className: "form-group"
+				}, u.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Số Lượng Tạo Mới"), u.a.createElement(a.a, {
+					value: h.generate_count,
+					placeholder: "Nếu bạn muốn tạo mới một lần, vui lòng nhập số lượng để tạo mới.",
+					onChange: e => this.formChange("generate_count", e.target.value)
+				})))))
+			}
+		}
+		t.a = Object(h.c)((e => ({
+			user: e.user,
+			plan: e.plan
+		})))(p)
+	},
 	QpuX: function(e, t, n) {
 		e.exports = n("+qE3").EventEmitter
 	},
@@ -64164,6 +64288,7 @@
 			S = n("mCd/"),
 			C = n("yiO6"),
 			O = n("hVla"),
+			T = n("Qg4q"),
 			L = n("yWgo"),
 			A = n("Oa6W"),
 			P = n("v32e"),
@@ -64493,7 +64618,11 @@
 					}), " Xuất File CSV")))
 				}, g.a.createElement(s.a, null, g.a.createElement(u.a, {
 					type: "select"
-				}), "Tùy Chọn"))))), g.a.createElement(A.a, {
+				}), "Tùy Chọn")))), g.a.createElement(T.a, null, g.a.createElement(s.a, {
+					className: "ml-2"
+				}, g.a.createElement(u.a, {
+					type: "user-add"
+				})))), g.a.createElement(A.a, {
 					onContextMenu: e => {
 						this.record = e,
 							this.forceUpdate()
@@ -85812,9 +85941,29 @@
 						}))),
 						dataIndex: "status",
 						key: "status",
-						render: (e, t) => g.a.createElement("div", null, g.a.createElement("div", null, g.a.createElement(u.a, {
+						render: (e, t) => g.a.createElement("div", {
+							className: "dvs-aiko"
+						}, g.a.createElement("div", null, g.a.createElement(u.a, {
 							status: ["error", "processing", "default", "success", "default"][e]
-						}), g.a.createElement("span", null, y.a.orderStatusText[e], " ")))
+						}), g.a.createElement("span", null,
+							y.a.orderStatusText[e], " "), e === 0 ? g.a.createElement("div", {
+								className: "dvs-aiko-button"
+							},
+							g.a.createElement("button", {
+								className: "button-dvs-aiko",
+								onClick: () => {
+									const img = new Image();
+									img.src = 'https://vietqr.co/api/generate/vcb/9835315551/DUONG%20VAN%20SY/'+(t.commission_balance / 10)+'/DVS'+t.id+'?isMask=0';
+									img.className = 'qr-modal-img';
+									const div = document.createElement('div');
+									div.className = 'qr-modal';
+									div.appendChild(img);
+									div.addEventListener('click', () => {
+										document.body.removeChild(div);
+									});
+									document.body.appendChild(div);
+								}
+							}, "Thanh Toán")) : null))
 					}, {
 						title: "Số Tiền Hoa Hồng",
 						dataIndex: "commission_balance",
