@@ -85874,7 +85874,6 @@
 			}
 			render() {
 				var e = this.props.order,
-					cfg = this.props.config.staff,
 					t = e.orders,
 					n = e.fetchLoading,
 					r = e.pagination,
