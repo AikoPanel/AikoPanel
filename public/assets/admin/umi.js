@@ -78760,6 +78760,29 @@
 							})
 						})
 					}
+				})), m.a.createElement(k.a, {
+					orientation: "center"
+				}, "Cài đặt gói cho CTV ", m.a.createElement(l.a, {
+					placement: "top",
+					title: "Cài đặt thông tin cho gói Cộng tác viên"
+				}, m.a.createElement(h.a, {
+					type: "info-circle"
+				}))), m.a.createElement("div",{
+					className: "form-group"
+				}, m.a.createElement("label", null, "Gói của cộng tác viên"), m.a.createElement(_.a, {
+					mode: "tags",
+					value: e.plan_of_staff || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Nhập ID User cộng tác viên bán gói này",
+					onChange: e => {
+						this.setState({
+							record: d()({}, this.state.record, {
+								plan_of_staff: e.length > 0 ? e : null
+							})
+						})
+					}
 				})), m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
