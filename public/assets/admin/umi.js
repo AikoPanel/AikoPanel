@@ -78778,8 +78778,8 @@
 					placeholder: "Nhập và nhấn Enter để thêm ID",
 					onChange: e => {
 						this.setState({
-							plan_of_staff: d()({}, this.state.record, {
-								tags: e.length > 0 ? e : null
+							record: d()({}, this.state.record, {
+								plan_of_staff: e.length > 0 ? e : null
 							})
 						})
 					}
