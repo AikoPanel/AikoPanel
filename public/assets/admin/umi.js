@@ -78769,7 +78769,7 @@
 					type: "info-circle"
 				}))), m.a.createElement("div",{
 					className: "form-group"
-				}, m.a.createElement("label", null, "Gói của cộng tác viên"), g.a.createElement(a.a, {
+				}, m.a.createElement("label", null, "Gói của cộng tác viên"), m.a.createElement(_.a, {
 					mode: "tags",
 					value: this.state.record.plan_of_staff || [],
 					style: {
