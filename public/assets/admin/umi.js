@@ -78771,7 +78771,7 @@
 					className: "form-group"
 				}, m.a.createElement("label", null, "Gói của cộng tác viên"), m.a.createElement(_.a, {
 					mode: "tags",
-					value: e.plan_of_staff || [],
+					value: this.state.record.plan_of_staff || [],
 					style: {
 						width: "100%"
 					},
