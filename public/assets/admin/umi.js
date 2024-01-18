@@ -78769,17 +78769,17 @@
 					type: "info-circle"
 				}))), m.a.createElement("div",{
 					className: "form-group"
-				}, m.a.createElement("label", null, "Gói của cộng tác viên"), m.a.createElement(_.a, {
+				}, m.a.createElement("label", null, "Gói của cộng tác viên"), g.a.createElement(a.a, {
 					mode: "tags",
 					value: this.state.record.plan_of_staff || [],
 					style: {
 						width: "100%"
 					},
-					placeholder: "Nhập ID User cộng tác viên bán gói này",
+					placeholder: "Nhập và nhấn Enter để thêm ID",
 					onChange: e => {
 						this.setState({
-							record: d()({}, this.state.record, {
-								plan_of_staff: e.length > 0 ? e : null
+							plan_of_staff: d()({}, this.state.record, {
+								tags: e.length > 0 ? e : null
 							})
 						})
 					}
