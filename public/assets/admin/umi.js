@@ -78795,18 +78795,13 @@
 					value: 2
 				}, "Gói của Cộng tác viên"))), 2 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
-				}, m.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "Gói của cộng tác viên ", m.a.createElement(l.a, {
-					placement: "top",
-					title: "ID của cộng tác viên có thể bán gói này, Lấy ID người dùng ở User Page nhé (^_^)"
-				}), m.a.createElement(_.a, {
+				}, m.a.createElement("label", null, "Gói của cộng tác viên (ID Staff)"), m.a.createElement(_.a, {
 					mode: "tags",
 					value: this.state.record.plan_of_staff || [],
 					style: {
 						width: "100%"
 					},
-					placeholder: "Nhập và nhấn Enter để thêm ID",
+					placeholder: "ID user có thể bán gói này",
 					onChange: e => {
 						this.setState({
 							record: d()({}, this.state.record, {
@@ -78814,7 +78809,7 @@
 							})
 						})
 					}
-				}))): "", m.a.createElement("div", {
+				})): "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
