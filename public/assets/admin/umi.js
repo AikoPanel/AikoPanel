@@ -100525,9 +100525,9 @@
 				if (this.setState({
 						visible: !this.state.visible
 					}),
-					this.state.server.networkSettings && "object" == typeof this.state.server.networkSettings) {
+					this.state.server.network_settings && "object" == typeof this.state.server.network_settings) {
 					var e = this.state.server;
-					e.networkSettings = JSON.stringify(e.networkSettings, null, 2),
+					e.network_settings = JSON.stringify(e.network_settings, null, 2),
 						this.setState({
 							server: e
 						})
@@ -100536,7 +100536,7 @@
 			save() {
 				try {
 					var e = this.state.server;
-					e.networkSettings = e.networkSettings ? "string" == typeof e.networkSettings && JSON.parse(e.networkSettings) : null,
+					e.network_settings = e.network_settings ? "string" == typeof e.network_settings && JSON.parse(e.network_settings) : null,
 						this.props.dispatch({
 							type: "serverVless/save",
 							params: e,
@@ -100569,10 +100569,10 @@
 			}
 			renderChildDrawer() {
 				var e = this.state.server,
-					t = e.networkSettings,
-					n = e.tlsSettings;
+					t = e.network_settings,
+					n = e.tls_settings;
 				switch (this.state.childDrawer.type) {
-					case "networkSettings":
+					case "network_settings":
 						var r = {
 							tcp: JSON.stringify({
 								header: {
@@ -100617,7 +100617,7 @@
 							showGutter: !0,
 							highlightActiveLine: !0,
 							value: t || "",
-							onChange: e => this.formChange("networkSettings", e),
+							onChange: e => this.formChange("network_settings", e),
 							setOptions: {
 								enableBasicAutocompletion: !1,
 								enableLiveAutocompletion: !1,
@@ -100627,11 +100627,11 @@
 							},
 							ref: "editor"
 						})));
-					case "tlsSettings":
+					case "tls_settings":
 						return y.a.createElement(U, {
 							settings: n,
 							tls: e.tls,
-							onChange: e => this.changeServer("tlsSettings", e)
+							onChange: e => this.changeServer("tls_settings", e)
 						})
 				}
 			}
@@ -100709,7 +100709,7 @@
 					className: "form-group col-md-4 col-xs-12"
 				}, y.a.createElement("label", null, "An ninh ", 0 != parseInt(e.tls) && y.a.createElement("a", {
 					href: "javascript:void(0);",
-					onClick: () => this.showChildDrawer("Chỉnh sửa Cấu hình Bảo mật", "tlsSettings")
+					onClick: () => this.showChildDrawer("Chỉnh sửa Cấu hình Bảo mật", "tls_settings")
 				}, "Chỉnh sửa Cấu hình")), y.a.createElement(N.a, {
 					value: parseInt(e.tls) || 0,
 					style: {
@@ -100756,7 +100756,7 @@
 					className: "form-group col-md-12 col-xs-12"
 				}, y.a.createElement("label", null, "Giao thức Truyền tải ", y.a.createElement("a", {
 					href: "javascript:void(0);",
-					onClick: () => this.showChildDrawer("Chỉnh sửa cấu hình giao thức", "networkSettings")
+					onClick: () => this.showChildDrawer("Chỉnh sửa cấu hình giao thức", "network_settings")
 				}, "Chỉnh sửa Cấu hình")), y.a.createElement(N.a, {
 					value: e.network,
 					placeholder: "Chọn Giao thức Truyền tải",
@@ -107519,9 +107519,9 @@
 				if (this.setState({
 						visible: !this.state.visible
 					}),
-					this.state.server.networkSettings && "object" == typeof this.state.server.networkSettings) {
+					this.state.server.network_settings && "object" == typeof this.state.server.network_settings) {
 					var e = this.state.server;
-					e.networkSettings = JSON.stringify(e.networkSettings, null, 2),
+					e.network_settings = JSON.stringify(e.network_settings, null, 2),
 						this.setState({
 							server: e
 						})
@@ -107529,7 +107529,7 @@
 			}
 			save() {
 				var e = this.state.server;
-				e.networkSettings = e.networkSettings ? "string" == typeof e.networkSettings && JSON.parse(e.networkSettings) : null,
+				e.network_settings = e.network_settings ? "string" == typeof e.network_settings && JSON.parse(e.network_settings) : null,
 					this.props.dispatch({
 						type: "serverTrojan/save",
 						params: e,
@@ -107555,8 +107555,8 @@
 				})
 			}
 			renderChildDrawer() {
-				var e = this.state.server.networkSettings;
-				if ("networkSettings" === this.state.childDrawer.type) {
+				var e = this.state.server.network_settings;
+				if ("network_settings" === this.state.childDrawer.type) {
 					var t = {
 						tcp: "",
 						ws: JSON.stringify({
@@ -107586,7 +107586,7 @@
 						showGutter: !0,
 						highlightActiveLine: !0,
 						value: e || "",
-						onChange: e => this.formChange("networkSettings", e),
+						onChange: e => this.formChange("network_settings", e),
 						setOptions: {
 							enableBasicAutocompletion: !1,
 							enableLiveAutocompletion: !1,
@@ -107726,7 +107726,7 @@
 					className: "form-group col-md-12 col-xs-12"
 				}, f.a.createElement("label", null, "Giao thức Truyền tải ", f.a.createElement("a", {
 					href: "javascript:void(0);",
-					onClick: () => this.showChildDrawer("Chỉnh sửa Cấu hình Giao thức.", "networkSettings")
+					onClick: () => this.showChildDrawer("Chỉnh sửa Cấu hình Giao thức.", "network_settings")
 				}, "Chỉnh sửa Cấu hình")), f.a.createElement(s.a, {
 					value: e.network,
 					placeholder: "Vui lòng chọn một giao thức truyền tải.",
