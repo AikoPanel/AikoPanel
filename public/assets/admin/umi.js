@@ -19138,7 +19138,7 @@
 					type: "theme/getThemesStaff"
 				})
 			}
-			activeTheme(e, staff) {
+			activeTheme(e) {
 				var t = this;
 				return a()(y().mark((function n() {
 					return y().wrap((function(n) {
@@ -19148,7 +19148,7 @@
 									return n.next = 2,
 										Object(v.b)("/" + window.settings.secure_path + "/config/save", {
 											frontend_theme: e,
-											staff_theme: staff
+											staff_theme: e
 										});
 								case 2:
 									if (200 === n.sent.code) {
@@ -38200,7 +38200,8 @@
 			name: "theme",
 			state: o()({}, {
 				themes: [],
-				active: void 0
+				active: void 0,
+				staff: void 0,
 			}),
 			reducers: {
 				setState(e, t) {
