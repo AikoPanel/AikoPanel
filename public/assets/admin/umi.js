@@ -19133,9 +19133,6 @@
 			componentDidMount() {
 				this.props.dispatch({
 					type: "theme/getThemes"
-				}),
-				this.props.dispatch({
-					type: "theme/getThemesStaff"
 				})
 			}
 			activeTheme(e) {
@@ -19147,8 +19144,7 @@
 								case 0:
 									return n.next = 2,
 										Object(v.b)("/" + window.settings.secure_path + "/config/save", {
-											frontend_theme: e,
-											staff_theme: e
+											frontend_theme: e
 										});
 								case 2:
 									if (200 === n.sent.code) {
@@ -19170,8 +19166,7 @@
 			render() {
 				var e = this.props.theme,
 					t = e.themes,
-					n = e.active,
-					staff = e.staff;
+					n = e.active;
 				return e.getThemesLoading,
 					c.a.createElement(l.a, o()({}, this.props, {
 						loading: Object.keys(t).length <= 0,
@@ -19185,7 +19180,7 @@
 						role: "alert"
 					}, c.a.createElement("p", {
 						className: "mb-0"
-					}, "Nếu bạn triển khai Akopanel theo cách tách biệt trước và sau, cấu hình chủ đề sẽ không có hiệu lực. Docs", c.a.createElement("b", null, c.a.createElement("a", {
+					}, "Nếu bạn triển khai Akopanel theo cách tách biệt trước và sau, cấu hình chủ đề sẽ không có hiệu lực.học hỏi", c.a.createElement("b", null, c.a.createElement("a", {
 						href: "https://docs.v2board.com/use/advanced.html#%E5%89%8D%E7%AB%AF%E5%88%86%E7%A6%BB"
 					}, "Phân tách Frontend và Backend")))))), Object.keys(t).map((e => {
 						var r = t[e];
@@ -19211,12 +19206,7 @@
 							className: "btn btn-sm rounded-pill btn-outline-light px-3 mr-2",
 							onClick: () => this.activeTheme(e),
 							disabled: n === e
-						}, n === e ? "Chủ Đề Hiện Tại (ADMIN)" : "Kích Hoạt Chủ Đề(ADMIN)"), c.a.createElement("button", {
-							type: "button",
-							className: "btn btn-sm rounded-pill btn-outline-light px-3 mr-2",
-							onClick: () => this.activeTheme(e),
-							disabled: staff === e
-						}, staff === e ? "Chủ Đề Hiện Tại (CTV)" : "Kích Hoạt Chủ Đề (CTV)"), c.a.createElement(g, {
+						}, n === e ? "Chủ Đề Hiện Tại" : "Kích Hoạt Chủ Đề"), c.a.createElement(g, {
 							keyName: e,
 							themeName: r.name,
 							configs: r.configs
@@ -38200,8 +38190,7 @@
 			name: "theme",
 			state: o()({}, {
 				themes: [],
-				active: void 0,
-				staff: void 0,
+				active: void 0
 			}),
 			reducers: {
 				setState(e, t) {
