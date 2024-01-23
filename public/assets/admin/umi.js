@@ -22685,7 +22685,34 @@
 				}, "Cho Phép Email Này Truy Cập Trang CTV "), p.a.createElement("div", null, p.a.createElement(i.a, {
 					checked: t.is_staff,
 					onChange: e => this.formChange("is_staff", e ? 1 : 0)
-				}))), p.a.createElement("div", {
+				}))), t.is_staff ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "URL Truy Cập Trang CTV (Nếu Có)"), p.a.createElement(u.a, {
+					addonAfter: "URL",
+					defaultValue: t.staff_url,
+					placeholder: "Nếu để trống, sẽ không có URL truy cập trang CTV.",
+					onChange: e => this.formChange("staff_url", e.target.value)
+				})): "", t.is_staff && t.staff_url ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Tên website của CTV"), p.a.createElement(u.a, {
+					addonAfter: "Title",
+					defaultValue: t.staff_title,
+					placeholder: "Nếu để trống, sẽ không có tên website của CTV.",
+					onChange: e => this.formChange("staff_title", e.target.value)
+				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Mô tả website của CTV"), p.a.createElement(u.a, {
+					addonAfter: "Description",
+					defaultValue: t.staff_description,
+					placeholder: "Nếu để trống, sẽ không có mô tả website của CTV.",
+					onChange: e => this.formChange("staff_description", e.target.value)
+				})): "", p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
