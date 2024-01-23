@@ -19180,14 +19180,14 @@
 						role: "alert"
 					}, c.a.createElement("p", {
 						className: "mb-0"
-					}, "Nếu bạn triển khai Akopanel theo cách tách biệt trước và sau, cấu hình chủ đề sẽ không có hiệu lực.học hỏi", c.a.createElement("b", null, c.a.createElement("a", {
+					}, "Nếu bạn triển khai Akopanel theo cách tách biệt trước và sau, cấu hình chủ đề sẽ không có hiệu lực, Hướng dẫn ", c.a.createElement("b", null, c.a.createElement("a", {
 						href: "https://docs.v2board.com/use/advanced.html#%E5%89%8D%E7%AB%AF%E5%88%86%E7%A6%BB"
 					}, "Phân tách Frontend và Backend")))))), Object.keys(t).map((e => {
 						var r = t[e];
 						return c.a.createElement("div", {
 							className: "block block-transparent bg-image mb-0 mb-md-3 bg-primary",
 							style: {
-								backgroundImage: "url(https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80)"
+								backgroundImage: "url(https://avatars.githubusercontent.com/u/100770712?s=400&u=7bbc8ff9fbbe137add4b111ff138ea18d45a4f3a&v=4)"
 							}
 						}, c.a.createElement("div", {
 							className: "block-content block-content-full bg-gd-white-op-l"
