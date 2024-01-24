@@ -25051,7 +25051,7 @@
 				}, a.a.createElement("img", {
 					className: "user_avatar",
 					alt: "Avatar",
-					src: window.settings.logo || e.avatar_url,
+					src: e.avatar_url || window.settings.logo,
 					style: {
 						width: "28px",
 						height: "28px",

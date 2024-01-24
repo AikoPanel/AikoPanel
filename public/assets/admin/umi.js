@@ -22712,6 +22712,15 @@
 					defaultValue: t.staff_description,
 					placeholder: "Nếu để trống, sẽ không có mô tả website của CTV.",
 					onChange: e => this.formChange("staff_description", e.target.value)
+				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Logo Của Trang CTV"), p.a.createElement(u.a, {
+					addonAfter: "URL",
+					defaultValue: t.staff_logo,
+					placeholder: "Nếu để trống, Sẽ sử dụng Logo của trang web.",
+					onChange: e => this.formChange("staff_logo", e.target.value)
 				})): "", p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
