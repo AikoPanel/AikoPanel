@@ -31525,6 +31525,24 @@
 				})), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "URL Cộng tác viên (Thông báo Cho CTV)"), g.a.createElement(a.a, {
+					mode: "tags",
+					value: this.state.submit.staff_urls || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Nhập và nhấn Enter để thêm thẻ.",
+					onChange: e => {
+						this.setState({
+							submit: p()({}, this.state.submit, {
+								staff_urls: e.length > 0 ? e : null
+							})
+						})
+					}
+				})), g.a.createElement("div", {
+					className: "form-group"
+				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "URL Hình Ảnh"), g.a.createElement(s.a, {
 					placeholder: "Vui lòng nhập URL của hình ảnh.",
