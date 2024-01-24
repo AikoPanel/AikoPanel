@@ -19187,7 +19187,7 @@
 						return c.a.createElement("div", {
 							className: "block block-transparent bg-image mb-0 mb-md-3 bg-primary",
 							style: {
-								backgroundImage: "url(https://avatars.githubusercontent.com/u/100770712?s=400&u=7bbc8ff9fbbe137add4b111ff138ea18d45a4f3a&v=4)"
+								backgroundImage: "url(https://i.ibb.co/gdMk3vK/Hoshino-AI.png)"
 							}
 						}, c.a.createElement("div", {
 							className: "block-content block-content-full bg-gd-white-op-l"
@@ -31532,7 +31532,7 @@
 					style: {
 						width: "100%"
 					},
-					placeholder: "Nhập và nhấn Enter để thêm thẻ.",
+					placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
 					onChange: e => {
 						this.setState({
 							submit: p()({}, this.state.submit, {
