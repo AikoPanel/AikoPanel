@@ -22721,6 +22721,24 @@
 					defaultValue: t.staff_logo,
 					placeholder: "Nếu để trống, Sẽ sử dụng Logo của trang web.",
 					onChange: e => this.formChange("staff_logo", e.target.value)
+				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Zalo Group của CTV"), p.a.createElement(u.a, {
+					addonAfter: "URL",
+					defaultValue: t.staff_zalo,
+					placeholder: "Nếu để trống, Sẽ sử dụng Zalo của trang web.",
+					onChange: e => this.formChange("staff_zalo", e.target.value)
+				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Telegram Group của CTV"), p.a.createElement(u.a, {
+					addonAfter: "URL",
+					defaultValue: t.staff_telegram,
+					placeholder: "Nếu để trống, Sẽ sử dụng Telegram của trang web.",
+					onChange: e => this.formChange("staff_telegram", e.target.value)
 				})): "", p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {

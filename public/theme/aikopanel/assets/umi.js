@@ -15831,7 +15831,7 @@
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(h.formatMessage)({
 					id: "Liên kết ngay"
-				})))))) : l.a.createElement(l.a.Fragment, null), s.telegram_discuss_link ? l.a.createElement("div", {
+				})))))) : l.a.createElement(l.a.Fragment, null),t.staff_telegram || s.telegram_discuss_link ? l.a.createElement("div", {
 					className: "block block-rounded join_telegram_disscuss"
 				}, l.a.createElement("div", {
 					className: "block-header block-header-default"
@@ -15842,12 +15842,12 @@
 				})), l.a.createElement("div", {
 					className: "block-options"
 				}, l.a.createElement("a", {
-					href: s.telegram_discuss_link,
+					href: t.staff_telegram || s.telegram_discuss_link,
 					target: "_blank",
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(h.formatMessage)({
 					id: "Vào ngay"
-				}))))) : l.a.createElement(l.a.Fragment, null), s.zalo_discuss_link ? l.a.createElement("div", {
+				}))))) : l.a.createElement(l.a.Fragment, null), t.staff_zalo || s.zalo_discuss_link ? l.a.createElement("div", {
 					className: "block block-rounded join_telegram_disscuss"
 				}, l.a.createElement("div", {
 					className: "block-header block-header-default"
@@ -15858,7 +15858,7 @@
 				})), l.a.createElement("div", {
 					className: "block-options"
 				}, l.a.createElement("a", {
-					href: s.zalo_discuss_link,
+					href: t.staff_zalo || s.zalo_discuss_link,
 					target: "_blank",
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(h.formatMessage)({
@@ -17135,7 +17135,7 @@
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(m.formatMessage)({
 					id: "Bắt Đầu Ngay"
-				})))))) : u.a.createElement(u.a.Fragment, null), r.telegram_discuss_link ? u.a.createElement("div", {
+				})))))) : u.a.createElement(u.a.Fragment, null), t.staff_telegram || r.telegram_discuss_link ? u.a.createElement("div", {
 					className: "block block-rounded join_telegram_disscuss"
 				}, u.a.createElement("div", {
 					className: "block-header block-header-default"
@@ -17146,12 +17146,12 @@
 				})), u.a.createElement("div", {
 					className: "block-options"
 				}, u.a.createElement("a", {
-					href: r.telegram_discuss_link,
+					href: t.staff_telegram || r.telegram_discuss_link,
 					target: "_blank",
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(m.formatMessage)({
 					id: "Tham Gia Ngay"
-				}))))) : u.a.createElement(u.a.Fragment, null), r.zalo_discuss_link ? u.a.createElement("div", {
+				}))))) : u.a.createElement(u.a.Fragment, null), t.staff_zalo || r.zalo_discuss_link ? u.a.createElement("div", {
 					className: "block block-rounded join_telegram_disscuss"
 				}, u.a.createElement("div", {
 					className: "block-header block-header-default"
@@ -17162,7 +17162,7 @@
 				})), u.a.createElement("div", {
 					className: "block-options"
 				}, u.a.createElement("a", {
-					href: r.zalo_discuss_link,
+					href: t.staff_zalo || r.zalo_discuss_link,
 					target: "_blank",
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(m.formatMessage)({
@@ -31825,18 +31825,18 @@
 						className: "hdh-dvs text-muted"
 					}, Object(x.formatMessage)({
 						id: "IP Đang Truy Cập"
-					}), ": "), h.last_login_ip)), null !== g.zalo_discuss_link ? f.a.createElement("button", {
+					}), ": "), h.last_login_ip)), null !== h.staff_zalo || g.zalo_discuss_link ? f.a.createElement("button", {
 						className: "Aiko-DVS DVS-Aiko-zalo",
-						onClick: () => window.location.href = g.zalo_discuss_link
+						onClick: () => window.location.href = h.staff_zalo || g.zalo_discuss_link
 					}, [f.a.createElement("img", {
 						className: "icon-zalo",
 						src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEVHcEy2wMetveDr7u/Kzofx8vP5+vr///8+evLm7P/x8/MebPrW4P/19/8AZv+LqvsAXf8Sa/5VhOk0cet0m/+euP+9zv5hkP9Uh/zL1/xqjuAtcvoATf+twv7p6+tRgeiitvBsj+oAUN8DWuAAW+Q8aySXAAAAIXRSTlMAIDtHC37T/5T/lO//+/////+H2v///////1P///9RoPsYPczvAAABTElEQVR4AX2TB2LDIBAEhdqGGNChXpD7/9+Yg7jbeGz1YenJAyLNAqlI3smLEg+URZ488SPxyu9j9kbhHS1u302Fj1yNDeEz+lI/RQIu7cgtScTwfamNQZSChca0iFKyYKlDHN9H6vlmIGMsaQTG6qGnqaGJb1Q/KdsCWkFj4Ew5wZMmsyGFQLfw4YicZKF15Pz7zAv/7uQ0lJPovdATsPKBrRd6MNIX6Aa+IxYq3wonL0IHxqw+hbzJwrqA4y4Jpg29GMZx1HxxTo4dFju49SoYvlkDnNHJXk8K6DuJ0MjU+G5ESRPBCRWiCJ5MjkCUMFmhmfHJqlkg+WW6hf3SzDxhdsYs8SXH5Bvqpv1y0Hhlf132lo7H0/F4mPCAqk7ivnHM+cQcj2O1Tky/P3AR8bAzd5aN4Fw57fLkEVE3pweaWiRv5CKdA6l4KPwHUIgnkoB3qewAAAAASUVORK5CYII=",
 						alt: "Zalo Logo"
 					}), " ", f.a.createElement("span", null, Object(x.formatMessage)({
 						id: "Nhóm Zalo"
-					}))]) : null, null !== g.telegram_discuss_link ? f.a.createElement("button", {
+					}))]) : null, null !== h.staff_telegram || g.telegram_discuss_link ? f.a.createElement("button", {
 						className: "Aiko-DVS DVS-Aiko-telegram",
-						onClick: () => window.location.href = g.telegram_discuss_link,
+						onClick: () => window.location.href = h.staff_telegram || g.telegram_discuss_link,
 						style: {
 							alignItems: "center"
 						}
