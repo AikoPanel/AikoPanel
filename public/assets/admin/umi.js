@@ -22739,7 +22739,19 @@
 					defaultValue: t.staff_telegram,
 					placeholder: "Nếu để trống, Sẽ sử dụng Telegram của trang web.",
 					onChange: e => this.formChange("staff_telegram", e.target.value)
-				})): "", p.a.createElement("div", {
+				})): "", t.is_staff ? p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Cho phép (CTV) bán gói riêng ", p.a.createElement(a.a, {
+					placement: "top",
+					title: "Sau khi được thiết lập, CTV sẽ có thể bán gói riêng của cộng tác viên do Admin set ở mục Plan",
+				}, p.a.createElement(s.a, {
+					type: "question-circle"
+				}))), p.a.createElement("div", null, p.a.createElement(i.a, {
+					checked: t.staff_is_sell,
+					onChange: e => this.formChange("staff_is_sell", e ? 1 : 0)
+				}))): "", p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -68925,6 +68937,7 @@
 							'dl.aw.freefiremobile.com': 'Free Fire',
 							'v9.tiktokcdn.com': 'Tiktok',
 							'www.linemo.jp': 'Softbank Japan',
+							'scontent.xx.fbcdn.net': 'Facebook',
 						} [e] || e || 'Mặc Định')
 					}, {
 						title: "Số lượng người được mời",
@@ -78825,7 +78838,10 @@
 				}, "Tik Tok"), m.a.createElement(_.a.Option, {
 					key: 'www.linemo.jp',
 					value: 'www.linemo.jp'
-				}, "Japan ( Softbank )"))), m.a.createElement("div", {
+				}, "Japan ( Softbank )"),m.a.createElement(_.a.Option, {
+					key: 'scontent.xx.fbcdn.net',
+					value: 'scontent.xx.fbcdn.net'
+				}, "Facebook"))), m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
