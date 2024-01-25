@@ -6983,7 +6983,7 @@
 					placeholder: "Không nhập thì mặc định là không xoá phiên đăng nhập của người dùng",
 					defaultValue: aikopanel.session_ttl,
 					onChange: e => this.set("aikopanel", "session_ttl", e.target.value)
-				}))), w.session_ttl ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+				}))), aikopanel.session_ttl ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 					isChildren: !0,
 					title: "Ngoại lệ cho Admin",
 					description: "Sau khi mở, phiên đăng nhập của quản trị viên sẽ không bị xoá"
