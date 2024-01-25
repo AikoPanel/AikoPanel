@@ -4699,6 +4699,1690 @@
 			t.P = n("fKCf"),
 			t.Z = n("T8I8")
 	},
+	"1dM+": function(e, t, n) {
+		"use strict";
+		n.r(t);
+		var r = n("jehZ"),
+			o = n.n(r),
+			i = (n("+L6B"),
+				n("2/Rp")),
+			a = (n("5NDa"),
+				n("5rEg")),
+			s = (n("Znn+"),
+				n("ZTPi")),
+			c = (n("BoS7"),
+				n("Sdc0")),
+			l = n("p0pE"),
+			u = n.n(l),
+			h = n("q1tI"),
+			f = n.n(h),
+			d = n("Bl7J"),
+			p = n("/MKj");
+		class m extends f.a.Component {
+			render() {
+				return f.a.createElement("div", {
+					className: "row ".concat(this.props.isChildren ? "aikopanel-config-children" : ""),
+					style: {
+						padding: "20px",
+						borderBottom: "1px solid #eee"
+					}
+				}, f.a.createElement("div", {
+					className: "col-lg-6"
+				}, f.a.createElement("div", {
+					style: {
+						fontWeight: "bold",
+						marginBottom: 5
+					}
+				}, this.props.title), f.a.createElement("div", {
+					style: {
+						fontSize: 12,
+						marginBottom: 5,
+						color: "#666"
+					}
+				}, this.props.description)), f.a.createElement("div", {
+					className: "col-lg-6 text-right"
+				}, this.props.children))
+			}
+		}
+		class g extends f.a.Component {
+			componentDidMount() {
+				this.props.dispatch({
+						type: "config/fetch"
+					}),
+					this.props.dispatch({
+						type: "plan/fetch"
+					}),
+					this.props.dispatch({
+						type: "config/getEmailTemplate"
+					}),
+					this.props.dispatch({
+						type: "config/getThemeTemplate"
+					})
+			}
+			set(e, t, n) {
+				var r = this.props.config;
+				this.props.dispatch({
+						type: "config/setState",
+						payload: {
+							[e]: u()({}, r[e], {
+								[t]: n
+							})
+						}
+					}),
+					this.inputDelayTimer && clearTimeout(this.inputDelayTimer),
+					this.inputDelayTimer = setTimeout(function() {
+							this.inputDelayTimer = null,
+								this.props.dispatch({
+									type: "config/save",
+									parentKey: e
+								})
+						}
+						.bind(this), 1500)
+			}
+			render() {
+				var e = this.props.config,
+					t = e.site,
+					statistics = e.statistics,
+					n = e.invite,
+					staff = e.staff,
+					r = e.subscribe,
+					l = e.frontend,
+					advanced = e.advanced,
+					u = e.server,
+					h = e.tabs,
+					p = e.fetchLoading,
+					g = e.emailTemplate,
+					v = (e.themeTemplate,
+						e.email),
+					y = e.connect,
+					b = e.setTelegramWebhookLoading,
+					w = e.app,
+					aikopanel = e.aikopanel,
+					x = e.testSendMailLoading,
+					_ = e.safe,
+					E = this.props.plan.plans;
+				return f.a.createElement(d.a, o()({}, this.props, {
+					title: "Thiết lập hệ thống"
+				}), f.a.createElement("div", {
+					className: "mb-0 block border-bottom ".concat(p ? "block-mode-loading" : "")
+				}, f.a.createElement(s.a, {
+					onChange: e => this.setState({
+						tabs: e
+					}),
+					defaultActiveKey: h,
+					size: "large"
+				}, f.a.createElement(s.a.TabPane, {
+					tab: "Website",
+					key: "site"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Tên website",
+					description: "Sử dụng để hiển thị vị trí cụ thể của trang web"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tên website",
+					defaultValue: t.app_name,
+					onChange: e => this.set("site", "app_name", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Mô tả website",
+					description: "Hiển thị mô tả website trên các công cụ tìm kiếm"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập mô tả website",
+					defaultValue: t.app_description,
+					onChange: e => this.set("site", "app_description", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Địa chỉ Website",
+					description: "Địa chỉ trang web hiện tại, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL của trang web, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.app_url,
+					onChange: e => this.set("site", "app_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
+					description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(t.force_https),
+					onChange: e => this.set("site", "force_https", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "LOGO",
+					description: "Được sử dụng để hiển thị nơi cần thiết logo."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.logo,
+					onChange: e => this.set("site", "logo", e.target.value)
+				})), f.a.createElement(m, {
+					title: "URL gói đăng kí",
+					description: "Được sử dụng để cấp gói đăng kí, nếu trống thì sẽ là URL trang web. Nếu cần nhiều địa chỉ URL gói đăng kí, vui lòng sử dụng dấu phẩy để phân chia."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+					defaultValue: t.subscribe_url,
+					onChange: e => this.set("site", "subscribe_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "URL Điều khoản Sử dụng (TOS) của người dùng",
+					description: "Được sử dụng để chuyển đến Điều khoản Sử dụng (TOS) của người dùng"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL Điều khoản Sử dụng của người dùng, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.tos_url,
+					onChange: e => this.set("site", "tos_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Ngừng đăng ký người dùng mới",
+					description: "Sau khi kích hoạt, không ai có thể đăng ký"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(t.stop_register),
+					onChange: e => this.set("site", "stop_register", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Thử nghiệm miễn phí",
+					description: "Chọn gói cần thử nghiệm. Nếu không có lựa chọn, vui lòng trước tiên đi đến quản lý gói để thêm."
+				}, f.a.createElement("select", {
+					onChange: e => this.set("site", "try_out_plan_id", e.target.value),
+					className: "form-control",
+					value: t.try_out_plan_id,
+					placeholder: "Vui lòng chọn gói thử nghiệm"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không"), E.map((e => f.a.createElement("option", {
+					key: Math.random(),
+					value: e.id
+				}, e.name))))), 0 === t.try_out_plan_id || f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thời gian thử nghiệm (giờ)"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập thời gian thử nghiệm (giờ)",
+					defaultValue: t.try_out_hour,
+					onChange: e => this.set("site", "try_out_hour", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Đơn vị tiền tệ",
+					description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "VNĐ",
+					defaultValue: t.currency,
+					onChange: e => this.set("site", "currency", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Ký hiệu tiền tệ",
+					description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "đ",
+					defaultValue: t.currency_symbol,
+					onChange: e => this.set("site", "currency_symbol", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Thống kê",
+					key: "statistics"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê Order và Doanh thu theo ngày", 
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê Order và Doanh thu theo ngày"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.getorder_enable),
+					onChange: e => this.set("statistics", "getorder_enable", e ? 1 : 0)
+				}))),f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng truy cập của Node ngày hôm nay", 
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của Node ngày hôm nay"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.node_traffic_today),
+					onChange: e => this.set("statistics", "node_traffic_today", e ? 1 : 0)
+				}))),f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng truy cập của người dùng ngày hôm nay", 
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của người dùng ngày hôm nay"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.user_traffic_today),
+					onChange: e => this.set("statistics", "user_traffic_today", e ? 1 : 0)
+				}))),f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng node truy cập ngày hôm qua", 
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng node truy cập ngày hôm qua"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.node_traffic_yesterday),
+					onChange: e => this.set("statistics", "node_traffic_yesterday", e ? 1 : 0)
+				}))),f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng truy cập của người dùng ngày hôm qua", 
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của người dùng ngày hôm qua"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.user_traffic_yesterday),
+					onChange: e => this.set("statistics", "user_traffic_yesterday", e ? 1 : 0)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "An toàn",
+					key: "safe"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Xác thực email",
+					description: "Sau khi kích hoạt, sẽ bắt buộc người dùng thực hiện xác thực email lúc đăng ký"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.email_verify),
+					onChange: e => this.set("safe", "email_verify", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Cấm sử dụng nhiều tên miền Gmail",
+					description: "Sau khi mở Gmail nhiều tên miền sẽ không thể đăng ký"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.email_gmail_limit_enable),
+					onChange: e => this.set("safe", "email_gmail_limit_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Chế độ an toàn",
+					description: "Sau khi mở, trừ URL trạm này, tất cả các lượt truy cập đến tên miền trang web này ngoài trang web sẽ bị chặn bằng lỗi 403."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.safe_mode_enable),
+					onChange: e => this.set("safe", "safe_mode_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Đường dẫn trang quản trị",
+					description: "Đường dẫn quản lý sau cùng, sau khi sửa đổi sẽ thay đổi đường dẫn quản trị ban đầu."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "admin",
+					defaultValue: _.secure_path,
+					onChange: e => this.set("safe", "secure_path", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Đường dẫn trang Cộng tác viên",
+					description: "Đường dẫn quản lý sau cùng, sau khi sửa đổi sẽ thay đổi đường dẫn cộng tác viên ban đầu."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Đường dẫn web cộng tác viên",
+					defaultValue: _.staff_path,
+					onChange: e => this.set("safe", "staff_path", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách cho phép hậu tố email",
+					description: "Sau khi kích hoạt, chỉ có thể đăng ký với hậu tố sau tên trong danh sách email"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.email_whitelist_enable),
+					onChange: e => this.set("safe", "email_whitelist_enable", e ? 1 : 0)
+				})), _.email_whitelist_enable ? f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hậu tố email",
+					description: "Vui lòng sử dụng dấu phẩy để phân tách, ví dụ: icloud.com, gmail.com."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tên miền sau hậu tố, sử dụng dấu phẩy để phân tách, ví dụ: icloud.com, gmail.com.",
+					defaultValue: _.email_whitelist_suffix,
+					onChange: e => this.set("safe", "email_whitelist_suffix", e.target.value.split(","))
+				})) : "", f.a.createElement(m, {
+					title: "Captcha",
+					description: "Sau khi mở, sẽ sử dụng Google reCAPTCHA để ngăn chặn bot."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.recaptcha_enable),
+					onChange: e => this.set("safe", "recaptcha_enable", e ? 1 : 0)
+				})), _.recaptcha_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Khóa bí mật",
+					description: "Mật khẩu được sử dụng trong đơn đăng ký Google reCAPTCHA."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.recaptcha_key,
+					onChange: e => this.set("safe", "recaptcha_key", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Mật khẩu của trang web",
+					description: "Mật khẩu trang web được sử dụng trong đơn đăng ký Google reCAPTCHA."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.recaptcha_site_key,
+					onChange: e => this.set("safe", "recaptcha_site_key", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					title: "Hạn chế đăng ký theo địa chỉ IP",
+					description: "Sau khi kích hoạt, nếu tài khoản đăng ký theo địa chỉ IP đạt đến quy định, có thể bị hạn chế đăng ký. Vui lòng lưu ý rằng kiểm tra IP có thể gây ra sự cố do CDN hoặc proxy trung gian"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.register_limit_by_ip_enable),
+					onChange: e => this.set("safe", "register_limit_by_ip_enable", e ? 1 : 0)
+				})), _.register_limit_by_ip_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Lần thứ",
+					description: "Sau khi đạt đến số lần đăng ký, sẽ kích hoạt trạng thái chặn"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.register_limit_count,
+					onChange: e => this.set("safe", "register_limit_count", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thời gian chặn (phút).",
+					description: "Cần phải chờ đợi sau khoảng thời gian chặn trước khi có thể đăng ký lại"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.register_limit_expire,
+					onChange: e => this.set("safe", "register_limit_expire", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					title: "Kiểm soát chống Spam hoặc hack",
+					description: "Sau khi kích hoạt, nếu tài khoản này thử đăng nhập quá nhiều lần không thành công, sẽ bị hạn chế"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.password_limit_enable),
+					onChange: e => this.set("safe", "password_limit_enable", e ? 1 : 0)
+				})), _.password_limit_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Số lần thử",
+					description: "Sau khi đạt đến số lần thử đăng nhập không thành công, sẽ kích hoạt trạng thái chặn"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.password_limit_count,
+					onChange: e => this.set("safe", "password_limit_count", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thời gian chặn (phút).",
+					description: "Cần phải chờ đợi sau khoảng thời gian nghi ngờ trước khi có thể đăng nhập lại"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.password_limit_expire,
+					onChange: e => this.set("safe", "password_limit_expire", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					title: "Danh sách IP ưu tiên khi get Subcribe",
+					description: "Sau khi kích hoạt, IP trong danh sách này sẽ được ưu tiên và pass qua mọi kiểm tra."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập IP cần chặn, sử dụng dấu phẩy để phân tách, ví dụ: 123.123.123.123,123.123.123.124, để trống là cho phép tất cả các IP",
+					defaultValue: _.ip_blocklist,
+					onChange: e => this.set("safe", "ip_blocklist", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách IP bị chặn khi get Subcribe",
+					description: "Sau khi kích hoạt, IP trong danh sách này sẽ bị chặn khi get Subcribe."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập IP cần chặn, sử dụng dấu phẩy để phân tách, ví dụ: 123.123.123.123,123.123.123.124, để trống là cho phép tất cả các IP",
+					defaultValue: _.ip_blocklist,
+					onChange: e => this.set("safe", "ip_blocklist", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách User Agent bị chặn khi get Subcribe",
+					description: "Sau khi kích hoạt, User Agent trong danh sách này sẽ bị chặn khi get Subcribe."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập UserAgent cần chặn, mỗi UserAgent được cách nhau bởi dấu ( | ), ví dụ: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome, để trống là cho phép tất cả các UserAgent",
+					defaultValue: _.ua_blocklist,
+					onChange: e => this.set("safe", "ua_blocklist", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách quốc gia được phép get Subcribe",
+					description: "Sau khi kích hoạt, chỉ có thể get Subcribe từ quốc gia trong danh sách này."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập quốc gia được phép get Subcribe, mỗi quốc gia được cách nhau bởi dấu ( , ), ví dụ: VN,US,JP, để trống là cho phép tất cả các quốc gia",
+					defaultValue: _.country_allowlist,
+					onChange: e => this.set("safe", "country_allowlist", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Gói Dịch Vụ",
+					key: "subscribe"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
+					description: "Sau khi kích hoạt, người dùng có thể thay đổi gói đăng ki của mình"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.plan_change_enable),
+					onChange: e => this.set("subscribe", "plan_change_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Phương thức đặt lại lưu lượng",
+					description: "Chế độ thiết lập lại lưu lượng toàn cục, mặc định là hàng tháng mỗi ngày 1. Có thể được cấu hình riêng cho từng đơn đặt hàng trong quản lý đặt hàng"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "reset_traffic_method", e.target.value),
+					className: "form-control",
+					value: r.reset_traffic_method,
+					placeholder: "Vui lòng chọn cách đặt lại đơn đặt hàng"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Mỗi ngày 1 hằng tháng"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại theo tháng."), f.a.createElement("option", {
+					value: 2
+				}, "Không Reset"), f.a.createElement("option", {
+					value: 3
+				}, "Mỗi năm 1 lần vào ngày 1 tháng 1"), f.a.createElement("option", {
+					value: 4
+				}, "Thiết lập lại theo năm"), f.a.createElement("option", {
+					value: 5
+				}, "Thiết lập mỗi ngày"))), f.a.createElement(m, {
+					title: "Mở chế độ giảm giá hoặc chiết khấu",
+					description: "Sau khi kích hoạt, người dùng có thể thay đổi đơn đặt hàng, chiết khấu sẽ được áp dụng bởi hệ thống đối với đơn đặt hàng gốc, vui lòng xem tài liệu tham khảo"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.surplus_enable),
+					onChange: e => this.set("subscribe", "surplus_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Khi có đơn đặt hàng mới",
+					description: "Khi đặt hàng mới hoàn thành, nhiệm vụ sẽ được kích hoạt"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "new_order_event_id", e.target.value),
+					className: "form-control",
+					value: r.new_order_event_id,
+					placeholder: "Vui lòng chọn khi có đơn đặt hàng mới"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement(m, {
+					title: "Khi có đơn đặt hàng tiếp theo",
+					description: "Khi đặt hàng trả phí hoàn thành, nhiệm vụ sẽ được kích hoạt"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "renew_order_event_id", e.target.value),
+					className: "form-control",
+					value: r.renew_order_event_id,
+					placeholder: "Vui lòng chọn khi có đơn đặt hàng tiếp theo"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement(m, {
+					title: "Khi có đơn thay đổi đặt hàng",
+					description: "Khi đặt hàng thay đổi hoàn thành, nhiệm vụ sẽ được kích hoạt"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "change_order_event_id", e.target.value),
+					className: "form-control",
+					value: r.change_order_event_id,
+					placeholder: "Vui lòng chọn khi có đơn đặt hàng tiếp theo"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thời Gian Kết Thúc Đơn Hàng",
+					description: "Thiết lập thời gian hủy đơn khi khách hàng tạo đơn hàng mới"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập",
+					defaultValue: r.interval_order_time,
+					onChange: e => this.set("subscribe", "interval_order_time", e.target.value)
+				}))), f.a.createElement(m, {
+					title: "Hiển thị tổng số lượng người dùng đã mua gói",
+					description: "Sau khi mở, tổng số lượng người dùng đã mua gói sẽ được hiển thị trên người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_total_user_enable),
+					onChange: e => this.set("subscribe", "show_total_user_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Sắp xếp thứ tự các Server",
+					description: "Sắp xếp lại các server của máy chủ theo thứ tự online từ nhỏ tới lớn"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.arrange_server_enable),
+					onChange: e => this.set("subscribe", "arrange_server_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hiển thị thông tin đặt hàng trong đơn đặt hàng",
+					description: "Sau khi mở, thông tin đặt hàng sẽ được xuất khi người dùng lấy link đặt hàng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_info_to_server_enable),
+					onChange: e => this.set("subscribe", "show_info_to_server_enable", e ? 1 : 0)
+				})), r.show_info_to_server_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin Gói",
+					description: "Sẽ hiển thị thông tin gói sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_plan),
+					onChange: e => this.set("subscribe", "show_client_info_plan", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin Hạn sử dụng",
+					description: "Sẽ hiển thị thông tin Hạn sử dụng sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_expire_at),
+					onChange: e => this.set("subscribe", "show_client_info_expire_at", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin thời gian lấy link đặt hàng",
+					description: "Sẽ hiển thị thông tin thời gian lấy link đặt hàng sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_time_getsubscribe),
+					onChange: e => this.set("subscribe", "show_client_info_time_getsubscribe", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin Data sử dụng",
+					description: "Sẽ hiển thị thông tin Data sử dụng sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_used_traffic),
+					onChange: e => this.set("subscribe", "show_client_info_used_traffic", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin SNI",
+					description: "Sẽ hiển thị thông tin SNI sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_sni),
+					onChange: e => this.set("subscribe", "show_client_info_sni", e ? 1 : 0)
+				}))) : "", f.a.createElement(m, {
+					title: "Danh Sách máy chủ thông báo gói hết hạn",
+					description: "Sau khi mở, thông tin gói hết hạn sẽ được gửi đến máy chủ trong danh sách này Mỗi máy chủ cách nhau một dấu phẩy ."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "",
+					defaultValue: r.overdue_custom_message,
+					onChange: e => this.set("subscribe", "overdue_custom_message", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Nhân viên",
+					key: "staff"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thông tin thanh toán",
+					description: "Cài đặt thông tin thanh toán của cho nhân viên"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Tên tài khoản",
+					defaultValue: staff.name_account,
+					onChange: e => this.set("staff", "name_account", e.target.value)
+				}),f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Số tài khoản",
+					defaultValue: staff.number_account,
+					onChange: e => this.set("staff", "number_account", e.target.value)
+				}),f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Từ khoá thanh toán (Keyword)",
+					defaultValue: staff.keyword_account,
+					onChange: e => this.set("staff", "keyword_account", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Giới hạn tạo tài khoản của nhân viên",
+					description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: staff.staff_generate_user_limit,
+					onChange: e => this.set("staff", "staff_generate_user_limit", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Mời & Thanh toán",
+					key: "invite"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Mở chế độ mời",
+					description: "Sau khi mở, chỉ có người dùng được mời mới có thể đăng ký."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.invite_force),
+					onChange: e => this.set("invite", "invite_force", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Mã mời",
+					description: "Mặc định, tỷ lệ phần trăm hoa hồng toàn cầu, bạn có thể cấu hình tỷ lệ phần trăm cho mỗi đơn đặt hàng trong quản lý đặt hàng."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: n.invite_commission,
+					onChange: e => this.set("invite", "invite_commission", parseInt(e.target.value))
+				})), f.a.createElement(m, {
+					title: "Người dùng có thể tạo mã mời giới hạn",
+					description: "Sau khi kích hoạt, người dùng có thể tạo mã mời giới hạn, vui lòng nhập số lượng giới hạn"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: n.invite_gen_limit,
+					onChange: e => this.set("invite", "invite_gen_limit", parseInt(e.target.value))
+				})), f.a.createElement(m, {
+					title: "Mã mời vĩnh viễn không hết hạn",
+					description: "Sau khi kích hoạt, mã mời sẽ không bao giờ hết hạn, nếu không, nó sẽ hết hiệu lực sau khi sử dụng."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.invite_never_expire),
+					onChange: e => this.set("invite", "invite_never_expire", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hoa hồng chỉ được kích hoạt lần đầu",
+					description: "Sau khi kích hoạt, hoa hồng chỉ được tạo ra lần đầu tiên khi người dùng thanh toán, có thể cấu hình riêng cho từng người dùng trong quản lý người dùng."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.commission_first_time_enable),
+					onChange: e => this.set("invite", "commission_first_time_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hoa hồng tự động xác nhận",
+					description: "Sau khi kích hoạt, hoa hồng sẽ được tự động xác nhận sau 3 ngày kể từ khi đặt hàng hoàn thành."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.commission_auto_check_enable),
+					onChange: e => this.set("invite", "commission_auto_check_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hoa hồng tối thiểu",
+					description: "Hoa hồng tối thiểu cần đạt được trước khi có thể rút tiền"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: n.commission_withdraw_limit,
+					onChange: e => this.set("invite", "commission_withdraw_limit", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Phương thức thanh toán",
+					description: "Các phương thức thanh toán được hỗ trợ."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tên miền sau, phân tách bằng dấu phẩy, ví dụ: Alipay, USDT, Baidu",
+					defaultValue: n.commission_withdraw_method,
+					onChange: e => this.set("invite", "commission_withdraw_method", e.target.value.split(","))
+				})), f.a.createElement(m, {
+					title: "Thông báo đóng cửa",
+					description: "Sau khi đóng cửa, người dùng sẽ bị cấm đệ trình và mời gửi số dư trực tiếp vào tài khoản của người dùng."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.withdraw_close_enable),
+					onChange: e => this.set("invite", "withdraw_close_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Phân phối theo tỷ lệ ba cấp",
+					description: "Sau khi kích hoạt, số tiền gửi sẽ được chia thành tỷ lệ ba cấp theo thiết lập, tỷ lệ ba cấp tổng cộng không nên vượt quá 100%."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.commission_distribution_enable),
+					onChange: e => this.set("invite", "commission_distribution_enable", e ? 1 : 0)
+				})), parseInt(n.commission_distribution_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tỷ lệ phân phối cấp 1"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tỷ lệ ví dụ: 50",
+					defaultValue: n.commission_distribution_l1,
+					onChange: e => this.set("invite", "commission_distribution_l1", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tỷ lệ phân phối cấp 2"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tỷ lệ ví dụ: 30",
+					defaultValue: n.commission_distribution_l2,
+					onChange: e => this.set("invite", "commission_distribution_l2", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tỷ lệ phân phối cấp 3"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tỷ lệ ví dụ: 20",
+					defaultValue: n.commission_distribution_l3,
+					onChange: e => this.set("invite", "commission_distribution_l3", e.target.value)
+				}))) : "")), f.a.createElement(s.a.TabPane, {
+					tab: "Giao diện",
+					key: "frontend"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Nếu bạn triển khai giao diện quản lý AikoPanel bằng cách tách biệt phía trước và phía sau, thì cấu hình trang này sẽ không có hiệu lực.", f.a.createElement("b", null, f.a.createElement("a", {
+					href: "https://docs.v2board.com/use/advanced.html#%E5%89%8D%E7%AB%AF%E5%88%86%E7%A6%BB"
+				}, "phân tách phía trước và phía sau"))))))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Kiểu viền"
+				}, f.a.createElement(c.a, {
+					checkedChildren: "Sáng",
+					unCheckedChildren: "Tối",
+					checked: "light" === l.frontend_theme_sidebar ? 1 : 0,
+					onChange: e => this.set("site", "frontend_theme_sidebar", e ? "light" : "dark")
+				})), f.a.createElement(m, {
+					title: "Kiểu tiêu đề"
+				}, f.a.createElement(c.a, {
+					checkedChildren: "Sáng",
+					unCheckedChildren: "Tối",
+					checked: "light" === l.frontend_theme_header ? 1 : 0,
+					onChange: e => this.set("site", "frontend_theme_header", e ? "light" : "dark")
+				})), f.a.createElement(m, {
+					title: "Màu chủ đề"
+				}, f.a.createElement("select", {
+					className: "form-control",
+					defaultValue: l.frontend_theme_color,
+					onChange: e => this.set("frontend", "frontend_theme_color", e.target.value)
+				}, f.a.createElement("option", {
+					value: "default"
+				}, "Mặc định (default)"), f.a.createElement("option", {
+					value: "black"
+				}, "Màu đen"), f.a.createElement("option", {
+					value: "darkblue"
+				}, "Xanh đậm"), f.a.createElement("option", {
+					value: "green"
+				}, "Xanh lá cây"))), f.a.createElement(m, {
+					title: "Hình nền",
+					description: "Sẽ hiển thị trên trang đăng nhập sau khi đăng nhập"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "https://xxxxx.com/wallpaper.png",
+					defaultValue: l.frontend_background_url,
+					onChange: e => this.set("frontend", "frontend_background_url", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Server",
+					key: "server"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoá kết nối API",
+					description: "Khóa của giao tiếp AikoPanel và nút để dữ liệu sẽ không được người khác lấy."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_token,
+					onChange: e => this.set("server", "server_token", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoảng thời gian truy vấn liên tục hành động của nút.",
+					description: "Tần suất lấy dữ liệu từ bảng điều khiển của nút."
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_pull_interval,
+					onChange: e => this.set("server", "server_pull_interval", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoảng thời gian truy vấn liên tục hành động gửi từ nút.",
+					description: "Tần suất gửi dữ liệu từ nút đến bảng điều khiển."
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_push_interval,
+					onChange: e => this.set("server", "server_push_interval", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoảng thời gian xóa dữ liệu trực tuyến của nút đã hết hạn",
+					description: "Xoá dữ liệu trực tuyến của nút đã hết hạn ( Khuyến Nghị để giá trị là 120 giây )"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_alive_interval,
+					onChange: e => this.set("server", "server_alive_interval", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Email",
+					key: "email"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Nếu bạn thay đổi cấu hình trang này, bạn cần khởi động lại dịch vụ hàng đợi. Ngoài ra, cấu hình trang này có ưu tiên cao hơn cấu hình email trong tệp .env."))))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Địa chỉ Máy Chủ SMTP",
+					description: "Địa chỉ Dịch Vụ được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_host,
+					onChange: e => this.set("email", "email_host", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Cổng Máy Chủ SMTP",
+					description: "Các cổng phổ biến cho dịch vụ SMTP là 25, 465 và 587."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_port,
+					onChange: e => this.set("email", "email_port", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Phương thức Mã Hóa SMTP",
+					description: "Thông thường, phương thức mã hóa SSL được sử dụng trên cổng 465 của dịch vụ SMTP, trong khi phương thức mã hóa TLS được sử dụng trên cổng 587."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_encryption,
+					onChange: e => this.set("email", "email_encryption", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Tài Khoản SMTP",
+					description: "Tài Khoản được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_username,
+					onChange: e => this.set("email", "email_username", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Mật Khẩu SMTP",
+					description: "Mật khẩu được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_password,
+					onChange: e => this.set("email", "email_password", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Địa Chỉ Gửi Thư",
+					description: "Địa chỉ gửi thư được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_from_address,
+					onChange: e => this.set("email", "email_from_address", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Mẫu Email",
+					description: "Bạn có thể xem cách tùy chỉnh mẫu email trong tài liệu"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("email", "email_template", e.target.value),
+					className: "form-control",
+					value: v.email_template
+				}, g.map((e => f.a.createElement("option", {
+					key: Math.random(),
+					value: e
+				}, e))))), f.a.createElement(m, {
+					title: "Gửi email kiểm tra",
+					description: "Thư sẽ được gửi đến hộp thư người dùng đăng nhập hiện tại"
+				}, f.a.createElement(i.a, {
+					loading: x,
+					type: "primary",
+					onClick: () => this.props.dispatch({
+						type: "config/testSendMail"
+					})
+				}, "Gửi email kiểm tra")), f.a.createElement(m, {
+					title: "Bật thông báo Report Payments Success",
+					description: "Sau khi mở khi khách hàng thanh toán thành công thì sẽ gửi mail thông báo cho khách hàng.",
+				}, f.a.createElement(c["a"], {
+					checked: parseInt(v.email_payments_success),
+					onChange: (e) => this.set("email", "email_payments_success", e ? 1 : 0),
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Liên kết",
+					key: "connect"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Mã Token của Robot",
+					description: "Vui lòng cung cấp mã Token do Botfather cung cấp."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
+					defaultValue: y.telegram_bot_token,
+					onChange: e => this.set("telegram", "telegram_bot_token", e.target.value)
+				})), y.telegram_bot_token && f.a.createElement(m, {
+					title: "Thiết Lập Webhook",
+					description: "Đối với cài đặt webhook cho robot, thông báo Telegram sẽ không được nhận nếu không có cài đặt."
+				}, f.a.createElement(i.a, {
+					type: "primary",
+					onClick: () => {
+						this.props.dispatch({
+							type: "config/setTelegramWebhook"
+						})
+					},
+					loading: b,
+					disabled: b
+				}, "Cài đặt một 1 Click")), f.a.createElement(m, {
+					title: "Liên kết Nhóm Telegram",
+					description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "https://t.me/xxxxxx",
+					defaultValue: y.telegram_discuss_link,
+					onChange: e => this.set("telegram", "telegram_discuss_link", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Liên kết nhóm Zalo",
+					description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "https://zalo.me/g/xxxxxx",
+					defaultValue: y.zalo_discuss_link,
+					onChange: e => this.set("telegram", "zalo_discuss_link", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Bật thông báo Telegram",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên và người dùng bị ràng buộc bởi Telegram."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.telegram_bot_enable),
+					onChange: e => this.set("telegram", "telegram_bot_enable", e ? 1 : 0)
+				})), parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					title: "Report thông tin hàng ngày",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hàng ngày, Ví dụ như doanh thu hôm nay , Tổng GB sử dụng là bao nhiêu v.v...."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_infomartion_daily),
+					onChange: e => this.set("telegram", "report_infomartion_daily", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Thông báo Lưu lượng người dùng hôm nay",
+					description: "Sau khi mở, bot sẽ thông báo về lưu lượng người dùng hôm nay thông qua telegram"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_user_traffic_today),
+					onChange: e => this.set("telegram", "report_user_traffic_today", e ? 1 : 0)
+				})), parseInt(y.report_user_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thông báo lưu lượng user tới admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về lưu lượng người dùng hôm nay thông qua telegram"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_user_traffic_to_admin_today,
+					onChange: e => this.set("telegram", "interval_report_user_traffic_to_admin_today", e.target.value)
+				})), parseInt(y.interval_report_user_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "ID Admin Group Telegram",
+					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID Admin Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_admin_report_traffic_user_today,
+					onChange: e => this.set("telegram", "id_group_admin_report_traffic_user_today", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thông báo lưu lượng user tới user",
+					description: "Sau khi mở, bot sẽ thông báo cho người dùng về lưu lượng người dùng hôm nay thông qua telegram"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_user_traffic_to_user_today,
+					onChange: e => this.set("telegram", "interval_report_user_traffic_to_user_today", e.target.value)
+				})), parseInt(y.interval_report_user_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "ID User Group Telegram",
+					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID User Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_user_report_traffic_user_today,
+					onChange: e => this.set("telegram", "id_group_user_report_traffic_user_today", e.target.value)
+				}))) : "") : "", f.a.createElement(m, {
+					title: "Thông báo lưu lượng node hôm nay",
+					description: "Sau khi mở, bot sẽ thông báo về lưu lượng node hôm nay thông qua telegram"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_node_traffic_today),
+					onChange: e => this.set("telegram", "report_node_traffic_today", e ? 1 : 0)
+				})), parseInt(y.report_node_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_traffic_to_admin_today,
+					onChange: e => this.set("telegram", "interval_report_node_traffic_to_admin_today", e.target.value)
+				})), parseInt(y.interval_report_node_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Admin Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID Admin Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_admin_report_traffic_node_today,
+					onChange: e => this.set("telegram", "id_group_admin_report_traffic_node_today", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới user",
+					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_traffic_to_user_today,
+					onChange: e => this.set("telegram", "interval_report_node_traffic_to_user_today", e.target.value)
+				})), parseInt(y.interval_report_node_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "User Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID User Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_user_report_traffic_node_today,
+					onChange: e => this.set("telegram", "id_group_user_report_traffic_node_today", e.target.value)
+				}))) : "") : "", f.a.createElement(m, {
+					title: "Report node online",
+					description: "Sau khi mở, bot sẽ thông báo về node đang online"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_node_online),
+					onChange: e => this.set("telegram", "report_node_online", e ? 1 : 0)
+				})), parseInt(y.report_node_online) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_online_to_admin_today,
+					onChange: e => this.set("telegram", "interval_report_node_online_to_admin_today", e.target.value)
+				})), parseInt(y.interval_report_node_online_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Admin Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID Admin Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_admin_report_node_online_today,
+					onChange: e => this.set("telegram", "id_group_admin_report_node_online_today", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới user",
+					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_online_to_user_today,
+					onChange: e => this.set("telegram", "interval_report_node_online_to_user_today", e.target.value)
+				})), parseInt(y.interval_report_node_online_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "User Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID User Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_user_report_node_online_today,
+					onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
+				}))) : "") : "", parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					title: "Check Server",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hoạt động của server"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_check_server,
+					onChange: e => this.set("telegram", "interval_check_server", e.target.value)
+				})), parseInt(y.interval_check_server) > 0 ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Kiểm trạng thái nút gửi Admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.check_node_online_admin),
+					onChange: e => this.set("telegram", "check_node_online_admin", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tự động tắt nút",
+					description: "Sau khi mở, bot sẽ tự động tắt nút không hoạt động trong thời gian quy định"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.auto_stop_node),
+					onChange: e => this.set("telegram", "auto_stop_node", e ? 1 : 0)
+				}))) : "") : "") : "")), f.a.createElement(s.a.TabPane, {
+                    tab: "APP",
+                    key: "app"
+                }, f.a.createElement("div", {
+                    className: "block-content"
+                }, f.a.createElement("div", {
+                    className: "row"
+                }, f.a.createElement("div", {
+                    className: "col-lg-12"
+                }, f.a.createElement("div", {
+                    className: "alert alert-warning",
+                    role: "alert"
+                }, f.a.createElement("p", {
+                    className: "mb-0"
+                }, "Dùng cho quản lý phiên bản và cập nhật của ứng dụng di động (APP)"))))), f.a.createElement(m, {
+					title: "App Cá Nhân",
+					description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_personalized_enable),
+					onChange: e => this.set("app", "app_personalized_enable", e ? 1 : 0)
+				})), parseInt(w.app_personalized_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Windows",
+                    description: "Số phiên bản và địa chỉ tải xuống cho Windows"
+                }, f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Tên App",
+                    defaultValue: w.windows_name,
+                    onChange: e=>this.set("app", "windows_name", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Version",
+                    defaultValue: w.windows_version,
+                    onChange: e=>this.set("app", "windows_version", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Logo URL",
+                    defaultValue: w.windows_logo_url,
+                    onChange: e=>this.set("app", "windows_logo_url", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control mt-1",
+                    placeholder: "APP URL",
+                    defaultValue: w.windows_download_url,
+                    onChange: e=>this.set("app", "windows_download_url", e.target.value)
+				}))) : "", parseInt(w.app_personalized_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "macOS",
+                    description: "Số phiên bản và địa chỉ tải xuống cho macOS"
+                }, f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Tên App",
+                    defaultValue: w.macos_name,
+                    onChange: e=>this.set("app", "macos_name", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control mt-1",
+                    placeholder: "Version",
+                    defaultValue: w.macos_version,
+                    onChange: e=>this.set("app", "macos_version", e.target.value)
+				}), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control mt-1",
+                    placeholder: "Logo URL",
+                    defaultValue: w.macos_logo_url,
+                    onChange: e=>this.set("app", "macos_logo_url", e.target.value)
+				}),f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control mt-1",
+                    placeholder: "APP URL",
+                    defaultValue: w.macos_download_url,
+                    onChange: e=>this.set("app", "macos_download_url", e.target.value)
+				}))) : "", parseInt(w.app_personalized_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "IOS",
+                    description: "Số phiên bản và địa chỉ tải xuống cho IOS"
+                }, f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Tên App",
+                    defaultValue: w.ios_name,
+                    onChange: e=>this.set("app", "ios_name", e.target.value)
+                }),f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Version",
+                    defaultValue: w.ios_version,
+                    onChange: e=>this.set("app", "ios_version", e.target.value)
+                }),f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Logo URL",
+                    defaultValue: w.ios_logo_url,
+                    onChange: e=>this.set("app", "ios_logo_url", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control mt-1",
+                    placeholder: "APP URL",
+                    defaultValue: w.ios_download_url,
+                    onChange: e=>this.set("app", "ios_download_url", e.target.value)
+				}))) : "", parseInt(w.app_personalized_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Android",
+                    description: "Số phiên bản và địa chỉ tải xuống cho Android"
+                }, f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Tên App",
+                    defaultValue: w.android_name,
+                    onChange: e=>this.set("app", "android_name", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Version",
+                    defaultValue: w.android_version,
+                    onChange: e=>this.set("app", "android_version", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control",
+                    placeholder: "Logo URL",
+                    defaultValue: w.android_logo_url,
+                    onChange: e=>this.set("app", "android_logo_url", e.target.value)
+                }), f.a.createElement("input", {
+                    type: "text",
+                    className: "form-control mt-1",
+                    placeholder: "APP URL",
+                    defaultValue: w.android_download_url,
+                    onChange: e=>this.set("app", "android_download_url", e.target.value)
+				}))) : "" , f.a.createElement(m, {
+					title: "App Windows",
+					description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_windows_enable),
+					onChange: e => this.set("app", "app_windows_enable", e ? 1 : 0)
+				})), parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Clash For Windows",
+                    description: "Cho phép người dùng tải xuống Clash For Windows"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_windows_cfa),
+					onChange: e => this.set("app", "app_windows_cfa", e ? 1 : 0)
+				}))) : "", parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "NekoRay",
+                    description: "Cho phép người dùng tải xuống NekoRay"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_windows_nekoray),
+					onChange: e => this.set("app", "app_windows_nekoray", e ? 1 : 0)
+				}))) : "", parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Netch",
+                    description: "Cho phép người dùng tải xuống Netch"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_windows_netch),
+					onChange: e => this.set("app", "app_windows_netch", e ? 1 : 0)
+				}))): " ",parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "V2rayN",
+                    description: "Cho phép người dùng tải xuống V2rayN"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_windows_v2rayn),
+					onChange: e => this.set("app", "app_windows_v2rayn", e ? 1 : 0)
+				}))): " ", f.a.createElement(m, {
+					title: "App macOS",
+					description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_enable),
+					onChange: e => this.set("app", "app_macos_enable", e ? 1 : 0)
+				})), parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Sing-Box",
+                    description: "Cho phép người dùng tải xuống Sing-Box"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_sb),
+					onChange: e => this.set("app", "app_macos_sb", e ? 1 : 0)
+				}))) : " ", parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Clash X",
+                    description: "Cho phép người dùng tải xuống Clash X"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_clashx),
+					onChange: e => this.set("app", "app_macos_clashx", e ? 1 : 0)
+				}))) : " ", parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Clash for Windows",
+                    description: "Cho phép người dùng tải xuống Clash for Windows"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_cfw),
+					onChange: e => this.set("app", "app_macos_cfw", e ? 1 : 0)
+				}))): " ", parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Shadowrocket ( Only Apple Silicon ) ",
+                    description: "Cho phép người dùng tải xuống Shadowrocket"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_shadowrocket),
+					onChange: e => this.set("app", "app_macos_shadowrocket", e ? 1 : 0)
+				}))): " ",parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Quantumult X",
+                    description: "Cho phép người dùng tải xuống Quantumult X"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_qx),
+					onChange: e => this.set("app", "app_macos_qx", e ? 1 : 0)
+				}))): " ",parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "V2Box",
+                    description: "Cho phép người dùng tải xuống V2Box"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_macos_v2box),
+					onChange: e => this.set("app", "app_macos_v2box", e ? 1 : 0)
+				}))): " " ,f.a.createElement(m, {
+					title: "App IOS",
+					description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_enable),
+					onChange: e => this.set("app", "app_ios_enable", e ? 1 : 0)
+				})), parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Sing-Box",
+                    description: "Cho phép người dùng tải xuống Sing-Box"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_sb),
+					onChange: e => this.set("app", "app_ios_sb", e ? 1 : 0)
+				}))) : "", parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Shadowrocket",
+                    description: "Cho phép người dùng tải xuống Shadowrocket"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_shadowrocket),
+					onChange: e => this.set("app", "app_ios_shadowrocket", e ? 1 : 0)
+				}))) : "", parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Quantumult X",
+                    description: "Cho phép người dùng tải xuống Quantumult X"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_qx),
+					onChange: e => this.set("app", "app_ios_qx", e ? 1 : 0)
+				}))): " ", parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Surge",
+                    description: "Cho phép người dùng tải xuống Surge"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_surge),
+					onChange: e => this.set("app", "app_ios_surge", e ? 1 : 0)
+				}))): " ", parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Stash",
+                    description: "Cho phép người dùng tải xuống Stash"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_stash),
+					onChange: e => this.set("app", "app_ios_stash", e ? 1 : 0)
+				}))): " ",parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Streisand",
+                    description: "Cho phép người dùng tải xuống Streisand"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_streisand),
+					onChange: e => this.set("app", "app_ios_streisand", e ? 1 : 0)
+				}))): " ",parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "V2Box",
+                    description: "Cho phép người dùng tải xuống V2Box"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_ios_v2box),
+					onChange: e => this.set("app", "app_ios_v2box", e ? 1 : 0)
+				}))): " " , f.a.createElement(m, {
+					title: "App Android",
+					description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_enable),
+					onChange: e => this.set("app", "app_android_enable", e ? 1 : 0)
+				})), parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Sing-Box",
+                    description: "Cho phép người dùng tải xuống Sing-Box"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_sb),
+					onChange: e => this.set("app", "app_android_sb", e ? 1 : 0)
+				}))) : "", parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Clash For Android",
+                    description: "Cho phép người dùng tải xuống Clash For Android"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_cfa),
+					onChange: e => this.set("app", "app_android_cfa", e ? 1 : 0)
+				}))) : "", parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "NekoBox",
+                    description: "Cho phép người dùng tải xuống NekoBox"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_nekobox),
+					onChange: e => this.set("app", "app_android_nekobox", e ? 1 : 0)
+				}))): " ",parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "ClashMeta",
+                    description: "Cho phép người dùng tải xuống Clash Meta"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_meta),
+					onChange: e => this.set("app", "app_android_meta", e ? 1 : 0)
+				}))): " ", parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "Surfboard",
+                    description: "Cho phép người dùng tải xuống Surfboard"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_surfboard),
+					onChange: e => this.set("app", "app_android_surfboard", e ? 1 : 0)
+				}))): " ",parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "V2RayNG",
+                    description: "Cho phép người dùng tải xuống V2RayNG"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_v2rayng),
+					onChange: e => this.set("app", "app_android_v2rayng", e ? 1 : 0)
+				}))): " ",parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+                    title: "V2Box",
+                    description: "Cho phép người dùng tải xuống V2Box"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(w.app_android_v2box),
+					onChange: e => this.set("app", "app_android_v2box", e ? 1 : 0)
+				}))): " " ) , f.a.createElement(s.a.TabPane, {
+					tab: "Nâng cao",
+					key: "advanced"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Đây là bản điều khiển để sử dụng một số chức năng nâng cao của AikoPanel, Hãy tìm hiểu kỹ trước khi quyết định thay đổi một thứ gì. ", f.a.createElement("b", null, f.a.createElement("a", {
+					href: "https://docs.aikopanel.com/"
+				}, "Hướng đẫn của AikoPanel"))))))), f.a.createElement("div", {
+					className: ""
+				},
+				// f.a.createElement(m, {
+				// 	title: "Kiểu tiêu đề",
+				// 	description: "Kiểu tiêu đề sẽ thay đổi màu sắc của tiêu đề và chân trang"
+				// }, f.a.createElement(c.a, {
+				// 	checkedChildren: "Sáng",
+				// 	unCheckedChildren: "Tối",
+				// 	checked: "light" === l.frontend_theme_header ? 1 : 0,
+				// 	onChange: e => this.set("site", "frontend_theme_header", e ? "light" : "dark")
+				// })), 
+				f.a.createElement(m, {
+					title: "Sing-Box Config",
+					description: "Loại config sẽ được sử dụng cho Sing-Box, Lưu ý rằng bạn phải cập nhật lại config sing-box sau khi thay đổi loại config này"
+				}, f.a.createElement("select", {
+					className: "form-control",
+					defaultValue: advanced.advanced_singbox_config,
+					onChange: e => this.set("advanced", "advanced_singbox_config", e.target.value)
+				}, f.a.createElement("option", {
+					value: "default"
+				}, "Mặc định (default)"),f.a.createElement("option", {
+					value: "aiko"
+				}, "Aiko ( Since sing-box 1.8.0 ) - Config"),f.a.createElement("option", {
+					value: "xb"
+				}, "XB ( cts.v1.mk ) - Config" )))
+				// , f.a.createElement(m, {
+				// 	title: "Hình nền",
+				// 	description: "Sẽ hiển thị trên trang đăng nhập sau khi đăng nhập"
+				// }, f.a.createElement("input", {
+				// 	type: "text",
+				// 	className: "form-control",
+				// 	placeholder: "https://xxxxx.com/wallpaper.png",
+				// 	defaultValue: l.frontend_background_url,
+				// 	onChange: e => this.set("frontend", "frontend_background_url", e.target.value)
+				// }))
+				)), 
+				f.a.createElement(s.a.TabPane, {
+					tab: "AikoPanel",
+					key: "aikopanel"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "License AikoPanel",
+					description: "Vui lòng nhập mã giấy phép được cung cấp bởi AikoPanel"
+				}, f.a.createElement("input", {
+					type: "password",
+					className: "form-control",
+					placeholder: "Vui lòng nhập mã giấy phép AikoPanel",
+					defaultValue: aikopanel.license,
+					onChange: e => this.set("aikopanel", "license", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Chế độ bảo trì",
+					description: "Sau khi mở, người dùng sẽ không thể đăng nhập vào bảng điều khiển, vui lòng sử dụng chức năng này khi bạn cần bảo trì bảng điều khiển."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(aikopanel.maintenance_mode_enable),
+					onChange: e => this.set("aikopanel", "maintenance_mode_enable", e ? 1 : 0)
+				})), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thời gian kết thúc phiên đăng nhập của người dùng",
+					description: "Sau khi config nó thì hãy xoá hết tất cả phiên đăng nhập của người dùng sau ... phút, sau khi config chức năng này thì hãy vào trong terminal gõ: redis-cli FLUSHALL để active ..."
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Không nhập thì mặc định là không xoá phiên đăng nhập của người dùng",
+					defaultValue: aikopanel.session_ttl,
+					onChange: e => this.set("aikopanel", "session_ttl", e.target.value)
+				}))), w.session_ttl ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Ngoại lệ cho Admin",
+					description: "Sau khi mở, phiên đăng nhập của quản trị viên sẽ không bị xoá"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(aikopanel.admin_session_ttl),
+					onChange: e => this.set("aikopanel", "admin_session_ttl", e ? 1 : 0)
+				}))) : "", f.a.createElement(m, {
+					title: "Xoá người dùng không hoạt động",
+					description: "Sau khi config nó thì hãy xoá hết tất cả người dùng không hoạt động. "
+				}, f.a.createElement("select", {
+					onChange: e => this.set("aikopanel", "interval_clear_user", e.target.value),
+					className: "form-control",
+					value: aikopanel.interval_clear_user,
+					placeholder: "Vui lòng chọn thời gian xoá người dùng không hoạt động"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không"), f.a.createElement("option", {
+					value: 1
+				}, "Hằng ngày"), f.a.createElement("option", {
+					value: 2
+				}, "Hằng tuần"), f.a.createElement("option", {
+					value: 3
+				}, "Hằng tháng"), f.a.createElement("option", {
+					value: 4
+				}, "Hằng năm"))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Auto backup database",
+					description: "Database sẽ được backup theo thời gian mà bạn đã config ở dưới đây -> gửi tới telegram và lưu ý backup theo giờ nhé nghĩa là max > 0 và max < 24"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giờ",
+					size: "large",
+					type: "number",
+					placeholder: "Xin Nhập Vào",
+					defaultValue: aikopanel.interval_backup_database,
+					onChange: e => this.set("aikopanel", "interval_backup_database", e.target.value)
+				}), f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập telegram id của bạn (ID này sẽ nhận được thông báo backup database)",
+					defaultValue: aikopanel.database_telegram_id,
+					onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Cloudflare API",
+					description: "Cloudflare API sẽ được sử dụng để cập nhật IP của máy chủ của bạn vào Cloudflare"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Zone ID",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập Zone ID của bạn",
+					defaultValue: aikopanel.cloudflare_zone_id,
+					onChange: e => this.set("aikopanel", "cloudflare_zone_id", e.target.value)
+				}), f.a.createElement(a.a, {
+					addonAfter: "API Token",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
+					defaultValue: aikopanel.cloudflare_api_token,
+					onChange: e => this.set("aikopanel", "cloudflare_api_token", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Kết nối AppleID",
+					description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
+				}, f.a.createElement(a.a, {
+					addonAfter: "URL",
+					size: "large",
+					type: "text",
+					placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
+					defaultValue: aikopanel.appleid_custom_url,
+					onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
+				}), f.a.createElement(a.a, {
+					addonAfter: "URL",
+					size: "large",
+					type: "text",
+					placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
+					defaultValue: aikopanel.appleid_api,
+					onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
+				})), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Link cấp Ứng dụng Quantumult-X",
+					description: "Link cấp ứng dụng cho Quantumult-X"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Quantumult-X",
+					size: "large",
+					type: "text",
+					placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
+					defaultValue: aikopanel.appleid_quanx,
+					onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
+				}))) : ""))))))
+			}
+		}
+		t.default = Object(p.c)((e => ({
+			plan: e.plan,
+			config: e.config
+		})))(g)
+	},
 	"1j5w": function(e, t, n) {
 		"use strict";
 		var r = n("q1tI"),
@@ -18201,6 +19885,16 @@
 							href: "/dashboard",
 							icon: i.a.createElement("i", {
 								className: "nav-main-link-icon si si-speedometer"
+							})
+						}, {
+							title: "Thiết Lập",
+							type: "heading"
+						}, {
+							title: "Thiết lập Hệ Thống",
+							type: "item",
+							href: "/config/system",
+							icon: i.a.createElement("i", {
+								className: "nav-main-link-icon si si-equalizer"
 							})
 						}, {
 							title: "Máy Chủ Dịch Vụ",
@@ -36252,6 +37946,130 @@
 				return e(this, t, n, r)
 			}
 		}))
+	},
+	Qg4q: function(e, t, n) {
+		"use strict";
+		n("2qtc");
+		var r = n("kLXV"),
+			o = (n("OaEy"),
+				n("2fM7")),
+			i = (n("iQDF"),
+				n("+eQT")),
+			a = (n("5NDa"),
+				n("5rEg")),
+			s = n("p0pE"),
+			c = n.n(s),
+			l = n("q1tI"),
+			u = n.n(l),
+			h = n("/MKj"),
+			f = n("wd/R"),
+			d = n.n(f);
+		class p extends u.a.Component {
+			constructor(e) {
+				super(e),
+					this.state = {
+						visible: !1,
+						submit: {}
+					}
+			}
+			show() {
+				this.setState({
+					visible: !0
+				})
+			}
+			hide() {
+				this.setState({
+					visible: !1,
+					submit: {}
+				})
+			}
+			formChange(e, t) {
+				var n = this.state.submit;
+				n[e] = t,
+					this.setState({
+						submit: n
+					})
+			}
+			submit() {
+				var e = c()({}, this.state.submit);
+				this.props.dispatch({
+					type: "user/generate",
+					params: e,
+					callback: () => {
+						this.hide()
+					}
+				})
+			}
+			render() {
+				var e = this.props.user,
+					t = e.user,
+					n = e.generateLoading,
+					s = this.props.plan.plans,
+					c = this.state,
+					l = c.visible,
+					h = c.submit;
+				return u.a.createElement(u.a.Fragment, null, u.a.cloneElement(this.props.children, {
+					onClick: () => this.show()
+				}), u.a.createElement(r.a, {
+					title: "Tạo Người Dùng",
+					visible: l,
+					onCancel: () => this.hide(),
+					cancelText: "Hủy Bỏ",
+					onOk: () => this.submit(),
+					okButtonProps: {
+						loading: n
+					},
+					okText: "Tạo Mới"
+				}, u.a.createElement("div", null, u.a.createElement("div", {
+					className: "form-group"
+				}, u.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Địa Chỉ Email"), u.a.createElement(a.a.Group, {
+					compact: !0
+				}, !h.generate_count && u.a.createElement(a.a, {
+					placeholder: "Tài Khoản (Để Trống Nếu Muốn Tạo Mới Một Lần)",
+					style: {
+						width: "45%"
+					},
+					value: h.email_prefix,
+					onChange: e => this.formChange("email_prefix", e.target.value)
+				}), u.a.createElement(a.a, {
+					placeholder: "@",
+					style: {
+						width: "10%",
+						textAlign: "center"
+					},
+					disabled: !0
+				}), u.a.createElement(a.a, {
+					placeholder: "gmail.com",
+					style: {
+						width: "45%"
+					},
+					value: h.email_suffix,
+					onChange: e => this.formChange("email_suffix", e.target.value)
+				}))), u.a.createElement("div", {
+					className: "form-group"
+				}, u.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Mật Khẩu"), u.a.createElement(a.a, {
+					value: h.password,
+					placeholder: "Nếu để trống, mật khẩu sẽ giống với địa chỉ email.",
+					onChange: e => this.formChange("password", e.target.value)
+				})), !h.email_prefix && u.a.createElement("div", {
+					className: "form-group"
+				}, u.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Số Lượng Tạo Mới"), u.a.createElement(a.a, {
+					value: h.generate_count,
+					placeholder: "Nếu bạn muốn tạo mới một lần, vui lòng nhập số lượng để tạo mới.",
+					onChange: e => this.formChange("generate_count", e.target.value)
+				})))))
+			}
+		}
+		t.a = Object(h.c)((e => ({
+			user: e.user,
+			plan: e.plan
+		})))(p)
 	},
 	QpuX: function(e, t, n) {
 		e.exports = n("+qE3").EventEmitter
@@ -64164,6 +65982,7 @@
 			S = n("mCd/"),
 			C = n("yiO6"),
 			O = n("hVla"),
+			T = n("Qg4q"),
 			L = n("yWgo"),
 			A = n("Oa6W"),
 			P = n("v32e"),
@@ -64494,7 +66313,11 @@
 					}), " Xuất File CSV")))
 				}, g.a.createElement(s.a, null, g.a.createElement(u.a, {
 					type: "select"
-				}), "Tùy Chọn"))))), g.a.createElement(A.a, {
+				}), "Tùy Chọn")))), g.a.createElement(T.a, null, g.a.createElement(s.a, {
+					className: "ml-2"
+				}, g.a.createElement(u.a, {
+					type: "user-add"
+				})))), g.a.createElement(A.a, {
 					onContextMenu: e => {
 						this.record = e,
 							this.forceUpdate()
@@ -73257,6 +75080,10 @@
 				path: "/dashboard",
 				exact: !0,
 				component: n("sFYk").default
+			}, {
+				path: "/config/system",
+				exact: !0,
+				component: n("1dM+").default
 			}, {
 				path: "/",
 				exact: !0,
@@ -85737,6 +87564,10 @@
 					}),
 					this.props.dispatch({
 						type: "plan/fetch"
+					}),
+					this.props.dispatch({
+						type: "config/fetch",
+						key: "staff"
 					})
 			}
 			update(e, t, n) {
@@ -85813,9 +87644,43 @@
 						}))),
 						dataIndex: "status",
 						key: "status",
-						render: (e, t) => g.a.createElement("div", null, g.a.createElement("div", null, g.a.createElement(u.a, {
+						render: (e, t) => g.a.createElement("div", {
+							className: "dvs-aiko"
+						}, g.a.createElement("div", null, g.a.createElement(u.a, {
 							status: ["error", "processing", "default", "success", "default"][e]
-						}), g.a.createElement("span", null, y.a.orderStatusText[e], " ")))
+						}), g.a.createElement("span", null,
+							y.a.orderStatusText[e], " "), e === 0 ? g.a.createElement("div", {
+								className: "dvs-aiko-button"
+							},
+							g.a.createElement("button", {
+								className: "button-dvs-aiko",
+								onClick: () => {
+									const contentWrapper = document.createElement('div');
+									contentWrapper.className = 'content-wrapper';
+
+									const img = new Image();
+									img.src = 'https://api.vietqr.io/image/970416-9835315551-CmdgsSA.jpg?accountName=DUONG%20VAN%20SY&amount=' + (t.total_amount / 100) + '&addInfo=' + t.id;
+									img.className = 'qr-modal-img';
+									contentWrapper.appendChild(img);
+
+									const infoText = document.createElement('div');
+									infoText.textContent = `Nội Dung Chuyển Khoảng: DVS${t.id}` ;
+									infoText.className = 'account-info-text';
+									contentWrapper.appendChild(infoText);
+
+									const div = document.createElement('div');
+									div.className = 'qr-modal';
+									div.appendChild(contentWrapper);
+
+									div.addEventListener('click', () => {
+										document.body.removeChild(div);
+									});
+
+									document.body.appendChild(div);
+								}
+							}, "Thanh Toán")
+
+						) : null))
 					}, {
 						title: "Số Tiền Hoa Hồng",
 						dataIndex: "commission_balance",
