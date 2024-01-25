@@ -4751,12 +4751,6 @@
 					}),
 					this.props.dispatch({
 						type: "plan/fetch"
-					}),
-					this.props.dispatch({
-						type: "config/getEmailTemplate"
-					}),
-					this.props.dispatch({
-						type: "config/getThemeTemplate"
 					})
 			}
 			set(e, t, n) {
