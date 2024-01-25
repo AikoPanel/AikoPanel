@@ -4826,12 +4826,6 @@
 					defaultValue: t.app_url,
 					onChange: e => this.set("site", "app_url", e.target.value)
 				})), f.a.createElement(m, {
-					title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
-					description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
-				}, f.a.createElement(c.a, {
-					checked: parseInt(t.force_https),
-					onChange: e => this.set("site", "force_https", e ? 1 : 0)
-				})), f.a.createElement(m, {
 					title: "LOGO",
 					description: "Được sử dụng để hiển thị nơi cần thiết logo."
 				}, f.a.createElement("input", {
@@ -4840,71 +4834,6 @@
 					placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
 					defaultValue: t.logo,
 					onChange: e => this.set("site", "logo", e.target.value)
-				})), f.a.createElement(m, {
-					title: "URL gói đăng kí",
-					description: "Được sử dụng để cấp gói đăng kí, nếu trống thì sẽ là URL trang web. Nếu cần nhiều địa chỉ URL gói đăng kí, vui lòng sử dụng dấu phẩy để phân chia."
-				}, f.a.createElement("textarea", {
-					rows: "4",
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
-					defaultValue: t.subscribe_url,
-					onChange: e => this.set("site", "subscribe_url", e.target.value)
-				})), f.a.createElement(m, {
-					title: "URL Điều khoản Sử dụng (TOS) của người dùng",
-					description: "Được sử dụng để chuyển đến Điều khoản Sử dụng (TOS) của người dùng"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập URL Điều khoản Sử dụng của người dùng, cuối cùng không có dấu gạch chéo (/)",
-					defaultValue: t.tos_url,
-					onChange: e => this.set("site", "tos_url", e.target.value)
-				})), f.a.createElement(m, {
-					title: "Ngừng đăng ký người dùng mới",
-					description: "Sau khi kích hoạt, không ai có thể đăng ký"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(t.stop_register),
-					onChange: e => this.set("site", "stop_register", e ? 1 : 0)
-				})), f.a.createElement(m, {
-					title: "Thử nghiệm miễn phí",
-					description: "Chọn gói cần thử nghiệm. Nếu không có lựa chọn, vui lòng trước tiên đi đến quản lý gói để thêm."
-				}, f.a.createElement("select", {
-					onChange: e => this.set("site", "try_out_plan_id", e.target.value),
-					className: "form-control",
-					value: t.try_out_plan_id,
-					placeholder: "Vui lòng chọn gói thử nghiệm"
-				}, f.a.createElement("option", {
-					value: 0
-				}, "Không"), E.map((e => f.a.createElement("option", {
-					key: Math.random(),
-					value: e.id
-				}, e.name))))), 0 === t.try_out_plan_id || f.a.createElement(m, {
-					isChildren: !0,
-					title: "Thời gian thử nghiệm (giờ)"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập thời gian thử nghiệm (giờ)",
-					defaultValue: t.try_out_hour,
-					onChange: e => this.set("site", "try_out_hour", e.target.value)
-				})), f.a.createElement(m, {
-					title: "Đơn vị tiền tệ",
-					description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "VNĐ",
-					defaultValue: t.currency,
-					onChange: e => this.set("site", "currency", e.target.value)
-				})), f.a.createElement(m, {
-					title: "Ký hiệu tiền tệ",
-					description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "đ",
-					defaultValue: t.currency_symbol,
-					onChange: e => this.set("site", "currency_symbol", e.target.value)
 				})))), f.a.createElement(s.a.TabPane, {
 					tab: "Liên kết",
 					key: "connect"
@@ -5152,95 +5081,12 @@
 				}, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
-					title: "License AikoPanel",
-					description: "Vui lòng nhập mã giấy phép được cung cấp bởi AikoPanel"
-				}, f.a.createElement("input", {
-					type: "password",
-					className: "form-control",
-					placeholder: "Vui lòng nhập mã giấy phép AikoPanel",
-					defaultValue: aikopanel.license,
-					onChange: e => this.set("aikopanel", "license", e.target.value)
-				})), f.a.createElement(m, {
 					title: "Chế độ bảo trì",
 					description: "Sau khi mở, người dùng sẽ không thể đăng nhập vào bảng điều khiển, vui lòng sử dụng chức năng này khi bạn cần bảo trì bảng điều khiển."
 				}, f.a.createElement(c.a, {
 					checked: parseInt(aikopanel.maintenance_mode_enable),
 					onChange: e => this.set("aikopanel", "maintenance_mode_enable", e ? 1 : 0)
 				})), f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement(m, {
-					title: "Thời gian kết thúc phiên đăng nhập của người dùng",
-					description: "Sau khi config nó thì hãy xoá hết tất cả phiên đăng nhập của người dùng sau ... phút, sau khi config chức năng này thì hãy vào trong terminal gõ: redis-cli FLUSHALL để active ..."
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Không nhập thì mặc định là không xoá phiên đăng nhập của người dùng",
-					defaultValue: aikopanel.session_ttl,
-					onChange: e => this.set("aikopanel", "session_ttl", e.target.value)
-				}))), aikopanel.session_ttl ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Ngoại lệ cho Admin",
-					description: "Sau khi mở, phiên đăng nhập của quản trị viên sẽ không bị xoá"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(aikopanel.admin_session_ttl),
-					onChange: e => this.set("aikopanel", "admin_session_ttl", e ? 1 : 0)
-				}))) : "", f.a.createElement(m, {
-					title: "Xoá người dùng không hoạt động",
-					description: "Sau khi config nó thì hãy xoá hết tất cả người dùng không hoạt động. "
-				}, f.a.createElement("select", {
-					onChange: e => this.set("aikopanel", "interval_clear_user", e.target.value),
-					className: "form-control",
-					value: aikopanel.interval_clear_user,
-					placeholder: "Vui lòng chọn thời gian xoá người dùng không hoạt động"
-				}, f.a.createElement("option", {
-					value: 0
-				}, "Không"), f.a.createElement("option", {
-					value: 1
-				}, "Hằng ngày"), f.a.createElement("option", {
-					value: 2
-				}, "Hằng tuần"), f.a.createElement("option", {
-					value: 3
-				}, "Hằng tháng"), f.a.createElement("option", {
-					value: 4
-				}, "Hằng năm"))), f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement(m, {
-					title: "Auto backup database",
-					description: "Database sẽ được backup theo thời gian mà bạn đã config ở dưới đây -> gửi tới telegram và lưu ý backup theo giờ nhé nghĩa là max > 0 và max < 24"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Giờ",
-					size: "large",
-					type: "number",
-					placeholder: "Xin Nhập Vào",
-					defaultValue: aikopanel.interval_backup_database,
-					onChange: e => this.set("aikopanel", "interval_backup_database", e.target.value)
-				}), f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập telegram id của bạn (ID này sẽ nhận được thông báo backup database)",
-					defaultValue: aikopanel.database_telegram_id,
-					onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
-				}))), f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement(m, {
-					title: "Cloudflare API",
-					description: "Cloudflare API sẽ được sử dụng để cập nhật IP của máy chủ của bạn vào Cloudflare"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Zone ID",
-					size: "large",
-					type: "text",
-					placeholder: "Vui lòng nhập Zone ID của bạn",
-					defaultValue: aikopanel.cloudflare_zone_id,
-					onChange: e => this.set("aikopanel", "cloudflare_zone_id", e.target.value)
-				}), f.a.createElement(a.a, {
-					addonAfter: "API Token",
-					size: "large",
-					type: "text",
-					placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
-					defaultValue: aikopanel.cloudflare_api_token,
-					onChange: e => this.set("aikopanel", "cloudflare_api_token", e.target.value)
-				}))), f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Kết nối AppleID",
