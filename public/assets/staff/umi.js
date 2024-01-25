@@ -4817,15 +4817,6 @@
 					defaultValue: t.app_description,
 					onChange: e => this.set("site", "app_description", e.target.value)
 				})), f.a.createElement(m, {
-					title: "Địa chỉ Website",
-					description: "Địa chỉ trang web hiện tại, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập URL của trang web, cuối cùng không có dấu gạch chéo (/)",
-					defaultValue: t.app_url,
-					onChange: e => this.set("site", "app_url", e.target.value)
-				})), f.a.createElement(m, {
 					title: "LOGO",
 					description: "Được sử dụng để hiển thị nơi cần thiết logo."
 				}, f.a.createElement("input", {
