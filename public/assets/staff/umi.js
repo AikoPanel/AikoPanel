@@ -5031,31 +5031,7 @@
 					placeholder: "-xxxxxxxxx",
 					defaultValue: y.id_group_user_report_node_online_today,
 					onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
-				}))) : "") : "", parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					title: "Check Server",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hoạt động của server"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_check_server,
-					onChange: e => this.set("telegram", "interval_check_server", e.target.value)
-				})), parseInt(y.interval_check_server) > 0 ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Kiểm trạng thái nút gửi Admin",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.check_node_online_admin),
-					onChange: e => this.set("telegram", "check_node_online_admin", e ? 1 : 0)
-				})), f.a.createElement(m, {
-					isChildren: !0,
-					title: "Tự động tắt nút",
-					description: "Sau khi mở, bot sẽ tự động tắt nút không hoạt động trong thời gian quy định"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.auto_stop_node),
-					onChange: e => this.set("telegram", "auto_stop_node", e ? 1 : 0)
-				}))) : "") : "") : "")), f.a.createElement(s.a.TabPane, {
+				}))) : "") : "" ) : "" )), f.a.createElement(s.a.TabPane, {
 					tab: "AikoPanel",
 					key: "aikopanel"
 				}, f.a.createElement("div", {
