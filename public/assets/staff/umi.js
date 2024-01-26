@@ -15066,7 +15066,7 @@
 				site: {},
 				server: {},
 				connect: {},
-				// aikopanel: {},
+				staff: {},
 				tabs: "site",
 				fetchLoading: !1,
 				setTelegramWebhookLoading: !1
