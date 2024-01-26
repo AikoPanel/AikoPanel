@@ -86221,7 +86221,7 @@
 						type: "plan/fetch"
 					}),
 					this.props.dispatch({
-						type: "/order/getPaymentMethod"
+						type: "order/getPaymentMethod"
 					})
 			}
 			update(e, t, n) {
