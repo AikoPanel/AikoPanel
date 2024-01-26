@@ -6397,28 +6397,6 @@
 					onChange: e => this.set("telegram", "report_user_traffic_today", e ? 1 : 0)
 				})), parseInt(y.report_user_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 					isChildren: !0,
-					title: "Thông báo lưu lượng user tới admin",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về lưu lượng người dùng hôm nay thông qua telegram"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_report_user_traffic_to_admin_today,
-					onChange: e => this.set("telegram", "interval_report_user_traffic_to_admin_today", e.target.value)
-				})), parseInt(y.interval_report_user_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "ID Admin Group Telegram",
-					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "ID Admin Group",
-					size: "large",
-					type: "text",
-					placeholder: "-xxxxxxxxx",
-					defaultValue: y.id_group_admin_report_traffic_user_today,
-					onChange: e => this.set("telegram", "id_group_admin_report_traffic_user_today", e.target.value)
-				}))) : "", f.a.createElement(m, {
-					isChildren: !0,
 					title: "Thông báo lưu lượng user tới user",
 					description: "Sau khi mở, bot sẽ thông báo cho người dùng về lưu lượng người dùng hôm nay thông qua telegram"
 				}, f.a.createElement(a.a, {
@@ -6447,28 +6425,6 @@
 					onChange: e => this.set("telegram", "report_node_traffic_today", e ? 1 : 0)
 				})), parseInt(y.report_node_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 					isChildren: !0,
-					title: "Report thông tin nút tới admin",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_report_node_traffic_to_admin_today,
-					onChange: e => this.set("telegram", "interval_report_node_traffic_to_admin_today", e.target.value)
-				})), parseInt(y.interval_report_node_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Admin Group ID Telegram",
-					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "ID Admin Group",
-					size: "large",
-					type: "text",
-					placeholder: "-xxxxxxxxx",
-					defaultValue: y.id_group_admin_report_traffic_node_today,
-					onChange: e => this.set("telegram", "id_group_admin_report_traffic_node_today", e.target.value)
-				}))) : "", f.a.createElement(m, {
-					isChildren: !0,
 					title: "Report thông tin nút tới user",
 					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
 				}, f.a.createElement(a.a, {
@@ -6496,28 +6452,6 @@
 					checked: parseInt(y.report_node_online),
 					onChange: e => this.set("telegram", "report_node_online", e ? 1 : 0)
 				})), parseInt(y.report_node_online) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Report thông tin nút tới admin",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_report_node_online_to_admin_today,
-					onChange: e => this.set("telegram", "interval_report_node_online_to_admin_today", e.target.value)
-				})), parseInt(y.interval_report_node_online_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Admin Group ID Telegram",
-					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "ID Admin Group",
-					size: "large",
-					type: "text",
-					placeholder: "-xxxxxxxxx",
-					defaultValue: y.id_group_admin_report_node_online_today,
-					onChange: e => this.set("telegram", "id_group_admin_report_node_online_today", e.target.value)
-				}))) : "", f.a.createElement(m, {
 					isChildren: !0,
 					title: "Report thông tin nút tới user",
 					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
