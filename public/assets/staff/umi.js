@@ -5041,13 +5041,7 @@
 					className: "mb-0"
 				}, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
 					className: ""
-				}, f.a.createElement(m, {
-					title: "Chế độ bảo trì",
-					description: "Sau khi mở, người dùng sẽ không thể đăng nhập vào bảng điều khiển, vui lòng sử dụng chức năng này khi bạn cần bảo trì bảng điều khiển."
-				}, f.a.createElement(c.a, {
-					checked: parseInt(aikopanel.maintenance_mode_enable),
-					onChange: e => this.set("aikopanel", "maintenance_mode_enable", e ? 1 : 0)
-				})), f.a.createElement("div", {
+				}, f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Kết nối AppleID",
