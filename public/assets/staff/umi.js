@@ -4780,8 +4780,7 @@
 					p = e.fetchLoading,
 					y = e.connect,
 					b = e.setTelegramWebhookLoading,
-					w = e.app,
-					aikopanel = e.aikopanel,
+					// aikopanel = e.aikopanel,
 					E = this.props.plan.plans;
 				return f.a.createElement(d.a, o()({}, this.props, {
 					title: "Thiết lập hệ thống"
@@ -5025,53 +5024,55 @@
 					placeholder: "-xxxxxxxxx",
 					defaultValue: y.id_group_user_report_node_online_today,
 					onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
-				}))) : "") : "" ) : "" )), f.a.createElement(s.a.TabPane, {
-					tab: "AikoPanel",
-					key: "aikopanel"
-				}, f.a.createElement("div", {
-					className: "block-content"
-				}, f.a.createElement("div", {
-					className: "row"
-				}, f.a.createElement("div", {
-					className: "col-lg-12"
-				}, f.a.createElement("div", {
-					className: "alert alert-warning",
-					role: "alert"
-				}, f.a.createElement("p", {
-					className: "mb-0"
-				}, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement(m, {
-					title: "Kết nối AppleID",
-					description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
-				}, f.a.createElement(a.a, {
-					addonAfter: "URL",
-					size: "large",
-					type: "text",
-					placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
-					defaultValue: aikopanel.appleid_custom_url,
-					onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
-				}), f.a.createElement(a.a, {
-					addonAfter: "URL",
-					size: "large",
-					type: "text",
-					placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
-					defaultValue: aikopanel.appleid_api,
-					onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
-				})), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Link cấp Ứng dụng Quantumult-X",
-					description: "Link cấp ứng dụng cho Quantumult-X"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Quantumult-X",
-					size: "large",
-					type: "text",
-					placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
-					defaultValue: aikopanel.appleid_quanx,
-					onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
-				}))) : ""))))))
+				}))) : "") : "" ) : "" ))
+				// , f.a.createElement(s.a.TabPane, {
+				// 	tab: "AikoPanel",
+				// 	key: "aikopanel"
+				// }, f.a.createElement("div", {
+				// 	className: "block-content"
+				// }, f.a.createElement("div", {
+				// 	className: "row"
+				// }, f.a.createElement("div", {
+				// 	className: "col-lg-12"
+				// }, f.a.createElement("div", {
+				// 	className: "alert alert-warning",
+				// 	role: "alert"
+				// }, f.a.createElement("p", {
+				// 	className: "mb-0"
+				// }, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
+				// 	className: ""
+				// }, f.a.createElement("div", {
+				// 	className: ""
+				// }, f.a.createElement(m, {
+				// 	title: "Kết nối AppleID",
+				// 	description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
+				// }, f.a.createElement(a.a, {
+				// 	addonAfter: "URL",
+				// 	size: "large",
+				// 	type: "text",
+				// 	placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
+				// 	defaultValue: aikopanel.appleid_custom_url,
+				// 	onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
+				// }), f.a.createElement(a.a, {
+				// 	addonAfter: "URL",
+				// 	size: "large",
+				// 	type: "text",
+				// 	placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
+				// 	defaultValue: aikopanel.appleid_api,
+				// 	onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
+				// })), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+				// 	isChildren: !0,
+				// 	title: "Link cấp Ứng dụng Quantumult-X",
+				// 	description: "Link cấp ứng dụng cho Quantumult-X"
+				// }, f.a.createElement(a.a, {
+				// 	addonAfter: "Quantumult-X",
+				// 	size: "large",
+				// 	type: "text",
+				// 	placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
+				// 	defaultValue: aikopanel.appleid_quanx,
+				// 	onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
+				// }))) : "")))
+				)))
 			}
 		}
 		t.default = Object(p.c)((e => ({
@@ -15100,7 +15101,7 @@
 				site: {},
 				server: {},
 				connect: {},
-				aikopanel: {},
+				// aikopanel: {},
 				tabs: "site",
 				fetchLoading: !1,
 				setTelegramWebhookLoading: !1
