@@ -86221,7 +86221,8 @@
 						type: "plan/fetch"
 					}),
 					this.props.dispatch({
-						type: "config/fetch"
+						type: "config/fetch",
+						key: "staff"
 					})
 			}
 			update(e, t, n) {
@@ -86243,7 +86244,7 @@
 					t = e.orders,
 					n = e.fetchLoading,
 					r = e.pagination,
-					pay = e.payment,
+					staff = this.props.config.staff,
 					a = e.filter,
 					m = [{
 						title: "# Số Đơn Hàng",
@@ -86319,7 +86320,7 @@
 									contentWrapper.appendChild(img);
 
 									const infoText = document.createElement('div');
-									infoText.textContent = `Nội Dung Chuyển Khoảng: DVS${t.id}` ;
+									infoText.textContent = `Nội Dung Chuyển Khoảng: ${staff.keyword_account}${t.id}` ;
 									infoText.className = 'account-info-text';
 									contentWrapper.appendChild(infoText);
 
