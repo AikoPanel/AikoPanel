@@ -4876,12 +4876,6 @@
 					checked: parseInt(y.telegram_bot_enable),
 					onChange: e => this.set("telegram", "telegram_bot_enable", e ? 1 : 0)
 				})), parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					title: "Report thông tin hàng ngày",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hàng ngày, Ví dụ như doanh thu hôm nay , Tổng GB sử dụng là bao nhiêu v.v...."
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.report_infomartion_daily),
-					onChange: e => this.set("telegram", "report_infomartion_daily", e ? 1 : 0)
-				})), f.a.createElement(m, {
 					title: "Thông báo Lưu lượng người dùng hôm nay",
 					description: "Sau khi mở, bot sẽ thông báo về lưu lượng người dùng hôm nay thông qua telegram"
 				}, f.a.createElement(c.a, {
