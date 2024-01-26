@@ -11547,6 +11547,32 @@
 						}), e)
 					}))()
 				},
+				getPayment(e, t) {
+					var n = t.put;
+					return a().mark((function e() {
+						var t;
+						return a().wrap((function(e) {
+							for (;;)
+								switch (e.prev = e.next) {
+									case 0:
+										return e.next = 2,
+											Object(i.a)("/" + window.settings.staff_path + "/order/getPaymentMethod");
+									case 2:
+										return t = e.sent,
+											e.next = 5,
+											n({
+												type: "setState",
+												payload: {
+													payment: t.data
+												}
+											});
+									case 5:
+									case "end":
+										return e.stop()
+								}
+						}), e)
+					}))()
+				},
 				addFilter(e, t) {
 					var n = e.key,
 						r = e.condition,
@@ -86190,8 +86216,7 @@
 						type: "plan/fetch"
 					}),
 					this.props.dispatch({
-						type: "config/fetch",
-						key: "staff"
+						type: "order/getPaymentMethod",
 					})
 			}
 			update(e, t, n) {
@@ -86214,6 +86239,7 @@
 					n = e.fetchLoading,
 					r = e.pagination,
 					a = e.filter,
+					payment = e.payment,
 					m = [{
 						title: "# Số Đơn Hàng",
 						dataIndex: "trade_no",
