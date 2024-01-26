@@ -11513,37 +11513,6 @@
 						}), e)
 					}))()
 				},
-				getPaymentMethod(e, t) {
-					var n = t.put;
-					return u().mark((function e() {
-						var t;
-						return u().wrap((function(e) {
-							for (;;)
-								switch (e.prev = e.next) {
-									case 0:
-										return e.next = 2,
-											Object(l.a)("/" + window.settings.staff_path + "/order/getPaymentMethod");
-									case 2:
-										if (200 === (t = e.sent).code) {
-											e.next = 5;
-											break
-										}
-										return e.abrupt("return");
-									case 5:
-										return e.next = 7,
-											n({
-												type: "setState",
-												payload: {
-													payment: t.data
-												}
-											});
-									case 7:
-									case "end":
-										return e.stop()
-								}
-						}), e)
-					}))()
-				},
 				filter(e, t) {
 					var n = e.filter,
 						r = t.put,
@@ -86243,7 +86212,7 @@
 					t = e.orders,
 					n = e.fetchLoading,
 					r = e.pagination,
-					staff = this.props.config.site,
+					staff = this.props.config,
 					a = e.filter,
 					m = [{
 						title: "# Số Đơn Hàng",

@@ -78498,7 +78498,7 @@
 				})
 			}
 			render() {
-				var e = this.props.config.site,
+				var e = this.props.config,
 					t = this.props.plan.saveLoading,
 					n = this.props.serverGroup.groups;
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
