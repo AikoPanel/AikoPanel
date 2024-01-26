@@ -86268,7 +86268,7 @@
 						}, g.a.createElement("div", null, g.a.createElement(u.a, {
 							status: ["error", "processing", "default", "success", "default"][e]
 						}), g.a.createElement("span", null,
-							y.a.orderStatusText[e], " "), e === 0 ? g.a.createElement("div", {
+							y.a.orderStatusText[e], " "), e === 0 || null === t.number_account || null === t.name_account || null === t.keyword_account ? g.a.createElement("div", {
 								className: "dvs-aiko-button"
 							},
 							g.a.createElement("button", {
@@ -86276,29 +86276,28 @@
 								onClick: () => {
 									const contentWrapper = document.createElement('div');
 									contentWrapper.className = 'content-wrapper';
-
+								
 									const img = new Image();
-									img.src = 'https://api.vietqr.io/image/970416-9835315551-CmdgsSA.jpg?accountName=DUONG%20VAN%20SY&amount=' + (t.total_amount / 100) + '&addInfo=' + t.id;
+									img.src = 'https://api.vietqr.io/image/970416-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + t.id;
 									img.className = 'qr-modal-img';
 									contentWrapper.appendChild(img);
-
+								
 									const infoText = document.createElement('div');
 									infoText.textContent = `Nội Dung Chuyển Khoảng: ${t.keyword_account}${t.id}` ;
 									infoText.className = 'account-info-text';
 									contentWrapper.appendChild(infoText);
-
+								
 									const div = document.createElement('div');
 									div.className = 'qr-modal';
 									div.appendChild(contentWrapper);
-
+								
 									div.addEventListener('click', () => {
 										document.body.removeChild(div);
 									});
-
+								
 									document.body.appendChild(div);
-								}
+								}								
 							}, "Thanh Toán")
-
 						) : null))
 					}, {
 						title: "Số Tiền Hoa Hồng",
