@@ -86268,7 +86268,7 @@
 						}, g.a.createElement("div", null, g.a.createElement(u.a, {
 							status: ["error", "processing", "default", "success", "default"][e]
 						}), g.a.createElement("span", null,
-							y.a.orderStatusText[e], " "), e === 0 || null !== t.number_account || null !== t.name_account || null !== t.keyword_account ? g.a.createElement("div", {
+							y.a.orderStatusText[e], " "), e === 0 && null !== t.number_account && null !== t.name_account && null !== t.keyword_account ? g.a.createElement("div", {
 								className: "dvs-aiko-button"
 							},
 							g.a.createElement("button", {
