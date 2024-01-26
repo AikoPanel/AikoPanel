@@ -15066,7 +15066,6 @@
 				site: {},
 				server: {},
 				connect: {},
-				staff: {},
 				tabs: "site",
 				fetchLoading: !1,
 				setTelegramWebhookLoading: !1
@@ -86244,7 +86243,7 @@
 					t = e.orders,
 					n = e.fetchLoading,
 					r = e.pagination,
-					staff = this.props.config.staff,
+					staff = this.props.config.site,
 					a = e.filter,
 					m = [{
 						title: "# Số Đơn Hàng",
