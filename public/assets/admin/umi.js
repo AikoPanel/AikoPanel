@@ -22694,51 +22694,6 @@
 					defaultValue: t.staff_url,
 					placeholder: "Nếu để trống, sẽ không có URL truy cập trang CTV.",
 					onChange: e => this.formChange("staff_url", e.target.value)
-				})): "", t.is_staff && t.staff_url ? p.a.createElement("div", {
-					className: "form-group"
-				}, p.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Tên website của CTV"), p.a.createElement(u.a, {
-					addonAfter: "Title",
-					defaultValue: t.staff_title,
-					placeholder: "Nếu để trống, sẽ không có tên website của CTV.",
-					onChange: e => this.formChange("staff_title", e.target.value)
-				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
-					className: "form-group"
-				}, p.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Mô tả website của CTV"), p.a.createElement(u.a, {
-					addonAfter: "Description",
-					defaultValue: t.staff_description,
-					placeholder: "Nếu để trống, sẽ không có mô tả website của CTV.",
-					onChange: e => this.formChange("staff_description", e.target.value)
-				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
-					className: "form-group"
-				}, p.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Logo Của Trang CTV"), p.a.createElement(u.a, {
-					addonAfter: "URL",
-					defaultValue: t.staff_logo,
-					placeholder: "Nếu để trống, Sẽ sử dụng Logo của trang web.",
-					onChange: e => this.formChange("staff_logo", e.target.value)
-				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
-					className: "form-group"
-				}, p.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Zalo Group của CTV"), p.a.createElement(u.a, {
-					addonAfter: "URL",
-					defaultValue: t.staff_zalo,
-					placeholder: "Nếu để trống, Sẽ sử dụng Zalo của trang web.",
-					onChange: e => this.formChange("staff_zalo", e.target.value)
-				})): "",t.is_staff && t.staff_url ? p.a.createElement("div", {
-					className: "form-group"
-				}, p.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Telegram Group của CTV"), p.a.createElement(u.a, {
-					addonAfter: "URL",
-					defaultValue: t.staff_telegram,
-					placeholder: "Nếu để trống, Sẽ sử dụng Telegram của trang web.",
-					onChange: e => this.formChange("staff_telegram", e.target.value)
 				})): "", t.is_staff ? p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
