@@ -7021,7 +7021,6 @@
 					defaultValue: aikopanel.interval_backup_database,
 					onChange: e => this.set("aikopanel", "interval_backup_database", e.target.value)
 				}), f.a.createElement("input", {
-					rows: 2,
 					type: "text",
 					className: "form-control",
 					placeholder: "ID Telegram of Admin, Cách nhau bởi dấu phẩy (,) VD: 123456,654321",
