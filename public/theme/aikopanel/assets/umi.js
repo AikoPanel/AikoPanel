@@ -1000,6 +1000,10 @@
 							}))
 						}),
 						t.push({
+							title: "Karing",
+							href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
+						}),
+						t.push({
 							title: "V2Box",
 							href: "v2box://install-sub/?url=" + encodeURIComponent(e + "&flag=v2box") + "&name=" + window.settings.title
 						}),
@@ -1024,6 +1028,10 @@
 							href: "clash://install-config?url=" + encodeURIComponent(e + "&flag=clashpc") + "&name=" + window.settings.title
 						}),
 						t.push({
+							title: "Karing",
+							href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
+						}),
+						t.push({
 							title: "Shadowrocket",
 							href: "shadowrocket://add/sub://" + window.btoa(e + "&flag=shadowrocket").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "") + "?remark=" + window.settings.title
 						}),
@@ -1046,6 +1054,10 @@
 							href: "clash://install-config?url=" + encodeURIComponent(e + "&flag=meta") + "&name=" + window.settings.title
 						}),
 						t.push({
+							title: "Karing",
+							href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
+						}),
+						t.push({
 							title: "Clash For Windows",
 							href: "clash://install-config?url=" + encodeURIComponent(e + "&flag=clashpc") + "&name=" + window.settings.title
 						})),
@@ -1059,6 +1071,10 @@
 						}) && t.push({
 							title: "ClashMeta For Android",
 							href: "clash://install-config?url=" + encodeURIComponent(e + "&flag=meta") + "&name=" + window.settings.title
+						}),
+						t.push({
+							title: "Karing",
+							href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
 						}),
 						t.push({
 							title: "V2Box",
