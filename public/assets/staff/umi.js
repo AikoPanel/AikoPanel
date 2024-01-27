@@ -86278,7 +86278,7 @@
 									contentWrapper.className = 'content-wrapper';
 								
 									const img = new Image();
-									img.src = 'https://api.vietqr.io/image/970416-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + t.id;
+									img.src = 'https://api.vietqr.io/image/970416-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + t.keyword_account + t.id;
 									img.className = 'qr-modal-img';
 									contentWrapper.appendChild(img);
 								
@@ -86330,19 +86330,7 @@
 									onClick: e => {
 										this.update(t.trade_no, "commission_status", e.key)
 									}
-								}, "Đang Chờ Xác Nhận"), g.a.createElement(h.a.Item, {
-									key: "1",
-									disabled: 1 === e,
-									onClick: e => {
-										this.update(t.trade_no, "commission_status", e.key)
-									}
-								}, "Hợp Lệ"), g.a.createElement(h.a.Item, {
-									key: "3",
-									disabled: 3 === e,
-									onClick: e => {
-										this.update(t.trade_no, "commission_status", e.key)
-									}
-								}, "Không Hợp Lệ"))
+								}, "Đang Chờ Xác Nhận"))
 							}, g.a.createElement("div", null, g.a.createElement(u.a, {
 								status: n[e]
 							}), g.a.createElement("span", null, y.a.commissionStatusText[e], " "), g.a.createElement("a", {
