@@ -86335,7 +86335,7 @@
 								status: n[e]
 							}), g.a.createElement("span", null, y.a.commissionStatusText[e], " "), g.a.createElement("a", {
 								href: "javascript:void(0);"
-							}, "Đánh Dấu Là ", g.a.createElement(d.a, {
+							}, "Trạng thái chi tiết ", g.a.createElement(d.a, {
 								type: "caret-down"
 							})))))
 						}
