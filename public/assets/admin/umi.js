@@ -22671,6 +22671,15 @@
 					defaultValue: t.speed_limit,
 					placeholder: "Nếu để trống, không giới hạn tốc độ.",
 					onChange: e => this.formChange("speed_limit", e.target.value)
+				})),p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Telegram ID"), p.a.createElement(u.a, {
+					addonAfter: "ID Telegram",
+					defaultValue: t.telegram_id,
+					placeholder: "Telegram ID",
+					onChange: e => this.formChange("telegram_id", e.target.value)
 				})), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
