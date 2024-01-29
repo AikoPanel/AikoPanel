@@ -6007,6 +6007,12 @@
 				}),f.a.createElement("input", {
 					type: "text",
 					className: "form-control",
+					placeholder: "BankID",
+					defaultValue: staff.bank_id,
+					onChange: e => this.set("staff", "bank_id", e.target.value)
+				}),f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
 					placeholder: "Số tài khoản",
 					defaultValue: staff.number_account,
 					onChange: e => this.set("staff", "number_account", e.target.value)

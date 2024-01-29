@@ -86268,7 +86268,7 @@
 						}, g.a.createElement("div", null, g.a.createElement(u.a, {
 							status: ["error", "processing", "default", "success", "default"][e]
 						}), g.a.createElement("span", null,
-							y.a.orderStatusText[e], " "), e === 0 && null !== t.number_account && null !== t.name_account && null !== t.keyword_account ? g.a.createElement("div", {
+							y.a.orderStatusText[e], " "), e === 0 && null !== t.number_account && t.bank_id && null !== t.name_account && null !== t.keyword_account ? g.a.createElement("div", {
 								className: "dvs-aiko-button"
 							},
 							g.a.createElement("button", {
@@ -86278,7 +86278,7 @@
 									contentWrapper.className = 'content-wrapper';
 								
 									const img = new Image();
-									img.src = 'https://api.vietqr.io/image/970416-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + t.keyword_account + t.id;
+									img.src = 'https://api.vietqr.io/image/'+ t.bank_id + '-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + t.keyword_account + t.id;
 									img.className = 'qr-modal-img';
 									contentWrapper.appendChild(img);
 								
