@@ -5488,7 +5488,7 @@
 					b = e.setTelegramWebhookLoading,
 					w = e.app,
 					aikopanel = e.aikopanel,
-					backup = e.backupDatabaseLoading,
+					bk = e.backupDatabaseLoading,
 					x = e.testSendMailLoading,
 					_ = e.safe,
 					E = this.props.plan.plans;
@@ -7033,9 +7033,9 @@
 					placeholder: "ID Telegram of Admin, Cách nhau bởi dấu phẩy (,) VD: 123456,654321",
 					defaultValue: aikopanel.database_telegram_id,
 					onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
-				}))), aikopanel.database_telegram_id && f.a.createElement(m, {
+				}))), f.a.createElement(m, {
 					title: "Backup Database Ngay Lập Tức",
-					description: "Sau khi kích hoạt, Database sẽ được backup ngay lập tức"
+					description: "Sau khi click sẽ backup database ngay lập tức, nếu có Telegram ID thì sẽ gửi tới Telegram còn không sẽ save vào mục /database/backup"
 				}, f.a.createElement(i.a, {
 					type: "primary",
 					onClick: () => {
@@ -7043,9 +7043,9 @@
 							type: "config/backupDataBase"
 						})
 					},
-					loading: backup,
-					disabled: backup
-				}, "Cài đặt một 1 Click")), f.a.createElement("div", {
+					loading: bk,
+					disabled: bk
+				}, "Nhấn vào đây để Backup")), f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Cloudflare API",
@@ -17129,7 +17129,7 @@
 				emailTemplate: [],
 				themeTemplate: [],
 				setTelegramWebhookLoading: !1,
-				backupDataBaseLoading: !1
+				backupDatabaseLoading: !1
 			}),
 			reducers: {
 				setState(e, t) {
@@ -17391,7 +17391,7 @@
 												r({
 													type: "setState",
 													payload: {
-														backupDataBaseLoading: !0
+														backupDatabaseLoading: !0
 													}
 												});
 										case 2:
@@ -17403,7 +17403,7 @@
 												r({
 													type: "setState",
 													payload: {
-														backupDataBaseLoading: !1
+														backupDatabaseLoading: !1
 													}
 												});
 										case 7:
