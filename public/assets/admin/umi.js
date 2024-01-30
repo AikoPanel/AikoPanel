@@ -5488,6 +5488,7 @@
 					b = e.setTelegramWebhookLoading,
 					w = e.app,
 					aikopanel = e.aikopanel,
+					backup = e.backupDatabaseLoading,
 					x = e.testSendMailLoading,
 					_ = e.safe,
 					E = this.props.plan.plans;
@@ -7032,7 +7033,19 @@
 					placeholder: "ID Telegram of Admin, Cách nhau bởi dấu phẩy (,) VD: 123456,654321",
 					defaultValue: aikopanel.database_telegram_id,
 					onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
-				}))), f.a.createElement("div", {
+				}))), aikopanel.interval_backup_database && f.a.createElement(m, {
+					title: "Backup Database Ngay Lập Tức",
+					description: "Sau khi kích hoạt, Database sẽ được backup ngay lập tức"
+				}, f.a.createElement(i.a, {
+					type: "primary",
+					onClick: () => {
+						this.props.dispatch({
+							type: "config/backupDataBase"
+						})
+					},
+					loading: backup,
+					disabled: backup
+				}, "Cài đặt một 1 Click")), f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Cloudflare API",
@@ -17115,7 +17128,8 @@
 				fetchLoading: !1,
 				emailTemplate: [],
 				themeTemplate: [],
-				setTelegramWebhookLoading: !1
+				setTelegramWebhookLoading: !1,
+				backupDataBaseLoading: !1
 			}),
 			reducers: {
 				setState(e, t) {
@@ -17363,7 +17377,50 @@
 								}
 						}), e)
 					}))()
-				}
+				},
+				backupDataBase(e, t) {
+					var r = t.put;
+					return t.select,
+						u().mark((function e() {
+							var t;
+							return u().wrap((function(e) {
+								for (;;)
+									switch (e.prev = e.next) {
+										case 0:
+											return e.next = 2,
+												r({
+													type: "setState",
+													payload: {
+														backupDataBaseLoading: !0
+													}
+												});
+										case 2:
+											return e.next = 4,
+												Object(l.b)("/" + window.settings.secure_path + "/config/backupDataBase");
+										case 4:
+											return t = e.sent,
+												e.next = 7,
+												r({
+													type: "setState",
+													payload: {
+														backupDataBaseLoading: !1
+													}
+												});
+										case 7:
+											if (200 === t.code) {
+												e.next = 9;
+												break
+											}
+											return e.abrupt("return");
+										case 9:
+											o.a.success("Backup Thành Công");
+										case 10:
+										case "end":
+											return e.stop()
+									}
+							}), e)
+						}))()
+				}		
 			}
 		}
 	},
