@@ -6034,28 +6034,25 @@
 										disabled: true,
 										selected: true
 									}, "--Chọn ngân hàng--"),
-									this.state.banks.map(bank =>
+									this.state.banks.sort((a, b) => a.shortName.localeCompare(b.shortName)).map(bank =>
 										f.a.createElement("option", {
 											value: bank.bin
-										}, bank.shortName)
-									)),
-								f.a.createElement("input", {
+										}, `${bank.shortName} - ${bank.name}`)
+									)), f.a.createElement("input", {
 									type: "text",
 									className: "form-control",
 									placeholder: "Số tài khoản",
 									defaultValue: staff.number_account,
 									onChange: e => this.set("staff", "number_account", e.target.value)
-								}),
-								f.a.createElement("input", {
+								}), f.a.createElement("input", {
 									type: "text",
 									className: "form-control",
 									placeholder: "Từ khoá thanh toán (Keyword)",
 									defaultValue: staff.keyword_account,
 									onChange: e => this.set("staff", "keyword_account", e.target.value)
 								})
-							))
-
-						, f.a.createElement("div", {
+							)),
+						f.a.createElement("div", {
 							className: ""
 						}, f.a.createElement(m, {
 							title: "Giới hạn tạo tài khoản của nhân viên",
@@ -68972,21 +68969,34 @@
 							return t ? t.name : "-"
 						}
 					}, {
-						title: "Đã Sử Dụng (GB)",
+						title: "Đã Sử Dụng",
 						dataIndex: "total_used",
 						key: "total_used",
 						sorter: !0,
-						render: (e, t) => g.a.createElement(h.a, {
-							color: parseFloat(e) > parseFloat(t.transfer_enable) ? "red" : "green"
-						}, e)
+						render: (e, t) => {
+							let originalValue = parseFloat(e);
+							let displayValue = originalValue;
+							let unit = ' GB';
+							if (displayValue < 1) {
+								displayValue *= 1024;
+								unit = ' MB';
+								if (displayValue < 1) {
+									displayValue *= 1024;
+									unit = ' KB';
+								}
+							}
+							return g.a.createElement(h.a, {
+								color: originalValue > parseFloat(t.transfer_enable) ? "red" : "green"
+							}, displayValue.toLocaleString('vi-VN') + unit);
+						}
 					}, {
 						title: "Lưu Lượng (GB)",
 						dataIndex: "transfer_enable",
 						key: "transfer_enable",
 						sorter: !0,
-						render: (e, t) => e
+						render: (e, t) => parseFloat(e).toLocaleString('vi-VN') + ' GB'
 					}, {
-						title: "SNI User",
+						title: "SNI Người Dùng",
 						dataIndex: "sni",
 						key: "sni",
 						render: e => ({
@@ -68997,7 +69007,7 @@
 							'www.linemo.jp': 'Softbank Japan',
 						} [e] || e || 'Mặc Định')
 					}, {
-						title: "Số lượng người được mời",
+						title: "Số người giới thiệu",
 						dataIndex: "invited_user_count",
 						key: "updated_at",
 						sorter: (e, t) => e.invited_user_count - t.invited_user_count,
@@ -69009,12 +69019,20 @@
 						title: "Số Dư",
 						dataIndex: "balance",
 						key: "balance",
-						sorter: !0
+						sorter: !0,
+						render: (e, t) => parseFloat(e).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
 					}, {
 						title: "Hoa Hồng",
 						dataIndex: "commission_balance",
 						key: "commission_balance",
-						sorter: !0
+						sorter: !0,
+						render: (e, t) => parseFloat(e).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
 					}, {
 						title: "IP Đăng nhập",
 						dataIndex: "last_login_ip",
@@ -79080,7 +79098,7 @@
 						title: "Lưu Lượng",
 						dataIndex: "transfer_enable",
 						key: "transfer_enable",
-						render: e => m.a.createElement(m.a.Fragment, null, e, " GB")
+						render: e => m.a.createElement(m.a.Fragment, null, e.toLocaleString(), " GB")
 					}, {
 						title: "Giới Hạn Số Lượng Thiết Bị",
 						dataIndex: "device_limit",
@@ -79090,52 +79108,82 @@
 						title: "1 Ngày",
 						dataIndex: "one_day_price",
 						key: "one_day_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "1 Tháng",
 						dataIndex: "month_price",
 						key: "month_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "2 Tháng",
 						dataIndex: "two_month_price",
 						key: "two_month_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "3 Tháng",
 						dataIndex: "quarter_price",
 						key: "quarter_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "6 Tháng",
 						dataIndex: "half_year_price",
 						key: "half_year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "1 Năm",
 						dataIndex: "year_price",
 						key: "year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "2 Năm",
 						dataIndex: "two_year_price",
 						key: "two_year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "3 Năm",
 						dataIndex: "three_year_price",
 						key: "three_year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "Vĩnh Viễn",
 						dataIndex: "onetime_price",
 						key: "onetime_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "Đặt Lại Gói",
 						dataIndex: "reset_price",
 						key: "reset_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "Nhóm Máy Chủ",
 						dataIndex: "group_id",
@@ -91747,35 +91795,50 @@
 					span: 6
 				}, "Số Tiền Thanh Toán"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.total_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.total_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Thanh Toán Bằng Số Dư"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.balance_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.balance_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Giảm Giá"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.discount_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.discount_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Hoàn Trả"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.refund_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.refund_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Khấu Trừ"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.surplus_amount / 100).toLocaleString())), g.a.createElement(_.a, null), g.a.createElement(E.a, {
+				}, (this.state.order.surplus_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(_.a, null), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
@@ -91808,14 +91871,14 @@
 					span: 6
 				}, "Số Tiền Hoa Hồng"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.commission_balance / 100).toFixed(2))), this.state.order.actual_commission_balance && g.a.createElement(E.a, {
+				}, (this.state.order.commission_balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}))), this.state.order.actual_commission_balance && g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Thực Tế Được Cấp"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.actual_commission_balance / 100).toFixed(2))), g.a.createElement(E.a, {
+				}, (this.state.order.actual_commission_balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
@@ -91926,7 +91989,10 @@
 						dataIndex: "total_amount",
 						key: "total_amount",
 						align: "right",
-						render: e => (e / 100).toLocaleString()
+						render: e => (e / 100).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
 					}, {
 						title: g.a.createElement("span", null, g.a.createElement(f.a, {
 							placement: "top",
@@ -91968,7 +92034,7 @@
 						dataIndex: "commission_balance",
 						key: "commission_balance",
 						align: "right",
-						render: (e, t) => 0 === t.status || 2 === t.status ? "-" : e ? (e / 100).toFixed(2) : "-"
+						render: (e, t) => 0 === t.status || 2 === t.status ? "-" : e ? (e / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}) : "-"
 					}, {
 						title: g.a.createElement("span", null, "Trạng Thái Hoa Hồng ", g.a.createElement(f.a, {
 							placement: "top",

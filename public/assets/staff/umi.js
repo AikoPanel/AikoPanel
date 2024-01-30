@@ -4787,225 +4787,225 @@
 				}), f.a.createElement("div", {
 					className: "mb-0 block border-bottom ".concat(p ? "block-mode-loading" : "")
 				}, f.a.createElement(s.a, {
-					onChange: e => this.setState({
-						tabs: e
-					}),
-					defaultActiveKey: h,
-					size: "large"
-				}, f.a.createElement(s.a.TabPane, {
-					tab: "Website",
-					key: "site"
-				}, f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement(m, {
-					title: "Tên website",
-					description: "Sử dụng để hiển thị vị trí cụ thể của trang web"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập tên website",
-					defaultValue: t.app_name,
-					onChange: e => this.set("site", "app_name", e.target.value)
-				})), f.a.createElement(m, {
-					title: "Mô tả website",
-					description: "Hiển thị mô tả website trên các công cụ tìm kiếm"
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập mô tả website",
-					defaultValue: t.app_description,
-					onChange: e => this.set("site", "app_description", e.target.value)
-				})), f.a.createElement(m, {
-					title: "LOGO",
-					description: "Được sử dụng để hiển thị nơi cần thiết logo."
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
-					defaultValue: t.logo,
-					onChange: e => this.set("site", "logo", e.target.value)
-				})))), f.a.createElement(s.a.TabPane, {
-					tab: "Liên kết",
-					key: "connect"
-				}, f.a.createElement("div", {
-					className: ""
-				}, f.a.createElement(m, {
-					title: "Mã Token của Robot",
-					description: "Vui lòng cung cấp mã Token do Botfather cung cấp."
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-					defaultValue: y.telegram_bot_token,
-					onChange: e => this.set("telegram", "telegram_bot_token", e.target.value)
-				})), y.telegram_bot_token && f.a.createElement(m, {
-					title: "Thiết Lập Webhook",
-					description: "Đối với cài đặt webhook cho robot, thông báo Telegram sẽ không được nhận nếu không có cài đặt."
-				}, f.a.createElement(i.a, {
-					type: "primary",
-					onClick: () => {
-						this.props.dispatch({
-							type: "config/setTelegramWebhook"
-						})
-					},
-					loading: b,
-					disabled: b
-				}, "Cài đặt một 1 Click")), f.a.createElement(m, {
-					title: "Liên kết Nhóm Telegram",
-					description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "https://t.me/xxxxxx",
-					defaultValue: y.telegram_discuss_link,
-					onChange: e => this.set("telegram", "telegram_discuss_link", e.target.value)
-				})), f.a.createElement(m, {
-					title: "Liên kết nhóm Zalo",
-					description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
-				}, f.a.createElement("input", {
-					type: "text",
-					className: "form-control",
-					placeholder: "https://zalo.me/g/xxxxxx",
-					defaultValue: y.zalo_discuss_link,
-					onChange: e => this.set("telegram", "zalo_discuss_link", e.target.value)
-				})), f.a.createElement(m, {
-					title: "Bật thông báo Telegram",
-					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên và người dùng bị ràng buộc bởi Telegram."
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.telegram_bot_enable),
-					onChange: e => this.set("telegram", "telegram_bot_enable", e ? 1 : 0)
-				})), parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					title: "Thông báo Lưu lượng người dùng hôm nay",
-					description: "Sau khi mở, bot sẽ thông báo về lưu lượng người dùng hôm nay thông qua telegram"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.report_user_traffic_today),
-					onChange: e => this.set("telegram", "report_user_traffic_today", e ? 1 : 0)
-				})), parseInt(y.report_user_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Thông báo lưu lượng user tới user",
-					description: "Sau khi mở, bot sẽ thông báo cho người dùng về lưu lượng người dùng hôm nay thông qua telegram"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_report_user_traffic_to_user_today,
-					onChange: e => this.set("telegram", "interval_report_user_traffic_to_user_today", e.target.value)
-				})), parseInt(y.interval_report_user_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "ID User Group Telegram",
-					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "ID User Group",
-					size: "large",
-					type: "text",
-					placeholder: "-xxxxxxxxx",
-					defaultValue: y.id_group_user_report_traffic_user_today,
-					onChange: e => this.set("telegram", "id_group_user_report_traffic_user_today", e.target.value)
-				}))) : "") : "", f.a.createElement(m, {
-					title: "Thông báo lưu lượng node hôm nay",
-					description: "Sau khi mở, bot sẽ thông báo về lưu lượng node hôm nay thông qua telegram"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.report_node_traffic_today),
-					onChange: e => this.set("telegram", "report_node_traffic_today", e ? 1 : 0)
-				})), parseInt(y.report_node_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Report thông tin nút tới user",
-					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_report_node_traffic_to_user_today,
-					onChange: e => this.set("telegram", "interval_report_node_traffic_to_user_today", e.target.value)
-				})), parseInt(y.interval_report_node_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "User Group ID Telegram",
-					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "ID User Group",
-					size: "large",
-					type: "text",
-					placeholder: "-xxxxxxxxx",
-					defaultValue: y.id_group_user_report_traffic_node_today,
-					onChange: e => this.set("telegram", "id_group_user_report_traffic_node_today", e.target.value)
-				}))) : "") : "", f.a.createElement(m, {
-					title: "Report node online",
-					description: "Sau khi mở, bot sẽ thông báo về node đang online"
-				}, f.a.createElement(c.a, {
-					checked: parseInt(y.report_node_online),
-					onChange: e => this.set("telegram", "report_node_online", e ? 1 : 0)
-				})), parseInt(y.report_node_online) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "Report thông tin nút tới user",
-					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "Phút",
-					size: "large",
-					type: "number",
-					placeholder: "Nhập thời gian thông báo (phút)",
-					defaultValue: y.interval_report_node_online_to_user_today,
-					onChange: e => this.set("telegram", "interval_report_node_online_to_user_today", e.target.value)
-				})), parseInt(y.interval_report_node_online_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-					isChildren: !0,
-					title: "User Group ID Telegram",
-					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
-				}, f.a.createElement(a.a, {
-					addonAfter: "ID User Group",
-					size: "large",
-					type: "text",
-					placeholder: "-xxxxxxxxx",
-					defaultValue: y.id_group_user_report_node_online_today,
-					onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
-				}))) : "") : "" ) : "" ))
-				// , f.a.createElement(s.a.TabPane, {
-				// 	tab: "AikoPanel",
-				// 	key: "aikopanel"
-				// }, f.a.createElement("div", {
-				// 	className: "block-content"
-				// }, f.a.createElement("div", {
-				// 	className: "row"
-				// }, f.a.createElement("div", {
-				// 	className: "col-lg-12"
-				// }, f.a.createElement("div", {
-				// 	className: "alert alert-warning",
-				// 	role: "alert"
-				// }, f.a.createElement("p", {
-				// 	className: "mb-0"
-				// }, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
-				// 	className: ""
-				// }, f.a.createElement("div", {
-				// 	className: ""
-				// }, f.a.createElement(m, {
-				// 	title: "Kết nối AppleID",
-				// 	description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
-				// }, f.a.createElement(a.a, {
-				// 	addonAfter: "URL",
-				// 	size: "large",
-				// 	type: "text",
-				// 	placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
-				// 	defaultValue: aikopanel.appleid_custom_url,
-				// 	onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
-				// }), f.a.createElement(a.a, {
-				// 	addonAfter: "URL",
-				// 	size: "large",
-				// 	type: "text",
-				// 	placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
-				// 	defaultValue: aikopanel.appleid_api,
-				// 	onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
-				// })), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-				// 	isChildren: !0,
-				// 	title: "Link cấp Ứng dụng Quantumult-X",
-				// 	description: "Link cấp ứng dụng cho Quantumult-X"
-				// }, f.a.createElement(a.a, {
-				// 	addonAfter: "Quantumult-X",
-				// 	size: "large",
-				// 	type: "text",
-				// 	placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
-				// 	defaultValue: aikopanel.appleid_quanx,
-				// 	onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
-				// }))) : "")))
+						onChange: e => this.setState({
+							tabs: e
+						}),
+						defaultActiveKey: h,
+						size: "large"
+					}, f.a.createElement(s.a.TabPane, {
+						tab: "Website",
+						key: "site"
+					}, f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
+						title: "Tên website",
+						description: "Sử dụng để hiển thị vị trí cụ thể của trang web"
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập tên website",
+						defaultValue: t.app_name,
+						onChange: e => this.set("site", "app_name", e.target.value)
+					})), f.a.createElement(m, {
+						title: "Mô tả website",
+						description: "Hiển thị mô tả website trên các công cụ tìm kiếm"
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập mô tả website",
+						defaultValue: t.app_description,
+						onChange: e => this.set("site", "app_description", e.target.value)
+					})), f.a.createElement(m, {
+						title: "LOGO",
+						description: "Được sử dụng để hiển thị nơi cần thiết logo."
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
+						defaultValue: t.logo,
+						onChange: e => this.set("site", "logo", e.target.value)
+					})))), f.a.createElement(s.a.TabPane, {
+						tab: "Liên kết",
+						key: "connect"
+					}, f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
+						title: "Mã Token của Robot",
+						description: "Vui lòng cung cấp mã Token do Botfather cung cấp."
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
+						defaultValue: y.telegram_bot_token,
+						onChange: e => this.set("telegram", "telegram_bot_token", e.target.value)
+					})), y.telegram_bot_token && f.a.createElement(m, {
+						title: "Thiết Lập Webhook",
+						description: "Đối với cài đặt webhook cho robot, thông báo Telegram sẽ không được nhận nếu không có cài đặt."
+					}, f.a.createElement(i.a, {
+						type: "primary",
+						onClick: () => {
+							this.props.dispatch({
+								type: "config/setTelegramWebhook"
+							})
+						},
+						loading: b,
+						disabled: b
+					}, "Cài đặt một 1 Click")), f.a.createElement(m, {
+						title: "Liên kết Nhóm Telegram",
+						description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "https://t.me/xxxxxx",
+						defaultValue: y.telegram_discuss_link,
+						onChange: e => this.set("telegram", "telegram_discuss_link", e.target.value)
+					})), f.a.createElement(m, {
+						title: "Liên kết nhóm Zalo",
+						description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "https://zalo.me/g/xxxxxx",
+						defaultValue: y.zalo_discuss_link,
+						onChange: e => this.set("telegram", "zalo_discuss_link", e.target.value)
+					})), f.a.createElement(m, {
+						title: "Bật thông báo Telegram",
+						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên và người dùng bị ràng buộc bởi Telegram."
+					}, f.a.createElement(c.a, {
+						checked: parseInt(y.telegram_bot_enable),
+						onChange: e => this.set("telegram", "telegram_bot_enable", e ? 1 : 0)
+					})), parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						title: "Thông báo Lưu lượng người dùng hôm nay",
+						description: "Sau khi mở, bot sẽ thông báo về lưu lượng người dùng hôm nay thông qua telegram"
+					}, f.a.createElement(c.a, {
+						checked: parseInt(y.report_user_traffic_today),
+						onChange: e => this.set("telegram", "report_user_traffic_today", e ? 1 : 0)
+					})), parseInt(y.report_user_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "Thông báo lưu lượng user tới user",
+						description: "Sau khi mở, bot sẽ thông báo cho người dùng về lưu lượng người dùng hôm nay thông qua telegram"
+					}, f.a.createElement(a.a, {
+						addonAfter: "Phút",
+						size: "large",
+						type: "number",
+						placeholder: "Nhập thời gian thông báo (phút)",
+						defaultValue: y.interval_report_user_traffic_to_user_today,
+						onChange: e => this.set("telegram", "interval_report_user_traffic_to_user_today", e.target.value)
+					})), parseInt(y.interval_report_user_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "ID User Group Telegram",
+						description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+					}, f.a.createElement(a.a, {
+						addonAfter: "ID User Group",
+						size: "large",
+						type: "text",
+						placeholder: "-xxxxxxxxx",
+						defaultValue: y.id_group_user_report_traffic_user_today,
+						onChange: e => this.set("telegram", "id_group_user_report_traffic_user_today", e.target.value)
+					}))) : "") : "", f.a.createElement(m, {
+						title: "Thông báo lưu lượng node hôm nay",
+						description: "Sau khi mở, bot sẽ thông báo về lưu lượng node hôm nay thông qua telegram"
+					}, f.a.createElement(c.a, {
+						checked: parseInt(y.report_node_traffic_today),
+						onChange: e => this.set("telegram", "report_node_traffic_today", e ? 1 : 0)
+					})), parseInt(y.report_node_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "Report thông tin nút tới user",
+						description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
+					}, f.a.createElement(a.a, {
+						addonAfter: "Phút",
+						size: "large",
+						type: "number",
+						placeholder: "Nhập thời gian thông báo (phút)",
+						defaultValue: y.interval_report_node_traffic_to_user_today,
+						onChange: e => this.set("telegram", "interval_report_node_traffic_to_user_today", e.target.value)
+					})), parseInt(y.interval_report_node_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "User Group ID Telegram",
+						description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+					}, f.a.createElement(a.a, {
+						addonAfter: "ID User Group",
+						size: "large",
+						type: "text",
+						placeholder: "-xxxxxxxxx",
+						defaultValue: y.id_group_user_report_traffic_node_today,
+						onChange: e => this.set("telegram", "id_group_user_report_traffic_node_today", e.target.value)
+					}))) : "") : "", f.a.createElement(m, {
+						title: "Report node online",
+						description: "Sau khi mở, bot sẽ thông báo về node đang online"
+					}, f.a.createElement(c.a, {
+						checked: parseInt(y.report_node_online),
+						onChange: e => this.set("telegram", "report_node_online", e ? 1 : 0)
+					})), parseInt(y.report_node_online) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "Report thông tin nút tới user",
+						description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
+					}, f.a.createElement(a.a, {
+						addonAfter: "Phút",
+						size: "large",
+						type: "number",
+						placeholder: "Nhập thời gian thông báo (phút)",
+						defaultValue: y.interval_report_node_online_to_user_today,
+						onChange: e => this.set("telegram", "interval_report_node_online_to_user_today", e.target.value)
+					})), parseInt(y.interval_report_node_online_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "User Group ID Telegram",
+						description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+					}, f.a.createElement(a.a, {
+						addonAfter: "ID User Group",
+						size: "large",
+						type: "text",
+						placeholder: "-xxxxxxxxx",
+						defaultValue: y.id_group_user_report_node_online_today,
+						onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
+					}))) : "") : "") : ""))
+					// , f.a.createElement(s.a.TabPane, {
+					// 	tab: "AikoPanel",
+					// 	key: "aikopanel"
+					// }, f.a.createElement("div", {
+					// 	className: "block-content"
+					// }, f.a.createElement("div", {
+					// 	className: "row"
+					// }, f.a.createElement("div", {
+					// 	className: "col-lg-12"
+					// }, f.a.createElement("div", {
+					// 	className: "alert alert-warning",
+					// 	role: "alert"
+					// }, f.a.createElement("p", {
+					// 	className: "mb-0"
+					// }, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
+					// 	className: ""
+					// }, f.a.createElement("div", {
+					// 	className: ""
+					// }, f.a.createElement(m, {
+					// 	title: "Kết nối AppleID",
+					// 	description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
+					// }, f.a.createElement(a.a, {
+					// 	addonAfter: "URL",
+					// 	size: "large",
+					// 	type: "text",
+					// 	placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
+					// 	defaultValue: aikopanel.appleid_custom_url,
+					// 	onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
+					// }), f.a.createElement(a.a, {
+					// 	addonAfter: "URL",
+					// 	size: "large",
+					// 	type: "text",
+					// 	placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
+					// 	defaultValue: aikopanel.appleid_api,
+					// 	onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
+					// })), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					// 	isChildren: !0,
+					// 	title: "Link cấp Ứng dụng Quantumult-X",
+					// 	description: "Link cấp ứng dụng cho Quantumult-X"
+					// }, f.a.createElement(a.a, {
+					// 	addonAfter: "Quantumult-X",
+					// 	size: "large",
+					// 	type: "text",
+					// 	placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
+					// 	defaultValue: aikopanel.appleid_quanx,
+					// 	onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
+					// }))) : "")))
 				)))
 			}
 		}
@@ -18503,7 +18503,7 @@
 				super(e),
 					this.state = {
 						nav: [{
-							title: "Bảng Điều Kiển",
+							title: "Bảng Điều Khiển",
 							type: "item",
 							href: "/dashboard",
 							icon: i.a.createElement("i", {
@@ -36994,13 +36994,7 @@
 						render: (e, t) => d.a.createElement("div", null, d.a.createElement("a", {
 							href: "javascript:void(0);",
 							onClick: () => this.toChat(t.id)
-						}, "Xem"), d.a.createElement(u.a, {
-							type: "vertical"
-						}), d.a.createElement("a", {
-							disabled: t.status,
-							href: "javascript:void(0);",
-							onClick: () => this.close(t.id)
-						}, "Đóng"))
+						}, "Xem"))
 					}];
 				return d.a.createElement(p.a, o()({}, this.props, {
 					title: "Quản Lý Công Việc"
@@ -64757,19 +64751,32 @@
 						sorter: !0,
 						render: e => e || "-"
 					}, {
-						title: "Đã Sử Dụng (GB)",
+						title: "Đã Sử Dụng",
 						dataIndex: "total_used",
 						key: "total_used",
 						sorter: !0,
-						render: (e, t) => g.a.createElement(h.a, {
-							color: parseFloat(e) > parseFloat(t.transfer_enable) ? "red" : "green"
-						}, e)
+						render: (e, t) => {
+							let originalValue = parseFloat(e);
+							let displayValue = originalValue;
+							let unit = ' GB';
+							if (displayValue < 1) {
+								displayValue *= 1024;
+								unit = ' MB';
+								if (displayValue < 1) {
+									displayValue *= 1024;
+									unit = ' KB';
+								}
+							}
+							return g.a.createElement(h.a, {
+								color: originalValue > parseFloat(t.transfer_enable) ? "red" : "green"
+							}, displayValue.toLocaleString('vi-VN') + unit);
+						}
 					}, {
 						title: "Lưu Lượng (GB)",
 						dataIndex: "transfer_enable",
 						key: "transfer_enable",
 						sorter: !0,
-						render: (e, t) => e
+						render: (e, t) => parseFloat(e).toLocaleString('vi-VN') + ' GB'
 					}, {
 						title: "SNI User",
 						dataIndex: "sni",
@@ -64785,12 +64792,20 @@
 						title: "Số Dư",
 						dataIndex: "balance",
 						key: "balance",
-						sorter: !0
+						sorter: !0,
+						render: (e, t) => parseFloat(e).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
 					}, {
 						title: "Hoa Hồng",
 						dataIndex: "commission_balance",
 						key: "commission_balance",
-						sorter: !0
+						sorter: !0,
+						render: (e, t) => parseFloat(e).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
 					}, {
 						title: "Thời Gian Tham Gia",
 						dataIndex: "created_at",
@@ -73931,7 +73946,7 @@
 						title: "Lưu Lượng",
 						dataIndex: "transfer_enable",
 						key: "transfer_enable",
-						render: e => m.a.createElement(m.a.Fragment, null, e, " GB")
+						render: e => m.a.createElement(m.a.Fragment, null, e.toLocaleString(), " GB")
 					}, {
 						title: "Giới Hạn Số Lượng Thiết Bị",
 						dataIndex: "device_limit",
@@ -73941,52 +73956,82 @@
 						title: "1 Ngày",
 						dataIndex: "one_day_price",
 						key: "one_day_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "1 Tháng",
 						dataIndex: "month_price",
 						key: "month_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "2 Tháng",
 						dataIndex: "two_month_price",
 						key: "two_month_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "3 Tháng",
 						dataIndex: "quarter_price",
 						key: "quarter_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "6 Tháng",
 						dataIndex: "half_year_price",
 						key: "half_year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "1 Năm",
 						dataIndex: "year_price",
 						key: "year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "2 Năm",
 						dataIndex: "two_year_price",
 						key: "two_year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "3 Năm",
 						dataIndex: "three_year_price",
 						key: "three_year_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "Vĩnh Viễn",
 						dataIndex: "onetime_price",
 						key: "onetime_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: "Đặt Lại Gói",
 						dataIndex: "reset_price",
 						key: "reset_price",
-						render: e => null !== e ? e.toLocaleString() : "-"
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}],
 					p = this;
 				return m.a.createElement(g.a, o()({}, this.props, {
@@ -86073,35 +86118,50 @@
 					span: 6
 				}, "Số Tiền Thanh Toán"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.total_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.total_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Thanh Toán Bằng Số Dư"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.balance_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.balance_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Giảm Giá"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.discount_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.discount_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Hoàn Trả"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.refund_amount / 100).toLocaleString())), g.a.createElement(E.a, {
+				}, (this.state.order.refund_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Khấu Trừ"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.surplus_amount / 100).toLocaleString())), g.a.createElement(_.a, null), g.a.createElement(E.a, {
+				}, (this.state.order.surplus_amount / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(_.a, null), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
@@ -86134,14 +86194,14 @@
 					span: 6
 				}, "Số Tiền Hoa Hồng"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.commission_balance / 100).toFixed(2))), this.state.order.actual_commission_balance && g.a.createElement(E.a, {
+				}, (this.state.order.commission_balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}))), this.state.order.actual_commission_balance && g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Thực Tế Được Cấp"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.actual_commission_balance / 100).toFixed(2))), g.a.createElement(E.a, {
+				}, (this.state.order.actual_commission_balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
@@ -86222,6 +86282,68 @@
 						dataIndex: "id",
 						key: "id"
 					}, {
+						title: g.a.createElement("span", null, g.a.createElement(f.a, {
+							placement: "top",
+							title: "Sau khi đánh dấu là [Đã Thanh Toán], hệ thống sẽ tự động mở và hoàn tất quá trình kích hoạt."
+						}, "Trạng Thái ", g.a.createElement(d.a, {
+							type: "question-circle"
+						}))),
+						dataIndex: "status",
+						key: "status",
+						render: (e, t) => g.a.createElement("div", {
+							className: "dvs-aiko"
+						}, g.a.createElement("div", null, g.a.createElement(u.a, {
+							status: ["error", "processing", "default", "success", "default"][e]
+						}), g.a.createElement("span", null,
+							y.a.orderStatusText[e], " "), e === 0 && null !== t.number_account && t.bank_id && null !== t.name_account && null !== t.keyword_account ? g.a.createElement("div", {
+								className: "dvs-aiko-button"
+							},
+							g.a.createElement("button", {
+								className: "button-dvs-aiko",
+								onClick: () => {
+									const contentWrapper = document.createElement('div');
+									contentWrapper.className = 'content-wrapper';
+
+									const img = new Image();
+									img.src = 'https://api.vietqr.io/image/' + t.bank_id + '-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + (t.keyword_account + t.id).toUpperCase();
+									img.className = 'qr-modal-img';
+									contentWrapper.appendChild(img);
+
+									const infoText = document.createElement('div');
+									infoText.innerHTML = `<div class="info-table">
+									<div class="info-row">
+									<span class="info-label">Chủ tài khoản</span>
+									<span class="info-value">${t.name_account}</span>
+									</div>
+									<div class="info-row">
+									<span class="info-label">Số tài khoản</span>
+									<span class="info-value">${t.number_account}</span>
+									</div>
+									<div class="info-row">
+									<span class="info-label">Số tiền</span>
+									<span class="info-value">${(t.total_amount / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'})}</span>
+									</div>
+									<div class="info-row">
+									<span class="info-label">Nội dung</span>
+									<span class="info-value">${(t.keyword_account + t.id).toUpperCase()}</span>
+									</div>
+									</div>`;
+									infoText.className = 'account-info-text';
+									contentWrapper.appendChild(infoText);
+
+									const div = document.createElement('div');
+									div.className = 'qr-modal';
+									div.appendChild(contentWrapper);
+
+									div.addEventListener('click', () => {
+										document.body.removeChild(div);
+									});
+
+									document.body.appendChild(div);
+								}
+							}, "Thanh Toán")
+						) : null))
+					}, {
 						title: "Loại",
 						dataIndex: "type",
 						key: "type",
@@ -86252,75 +86374,19 @@
 						dataIndex: "total_amount",
 						key: "total_amount",
 						align: "right",
-						render: e => (e / 100).toLocaleString()
-					}, {
-						title: g.a.createElement("span", null, g.a.createElement(f.a, {
-							placement: "top",
-							title: "Sau khi đánh dấu là [Đã Thanh Toán], hệ thống sẽ tự động mở và hoàn tất quá trình kích hoạt."
-						}, "Trạng Thái Đơn Hàng ", g.a.createElement(d.a, {
-							type: "question-circle"
-						}))),
-						dataIndex: "status",
-						key: "status",
-						render: (e, t) => g.a.createElement("div", {
-							className: "dvs-aiko"
-						}, g.a.createElement("div", null, g.a.createElement(u.a, {
-							status: ["error", "processing", "default", "success", "default"][e]
-						}), g.a.createElement("span", null,
-							y.a.orderStatusText[e], " "), e === 0 && null !== t.number_account && t.bank_id && null !== t.name_account && null !== t.keyword_account ? g.a.createElement("div", {
-								className: "dvs-aiko-button"
-							},
-							g.a.createElement("button", {
-								className: "button-dvs-aiko",
-								onClick: () => {
-									const contentWrapper = document.createElement('div');
-									contentWrapper.className = 'content-wrapper';
-								
-									const img = new Image();
-									img.src = 'https://api.vietqr.io/image/'+ t.bank_id + '-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + (t.keyword_account + t.id).toUpperCase();
-									img.className = 'qr-modal-img';
-									contentWrapper.appendChild(img);
-								
-									const infoText = document.createElement('div');
-									infoText.innerHTML = `<div class="info-table">
-									<div class="info-row">
-									<span class="info-label">Chủ tài khoản</span>
-									<span class="info-value">${t.name_account}</span>
-									</div>
-									<div class="info-row">
-									<span class="info-label">Số tài khoản</span>
-									<span class="info-value">${t.number_account}</span>
-									</div>
-									<div class="info-row">
-									<span class="info-label">Số tiền</span>
-									<span class="info-value">${(t.total_amount / 100).toLocaleString()}đ</span>
-									</div>
-									<div class="info-row">
-									<span class="info-label">Nội dung</span>
-									<span class="info-value">${(t.keyword_account + t.id).toUpperCase()}</span>
-									</div>
-									</div>`;
-									infoText.className = 'account-info-text';
-									contentWrapper.appendChild(infoText);
-								
-									const div = document.createElement('div');
-									div.className = 'qr-modal';
-									div.appendChild(contentWrapper);
-								
-									div.addEventListener('click', () => {
-										document.body.removeChild(div);
-									});
-								
-									document.body.appendChild(div);
-								}								
-							}, "Thanh Toán")
-						) : null))
+						render: e => (e / 100).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
 					}, {
 						title: "Số Tiền Hoa Hồng",
 						dataIndex: "commission_balance",
 						key: "commission_balance",
 						align: "right",
-						render: (e, t) => 0 === t.status || 2 === t.status ? "-" : e ? (e / 100).toFixed(2) : "-"
+						render: (e, t) => 0 === t.status || 2 === t.status ? "-" : e ? (e / 100).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: g.a.createElement("span", null, "Trạng Thái Hoa Hồng ", g.a.createElement(f.a, {
 							placement: "top",
@@ -86349,11 +86415,7 @@
 								}, "Đang Chờ Xác Nhận"))
 							}, g.a.createElement("div", null, g.a.createElement(u.a, {
 								status: n[e]
-							}), g.a.createElement("span", null, y.a.commissionStatusText[e], " "), g.a.createElement("a", {
-								href: "javascript:void(0);"
-							}, "Trạng thái chi tiết ", g.a.createElement(d.a, {
-								type: "caret-down"
-							})))))
+							}), g.a.createElement("span", null, y.a.commissionStatusText[e], " "))))
 						}
 					}, {
 						title: "Thời Gian Tạo",
@@ -86405,7 +86467,7 @@
 							key: "Đã Hủy",
 							value: 2
 						}, {
-							key: "Đã Hoàn Thành",
+							key: "Đã Duyệt Đơn",
 							value: 3
 						}]
 					}, {
@@ -86414,7 +86476,7 @@
 						type: "select",
 						condition: ["="],
 						options: [{
-							key: "Chờ Xác Nhận",
+							key: "Đang Chờ Xác Nhận",
 							value: 0
 						}, {
 							key: "Đang Tiến Hành Chi Trả",
@@ -88775,9 +88837,9 @@
 					className: "text-muted w-75 mb-1"
 				}, "Doanh thu CTV  ( có thể rút ) "), c.a.createElement("p", {
 					className: "display-4 text-black font-w300 mb-2"
-				}, stat ? (stat[4] / 100).toLocaleString() : "0", c.a.createElement("span", {
+				}, stat ? (stat[4] / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}) : "0", c.a.createElement("span", {
 					className: "font-size-h5 font-w600 text-muted"
-				}, "VNĐ")))))), c.a.createElement("div", {
+				})))))), c.a.createElement("div", {
 					className: "col-lg-12 js-appear-enabled animated",
 					"data-toggle": "appear"
 				}, c.a.createElement("div", {
@@ -88793,7 +88855,7 @@
 							class: "text-muted mb-0"
 						}, "Tổng doanh thu đã nhận"), c.a.createElement("p", {
 							class: "fs-3 text-dark mb-0"
-						}, stat ? (stat[1] / 100).toLocaleString() : "0", " ", "VNĐ"),
+						}, stat ? (stat[1] / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}) : "0 ₫",),
 						c.a.createElement("hr", {}), c.a.createElement("p", {
 							class: "text-muted mb-0"
 						}, "Tổng người đã mời được"),
@@ -88805,12 +88867,12 @@
 							class: "text-muted mb-0"
 						}, "Hoa hồng đang chờ duyệt"), c.a.createElement("p", {
 							class: "fs-3 text-dark mb-0"
-						}, stat ? (stat[2] / 100).toLocaleString() : "0", " ", "VNĐ"),
+						}, stat ? (stat[2] / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}) : "0 ₫"),
 						c.a.createElement("hr", {}), c.a.createElement("p", {
 							class: "text-muted mb-0"
 						}, "Số dư ví tiêu dùng"), c.a.createElement("p", {
 							class: "fs-3 text-dark mb-0"
-						}, info?.balance ? (info?.balance / 100).toLocaleString() : "0", " ", "VNĐ")),
+						}, info?.balance ? (info?.balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}) : "0 ₫")),
 					c.a.createElement("div", {
 							class: "px-4 px-sm-5 border-start"
 						}, c.a.createElement("p", {
@@ -90956,13 +91018,13 @@
 				0: "Đang Chờ Thanh Toán",
 				1: "Đang Mở",
 				2: "Đã Hủy",
-				3: "Đã Hoàn Thành",
+				3: "Đã Thanh Toán",
 				4: "Đã Giảm Giá"
 			},
 			commissionStatusText: {
-				0: "Chờ Xác Nhận",
+				0: "Đang Chờ Xác Nhận",
 				1: "Đang Phát Hành",
-				2: "Đã Phát Hành",
+				2: "Đã Duyệt Hoa Hồng",
 				3: "Đã Từ Chối"
 			},
 			ticketStatusText: {
@@ -94768,22 +94830,7 @@
 							style: {
 								cursor: "pointer"
 							}
-						}, t.type + ": " + t.port)
-					}, {
-						title: y.a.createElement("span", null, y.a.createElement(u.a, {
-							placement: "top",
-							title: "Tùy theo tần suất báo cáo từ phía máy chủ dịch vụ mà quy định"
-						}, "Số người ", y.a.createElement(m.a, {
-							type: "question-circle"
-						}))),
-						dataIndex: "online",
-						key: "online",
-						align: "left",
-						width: 130,
-						sorter: (e, t) => e.online - t.online,
-						render: e => y.a.createElement(y.a.Fragment, null, y.a.createElement(m.a, {
-							type: "user"
-						}), " ", e || 0)
+						}, (t.type).toUpperCase() + ": " + t.port)
 					}],
 					F = this;
 				return y.a.createElement(b.a, o()({}, this.props, {
@@ -94798,15 +94845,13 @@
 					dataSource: N ? E.filter((e => -1 !== JSON.stringify(e).indexOf(N))) : E,
 					renderItem: e => y.a.createElement(i.a.Item, {
 						className: "aikopanel_node_mobile ".concat(e.parent_id ? "child_node" : ""),
-						actions: [y.a.createElement(y.a.Fragment, null, y.a.createElement(g.a, null, y.a.createElement(m.a, {
-							type: "user"
-						}), " ", e.online || 0))],
+						actions: [y.a.createElement(y.a.Fragment, null)],
 						extra: y.a.createElement(y.a.Fragment, null, y.a.createElement("span", null, I(e)))
 					}, y.a.createElement(i.a.Item.Meta, {
 						title: y.a.createElement(y.a.Fragment, null, y.a.createElement(h.a, {
 							status: D[e.available_status]
 						}), e.name),
-						description: "".concat(e.type, ": ").concat(e.port)
+						description: "".concat((e.type).toUpperCase(), ": ").concat(e.port)
 					}))
 				}) : y.a.createElement(x.a, {
 					onDragEnd: (e, t) => {
