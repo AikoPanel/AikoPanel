@@ -15747,10 +15747,6 @@
 					value: "4"
 				}, Object(h.formatMessage)({
 					id: "SNI Softbank Nhật Bản"
-				})),l.a.createElement("option", {
-					value: "5"
-				}, Object(h.formatMessage)({
-					id: "SNI Facebook"
 				})), l.a.createElement("option", {
 					value: "0"
 				}, Object(h.formatMessage)({

@@ -64780,7 +64780,6 @@
 							'dl.aw.freefiremobile.com': 'Free Fire',
 							'v9.tiktokcdn.com': 'Tiktok',
 							'www.linemo.jp': 'Softbank Japan',
-							'scontent.xx.fbcdn.net': 'Facebook',
 						} [e] || e || 'Mặc Định')
 					}, {
 						title: "Số Dư",
