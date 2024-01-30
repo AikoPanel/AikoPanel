@@ -26480,6 +26480,7 @@ a:not([href]):hover {
     margin-top: 10px;
     color: #04b4eb;
     font-weight: 600;
+    padding: 10px;
 }
 
 @media (max-width: 767.98px) {
@@ -26513,3 +26514,35 @@ a:not([href]):hover {
     background-color: #03A9F4;
     color: white;
 }
+
+.info-table-container {
+    text-align: center;
+    width: 100%;
+    display: table;
+    border-radius: 10px; 
+    overflow: hidden;
+    border: 1px solid blue; 
+}
+
+.info-table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse; 
+}
+
+.info-row {
+    display: table-row;
+}
+
+.info-label, .info-value {
+    display: table-cell;
+    border: 2px solid #06bb70;
+    padding: 5px;
+    text-align: left;
+    color: black;
+}
+
+.info-value {
+    color: #efa820;
+}
+

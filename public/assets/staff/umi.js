@@ -86277,12 +86277,29 @@
 									contentWrapper.className = 'content-wrapper';
 								
 									const img = new Image();
-									img.src = 'https://api.vietqr.io/image/'+ t.bank_id + '-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + t.keyword_account + t.id;
+									img.src = 'https://api.vietqr.io/image/'+ t.bank_id + '-' + t.number_account + '-CmdgsSA.jpg?accountName=' + encodeURIComponent(t.name_account) + '&amount=' + (t.total_amount / 100) + '&addInfo=' + (t.keyword_account + t.id).toUpperCase();
 									img.className = 'qr-modal-img';
 									contentWrapper.appendChild(img);
 								
 									const infoText = document.createElement('div');
-									infoText.textContent = `Nội Dung Chuyển Khoảng: ${t.keyword_account}${t.id}` ;
+									infoText.innerHTML = `<div class="info-table">
+									<div class="info-row">
+									<span class="info-label">Chủ tài khoản</span>
+									<span class="info-value">${t.name_account}</span>
+									</div>
+									<div class="info-row">
+									<span class="info-label">Số tài khoản</span>
+									<span class="info-value">${t.number_account}</span>
+									</div>
+									<div class="info-row">
+									<span class="info-label">Số tiền</span>
+									<span class="info-value">${(t.total_amount / 100).toLocaleString()}đ</span>
+									</div>
+									<div class="info-row">
+									<span class="info-label">Nội dung</span>
+									<span class="info-value">${(t.keyword_account + t.id).toUpperCase()}</span>
+									</div>
+									</div>`;
 									infoText.className = 'account-info-text';
 									contentWrapper.appendChild(infoText);
 								
