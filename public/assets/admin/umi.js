@@ -7033,7 +7033,7 @@
 					placeholder: "ID Telegram of Admin, Cách nhau bởi dấu phẩy (,) VD: 123456,654321",
 					defaultValue: aikopanel.database_telegram_id,
 					onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
-				}))), aikopanel.interval_backup_database && f.a.createElement(m, {
+				}))), aikopanel.database_telegram_id && f.a.createElement(m, {
 					title: "Backup Database Ngay Lập Tức",
 					description: "Sau khi kích hoạt, Database sẽ được backup ngay lập tức"
 				}, f.a.createElement(i.a, {
