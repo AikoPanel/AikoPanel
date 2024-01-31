@@ -6072,7 +6072,7 @@
 						}, f.a.createElement(c.a, {
 							checked: parseInt(staff.collaborator_enable),
 							onChange: e => this.set("staff", "collaborator_enable", e ? 1 : 0)
-						}))), staff.collaborator_enable && f.a.createElement("div", {
+						}))), staff.collaborator_enable ? f.a.createElement("div", {
 							className: ""
 						}, f.a.createElement(m, {
 							title:"Thông tin Name Server",
@@ -6091,7 +6091,7 @@
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.cloudflare_ns_2,
 							onChange: e => this.set("staff", "cloudflare_ns_2", e.target.value)
-						})))), f.a.createElement(s.a.TabPane, {
+						}))): "" ), f.a.createElement(s.a.TabPane, {
 						tab: "Mời & Thanh toán",
 						key: "invite"
 					}, f.a.createElement("div", {

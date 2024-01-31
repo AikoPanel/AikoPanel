@@ -15780,7 +15780,7 @@
 					id: "Lưu"
 				})))))))), l.a.createElement("div", {
 					className: "row mb-3 mb-md-0"
-				}, s.collaborator_enable === 1 || s.cloudflare_ns_1 || s.cloudflare_ns_2  && l.a.createElement("div", {
+				}, s.collaborator_enable === 1 && s.cloudflare_ns_1 && s.cloudflare_ns_2 ? l.a.createElement("div", {
 					className: "col-md-12"
 				}, l.a.createElement("div", {
 						className: "block block-rounded dvs-border"
@@ -15833,7 +15833,7 @@
 									onClick: () => window.copy(s.cloudflare_ns_2)
 								}, "Sao chép")
 							)
-						))))))), l.a.createElement("div", {
+						)))))): "" ), l.a.createElement("div", {
 					className: "row mb-3 mb-md-0"
 				}, l.a.createElement("div", {
 					className: "col-md-12"
