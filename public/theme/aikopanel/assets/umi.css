@@ -28628,3 +28628,48 @@ i.fab.fa-windows.fa-2x.icon-margin {
     text-align: right;
     border-radius: 0 3px 3px 0;
 }
+
+.custom-block-content {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-row {
+    margin-bottom: 15px;
+}
+
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+.custom-input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.custom-form-control {
+    background-color: #fff;
+    border: 1px solid #4e92e5;
+    border-radius: 6px;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.custom-btn {
+    background-color: #a8cfff;
+    color: #434343;
+    border: 1px solid #4e92e5;
+    border-left: none;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: #0bb192;
+    color: #ffffff;
+}

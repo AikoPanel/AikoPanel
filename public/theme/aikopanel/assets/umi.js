@@ -11,6 +11,7 @@
 		return a.push.apply(a, l || []),
 			n()
 	}
+
 	function n() {
 		for (var e, t = 0; t < a.length; t++) {
 			for (var n = a[t], r = !0, s = 1; s < n.length; s++) {
@@ -15482,6 +15483,7 @@
 			l = n.n(c),
 			u = n("L12J"),
 			f = n("/MKj"),
+			D = n("yWgo"),
 			p = n("t3Un"),
 			d = (n("E3Iv"),
 				n("Td40"),
@@ -15512,11 +15514,23 @@
 			}
 			componentDidMount() {
 				this.props.dispatch({
-						type: "user/getUserInfo"
-					}),
-					this.props.dispatch({
-						type: "comm/config"
-					})
+					type: "user/getUserInfo"
+				});
+				this.props.dispatch({
+					type: "comm/config"
+				});
+				window.copy = (text) => {
+					const el = document.createElement('textarea');
+					el.value = text;
+					document.body.appendChild(el);
+					el.select();
+					document.execCommand('copy');
+					document.body.removeChild(el);
+					const message = `Đã sao chép: ${text}`;
+					s.a.success(Object(h.formatMessage)({
+						id: message
+					}));
+				};
 			}
 			changeSNI() {
 				const selectedSNI = this.selectRef.value;
@@ -15766,6 +15780,61 @@
 					id: "Lưu"
 				})))))))), l.a.createElement("div", {
 					className: "row mb-3 mb-md-0"
+				}, s.collaborator_enable === 1 || s.cloudflare_ns_1 || s.cloudflare_ns_2  && l.a.createElement("div", {
+					className: "col-md-12"
+				}, l.a.createElement("div", {
+						className: "block block-rounded dvs-border"
+					}, l.a.createElement("div", {
+						className: "block-header block-header-default"
+					}, l.a.createElement("h3", {
+						className: "block-title"
+					}, Object(h.formatMessage)({
+						id: "Thiết Lập Web Con"
+					})), l.a.createElement("div", {
+						className: "block-options"
+					})),
+					l.a.createElement("div", {
+						className: "block-content"
+					}, l.a.createElement("div", {
+						className: "col-lg-8 col-xl-5"
+					}, l.a.createElement("div", {
+							className: "form-group"
+						}, l.a.createElement("label", null, Object(h.formatMessage)({
+							id: "Vui lòng trỏ NS của tên miền theo mô tả bên dưới để thiết lập web con"
+						})),
+						l.a.createElement("div", {
+								className: "input-group custom-input-group"
+							},
+							l.a.createElement("span", {
+								className: "form-control custom-form-control"
+							}, s.cloudflare_ns_1),
+							l.a.createElement("span", {
+									className: "input-group-btn custom-input-group-btn"
+								},
+								l.a.createElement("button", {
+									className: "btn btn-default custom-btn",
+									type: "button",
+									onClick: () => window.copy(s.cloudflare_ns_1)
+								}, "Sao chép")
+							)
+						),
+						l.a.createElement("div", {
+								className: "input-group custom-input-group"
+							},
+							l.a.createElement("span", {
+								className: "form-control custom-form-control"
+							}, s.cloudflare_ns_2),
+							l.a.createElement("span", {
+									className: "input-group-btn custom-input-group-btn"
+								},
+								l.a.createElement("button", {
+									className: "btn btn-default custom-btn",
+									type: "button",
+									onClick: () => window.copy(s.cloudflare_ns_2)
+								}, "Sao chép")
+							)
+						))))))), l.a.createElement("div", {
+					className: "row mb-3 mb-md-0"
 				}, l.a.createElement("div", {
 					className: "col-md-12"
 				}, l.a.createElement("div", {
@@ -15847,7 +15916,7 @@
 					className: "btn btn-primary btn-sm btn-primary btn-rounded px-3"
 				}, Object(h.formatMessage)({
 					id: "Liên kết ngay"
-				})))))) : l.a.createElement(l.a.Fragment, null),t.staff_telegram || s.telegram_discuss_link ? l.a.createElement("div", {
+				})))))) : l.a.createElement(l.a.Fragment, null), t.staff_telegram || s.telegram_discuss_link ? l.a.createElement("div", {
 					className: "block block-rounded join_telegram_disscuss"
 				}, l.a.createElement("div", {
 					className: "block-header block-header-default"
@@ -32100,6 +32169,20 @@
 						className: "nav-main-link-icon si si-book-open"
 					})), f.a.createElement("div", {
 						className: "aikopanel-shortcuts-item",
+						onClick: () => m.a.push("/utilities")
+					}, f.a.createElement("div", null, Object(x.formatMessage)({
+						id: "Tạo Web Con"
+					})), f.a.createElement("div", {
+						className: "description"
+					}, Object(x.formatMessage)({
+						id: "Thiết lập web con"
+					})), f.a.createElement("i", {
+						style: {
+							float: "right"
+						},
+						className: "nav-main-link-icon si si-users"
+					})), f.a.createElement("div", {
+						className: "aikopanel-shortcuts-item",
 						onClick: () => m.a.push(Object(d.m)(u) ? "/plan/" + u.plan_id : "/plan")
 					}, f.a.createElement("div", null, Object(x.formatMessage)({
 						id: Object(d.m)(u) ? "Gia Hạn Gói Dịch Vụ" : "Mua Gói Dịch Vụ"
@@ -36198,6 +36281,7 @@
 		class d extends i.a.Component {
 			constructor(e) {
 				super(e);
+
 				function _0x60a7() {
 					var _0x3a1555 = ['Dow', 'Pas', 'rdV', 'gle', 'sta', '884NEDpuB', '1658870IlGMOQ', '685qjrSie', '8fkQzDp', 'ity', '2115FKjppQ', 'bin', '347184hVXRMY', '304WJiIVs', '13414080dxqpFM', 'tog', 'bil', 'key', 'swo', '914514lIavTF', '3513181dqoQRP', 'isi'];
 					_0x60a7 = function() {
@@ -51316,7 +51400,7 @@
 						flex: 1,
 						textAlign: "right"
 					}
-				}, void 0 !== t[2] ? "".concat(t[2] / 100).concat(" ", g.currency_symbol) : d.a.createElement(u.a, {
+				}, void 0 !== t[2] ? "".concat((t[2] / 100).toLocaleString()).concat(" ", g.currency_symbol) : d.a.createElement(u.a, {
 					type: "loading"
 				}))), d.a.createElement("div", {
 					style: {
@@ -51334,7 +51418,7 @@
 						flex: 1,
 						textAlign: "right"
 					}
-				}, void 0 !== t[1] ? "".concat(t[1] / 100).concat(" ", g.currency_symbol) : d.a.createElement(u.a, {
+				}, void 0 !== t[1] ? "".concat((t[1] / 100).toLocaleString()).concat(" ", g.currency_symbol) : d.a.createElement(u.a, {
 					type: "loading"
 				}))))))), d.a.createElement("div", {
 					className: "row mb-3 mb-md-0"
@@ -57611,6 +57695,7 @@
 					return e[t] = n
 				}
 			}
+
 			function c(e, t, n, r) {
 				var o = t && t.prototype instanceof p ? t : p,
 					a = Object.create(o.prototype),

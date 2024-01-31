@@ -6064,6 +6064,33 @@
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.staff_generate_user_limit,
 							onChange: e => this.set("staff", "staff_generate_user_limit", e.target.value)
+						}))),f.a.createElement("div", {
+							className: ""
+						}, f.a.createElement(m, {
+							title: "Hiển thị Name Server để tạo web cho nhân viên",
+							description: "Sau khi kích hoạt, Name Server sẽ được hiển thị khi tạo web cho nhân viên"
+						}, f.a.createElement(c.a, {
+							checked: parseInt(staff.collaborator_enable),
+							onChange: e => this.set("staff", "collaborator_enable", e ? 1 : 0)
+						}))), staff.collaborator_enable && f.a.createElement("div", {
+							className: ""
+						}, f.a.createElement(m, {
+							title:"Thông tin Name Server",
+							description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+						}, f.a.createElement(a.a, {
+							addonAfter: "NS 1",
+							size: "large",
+							type: "number",
+							placeholder: "Vui lòng nhập",
+							defaultValue: staff.cloudflare_ns_1,
+							onChange: e => this.set("staff", "cloudflare_ns_1", e.target.value)
+						}), f.a.createElement(a.a, {
+							addonAfter: "NS 2",
+							size: "large",
+							type: "number",
+							placeholder: "Vui lòng nhập",
+							defaultValue: staff.cloudflare_ns_2,
+							onChange: e => this.set("staff", "cloudflare_ns_2", e.target.value)
 						})))), f.a.createElement(s.a.TabPane, {
 						tab: "Mời & Thanh toán",
 						key: "invite"
