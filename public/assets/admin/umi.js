@@ -6080,14 +6080,14 @@
 						}, f.a.createElement(a.a, {
 							addonAfter: "NS 1",
 							size: "large",
-							type: "number",
+							type: "text",
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.cloudflare_ns_1,
 							onChange: e => this.set("staff", "cloudflare_ns_1", e.target.value)
 						}), f.a.createElement(a.a, {
 							addonAfter: "NS 2",
 							size: "large",
-							type: "number",
+							type: "text",
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.cloudflare_ns_2,
 							onChange: e => this.set("staff", "cloudflare_ns_2", e.target.value)
