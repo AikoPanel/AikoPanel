@@ -97,5 +97,6 @@
     "Sending frequently, please try again later": "Gửi thường xuyên, vui lòng thử lại sau",
     "Current product is sold out": "Sản phẩm hiện tại đã bán hết",
     "There are too many password errors, please try again after :minute minutes.": "Có quá nhiều lỗi mật khẩu, vui lòng thử lại sau :minute phút.",
-    "Reset failed, Please try again later": "Đặt lại thất bại, Vui lòng thử lại sau"
+    "Reset failed, Please try again later": "Đặt lại thất bại, Vui lòng thử lại sau",
+    "The withdrawal amount cannot be greater than the current commission balance": "Số tiền rút không được lớn hơn số dư hoa hồng hiện tại"
 }
