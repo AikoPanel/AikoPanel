@@ -15779,8 +15779,8 @@
 				}, Object(h.formatMessage)({
 					id: "Lưu"
 				})))))))), l.a.createElement("div", {
-					className: "row mb-3 mb-md-0"
-				}, s.collaborator_enable === 1 && s.cloudflare_ns_1 && s.cloudflare_ns_2 ? l.a.createElement("div", {
+					className: "dvs-row mb-3 mb-md-0"
+				}, s.collaborator_enable === 1 && l.a.createElement("div", {
 					className: "col-md-12"
 				}, l.a.createElement("div", {
 						className: "block block-rounded dvs-border"
@@ -15789,51 +15789,93 @@
 					}, l.a.createElement("h3", {
 						className: "block-title"
 					}, Object(h.formatMessage)({
-						id: "Thiết Lập Web Con"
+						id: "Thiếp Lập Web Con"
 					})), l.a.createElement("div", {
 						className: "block-options"
 					})),
 					l.a.createElement("div", {
 						className: "block-content"
 					}, l.a.createElement("div", {
-						className: "col-lg-8 col-xl-5"
-					}, l.a.createElement("div", {
-							className: "form-group"
-						}, l.a.createElement("label", null, Object(h.formatMessage)({
-							id: "Vui lòng trỏ NS của tên miền theo mô tả bên dưới để thiết lập web con"
-						})),
-						l.a.createElement("div", {
-								className: "input-group custom-input-group"
-							},
-							l.a.createElement("span", {
-								className: "form-control custom-form-control"
-							}, s.cloudflare_ns_1),
-							l.a.createElement("span", {
-									className: "input-group-btn custom-input-group-btn"
+							className: "col-lg-8-col-xl-5"
+						}, l.a.createElement("div", {
+								className: "form-group"
+							}, l.a.createElement("div", {
+									className: "alert alert-warning mb-3",
+									role: "alert"
 								},
-								l.a.createElement("button", {
-									className: "btn btn-default custom-btn",
-									type: "button",
-									onClick: () => window.copy(s.cloudflare_ns_1)
-								}, "Sao chép")
-							)
-						),
-						l.a.createElement("div", {
-								className: "input-group custom-input-group"
-							},
-							l.a.createElement("span", {
-								className: "form-control custom-form-control"
-							}, s.cloudflare_ns_2),
-							l.a.createElement("span", {
-									className: "input-group-btn custom-input-group-btn"
+								Object(h.formatMessage)({
+									id: "Nếu bạn chưa có tên miền, vui lòng tham khảo đăng ký tên miền chỉ 29k "
+								}),
+								l.a.createElement("a", {
+									href: "https://inet.vn/dang-ky-ten-mien?aff=451767",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									style: {
+										color: '#3217ff',
+										textDecoration: 'underline',
+										fontWeight: '700'
+									}
+								}, "Tại Đây")
+							), l.a.createElement("label", null, Object(h.formatMessage)({
+								id: "Vui lòng trỏ NS hoặc Cập nhật DNS của tên miền theo mô tả bên dưới để thiết lập web con"
+							})),
+							l.a.createElement("div", {
+									className: "input-group custom-input-group"
 								},
-								l.a.createElement("button", {
-									className: "btn btn-default custom-btn",
-									type: "button",
-									onClick: () => window.copy(s.cloudflare_ns_2)
-								}, "Sao chép")
-							)
-						)))))): "" ), l.a.createElement("div", {
+								l.a.createElement("span", {
+									className: "form-control custom-form-control"
+								}, s.cloudflare_ns_1),
+								l.a.createElement("span", {
+										className: "input-group-btn custom-input-group-btn"
+									},
+									l.a.createElement("button", {
+										className: "btn btn-default custom-btn",
+										type: "button",
+										onClick: () => window.copy(s.cloudflare_ns_1)
+									}, "Sao chép")
+								)
+							),
+							l.a.createElement("div", {
+									className: "input-group custom-input-group"
+								},
+								l.a.createElement("span", {
+									className: "form-control custom-form-control"
+								}, s.cloudflare_ns_2),
+								l.a.createElement("span", {
+										className: "input-group-btn custom-input-group-btn"
+									},
+									l.a.createElement("button", {
+										className: "btn btn-default custom-btn",
+										type: "button",
+										onClick: () => window.copy(s.cloudflare_ns_2)
+									}, "Sao chép")
+								)
+							)),
+						l.a.createElement("div", {
+								className: "text-align-center"
+							}, "Sau khi trỏ NS xong vui lòng liên hệ Admin để kích hoạt web con",
+							l.a.createElement("div", null, s.zalo_discuss_link ? l.a.createElement("button", {
+								className: "Aiko-DVS DVS-Aiko-zalo",
+								onClick: () => window.location.href = s.zalo_discuss_link
+							}, [l.a.createElement("img", {
+								className: "icon-zalo",
+								src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEVHcEy2wMetveDr7u/Kzofx8vP5+vr///8+evLm7P/x8/MebPrW4P/19/8AZv+LqvsAXf8Sa/5VhOk0cet0m/+euP+9zv5hkP9Uh/zL1/xqjuAtcvoATf+twv7p6+tRgeiitvBsj+oAUN8DWuAAW+Q8aySXAAAAIXRSTlMAIDtHC37T/5T/lO//+/////+H2v///////1P///9RoPsYPczvAAABTElEQVR4AX2TB2LDIBAEhdqGGNChXpD7/9+Yg7jbeGz1YenJAyLNAqlI3smLEg+URZ488SPxyu9j9kbhHS1u302Fj1yNDeEz+lI/RQIu7cgtScTwfamNQZSChca0iFKyYKlDHN9H6vlmIGMsaQTG6qGnqaGJb1Q/KdsCWkFj4Ew5wZMmsyGFQLfw4YicZKF15Pz7zAv/7uQ0lJPovdATsPKBrRd6MNIX6Aa+IxYq3wonL0IHxqw+hbzJwrqA4y4Jpg29GMZx1HxxTo4dFju49SoYvlkDnNHJXk8K6DuJ0MjU+G5ESRPBCRWiCJ5MjkCUMFmhmfHJqlkg+WW6hf3SzDxhdsYs8SXH5Bvqpv1y0Hhlf132lo7H0/F4mPCAqk7ivnHM+cQcj2O1Tky/P3AR8bAzd5aN4Fw57fLkEVE3pweaWiRv5CKdA6l4KPwHUIgnkoB3qewAAAAASUVORK5CYII=",
+								alt: "Zalo Logo"
+							}), " ", l.a.createElement("span", null, Object(h.formatMessage)({
+								id: " Zalo Admin"
+							}))]) : null, s.telegram_discuss_link ? l.a.createElement("button", {
+								className: "Aiko-DVS DVS-Aiko-telegram",
+								onClick: () => window.location.href = s.telegram_discuss_link,
+								style: {
+									alignItems: "center"
+								}
+							}, [l.a.createElement("img", {
+								className: "icon-telegram",
+								src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAvVBMVEUAAABHt/Qwpd43sOwzq+c3ruo4sOg/tO83sOc4rOk3r+c1rOg4r+g6r+kvo980quY4qOgzqOQ3p+c0p+QwqOAwpt9TsOaV0O7Y8Pgvpd8yqOJuwOfM6Pj///94w+oxpuFMsOCg0/Dw+PzA4PNArODi8Pi44PD4//8wpOAtotowpd5fuOOw3PCDyOgwoOAuo90qn9ctodswoNgsoNkqntUqndQrn9gnn9MooNgqntYontYqndUvn9konNQom9Nm6UXDAAAAPXRSTlMACEiYwN7wGJj/gP/IMBj/yP+A8P+Y////8P///////////////////9j////////E////8Jj/gP//4P8wnkXuQgAAAbhJREFUeAFsjgMCgEAQALNtu/9/sUWuOawhXIiSrKiapiqyJApfdEMzTzRDf4VFC8I2YNp7iiU+yh0Iv3BuTVwVwm9M1T3inur7ts9uUOCyVL19fuD/Ewa8R0SGH8I9IocS0YAYAxC9SJLET9AX45A0fJNkeVFkpKawQRlWYQU3RInUTQt05CtFQer7qq/gshzGqSXqipCEtD9J+npuDwb2pYJyxpd8xcjUbWXTRQKDMBAF0Kms2dTdWyweXO5/rM4UqT0smR8c7rh+TF334B4OY/Bc13dRED52JLxuqHGbUt33PVj5vu9O2ZJCrAdTzNGF+8Rd0QDB2/hxWnPK0QkHkBV4QggehHTt24BztmvsuXjxQDYNftwEiusmR0E7QMJMKWpgqJQ67jpr6qIZDFXD0Erf2/ymRVMewsBiZogi++ZBXqiGgR0AROaLH+7QwjQiet02/qC1DvCBzrXBjrEOoCT+ZIzW+01qYoNzAmQgs0acYY5Bljb9VA7gxcmLIisynAvSt3MHWmVeVEWFc0FbQpu8hJ4jqz/SgQ+DxGKtruqOTQbwzYls3bORA/8Gw0h61noy+vz9n00ab2KwYRKTAAAAAElFTkSuQmCC",
+								alt: "Telegram Logo"
+							}), " ", l.a.createElement("span", null, Object(h.formatMessage)({
+								id: " Telegram Admin"
+							}))]) : null))))))), l.a.createElement("div", {
 					className: "row mb-3 mb-md-0"
 				}, l.a.createElement("div", {
 					className: "col-md-12"
