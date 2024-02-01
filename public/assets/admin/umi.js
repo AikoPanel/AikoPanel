@@ -6091,7 +6091,15 @@
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.cloudflare_ns_2,
 							onChange: e => this.set("staff", "cloudflare_ns_2", e.target.value)
-						}))): "" ), f.a.createElement(s.a.TabPane, {
+						}))): "" ,f.a.createElement("div", {
+							className: ""
+						}, f.a.createElement(m, {
+							title: "Trừ tiền hoa hồng sau khi có yêu cầu rút tiền",
+							description: "Sau khi kích hoạt, tiền hoa hồng sẽ được trừ sau khi có yêu cầu rút tiền"
+						}, f.a.createElement(c.a, {
+							checked: parseInt(staff.deduct_commission_enable),
+							onChange: e => this.set("staff", "deduct_commission_enable", e ? 1 : 0)
+						})))), f.a.createElement(s.a.TabPane, {
 						tab: "Mời & Thanh toán",
 						key: "invite"
 					}, f.a.createElement("div", {
