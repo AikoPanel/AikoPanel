@@ -31276,6 +31276,7 @@
 						visible: !1,
 						withdrawMethod: void 0,
 						withdrawAccount: void 0,
+						withdrawName: void 0,
 						withdrawAmount: void 0
 					}
 			}
@@ -31286,6 +31287,7 @@
 					this.setState({
 						withdrawMethod: void 0,
 						withdrawAccount: void 0,
+						withdrawName: void 0,
 						withdrawAmount: void 0
 					})
 			}
@@ -31293,6 +31295,7 @@
 				this.props.dispatch({
 					type: "ticket/withdraw",
 					withdrawAccount: this.state.withdrawAccount,
+					withdrawName: this.state.withdrawName,
 					withdrawAmount: this.state.withdrawAmount,
 					withdrawMethod: this.state.withdrawMethod,
 					callback: () => {
@@ -31349,6 +31352,19 @@
 					}),
 					onChange: e => this.setState({
 						withdrawAccount: e.target.value
+					})
+				})),s.a.createElement("div", {
+					className: "form-group"
+				}, s.a.createElement("label", null, Object(l.formatMessage)({
+					id: "Tên tài khoản"
+				})), s.a.createElement(o.a, {
+					type: "text",
+					className: "form-control",
+					placeholder: Object(l.formatMessage)({
+						id: "Vui lòng nhập tên tài khoản nhận tiền"
+					}),
+					onChange: e => this.setState({
+						withdrawName: e.target.value
 					})
 				})), s.a.createElement("div", {
 					className: "form-group"
@@ -40210,12 +40226,14 @@
 							switch (t.prev = t.next) {
 								case 0:
 									return n = e.withdrawAccount,
+										z = e.withdrawName,
 										r = e.withdrawMethod,
 										o = e.withdrawAmount,
 										a = e.callback,
 										t.next = 3,
 										Object(i.b)("/user/ticket/withdraw", {
 											withdraw_account: n,
+											withdraw_name: z,
 											withdraw_method: r,
 											withdraw_amount: o
 										});
