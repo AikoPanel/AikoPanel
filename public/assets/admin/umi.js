@@ -69033,7 +69033,7 @@
 						dataIndex: "sni",
 						key: "sni",
 						render: e => ({
-							'f.gxx.garenanow.com': 'Liên Quân',
+							'dl.ops.kgvn.garenanow.com': 'Liên Quân',
 							'dl.kgvn.garenanow.com': 'Liên Quân',
 							'dl.aw.freefiremobile.com': 'Free Fire',
 							'v9.tiktokcdn.com': 'Tiktok',
@@ -78935,8 +78935,8 @@
 					key: null,
 					value: null
 				}, "Mặc định ( Theo Node )"), m.a.createElement(_.a.Option, {
-					key: 'f.gxx.garenanow.com',
-					value: 'f.gxx.garenanow.com'
+					key: 'dl.ops.kgvn.garenanow.com',
+					value: 'dl.ops.kgvn.garenanow.com'
 				}, "Liên quân"), m.a.createElement(_.a.Option, {
 					key: 'dl.aw.freefiremobile.com',
 					value: 'dl.aw.freefiremobile.com'

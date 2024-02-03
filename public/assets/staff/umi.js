@@ -64782,7 +64782,7 @@
 						dataIndex: "sni",
 						key: "sni",
 						render: e => ({
-							'f.gxx.garenanow.com': 'Liên Quân',
+							'dl.ops.kgvn.garenanow.com': 'Liên Quân',
 							'dl.kgvn.garenanow.com': 'Liên Quân',
 							'dl.aw.freefiremobile.com': 'Free Fire',
 							'v9.tiktokcdn.com': 'Tiktok',
