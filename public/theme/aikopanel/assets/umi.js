@@ -31343,7 +31343,7 @@
 				}, e)))))), s.a.createElement("div", {
 					className: "form-group"
 				}, s.a.createElement("label", null, Object(l.formatMessage)({
-					id: "Tài khoản nhận tiền"
+					id: "Số tài khoản nhận tiền"
 				})), s.a.createElement(o.a, {
 					type: "text",
 					className: "form-control",
@@ -40220,7 +40220,7 @@
 					}), n)
 				}))(),
 				withdraw: e => l().mark((function t() {
-					var n, r, o, a;
+					var n, z, r, o, a;
 					return l().wrap((function(t) {
 						for (;;)
 							switch (t.prev = t.next) {
