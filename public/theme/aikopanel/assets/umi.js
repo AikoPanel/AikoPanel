@@ -31326,7 +31326,7 @@
 				}, s.a.createElement("div", {
 					className: "form-group"
 				}, s.a.createElement("label", null, Object(l.formatMessage)({
-					id: "Phương Thức Rút Tiền"
+					id: "Ngân Hàng"
 				})), s.a.createElement("div", null, s.a.createElement(a.a, {
 					style: {
 						width: "100%"
@@ -31343,7 +31343,7 @@
 				}, e)))))), s.a.createElement("div", {
 					className: "form-group"
 				}, s.a.createElement("label", null, Object(l.formatMessage)({
-					id: "Số tài khoản nhận tiền"
+					id: "Số tài khoản"
 				})), s.a.createElement(o.a, {
 					type: "text",
 					className: "form-control",
@@ -31356,7 +31356,7 @@
 				})),s.a.createElement("div", {
 					className: "form-group"
 				}, s.a.createElement("label", null, Object(l.formatMessage)({
-					id: "Tên tài khoản"
+					id: "Chủ Tài khoản"
 				})), s.a.createElement(o.a, {
 					type: "text",
 					className: "form-control",
