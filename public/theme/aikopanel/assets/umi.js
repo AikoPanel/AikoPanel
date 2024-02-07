@@ -31914,7 +31914,8 @@
 					}, f.a.createElement("span", {
 						className: "dvs-thongtin1-version"
 					}, Object(x.formatMessage)({
-						id: "Versions v" + window.settings.version
+						// id: "Versions v" + window.settings.version
+						id: window.settings.version
 					}))))), f.a.createElement("img", {
 						className: "avatar-aiko-dvs",
 						alt: "Avatar",
