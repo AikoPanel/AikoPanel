@@ -7113,20 +7113,32 @@
 						title: "Cloudflare API",
 						description: "Cloudflare API sẽ được sử dụng để cập nhật IP của máy chủ của bạn vào Cloudflare"
 					}, f.a.createElement(a.a, {
+						addonAfter: "Email Cloudflare",
+						size: "large",
+						type: "text",
+						placeholder: "Vui lòng nhập Email Cloudflare của bạn",
+						defaultValue: aikopanel.cloudflare_email,
+						onChange: e => this.set("aikopanel", "cloudflare_email", e.target.value)
+					}), f.a.createElement(a.a, {
+						addonAfter: "Global API Token",
+						size: "large",
+						type: "text",
+						placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
+						defaultValue: aikopanel.cloudflare_api_token,
+						onChange: e => this.set("aikopanel", "cloudflare_api_token", e.target.value)
+					}))), aikopanel.cloudflare_email && aikopanel.cloudflare_api_token ? f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
+						title: "Zone ID",
+						description: "Zone ID sẽ được sử dụng để cập nhật một số chức năng liên quan tới Cloudflare"
+					}, f.a.createElement(a.a, {
 						addonAfter: "Zone ID",
 						size: "large",
 						type: "text",
 						placeholder: "Vui lòng nhập Zone ID của bạn",
 						defaultValue: aikopanel.cloudflare_zone_id,
 						onChange: e => this.set("aikopanel", "cloudflare_zone_id", e.target.value)
-					}), f.a.createElement(a.a, {
-						addonAfter: "API Token",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
-						defaultValue: aikopanel.cloudflare_api_token,
-						onChange: e => this.set("aikopanel", "cloudflare_api_token", e.target.value)
-					}))), f.a.createElement("div", {
+					}))): "" , f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
 						title: "Kết nối AppleID",
