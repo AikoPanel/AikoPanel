@@ -7120,13 +7120,13 @@
 						defaultValue: aikopanel.cloudflare_email,
 						onChange: e => this.set("aikopanel", "cloudflare_email", e.target.value)
 					}), f.a.createElement(a.a, {
-						addonAfter: "Global API Token",
+						addonAfter: "Global API Key",
 						size: "large",
 						type: "text",
 						placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
-						defaultValue: aikopanel.cloudflare_api_token,
-						onChange: e => this.set("aikopanel", "cloudflare_api_token", e.target.value)
-					}))), aikopanel.cloudflare_email && aikopanel.cloudflare_api_token ? f.a.createElement("div", {
+						defaultValue: aikopanel.cloudflare_api_key,
+						onChange: e => this.set("aikopanel", "cloudflare_api_key", e.target.value)
+					}))), aikopanel.cloudflare_email && aikopanel.cloudflare_api_key ? f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
 						title: "Zone ID",
