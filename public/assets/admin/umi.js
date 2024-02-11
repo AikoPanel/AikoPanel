@@ -6993,7 +6993,16 @@
 						className: "form-control",
 						placeholder: "SNI của website, phân cách bằng dấu ,",
 						defaultValue: advanced.sni,
-						onChange: e => this.set("advanced", "sni", e.target.value.split(","))
+						onChange: e => {
+							const sniArray = e.target.value.split(",").map(s => {
+								const parts = s.split("|");
+								return {
+									value: parts[0], // Phần trước dấu | là value
+									label: parts[1] || "" // Phần sau dấu | là label, nếu không có thì trả về chuỗi rỗng
+								};
+							});
+							this.set("advanced", "sni", sniArray);
+						}						
 					})), f.a.createElement("div", {
 							className: ""
 						},
