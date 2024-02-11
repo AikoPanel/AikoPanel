@@ -6984,16 +6984,15 @@
 						className: "mb-0"
 					}, "Đây là bản điều khiển để sử dụng một số chức năng nâng cao của AikoPanel, Hãy tìm hiểu kỹ trước khi quyết định thay đổi một thứ gì. ", f.a.createElement("b", null, f.a.createElement("a", {
 						href: "https://docs.aikopanel.com/"
-					}, "Hướng đẫn của AikoPanel"))))))), 
-						f.a.createElement(m, {
-							title: "Tuỳ chọn cách config SNI của website",
-							description: ""
-						}, f.a.createElement(c.a, {
-							checkedChildren: "Admin",
-							unCheckedChildren: "Customer",
-							checked: "admin" === advanced.type_change_sni ? 1 : 0,
-							onChange: e => this.set("advanced", "type_change_sni", e ? "admin" : "customer")
-						})), advanced.type_change_sni ? f.a.createElement(m, {
+					}, "Hướng đẫn của AikoPanel"))))))), f.a.createElement(m, {
+						title: "Tuỳ chọn cách config SNI của website",
+						description: "Nếu bạn muốn custom thì file nằm ở thư mục /App/Utils/CustomSni.php"
+					}, f.a.createElement(c.a, {
+						checkedChildren: "Admin",
+						unCheckedChildren: "Customer",
+						checked: 1 === advanced.type_change_sni ? 1 : 0,
+						onChange: e => this.set("advanced", "type_change_sni", e ? 1 : 0)
+					})), advanced.type_change_sni ? f.a.createElement(m, {
 						title: "SNI của website",
 						description: "SNI custom cho website, nếu bạn không biết bạn cần làm gì thì hãy để trống"
 					}, f.a.createElement("textarea", {
