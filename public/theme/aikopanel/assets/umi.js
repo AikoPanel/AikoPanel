@@ -1005,20 +1005,12 @@
 							href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
 						}),
 						t.push({
-							title: "V2Box",
-							href: "v2box://install-sub/?url=" + encodeURIComponent(e + "&flag=v2box") + "&name=" + window.settings.title
-						}),
-						t.push({
 							title: "Surge",
 							href: "surge:///install-config?url=" + encodeURIComponent(e) + "&name=" + window.settings.title
 						}),
 						t.push({
 							title: "Stash",
 							href: "stash://install-config?url=" + encodeURIComponent(e) + "&name=" + window.settings.title
-						}),
-						t.push({
-							title: "Streisand",
-							href: "streisand://import/" + e + "&name=" + window.settings.title,
 						})),
 					Object(l.k)() && (t.push({
 							title: "ClashX",
@@ -1041,14 +1033,6 @@
 							href: "quantumult-x:///update-configuration?remote-resource=" + encodeURI(JSON.stringify({
 								server_remote: [e + "&flag=qxping, tag=" + window.settings.title]
 							}))
-						}),
-						t.push({
-							title: "V2Box",
-							href: "v2box://install-sub/?url=" + encodeURIComponent(e + "&flag=v2box") + "&name=" + window.settings.title
-						}),
-						t.push({
-							title: "Streisand",
-							href: "streisand://import/" + e + "&name=" + window.settings.title,
 						})),
 					Object(l.n)() && (t.push({
 							title: "ClashMeta",
@@ -1073,14 +1057,11 @@
 							title: "ClashMeta For Android",
 							href: "clash://install-config?url=" + encodeURIComponent(e + "&flag=meta") + "&name=" + window.settings.title
 						}),
-						t.push({
-							title: "Karing",
-							href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
-						}),
-						t.push({
-							title: "V2Box",
-							href: "v2box://install-sub/?url=" + encodeURIComponent(e + "&flag=v2box") + "&name=" + window.settings.title
-						}),
+						// Karing for android support comming soon
+						// t.push({
+						// 	title: "Karing",
+						// 	href: "karing://install-config?url=" + encodeURIComponent(e + "&flag=karing") + "&name=" + window.settings.title
+						// }),
 						t.push({
 							title: "Surfboard",
 							href: "surge:///install-config?url=" + encodeURIComponent(e) + "&name=" + window.settings.title

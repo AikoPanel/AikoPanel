@@ -6800,6 +6800,13 @@
 					}, f.a.createElement(c.a, {
 						checked: parseInt(w.app_windows_v2rayn),
 						onChange: e => this.set("app", "app_windows_v2rayn", e ? 1 : 0)
+					}))) : " ",parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+						isChildren: !0,
+						title: "Karing",
+						description: "Cho phép người dùng tải xuống Karing"
+					}, f.a.createElement(c.a, {
+						checked: parseInt(w.app_windows_karing),
+						onChange: e => this.set("app", "app_windows_karing", e ? 1 : 0)
 					}))) : " ", f.a.createElement(m, {
 						title: "App macOS",
 						description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
@@ -6843,11 +6850,11 @@
 						onChange: e => this.set("app", "app_macos_qx", e ? 1 : 0)
 					}))) : " ", parseInt(w.app_macos_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 						isChildren: !0,
-						title: "V2Box",
-						description: "Cho phép người dùng tải xuống V2Box"
+						title: "Karing",
+						description: "Cho phép người dùng tải xuống Karing"
 					}, f.a.createElement(c.a, {
-						checked: parseInt(w.app_macos_v2box),
-						onChange: e => this.set("app", "app_macos_v2box", e ? 1 : 0)
+						checked: parseInt(w.app_macos_karing),
+						onChange: e => this.set("app", "app_macos_karing", e ? 1 : 0)
 					}))) : " ", f.a.createElement(m, {
 						title: "App IOS",
 						description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
@@ -6898,11 +6905,11 @@
 						onChange: e => this.set("app", "app_ios_streisand", e ? 1 : 0)
 					}))) : " ", parseInt(w.app_ios_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 						isChildren: !0,
-						title: "V2Box",
-						description: "Cho phép người dùng tải xuống V2Box"
+						title: "Karing",
+						description: "Cho phép người dùng tải xuống Karing"
 					}, f.a.createElement(c.a, {
-						checked: parseInt(w.app_ios_v2box),
-						onChange: e => this.set("app", "app_ios_v2box", e ? 1 : 0)
+						checked: parseInt(w.app_ios_karing),
+						onChange: e => this.set("app", "app_ios_karing", e ? 1 : 0)
 					}))) : " ", f.a.createElement(m, {
 						title: "App Android",
 						description: "Sau khi mở sẽ hiển thị cho phép tải app trên trang người dùng"
@@ -6951,14 +6958,17 @@
 					}, f.a.createElement(c.a, {
 						checked: parseInt(w.app_android_v2rayng),
 						onChange: e => this.set("app", "app_android_v2rayng", e ? 1 : 0)
-					}))) : " ", parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "V2Box",
-						description: "Cho phép người dùng tải xuống V2Box"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(w.app_android_v2box),
-						onChange: e => this.set("app", "app_android_v2box", e ? 1 : 0)
-					}))) : " "), f.a.createElement(s.a.TabPane, {
+					}))) : " ", 
+					// Karing support comming soon
+					// parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					// 	isChildren: !0,
+					// 	title: "Karing",
+					// 	description: "Cho phép người dùng tải xuống Karing"
+					// }, f.a.createElement(c.a, {
+					// 	checked: parseInt(w.app_android_karing),
+					// 	onChange: e => this.set("app", "app_android_karing", e ? 1 : 0)
+					// }))) : " "
+					), f.a.createElement(s.a.TabPane, {
 						tab: "Nâng cao",
 						key: "advanced"
 					}, f.a.createElement("div", {
