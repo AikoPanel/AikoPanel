@@ -15785,10 +15785,10 @@
 									role: "alert"
 								},
 								Object(h.formatMessage)({
-									id: "Nếu bạn chưa có tên miền, vui lòng tham khảo đăng ký tên miền chỉ 29k "
+									id: "Nếu bạn chưa có tên miền, vui lòng tham khảo đăng ký tên miền"
 								}),
 								l.a.createElement("a", {
-									href: "https://inet.vn/dang-ky-ten-mien?aff=451767",
+									href: "https://tenten.vn/affiliate-tenten?p=VN&u=aikocute",
 									target: "_blank",
 									rel: "noopener noreferrer",
 									style: {
