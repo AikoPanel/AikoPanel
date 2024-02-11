@@ -78962,7 +78962,7 @@
 							})
 						})
 					}
-				}, type_change_sni ? e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
+				}, e.type_change_sni ? e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
 					value: e
 				}, e))): e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
 					value: e.value 
