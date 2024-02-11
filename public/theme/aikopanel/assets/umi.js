@@ -15722,13 +15722,11 @@
 					className: "form-control",
 					ref: this.setSelectRef,
 					onChange: this.handleSelectChange
-				}, s.type_change_sni ? l.a.createElement("option", {
+				}, l.a.createElement("option", {
 					value: ""
 				}, Object(h.formatMessage)({
 					id: "--Chọn SNI--"
-				})): l.a.createElement("option", {
-					value: e.sni
-				}, e.name), s.type_change_sni ? s.sni && s.sni.map((e => l.a.createElement("option", {
+				})), s.type_change_sni ? s.sni && s.sni.map((e => l.a.createElement("option", {
 					value: e
 				}, e))) : s.sni && s.sni.map((e => l.a.createElement("option", {
 					value: e.value
