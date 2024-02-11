@@ -16266,36 +16266,37 @@
 						}), Object(m.formatMessage)({
 							id: "Tải Xuống"
 						}))))) : u.a.createElement(u.a.Fragment, null),
-						Android?.v2box ? u.a.createElement("div", {
-							className: "block join_dvs_disscuss"
-						}, u.a.createElement("div", {
-							className: "block-rounded-price"
-						}, u.a.createElement("div", {
-							className: "block-rounded-price-dvs"
-						}, Android?.v2box.price)), u.a.createElement("div", {
-							className: "block-rounded-join"
-						}, u.a.createElement("div", {
-							className: "block-rounded-join-dvs"
-						}, Object(m.formatMessage)({
-							id: "Phiên bản"
-						}), ": ", Android?.v2box.version)), u.a.createElement("div", {
-							className: "block-header-dvs block-header block-header-default"
-						}, u.a.createElement("div", {
-							className: "dvs-title"
-						}, u.a.createElement("div", null, u.a.createElement("img", {
-							className: "dvs-aiko-application",
-							src: '/theme/aikopanel/assets/images/icon/V2Box.png'
-						}), Android?.v2box.name)), u.a.createElement("div", {
-							className: "block-options"
-						}, u.a.createElement("a", {
-							href: Android?.v2box.link,
-							target: "_blank",
-							className: "btn-dvs"
-						}, u.a.createElement("i", {
-							className: "fa fa-download"
-						}), Object(m.formatMessage)({
-							id: "Tải Xuống"
-						}))))) : u.a.createElement(u.a.Fragment, null),
+						// Karing support Android in the future
+						// Android?.karing ? u.a.createElement("div", {
+						// 	className: "block join_dvs_disscuss"
+						// }, u.a.createElement("div", {
+						// 	className: "block-rounded-price"
+						// }, u.a.createElement("div", {
+						// 	className: "block-rounded-price-dvs"
+						// }, Android?.karing.price)), u.a.createElement("div", {
+						// 	className: "block-rounded-join"
+						// }, u.a.createElement("div", {
+						// 	className: "block-rounded-join-dvs"
+						// }, Object(m.formatMessage)({
+						// 	id: "Phiên bản"
+						// }), ": ", Android?.karing.version)), u.a.createElement("div", {
+						// 	className: "block-header-dvs block-header block-header-default"
+						// }, u.a.createElement("div", {
+						// 	className: "dvs-title"
+						// }, u.a.createElement("div", null, u.a.createElement("img", {
+						// 	className: "dvs-aiko-application",
+						// 	src: '/theme/aikopanel/assets/images/icon/Karing.png'
+						// }), Android?.karing.name)), u.a.createElement("div", {
+						// 	className: "block-options"
+						// }, u.a.createElement("a", {
+						// 	href: Android?.karing.link,
+						// 	target: "_blank",
+						// 	className: "btn-dvs"
+						// }, u.a.createElement("i", {
+						// 	className: "fa fa-download"
+						// }), Object(m.formatMessage)({
+						// 	id: "Tải Xuống"
+						// }))))) : u.a.createElement(u.a.Fragment, null),
 						Android?.cfa ? u.a.createElement("div", {
 							className: "block join_dvs_disscuss"
 						}, u.a.createElement("div", {
@@ -16489,29 +16490,29 @@
 						}), Object(m.formatMessage)({
 							id: "Tải Xuống"
 						}))))) : u.a.createElement(u.a.Fragment, null),
-						iOS?.v2box ? u.a.createElement("div", {
+						iOS?.karing ? u.a.createElement("div", {
 							className: "block join_dvs_disscuss"
 						}, u.a.createElement("div", {
 							className: "block-rounded-price"
 						}, u.a.createElement("div", {
 							className: "block-rounded-price-dvs"
-						}, iOS?.v2box.price)), u.a.createElement("div", {
+						}, iOS?.karing.price)), u.a.createElement("div", {
 							className: "block-rounded-join"
 						}, u.a.createElement("div", {
 							className: "block-rounded-join-dvs"
 						}, Object(m.formatMessage)({
 							id: "Phiên bản"
-						}), ": ", iOS?.v2box.version)), u.a.createElement("div", {
+						}), ": ", iOS?.karing.version)), u.a.createElement("div", {
 							className: "block-header-dvs block-header block-header-default"
 						}, u.a.createElement("div", {
 							className: "dvs-title"
 						}, u.a.createElement("div", null, u.a.createElement("img", {
 							className: "dvs-aiko-application",
-							src: '/theme/aikopanel/assets/images/icon/V2Box.png'
-						}), iOS?.v2box.name)), u.a.createElement("div", {
+							src: '/theme/aikopanel/assets/images/icon/Karing.png'
+						}), iOS?.karing.name)), u.a.createElement("div", {
 							className: "block-options"
 						}, u.a.createElement("a", {
-							href: iOS?.v2box.link,
+							href: iOS?.karing.link,
 							target: "_blank",
 							className: "btn-dvs"
 						}, u.a.createElement("i", {
@@ -16816,29 +16817,29 @@
 						}), Object(m.formatMessage)({
 							id: "Tải Xuống"
 						}))))) : u.a.createElement(u.a.Fragment, null),
-						macOS?.v2box ? u.a.createElement("div", {
+						macOS?.karing ? u.a.createElement("div", {
 							className: "block join_dvs_disscuss"
 						}, u.a.createElement("div", {
 							className: "block-rounded-price"
 						}, u.a.createElement("div", {
 							className: "block-rounded-price-dvs"
-						}, macOS?.v2box.price)), u.a.createElement("div", {
+						}, macOS?.karing.price)), u.a.createElement("div", {
 							className: "block-rounded-join"
 						}, u.a.createElement("div", {
 							className: "block-rounded-join-dvs"
 						}, Object(m.formatMessage)({
 							id: "Phiên bản"
-						}), ": ", macOS?.v2box.version)), u.a.createElement("div", {
+						}), ": ", macOS?.karing.version)), u.a.createElement("div", {
 							className: "block-header-dvs block-header block-header-default"
 						}, u.a.createElement("div", {
 							className: "dvs-title"
 						}, u.a.createElement("div", null, u.a.createElement("img", {
 							className: "dvs-aiko-application",
-							src: '/theme/aikopanel/assets/images/icon/V2Box.png'
-						}), macOS?.v2box.name)), u.a.createElement("div", {
+							src: '/theme/aikopanel/assets/images/icon/Karing.png'
+						}), macOS?.karing.name)), u.a.createElement("div", {
 							className: "block-options"
 						}, u.a.createElement("a", {
-							href: macOS?.v2box.link,
+							href: macOS?.karing.link,
 							target: "_blank",
 							className: "btn-dvs"
 						}, u.a.createElement("i", {
