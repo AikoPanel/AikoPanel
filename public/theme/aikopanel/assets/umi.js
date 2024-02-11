@@ -16683,6 +16683,36 @@
 						}), Object(m.formatMessage)({
 							id: "Tải Xuống"
 						}))))) : u.a.createElement(u.a.Fragment, null),
+						Windows?.karing ? u.a.createElement("div", {
+							className: "block join_dvs_disscuss"
+						}, u.a.createElement("div", {
+							className: "block-rounded-price"
+						}, u.a.createElement("div", {
+							className: "block-rounded-price-dvs"
+						}, Windows?.karing.price)), u.a.createElement("div", {
+							className: "block-rounded-join"
+						}, u.a.createElement("div", {
+							className: "block-rounded-join-dvs"
+						}, Object(m.formatMessage)({
+							id: "Phiên bản"
+						}), ": ", Windows?.karing.version)), u.a.createElement("div", {
+							className: "block-header-dvs block-header block-header-default"
+						}, u.a.createElement("div", {
+							className: "dvs-title"
+						}, u.a.createElement("div", null, u.a.createElement("img", {
+							className: "dvs-aiko-application",
+							src: '/theme/aikopanel/assets/images/icon/Karing.png'
+						}), Windows?.karing.name)), u.a.createElement("div", {
+							className: "block-options"
+						}, u.a.createElement("a", {
+							href: Windows?.karing.link,
+							target: "_blank",
+							className: "btn-dvs"
+						}, u.a.createElement("i", {
+							className: "fa fa-download"
+						}), Object(m.formatMessage)({
+							id: "Tải Xuống"
+						}))))) : u.a.createElement(u.a.Fragment, null),
 					),
 					u.a.createElement("div", {
 						className: "block-options"
