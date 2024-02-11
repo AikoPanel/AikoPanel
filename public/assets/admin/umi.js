@@ -6985,8 +6985,8 @@
 					}, "Đây là bản điều khiển để sử dụng một số chức năng nâng cao của AikoPanel, Hãy tìm hiểu kỹ trước khi quyết định thay đổi một thứ gì. ", f.a.createElement("b", null, f.a.createElement("a", {
 						href: "https://docs.aikopanel.com/"
 					}, "Hướng đẫn của AikoPanel"))))))), f.a.createElement(m, {
-						title: "Tuỳ chọn cách config SNI của website",
-						description: "Nếu bạn muốn custom thì file nằm ở thư mục /App/Utils/CustomSni.php"
+						title: "Tuỳ chọn cách config SNI của website (Bật là Admin) ",
+						description: "Nếu tắt thì config SNI ở  /App/Utils/CustomSni.php bật thì trực tiếp tại admin"
 					}, f.a.createElement(c.a, {
 						checked: parseInt(advanced.type_change_sni),
 						onChange: e => this.set("advanced", "type_change_sni", e ? 1 : 0)
