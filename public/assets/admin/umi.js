@@ -78657,6 +78657,7 @@
 			componentDidMount() {
 				this.props.dispatch({
 						type: "config/fetch",
+						key: "site"
 					}),
 					this.props.dispatch({
 						type: "serverGroup/fetch"
@@ -78964,13 +78965,19 @@
 				}, m.a.createElement(_.a.Option, {
 					key: null,
 					value: null
-				}, "Mặc định ( Theo Node )"), type_change_sni ? e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
-					key: e,
-					value: e
-				}, e))): e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
-					key: e.value,
-					value: e.value
-				}, e.label ))))), m.a.createElement("div", {
+				}, "Mặc định ( Theo Node )"), m.a.createElement(_.a.Option, {
+					key: 'dl.ops.kgvn.garenanow.com',
+					value: 'dl.ops.kgvn.garenanow.com'
+				}, "Liên quân"), m.a.createElement(_.a.Option, {
+					key: 'dl.aw.freefiremobile.com',
+					value: 'dl.aw.freefiremobile.com'
+				}, "Free Fire"), m.a.createElement(_.a.Option, {
+					key: 'v9.tiktokcdn.com',
+					value: 'v9.tiktokcdn.com'
+				}, "Tik Tok"), m.a.createElement(_.a.Option, {
+					key: 'www.linemo.jp',
+					value: 'www.linemo.jp'
+				}, "Japan ( Softbank )"))), m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
