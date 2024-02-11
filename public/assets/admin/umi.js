@@ -6984,7 +6984,16 @@
 						className: "mb-0"
 					}, "Đây là bản điều khiển để sử dụng một số chức năng nâng cao của AikoPanel, Hãy tìm hiểu kỹ trước khi quyết định thay đổi một thứ gì. ", f.a.createElement("b", null, f.a.createElement("a", {
 						href: "https://docs.aikopanel.com/"
-					}, "Hướng đẫn của AikoPanel"))))))), f.a.createElement(m, {
+					}, "Hướng đẫn của AikoPanel"))))))), 
+						f.a.createElement(m, {
+							title: "Tuỳ chọn cách config SNI của website",
+							description: ""
+						}, f.a.createElement(c.a, {
+							checkedChildren: "Admin",
+							unCheckedChildren: "Customer",
+							checked: "admin" === advanced.change_sni_type ? 1 : 0,
+							onChange: e => this.set("advanced", "change_sni_type", e ? "admin" : "customer")
+						})), advanced.change_sni_type ? f.a.createElement(m, {
 						title: "SNI của website",
 						description: "SNI custom cho website, nếu bạn không biết bạn cần làm gì thì hãy để trống"
 					}, f.a.createElement("textarea", {
@@ -6993,28 +7002,10 @@
 						className: "form-control",
 						placeholder: "SNI của website, phân cách bằng dấu ,",
 						defaultValue: advanced.sni,
-						onChange: e => {
-							const sniArray = e.target.value.split(",").map(s => {
-								const parts = s.split("|");
-								return {
-									value: parts[0], // Phần trước dấu | là value
-									label: parts[1] || "" // Phần sau dấu | là label, nếu không có thì trả về chuỗi rỗng
-								};
-							});
-							this.set("advanced", "sni", sniArray);
-						}						
-					})), f.a.createElement("div", {
+						onChange: e => this.set("advanced", "sni", e.target.value.split(","))
+					})): "", f.a.createElement("div", {
 							className: ""
 						},
-						// f.a.createElement(m, {
-						// 	title: "Kiểu tiêu đề",
-						// 	description: "Kiểu tiêu đề sẽ thay đổi màu sắc của tiêu đề và chân trang"
-						// }, f.a.createElement(c.a, {
-						// 	checkedChildren: "Sáng",
-						// 	unCheckedChildren: "Tối",
-						// 	checked: "light" === l.frontend_theme_header ? 1 : 0,
-						// 	onChange: e => this.set("site", "frontend_theme_header", e ? "light" : "dark")
-						// })), 
 						f.a.createElement(m, {
 							title: "Sing-Box Config",
 							description: "Loại config sẽ được sử dụng cho Sing-Box, Lưu ý rằng bạn phải cập nhật lại config sing-box sau khi thay đổi loại config này"
@@ -17280,13 +17271,7 @@
 									case 9:
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
-											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",").map(s => {
-												const parts = s.split("|");
-												return {
-													value: parts[0], // Lấy phần đầu tiên làm value
-													label: parts.length > 1 ? parts[1] : "" // Nếu có phần thứ hai thì lấy làm label, không thì trả về chuỗi rỗng
-												};
-											})),											
+											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
 											e.next = 13,
 											r({
 												type: "setState",

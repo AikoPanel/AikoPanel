@@ -15726,9 +15726,11 @@
 					value: ""
 				}, Object(h.formatMessage)({
 					id: "--Chọn SNI--"
-				})), s.sni && s.sni.map((e => l.a.createElement("option", {
+				})), s.type_change_sni ? s.sni && s.sni.map((e => l.a.createElement("option", {
 					value: e
-				}, e))), l.a.createElement("option", {
+				}, e))) : s.sni && s.sni.map((e => l.a.createElement("option", {
+					value: e.value
+				}, e.lable))) , l.a.createElement("option", {
 					value: "0"
 				}, Object(h.formatMessage)({
 					id: "Tùy Chỉnh SNI Riêng"
