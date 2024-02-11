@@ -36679,7 +36679,8 @@
 				}, a.a.createElement("div", {
 					className: "dvs-thongtin1-dangnhap"
 				}, Object(u.formatMessage)({
-					id: "AikoPanel v" + window.settings.version
+					// id: "AikoPanel v" + window.settings.version
+					id: window.settings.version
 				})))))), a.a.createElement("div", {
 					className: "block aiko-dvs-dangnhap block-rounded block-transparent block-fx-pop w-100 mb-0 overflow-hidden bg-image",
 					style: {
@@ -51095,7 +51096,8 @@
 				}, a.a.createElement("div", {
 					className: "dvs-thongtin1-dangnhap"
 				}, Object(u.formatMessage)({
-					id: "AikoPanel v" + window.settings.version
+					// id: "AikoPanel v" + window.settings.version
+					id: window.settings.version
 				})))))), a.a.createElement("div", {
 					className: "block aiko-dvs-dangnhap block-rounded block-transparent block-fx-pop w-100 mb-0 overflow-hidden bg-image",
 					style: {
