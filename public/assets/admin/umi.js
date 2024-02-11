@@ -6984,7 +6984,17 @@
 						className: "mb-0"
 					}, "Đây là bản điều khiển để sử dụng một số chức năng nâng cao của AikoPanel, Hãy tìm hiểu kỹ trước khi quyết định thay đổi một thứ gì. ", f.a.createElement("b", null, f.a.createElement("a", {
 						href: "https://docs.aikopanel.com/"
-					}, "Hướng đẫn của AikoPanel"))))))), f.a.createElement("div", {
+					}, "Hướng đẫn của AikoPanel"))))))), f.a.createElement(m, {
+						title: "SNI của website",
+						description: "SNI custom cho website, nếu bạn không biết bạn cần làm gì thì hãy để trống"
+					}, f.a.createElement("textarea", {
+						rows: "4",
+						type: "text",
+						className: "form-control",
+						placeholder: "SNI của website, phân cách bằng dấu ,",
+						defaultValue: advanced.sni,
+						onChange: e => this.set("advanced", "sni", e.target.value.split(","))
+					})), f.a.createElement("div", {
 							className: ""
 						},
 						// f.a.createElement(m, {
@@ -17226,7 +17236,7 @@
 					var n = e.key,
 						r = t.put;
 					return u().mark((function e() {
-						var t, o, i;
+						var t, o, sni, i;
 						return u().wrap((function(e) {
 							for (;;)
 								switch (e.prev = e.next) {
@@ -17261,6 +17271,7 @@
 									case 9:
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
+											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
 											e.next = 13,
 											r({
 												type: "setState",
