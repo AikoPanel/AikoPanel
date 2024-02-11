@@ -17687,10 +17687,10 @@ a.text-muted:focus,a.text-muted:hover {
 }
 
 .text-white {
-    color: #000!important;
+    color: #fff!important
 }
 
-.v2board-container-title {
+.aikopanel-container-title {
     flex: 1 1;
     color: white;
 }
@@ -17728,7 +17728,7 @@ a.text-white-50:focus,a.text-white-50:hover {
 }
 
 .text-white-75 {
-    color: #000;
+    color: #fff;
     font-weight: 700;
 }
 

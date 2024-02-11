@@ -25161,7 +25161,7 @@
 				}, Object(l.formatMessage)({
 					id: "Tìm Kiếm"
 				})))), a.a.createElement("div", {
-					className: "dark" === v.header ? "v2board-container-title text-white" : "v2board-container-title text-black"
+					className: "dark" === v.header ? "aikopanel-container-title text-white" : "aikopanel-container-title text-black"
 				}, this.props.title), a.a.createElement("div", null, a.a.createElement("div", {
 					className: "dropdown d-inline-block"
 				}, a.a.createElement("button", {
@@ -31770,7 +31770,7 @@
 					className: "font-size-lg text-white mb-1"
 				}, e.title), f.a.createElement("p", {
 					className: "font-w600 text-white-75"
-				}, y()(1e3 * e.created_at).format("DD-MM-YYYY HH"))))
+				}, y()(1e3 * e.created_at).format("DD-MM-YYYY"))))
 			}
 			resetPackage() {
 				var e = this.props.user.subscribe,
