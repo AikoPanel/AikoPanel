@@ -78657,7 +78657,6 @@
 			componentDidMount() {
 				this.props.dispatch({
 						type: "config/fetch",
-						key: "site"
 					}),
 					this.props.dispatch({
 						type: "serverGroup/fetch"
@@ -78682,7 +78681,8 @@
 				})
 			}
 			render() {
-				var e = this.props.config,
+				var e = this.props.config.site,
+					sni = this.props.config.advanced.sni,
 					t = this.props.plan.saveLoading,
 					n = this.props.serverGroup.groups;
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
@@ -78962,11 +78962,11 @@
 							})
 						})
 					}
-				}, e.type_change_sni ? e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
-					value: e
-				}, e))): e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
-					value: e.value 
-				}, e.lable))))), m.a.createElement("div", {
+				}, sni.type_change_sni ? sni.sni && sni.sni.map((e => m.a.createElement(_.a.Option, {
+					value: sni
+				}, sni))): e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
+					value: sni.value
+				}, sni.lable))))), m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
