@@ -17271,8 +17271,7 @@
 									case 9:
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
-											// giữa các sni gồm 2 giá trị value và label nên cần phải chuyển đổi từ string sang mảng cách nhau bởi dấu |
-											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",").map(sni => { return { value: sni.split("|")[0], name: sni.split("|")[1] } })),
+											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.map(sni => `${sni.value}|${sni.name}`).join(",")),
 											e.next = 13,
 											r({
 												type: "setState",
