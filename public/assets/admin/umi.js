@@ -78681,8 +78681,7 @@
 				})
 			}
 			render() {
-				var e = this.props.config.site,
-					sni = this.props.config.advanced.sni,
+				var e = this.props.config,
 					t = this.props.plan.saveLoading,
 					n = this.props.serverGroup.groups;
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
@@ -78962,11 +78961,16 @@
 							})
 						})
 					}
-				}, sni.type_change_sni ? sni.sni && sni.sni.map((e => m.a.createElement(_.a.Option, {
-					value: sni
-				}, sni))): e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
-					value: sni.value
-				}, sni.lable))))), m.a.createElement("div", {
+				}, m.a.createElement(_.a.Option, {
+					key: null,
+					value: null
+				}, "Mặc định ( Theo Node )"), type_change_sni ? e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
+					key: e,
+					value: e
+				}, e))): e.sni && e.sni.map((e => m.a.createElement(_.a.Option, {
+					key: e.value,
+					value: e.value
+				}, e.label ))))), m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
