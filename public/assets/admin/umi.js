@@ -17274,7 +17274,7 @@
 											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",").map(item => {
 												const [value, name] = item.split("|");
 												return { value, name };
-											}));
+											})),
 											e.next = 13,
 											r({
 												type: "setState",
