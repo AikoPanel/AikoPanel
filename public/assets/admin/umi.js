@@ -17271,7 +17271,13 @@
 									case 9:
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
-											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
+											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",").map(s => {
+												const parts = s.split("|");
+												return {
+													value: parts[0], // Lấy phần đầu tiên làm value
+													label: parts.length > 1 ? parts[1] : "" // Nếu có phần thứ hai thì lấy làm label, không thì trả về chuỗi rỗng
+												};
+											})),											
 											e.next = 13,
 											r({
 												type: "setState",
