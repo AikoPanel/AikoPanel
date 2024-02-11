@@ -6990,9 +6990,9 @@
 					}, f.a.createElement(c.a, {
 						checkedChildren: "Admin",
 						unCheckedChildren: "Customer",
-						checked: 1 === advanced.type_change_sni ? 1 : 0,
+						checked: parseInt(advanced.type_change_sni),
 						onChange: e => this.set("advanced", "type_change_sni", e ? 1 : 0)
-					})), advanced.type_change_sni ? f.a.createElement(m, {
+					})), parseInt(advanced.type_change_sni) ? f.a.createElement(m, {
 						title: "SNI của website",
 						description: "SNI custom cho website, nếu bạn không biết bạn cần làm gì thì hãy để trống"
 					}, f.a.createElement("textarea", {
@@ -7002,7 +7002,7 @@
 						placeholder: "SNI của website, phân cách bằng dấu ,",
 						defaultValue: advanced.sni,
 						onChange: e => this.set("advanced", "sni", e.target.value.split(","))
-					})): "", f.a.createElement("div", {
+					})): "" , f.a.createElement("div", {
 							className: ""
 						},
 						f.a.createElement(m, {
