@@ -15726,23 +15726,9 @@
 					value: ""
 				}, Object(h.formatMessage)({
 					id: "--Chọn SNI--"
-				})), l.a.createElement("option", {
-					value: "1"
-				}, Object(h.formatMessage)({
-					id: "SNI Liên Quân"
-				})), l.a.createElement("option", {
-					value: "2"
-				}, Object(h.formatMessage)({
-					id: "SNI Free Fire"
-				})), l.a.createElement("option", {
-					value: "3"
-				}, Object(h.formatMessage)({
-					id: "SNI Tiktok"
-				})), l.a.createElement("option", {
-					value: "4"
-				}, Object(h.formatMessage)({
-					id: "SNI Softbank Nhật Bản"
-				})), l.a.createElement("option", {
+				})), s.sni && s.sni.map((e => l.a.createElement("option", {
+					value: e
+				}, e))), l.a.createElement("option", {
 					value: "0"
 				}, Object(h.formatMessage)({
 					id: "Tùy Chỉnh SNI Riêng"
