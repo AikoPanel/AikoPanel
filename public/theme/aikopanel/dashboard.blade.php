@@ -10,6 +10,12 @@
         <link rel="stylesheet" href="/theme/{{$theme}}/assets/custom.css?v={{$version}}">
     @endif
     <meta charset="utf-8">
+    <meta property="og:title" content="{{$title}}">
+    <meta property="og:site_name" content="{{$title}}">
+    <meta property="og:description" content="{{$description}}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{$theme_config['background_url']}}">
+    <link rel="icon" href='{{$logo}}'>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     @php ($colors = [
         'darkblue' => '#3b5998',
