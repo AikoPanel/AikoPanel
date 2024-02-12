@@ -18619,7 +18619,7 @@
 					href: "/"
 				}, i.a.createElement("span", {
 					className: "text-white-75"
-				}, window.settings.title ? window.settings.title : "")), i.a.createElement("div", {
+				}, window.settings.title ? window.settings.title : "AikoPanel")), i.a.createElement("div", {
 					className: "d-lg-none"
 				}, i.a.createElement("a", {
 					className: "text-white ml-2",
@@ -18637,7 +18637,7 @@
 					className: "nav-main"
 				}, this.state.nav.map((e => this.renderMenu(e.type, e.title, e.href, e.icon))))), i.a.createElement("div", {
 					className: "aikopanel-copyright"
-				}, window.settings.title ? window.settings.title : window.settings.version))
+				}, window.settings.version))
 			}
 		}
 		var u = Object(c.c)((e => ({

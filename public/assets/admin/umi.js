@@ -21577,7 +21577,7 @@
 					className: "nav-main"
 				}, this.state.nav.map((e => this.renderMenu(e.type, e.title, e.href, e.icon))))), i.a.createElement("div", {
 					className: "aikopanel-copyright"
-				}, window.settings.title ? window.settings.title : window.settings.version))
+				}, window.settings.version))
 			}
 		}
 		var u = Object(c.c)((e => ({
