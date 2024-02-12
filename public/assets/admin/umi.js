@@ -7147,6 +7147,7 @@
 					}))), aikopanel.cloudflare_email && aikopanel.cloudflare_api_key ? f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
+						children: !0,
 						title: "Zone ID",
 						description: "Zone ID sẽ được sử dụng để cập nhật một số chức năng liên quan tới Cloudflare"
 					}, f.a.createElement(a.a, {
