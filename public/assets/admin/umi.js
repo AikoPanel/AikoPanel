@@ -21559,7 +21559,7 @@
 					href: "/"
 				}, i.a.createElement("span", {
 					className: "text-white-75"
-				}, window.settings.title ? window.settings.title : "")), i.a.createElement("div", {
+				}, window.settings.title ? window.settings.title : "AikoPanel")), i.a.createElement("div", {
 					className: "d-lg-none"
 				}, i.a.createElement("a", {
 					className: "text-white ml-2",
