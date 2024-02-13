@@ -22865,7 +22865,6 @@
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
 				}, "Chú Thích"), p.a.createElement("div", null, p.a.createElement(u.a.TextArea, {
-					rows: 4,
 					placeholder: "Thêm ghi chú vào đây để dễ tìm khi cần...",
 					defaultValue: t.remarks,
 					onChange: e => this.formChange("remarks", e.target.value)
