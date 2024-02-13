@@ -79002,6 +79002,32 @@
 					type: "info-circle"
 				}))), m.a.createElement("div", {
 					className: "form-group"
+				}, m.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Loại gói"), m.a.createElement(_.a, {
+					placeholder: "Loại của gói",
+					style: {
+						width: "100%"
+					},
+					value: this.state.record.plan_type,
+					onChange: e => {
+						this.setState({
+							record: d()({}, this.state.record, {
+								plan_type: e
+							})
+						})
+					}
+				}, m.a.createElement(_.a.Option, {
+					key: null,
+					value: null
+				}, "Mặc định ( Show All )"), m.a.createElement(_.a.Option, {
+					key: 1,
+					value: 1
+				}, "Gói của Admin"), m.a.createElement(_.a.Option, {
+					key: 2,
+					value: 2
+				}, "Gói của Cộng tác viên"))), 2 == this.state.record.plan_type ? m.a.createElement("div", {
+					className: "form-group"
 				}, m.a.createElement("label", null, "Gói của cộng tác viên (ID Staff)"), m.a.createElement(_.a, {
 					mode: "tags",
 					value: this.state.record.plan_of_staff || [],
@@ -79016,7 +79042,7 @@
 							})
 						})
 					}
-				})), m.a.createElement("div", {
+				})): "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
