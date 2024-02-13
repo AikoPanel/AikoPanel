@@ -22860,19 +22860,7 @@
 					defaultValue: t.staff_url,
 					placeholder: "Nếu để trống, sẽ không có URL truy cập trang CTV.",
 					onChange: e => this.formChange("staff_url", e.target.value)
-				})) : "", t.is_staff ? p.a.createElement("div", {
-					className: "form-group"
-				}, p.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "Cho phép (CTV) bán gói riêng ", p.a.createElement(a.a, {
-					placement: "top",
-					title: "Sau khi được thiết lập, CTV sẽ có thể bán gói riêng của cộng tác viên do Admin set ở mục Plan",
-				}, p.a.createElement(s.a, {
-					type: "question-circle"
-				}))), p.a.createElement("div", null, p.a.createElement(i.a, {
-					checked: t.staff_is_sell,
-					onChange: e => this.formChange("staff_is_sell", e ? 1 : 0)
-				}))) : "", p.a.createElement("div", {
+				})) : "" , p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -79028,7 +79016,7 @@
 					value: 2
 				}, "Gói của Cộng tác viên"))), 2 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
-				}, m.a.createElement("label", null, "Gói của cộng tác viên (Domain CTV)"), m.a.createElement(_.a, {
+				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
 					row: 3,
 					value: this.state.record.plan_of_staff || [],
