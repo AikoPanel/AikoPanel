@@ -79028,13 +79028,14 @@
 					value: 2
 				}, "Gói của Cộng tác viên"))), 2 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
-				}, m.a.createElement("label", null, "Gói của cộng tác viên (ID Staff)"), m.a.createElement(_.a, {
+				}, m.a.createElement("label", null, "Gói của cộng tác viên (Domain CTV)"), m.a.createElement(_.a, {
 					mode: "tags",
+					row: 3,
 					value: this.state.record.plan_of_staff || [],
 					style: {
 						width: "100%"
 					},
-					placeholder: "ID user có thể bán gói này",
+					placeholder: "Để trống nếu như tất cả cộng tác viên bán gói này",
 					onChange: e => {
 						this.setState({
 							record: d()({}, this.state.record, {
