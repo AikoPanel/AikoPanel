@@ -79013,7 +79013,10 @@
 				}, "Gói của Admin"), m.a.createElement(_.a.Option, {
 					key: 2,
 					value: 2
-				}, "Gói của Cộng tác viên"))), 2 == this.state.record.plan_type ? m.a.createElement("div", {
+				}, "Gói CTV ( không bao gồm Web chính )"), m.a.createElement(_.a.Option, {
+					key: 3,
+					value: 3
+				}, "Gói CTV ( Có bao gồm web chính )"))), 2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
