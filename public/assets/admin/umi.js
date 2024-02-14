@@ -78936,10 +78936,10 @@
 				})), m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "SNI của gói"), m.a.createElement(_.a, {
+					for: "example-text-input-alt"
+				}, "SNI của gói"), m.a.createElement(C.a, {
 					addonAfter: "SNI",
-					placeholder: "Nếu để trống là sử dụng SNI của Node",
+					placeholder: "Nếu để trống, thì sử dụng SNI của node",
 					value: this.state.record.sni,
 					onChange: e => {
 						this.setState({
