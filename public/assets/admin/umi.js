@@ -78938,15 +78938,13 @@
 				}, m.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
 				}, "SNI của gói"), m.a.createElement(_.a, {
-					placeholder: "Nếu để trống, sẽ sử dung sni của Node",
-					style: {
-						width: "100%"
-					},
+					addonAfter: "SNI",
+					placeholder: "Nếu để trống là sử dụng SNI của Node",
 					value: this.state.record.sni,
 					onChange: e => {
 						this.setState({
 							record: d()({}, this.state.record, {
-								sni: e
+								sni: e.target.value
 							})
 						})
 					}
