@@ -78950,22 +78950,7 @@
 							})
 						})
 					}
-				}, m.a.createElement(_.a.Option, {
-					key: null,
-					value: null
-				}, "Mặc định ( Theo Node )"), m.a.createElement(_.a.Option, {
-					key: 'dl.ops.kgvn.garenanow.com',
-					value: 'dl.ops.kgvn.garenanow.com'
-				}, "Liên quân"), m.a.createElement(_.a.Option, {
-					key: 'dl.aw.freefiremobile.com',
-					value: 'dl.aw.freefiremobile.com'
-				}, "Free Fire"), m.a.createElement(_.a.Option, {
-					key: 'v9.tiktokcdn.com',
-					value: 'v9.tiktokcdn.com'
-				}, "Tik Tok"), m.a.createElement(_.a.Option, {
-					key: 'www.linemo.jp',
-					value: 'www.linemo.jp'
-				}, "Japan ( Softbank )"))), m.a.createElement("div", {
+				})), m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
