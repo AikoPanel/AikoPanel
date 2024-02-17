@@ -39968,24 +39968,6 @@
 					className: "form-group"
 				}, b.a.createElement("label", {
 					for: "example-text-input-alt"
-				}, "Chỉ định trang web được sử dụng mã giảm giá (Ex: aikopanel.com)"), b.a.createElement("div", null, b.a.createElement(a.a, {
-					value: this.state.submit.limit_staff_urls || [],
-					onChange: e => {
-						this.setState({
-							submit: v()({}, this.state.submit, {
-								limit_staff_urls: e.length ? e : null
-							})
-						})
-					},
-					mode: "multiple",
-					placeholder: "Chỉ định trang web được sử dụng mã giảm giá (để trống nếu không giới hạn).",
-					style: {
-						width: "100%"
-					}
-				}))),b.a.createElement("div", {
-					className: "form-group"
-				}, b.a.createElement("label", {
-					for: "example-text-input-alt"
 				}, "Chỉ Định Gói Dịch Vụ"), b.a.createElement("div", null, b.a.createElement(a.a, {
 					value: this.state.submit.limit_plan_ids || [],
 					onChange: e => {
