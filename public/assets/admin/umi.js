@@ -5891,8 +5891,8 @@
 					}, "Thiết lập lại theo năm"), f.a.createElement("option", {
 						value: 5
 					}, "Thiết lập mỗi ngày"))), f.a.createElement(m, {
-						title: "Mở chế độ giảm giá hoặc chiết khấu",
-						description: "Sau khi kích hoạt, người dùng có thể thay đổi đơn đặt hàng, chiết khấu sẽ được áp dụng bởi hệ thống đối với đơn đặt hàng gốc, vui lòng xem tài liệu tham khảo"
+						title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
+						description: "Sau khi kích hoạt, người dùng có thể thay đổi đơn đặt hàng, chiết khấu sẽ được áp dụng bởi hệ thống đối với đơn đặt hàng gốc."
 					}, f.a.createElement(c.a, {
 						checked: parseInt(r.surplus_enable),
 						onChange: e => this.set("subscribe", "surplus_enable", e ? 1 : 0)
@@ -39965,6 +39965,24 @@
 						})
 					}
 				})), b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Chỉ định trang web được sử dụng mã giảm giá (Ex: aikopanel.com)"), b.a.createElement("div", null, b.a.createElement(a.a, {
+					value: this.state.submit.limit_staff_urls || [],
+					onChange: e => {
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								limit_staff_urls: e.length ? e : null
+							})
+						})
+					},
+					mode: "multiple",
+					placeholder: "Chỉ định trang web được sử dụng mã giảm giá (để trống nếu không giới hạn).",
+					style: {
+						width: "100%"
+					}
+				}))),b.a.createElement("div", {
 					className: "form-group"
 				}, b.a.createElement("label", {
 					for: "example-text-input-alt"
