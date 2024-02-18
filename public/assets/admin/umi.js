@@ -31672,7 +31672,7 @@
 							})
 						})
 					}
-				}, this.props.config.site.sub_domain && this.props.config.site.sub_domain.map((e => g.a.createElement(a.a.Option, {
+				}, this.props.config.sub_domain && this.props.config.sub_domain.map((e => g.a.createElement(a.a.Option, {
 					key: e,
 					value: e
 				}, e))))), g.a.createElement("div", {
