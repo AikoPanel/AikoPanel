@@ -79024,10 +79024,10 @@
 							})
 						})
 					}
-				}, e.site.sub_domain.map((e => m.a.createElement(_.a.Option, {
-					key: Math.random(),
+				}, e.sub_domain.map((e => m.a.createElement(_.a.Option, {
+					key: e,
 					value: e
-				}, e))))): "", m.a.createElement("div", {
+				}, e))))) : "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
