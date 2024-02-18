@@ -31494,6 +31494,10 @@
 			componentDidMount() {
 				this.props.dispatch({
 					type: "notice/fetch"
+				}),
+				this.props.dispatch({
+					type: "config/fetch",
+					key: "site"
 				})
 			}
 			modalVisible() {
@@ -31524,6 +31528,7 @@
 				var e = this.props.notice,
 					t = e.notices,
 					n = e.fetchLoading,
+					config = this.props.config,
 					r = [{
 						title: "#",
 						dataIndex: "id",
@@ -31668,7 +31673,10 @@
 							})
 						})
 					}
-				})), g.a.createElement("div", {
+				}, config.site.sub_domain && config.site.sub_domain.map((e => g.a.createElement(a.a.Option, {
+					key: e,
+					value: e
+				}, e))))), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
