@@ -5557,7 +5557,7 @@
 						rows: "4",
 						type: "text",
 						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
 						defaultValue: t.sub_domain,
 						onChange: e => this.set("site", "sub_domain", e.target.value)
 					})), f.a.createElement(m, {
@@ -17243,7 +17243,7 @@
 					var n = e.key,
 						r = t.put;
 					return u().mark((function e() {
-						var t, o, sni, i;
+						var t, o, sni, sub_domain, i;
 						return u().wrap((function(e) {
 							for (;;)
 								switch (e.prev = e.next) {
@@ -17279,6 +17279,7 @@
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
 											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
+											"string" == typeof(null === (sub_domain = i.data.site) || void 0 === sub_domain ? void 0 : sub_domain.sub_domain) && (i.data.site.sub_domain = i.data.site.sub_domain.split(",")),
 											e.next = 13,
 											r({
 												type: "setState",
