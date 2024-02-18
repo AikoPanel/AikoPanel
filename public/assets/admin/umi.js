@@ -79012,7 +79012,6 @@
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
-					row: 3,
 					value: this.state.record.plan_of_staff || [],
 					style: {
 						width: "100%"
@@ -79025,7 +79024,10 @@
 							})
 						})
 					}
-				})): "", m.a.createElement("div", {
+				}, e.sub_domain.map((e => m.a.createElement(_.a.Option, {
+					key: Math.random(),
+					value: e
+				}, e))))): "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
