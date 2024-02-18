@@ -17279,7 +17279,7 @@
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
 											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
-											"string" == typeof(null === (sub_domain = i.data.site) || void 0 === sub_domain ? void 0 : sub_domain.sub_domain) && (i.data.site.sub_domain = i.data.site.sub_domain.split(",")),
+											"string" == typeof(null === (o = i.data.site) || void 0 === sub_domain ? void 0 : sub_domain.sub_domain) && (i.data.site.sub_domain = i.data.site.sub_domain.split(",")),
 											e.next = 13,
 											r({
 												type: "setState",
