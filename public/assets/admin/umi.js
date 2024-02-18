@@ -31493,11 +31493,11 @@
 			}
 			componentDidMount() {
 				this.props.dispatch({
-					type: "notice/fetch"
-				}),
-				this.props.dispatch({
 					type: "config/fetch",
 					key: "site"
+				}),
+				this.props.dispatch({
+					type: "notice/fetch"
 				})
 			}
 			modalVisible() {
@@ -31528,7 +31528,7 @@
 				var e = this.props.notice,
 					t = e.notices,
 					n = e.fetchLoading,
-					config = this.props.config,
+					cf = this.props.config,
 					r = [{
 						title: "#",
 						dataIndex: "id",
@@ -31673,7 +31673,7 @@
 							})
 						})
 					}
-				}, config.site.sub_domain && config.site.sub_domain.map((e => g.a.createElement(a.a.Option, {
+				}, cf.site.sub_domain && cf.site.sub_domain.map((e => g.a.createElement(a.a.Option, {
 					key: e,
 					value: e
 				}, e))))), g.a.createElement("div", {
