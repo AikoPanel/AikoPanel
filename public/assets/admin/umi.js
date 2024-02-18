@@ -39694,6 +39694,10 @@
 					}),
 					this.props.dispatch({
 						type: "plan/fetch"
+					}),
+					this.props.dispach({
+						type: "config/fetch",
+						key: "site"
 					})
 			}
 			modalVisible() {
@@ -39737,6 +39741,7 @@
 					n = e.fetchLoading,
 					r = e.saveLoading,
 					g = e.pagination,
+					cf = this.props.config,
 					y = this.props.plan.plans,
 					x = [{
 						title: "#",
@@ -39974,6 +39979,27 @@
 						})
 					}
 				})), b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Chỉ Định Web sử dụng"), b.a.createElement("div", null, b.a.createElement(a.a, {
+					value: this.state.submit.limit_staff_urls || [],
+					onChange: e => {
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								limit_staff_urls: e.length ? e : null
+							})
+						})
+					},
+					mode: "multiple",
+					placeholder: "Ưu đãi chỉ áp dụng cho các web được chỉ định (để trống nếu không giới hạn).",
+					style: {
+						width: "100%"
+					}
+				}, cf.site.sub_domain && cf.site.sub_domain.map((e => b.a.createElement(a.a.Option, {
+					key: e,
+					value: e
+				}, e)))))), b.a.createElement("div", {
 					className: "form-group"
 				}, b.a.createElement("label", {
 					for: "example-text-input-alt"
