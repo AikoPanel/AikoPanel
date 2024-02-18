@@ -5559,7 +5559,7 @@
 						className: "form-control",
 						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
 						defaultValue: t.sub_domain,
-						onChange: e => this.set("site", "sub_domain", e.target.value)
+						onChange: e => this.set("site", "sub_domain", e.target.value.split(","))
 					})), f.a.createElement(m, {
 						title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
 						description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
