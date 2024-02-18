@@ -31528,7 +31528,6 @@
 				var e = this.props.notice,
 					t = e.notices,
 					n = e.fetchLoading,
-					cf = this.props.config,
 					r = [{
 						title: "#",
 						dataIndex: "id",
@@ -31673,7 +31672,7 @@
 							})
 						})
 					}
-				}, cf.site.sub_domain && cf.site.sub_domain.map((e => g.a.createElement(a.a.Option, {
+				}, this.props.config.site.sub_domain && this.props.config.site.sub_domain.map((e => g.a.createElement(a.a.Option, {
 					key: e,
 					value: e
 				}, e))))), g.a.createElement("div", {
