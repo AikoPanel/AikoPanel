@@ -31493,10 +31493,6 @@
 			}
 			componentDidMount() {
 				this.props.dispatch({
-					type: "config/fetch",
-					key: "site"
-				}),
-				this.props.dispatch({
 					type: "notice/fetch"
 				})
 			}
@@ -31672,10 +31668,7 @@
 							})
 						})
 					}
-				}, this.props.config.sub_domain && this.props.config.sub_domain.map((e => g.a.createElement(a.a.Option, {
-					key: e,
-					value: e
-				}, e))))), g.a.createElement("div", {
+				})), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
