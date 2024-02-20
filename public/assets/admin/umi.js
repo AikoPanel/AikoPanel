@@ -79140,7 +79140,7 @@
 							}
 						}))
 					}, {
-						title: "Trạng Thái Bán Hàng",
+						title: "Mở bán",
 						dataIndex: "show",
 						key: "show",
 						render: (e, t) => m.a.createElement(u.a, {
