@@ -79063,6 +79063,8 @@
 				config: e.config
 			})))(T),
 			A = n("Oa6W"),
+			I = n("3a4m"),
+			Z = n.n(I),
 			P = (n("H9LU"),
 				n("3XVG"),
 				n("ykC2"),
@@ -79120,7 +79122,7 @@
 				  condition: t,
 				  value: n,
 				}),
-				L.a.push("/user")
+				Z.a.push("/user")
 			  }
 			render() {
 				var e, t = this.props.plan,
