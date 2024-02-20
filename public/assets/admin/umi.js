@@ -79119,7 +79119,8 @@
 				  key: e,
 				  condition: t,
 				  value: n,
-				})
+				}),
+				L.a.push("/user")
 			  }
 			render() {
 				var e, t = this.props.plan,
