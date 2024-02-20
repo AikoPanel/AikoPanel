@@ -79175,11 +79175,8 @@
 						key: "count",
 						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
 							type: "user",
-							style: { 
-								cursor: "pointer", 
-								color: "blue" 
-							},
-							onClick: () => jumpUserFilter("plan_id", "=", t.id),
+							style: { cursor: "pointer", color: "blue" },
+							onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
 						}), " ", e + "\/" + t.total)
 					}, {
 						title: "Lưu Lượng",
