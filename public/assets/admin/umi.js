@@ -69057,17 +69057,6 @@
 						sorter: !0,
 						render: (e, t) => parseFloat(e).toLocaleString('vi-VN') + ' GB'
 					}, {
-						title: "SNI Người Dùng",
-						dataIndex: "sni",
-						key: "sni",
-						render: e => ({
-							'dl.ops.kgvn.garenanow.com': 'Liên Quân',
-							'dl.kgvn.garenanow.com': 'Liên Quân',
-							'dl.aw.freefiremobile.com': 'Free Fire',
-							'v9.tiktokcdn.com': 'Tiktok',
-							'www.linemo.jp': 'Softbank Japan',
-						} [e] || e || 'Mặc Định')
-					}, {
 						title: "Số người giới thiệu",
 						dataIndex: "invited_user_count",
 						key: "updated_at",
