@@ -79113,6 +79113,14 @@
 					value: n
 				})
 			}
+			jumpUserFilter(e, t, n) {
+				this.props.dispatch({
+				  type: "user/addFilter",
+				  key: e,
+				  condition: t,
+				  value: n,
+				})
+			  }
 			render() {
 				var e, t = this.props.plan,
 					n = t.plans,
@@ -79166,9 +79174,11 @@
 						key: "count",
 						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
 							type: "user",
-							style: {
-								cursor: "move"
-							}
+							style: { 
+								cursor: "pointer", 
+								color: "blue" 
+							},
+							onClick: () => jumpUserFilter("plan_id", "=", t.id),
 						}), " ", e + "\/" + t.total)
 					}, {
 						title: "Lưu Lượng",
