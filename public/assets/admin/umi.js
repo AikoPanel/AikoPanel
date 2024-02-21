@@ -39975,6 +39975,22 @@
 					}
 				})), b.a.createElement("div", {
 					className: "form-group"
+				}, b.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), b.a.createElement(a.a, {
+					mode: "tags",
+					value: this.state.submit.limit_staff_urls || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Để trống nếu như tất cả cộng tác viên bán gói này",
+					onChange: e => {
+						this.setState({
+							submit: d()({}, this.state.submit, {
+								limit_staff_urls: e.length > 0 ? e : null
+							})
+						})
+					}
+				})), b.a.createElement("div", {
+					className: "form-group"
 				}, b.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "Chỉ Định Gói Dịch Vụ"), b.a.createElement("div", null, b.a.createElement(a.a, {
