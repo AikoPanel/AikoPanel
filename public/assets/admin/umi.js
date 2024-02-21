@@ -79128,7 +79128,7 @@
 				  value: n,
 				}),
 				Z.a.push("/user")
-			  }
+			}
 			render() {
 				var e, t = this.props.plan,
 					n = t.plans,

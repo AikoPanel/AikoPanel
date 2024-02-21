@@ -73878,6 +73878,8 @@
 				config: e.config
 			})))(T),
 			A = n("Oa6W"),
+			I = n("3a4m"),
+			Z = n.n(I),
 			P = (n("H9LU"),
 				n("3XVG"),
 				n("ykC2"),
@@ -73907,6 +73909,15 @@
 					})),
 					e
 			}
+			jumpUserFilter(e, t, n) {
+				this.props.dispatch({
+				  type: "user/addFilter",
+				  key: e,
+				  condition: t,
+				  value: n,
+				}),
+				Z.a.push("/user")
+			}
 			render() {
 				var e, t = this.props.plan,
 					n = t.plans,
@@ -73919,7 +73930,7 @@
 					}, {
 						title: m.a.createElement("span", null, "Thống kê ", m.a.createElement(l.a, {
 							placement: "top",
-							title: "Tổng số người mua gói"
+							title: "Tổng số người đã mua gói của bạn"
 						}, m.a.createElement(h.a, {
 							type: "question-circle"
 						}))),
@@ -73927,9 +73938,8 @@
 						key: "count",
 						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
 							type: "user",
-							style: {
-								cursor: "move"
-							}
+							style: { cursor: "pointer", color: "blue" },
+							onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
 						}), " ", t.total)
 					}, {
 						title: "Lưu Lượng",
