@@ -39975,13 +39975,13 @@
 					}
 				})), b.a.createElement("div", {
 					className: "form-group"
-				}, b.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), b.a.createElement(a.a, {
+				}, b.a.createElement("label", null, "Domain có thể dùng mã giảm giá"), b.a.createElement(a.a, {
 					mode: "tags",
 					value: this.state.submit.limit_staff_urls || [],
 					style: {
 						width: "100%"
 					},
-					placeholder: "Để trống nếu như tất cả cộng tác viên bán gói này",
+					placeholder: "Để trống nếu như tất cả cộng tác viên sử dung được mã giảm giá",
 					onChange: e => {
 						this.setState({
 							submit: v()({}, this.state.submit, {
