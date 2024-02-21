@@ -69289,6 +69289,10 @@
 							key: "Không",
 							value: 0
 						}]
+					}, {
+						key: "staff_url",
+						title: "URL web cộng tác viên",
+						condition: ["~", "="]
 					}]
 				}, g.a.createElement(s.a, {
 					type: E.length > 0 ? "primary" : ""
