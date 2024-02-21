@@ -39984,7 +39984,7 @@
 					placeholder: "Để trống nếu như tất cả cộng tác viên bán gói này",
 					onChange: e => {
 						this.setState({
-							submit: d()({}, this.state.submit, {
+							submit: v()({}, this.state.submit, {
 								limit_staff_urls: e.length > 0 ? e : null
 							})
 						})
