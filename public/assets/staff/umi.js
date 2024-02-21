@@ -73947,7 +73947,7 @@
 						key: "transfer_enable",
 						render: e => m.a.createElement(m.a.Fragment, null, e.toLocaleString(), " GB")
 					}, {
-						title: "Giới Hạn Số Lượng Thiết Bị",
+						title: "Giới hạn IP",
 						dataIndex: "device_limit",
 						key: "device_limit",
 						render: e => null !== e ? e : "-"
