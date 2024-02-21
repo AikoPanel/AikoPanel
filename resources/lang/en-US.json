@@ -99,6 +99,5 @@
     "There are too many password errors, please try again after :minute minutes.": "There are too many password errors, please try again after :minute minutes.",
     "Reset failed, Please try again later": "Reset failed, Please try again later",
     "The withdrawal amount cannot be greater than the current commission balance": "The withdrawal amount cannot be greater than the current commission balance",
-    "You do not have permission to access this site": "You do not have permission to access this site",
-    "The coupon code cannot be used for this domain": "The coupon code cannot be used for this domain"
+    "You do not have permission to access this site": "You do not have permission to access this site"
 }

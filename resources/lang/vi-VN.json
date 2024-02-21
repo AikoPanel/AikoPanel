@@ -100,6 +100,5 @@
     "There are too many password errors, please try again after :minute minutes.": "Có quá nhiều lỗi mật khẩu, vui lòng thử lại sau :minute phút.",
     "Reset failed, Please try again later": "Đặt lại thất bại, Vui lòng thử lại sau",
     "The withdrawal amount cannot be greater than the current commission balance": "Số tiền rút không được lớn hơn số dư hoa hồng hiện tại",
-    "You do not have permission to access this site": "Bạn không có quyền truy cập trang web này",
-    "The coupon code cannot be used for this domain": "Mã giảm giá không thể sử dụng cho tên miền này"
+    "You do not have permission to access this site": "Bạn không có quyền truy cập trang web này"
 }

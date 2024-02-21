@@ -99,6 +99,5 @@
     "There are too many password errors, please try again after :minute minutes.": "密码错误次数过多，请 :minute 分钟后再试",
     "Reset failed, Please try again later": "重置失败，请稍后再试",
     "The withdrawal amount cannot be greater than the current commission balance": "提现金额不能大于当前佣金余额",
-    "You do not have permission to access this site": "您没有权限访问该站点",
-    "The coupon code cannot be used for this domain": "此优惠券无法用于该域名"
+    "You do not have permission to access this site": "您没有权限访问该站点"
 }
