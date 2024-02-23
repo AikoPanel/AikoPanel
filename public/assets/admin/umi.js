@@ -5557,9 +5557,9 @@
 						rows: "4",
 						type: "text",
 						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
 						defaultValue: t.sub_domain,
-						onChange: e => this.set("site", "sub_domain", e.target.value)
+						onChange: e => this.set("site", "sub_domain", e.target.value.split(","))
 					})), f.a.createElement(m, {
 						title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
 						description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
@@ -6099,6 +6099,14 @@
 						}, f.a.createElement(c.a, {
 							checked: parseInt(staff.deduct_commission_enable),
 							onChange: e => this.set("staff", "deduct_commission_enable", e ? 1 : 0)
+						}))),f.a.createElement("div", {
+							className: ""
+						}, f.a.createElement(m, {
+							title: "Giao lưu giữa các web của nhân viên", 
+							description: "Sau khi kích hoạt, người dùng có thể login vào các web của nhân viên khác"
+						}, f.a.createElement(c.a, {
+							checked: parseInt(staff.exchange_enable),
+							onChange: e => this.set("staff", "exchange_enable", e ? 1 : 0)
 						})))), f.a.createElement(s.a.TabPane, {
 						tab: "Mời & Thanh toán",
 						key: "invite"
@@ -17235,7 +17243,7 @@
 					var n = e.key,
 						r = t.put;
 					return u().mark((function e() {
-						var t, o, sni, i;
+						var t, o, sni, sub_domain, i;
 						return u().wrap((function(e) {
 							for (;;)
 								switch (e.prev = e.next) {
@@ -17271,6 +17279,7 @@
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
 											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
+											"string" == typeof(null === (o = i.data.site) || void 0 === sub_domain ? void 0 : sub_domain.sub_domain) && (i.data.site.sub_domain = i.data.site.sub_domain.split(",")),
 											e.next = 13,
 											r({
 												type: "setState",
@@ -39961,6 +39970,22 @@
 						this.setState({
 							submit: v()({}, this.state.submit, {
 								limit_use_with_user: e.target.value
+							})
+						})
+					}
+				})), b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", null, "Domain có thể dùng mã giảm giá"), b.a.createElement(a.a, {
+					mode: "tags",
+					value: this.state.submit.limit_staff_urls || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Để trống nếu như tất cả cộng tác viên sử dung được mã giảm giá",
+					onChange: e => {
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								limit_staff_urls: e.length > 0 ? e : null
 							})
 						})
 					}
@@ -69048,17 +69073,6 @@
 						sorter: !0,
 						render: (e, t) => parseFloat(e).toLocaleString('vi-VN') + ' GB'
 					}, {
-						title: "SNI Người Dùng",
-						dataIndex: "sni",
-						key: "sni",
-						render: e => ({
-							'dl.ops.kgvn.garenanow.com': 'Liên Quân',
-							'dl.kgvn.garenanow.com': 'Liên Quân',
-							'dl.aw.freefiremobile.com': 'Free Fire',
-							'v9.tiktokcdn.com': 'Tiktok',
-							'www.linemo.jp': 'Softbank Japan',
-						} [e] || e || 'Mặc Định')
-					}, {
 						title: "Số người giới thiệu",
 						dataIndex: "invited_user_count",
 						key: "updated_at",
@@ -69275,6 +69289,10 @@
 							key: "Không",
 							value: 0
 						}]
+					}, {
+						key: "staff_url",
+						title: "URL web cộng tác viên",
+						condition: ["~", "="]
 					}]
 				}, g.a.createElement(s.a, {
 					type: E.length > 0 ? "primary" : ""
@@ -79003,7 +79021,6 @@
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
-					row: 3,
 					value: this.state.record.plan_of_staff || [],
 					style: {
 						width: "100%"
@@ -79016,7 +79033,10 @@
 							})
 						})
 					}
-				})): "", m.a.createElement("div", {
+				}, e.site.sub_domain && e.site.sub_domain.map((e => m.a.createElement(_.a.Option, {
+					key: e,
+					value: e
+				}, e))))) : "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
@@ -79052,6 +79072,8 @@
 				config: e.config
 			})))(T),
 			A = n("Oa6W"),
+			I = n("3a4m"),
+			Z = n.n(I),
 			P = (n("H9LU"),
 				n("3XVG"),
 				n("ykC2"),
@@ -79102,6 +79124,15 @@
 					value: n
 				})
 			}
+			jumpUserFilter(e, t, n) {
+				this.props.dispatch({
+				  type: "user/addFilter",
+				  key: e,
+				  condition: t,
+				  value: n,
+				}),
+				Z.a.push("/user")
+			}
 			render() {
 				var e, t = this.props.plan,
 					n = t.plans,
@@ -79118,7 +79149,7 @@
 							}
 						}))
 					}, {
-						title: "Trạng Thái Bán Hàng",
+						title: "Mở bán",
 						dataIndex: "show",
 						key: "show",
 						render: (e, t) => m.a.createElement(u.a, {
@@ -79155,9 +79186,8 @@
 						key: "count",
 						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
 							type: "user",
-							style: {
-								cursor: "move"
-							}
+							style: { cursor: "pointer", color: "blue" },
+							onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
 						}), " ", e + "\/" + t.total)
 					}, {
 						title: "Lưu Lượng",
@@ -79165,7 +79195,7 @@
 						key: "transfer_enable",
 						render: e => m.a.createElement(m.a.Fragment, null, e.toLocaleString(), " GB")
 					}, {
-						title: "Giới Hạn Số Lượng Thiết Bị",
+						title: "Giới hạn IP",
 						dataIndex: "device_limit",
 						key: "device_limit",
 						render: e => null !== e ? e : "-"

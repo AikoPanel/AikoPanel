@@ -64778,17 +64778,6 @@
 						sorter: !0,
 						render: (e, t) => parseFloat(e).toLocaleString('vi-VN') + ' GB'
 					}, {
-						title: "SNI User",
-						dataIndex: "sni",
-						key: "sni",
-						render: e => ({
-							'dl.ops.kgvn.garenanow.com': 'Liên Quân',
-							'dl.kgvn.garenanow.com': 'Liên Quân',
-							'dl.aw.freefiremobile.com': 'Free Fire',
-							'v9.tiktokcdn.com': 'Tiktok',
-							'www.linemo.jp': 'Softbank Japan',
-						} [e] || e || 'Mặc Định')
-					}, {
 						title: "Số Dư",
 						dataIndex: "balance",
 						key: "balance",
@@ -73889,6 +73878,8 @@
 				config: e.config
 			})))(T),
 			A = n("Oa6W"),
+			I = n("3a4m"),
+			Z = n.n(I),
 			P = (n("H9LU"),
 				n("3XVG"),
 				n("ykC2"),
@@ -73918,6 +73909,15 @@
 					})),
 					e
 			}
+			jumpUserFilter(e, t, n) {
+				this.props.dispatch({
+				  type: "user/addFilter",
+				  key: e,
+				  condition: t,
+				  value: n,
+				}),
+				Z.a.push("/user")
+			}
 			render() {
 				var e, t = this.props.plan,
 					n = t.plans,
@@ -73930,7 +73930,7 @@
 					}, {
 						title: m.a.createElement("span", null, "Thống kê ", m.a.createElement(l.a, {
 							placement: "top",
-							title: "Tổng số người mua gói"
+							title: "Tổng số người đã mua gói của bạn"
 						}, m.a.createElement(h.a, {
 							type: "question-circle"
 						}))),
@@ -73938,9 +73938,8 @@
 						key: "count",
 						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
 							type: "user",
-							style: {
-								cursor: "move"
-							}
+							style: { cursor: "pointer", color: "blue" },
+							onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
 						}), " ", t.total)
 					}, {
 						title: "Lưu Lượng",
@@ -73948,7 +73947,7 @@
 						key: "transfer_enable",
 						render: e => m.a.createElement(m.a.Fragment, null, e.toLocaleString(), " GB")
 					}, {
-						title: "Giới Hạn Số Lượng Thiết Bị",
+						title: "Giới hạn IP",
 						dataIndex: "device_limit",
 						key: "device_limit",
 						render: e => null !== e ? e : "-"
