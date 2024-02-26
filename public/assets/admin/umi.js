@@ -5659,6 +5659,14 @@
 					})), f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
+						title: "Hiển thị Name Server để tạo web cho nhân viên",
+						description: "Sau khi kích hoạt, Name Server sẽ được hiển thị khi tạo web cho nhân viên"
+					}, f.a.createElement(c.a, {
+						checked: parseInt(ctv.collaborator_enable),
+						onChange: e => this.set("ctv", "collaborator_enable", e ? 1 : 0)
+					}))), f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
 						title: "Giao lưu giữa các web của nhân viên", 
 						description: "Sau khi kích hoạt, người dùng có thể login vào các web của nhân viên khác"
 					}, f.a.createElement(c.a, {
@@ -6088,14 +6096,6 @@
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.staff_generate_user_limit,
 							onChange: e => this.set("staff", "staff_generate_user_limit", e.target.value)
-						}))),f.a.createElement("div", {
-							className: ""
-						}, f.a.createElement(m, {
-							title: "Hiển thị Name Server để tạo web cho nhân viên",
-							description: "Sau khi kích hoạt, Name Server sẽ được hiển thị khi tạo web cho nhân viên"
-						}, f.a.createElement(c.a, {
-							checked: parseInt(staff.collaborator_enable),
-							onChange: e => this.set("staff", "collaborator_enable", e ? 1 : 0)
 						}))), staff.collaborator_enable ? f.a.createElement("div", {
 							className: ""
 						}, f.a.createElement(m, {
