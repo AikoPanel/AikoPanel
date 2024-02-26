@@ -15726,9 +15726,7 @@
 					value: ""
 				}, Object(h.formatMessage)({
 					id: "--Chọn SNI--"
-				})), s.type_change_sni ? s.sni && s.sni.map((e => l.a.createElement("option", {
-					value: e
-				}, e))) : s.sni && s.sni.map((e => l.a.createElement("option", {
+				})), s.sni && s.sni.map((e => l.a.createElement("option", {
 					value: e.value
 				}, e.lable))) , l.a.createElement("option", {
 					value: "0"

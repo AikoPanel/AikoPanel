@@ -6,15 +6,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/theme/{{$theme}}/assets/umi.css?v={{$version}}">
-    @if (file_exists(public_path("/theme/{$theme}/assets/custom.css")))
+    @if (file_exists(public_path("/theme/{{$theme}}/assets/custom.css")))
         <link rel="stylesheet" href="/theme/{{$theme}}/assets/custom.css?v={{$version}}">
     @endif
     <meta charset="utf-8">
-    <meta property="og:title" content="{{$title}}">
-    <meta property="og:site_name" content="{{$title}}">
-    <meta property="og:description" content="{{$description}}">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="{{$theme_config['background_url']}}">
+    <meta property="og:image" content="{{$logo}}">
     <link rel="icon" href='{{$logo}}'>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     @php ($colors = [
