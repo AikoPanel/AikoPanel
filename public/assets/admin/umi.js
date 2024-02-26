@@ -5666,8 +5666,8 @@
 						size: "large",
 						type: "number",
 						placeholder: "Vui lòng nhập",
-						defaultValue: div.staff_generate_user_limit,
-						onChange: e => this.set("div", "staff_generate_user_limit", e.target.value)
+						defaultValue: ctv.staff_generate_user_limit,
+						onChange: e => this.set("ctv", "staff_generate_user_limit", e.target.value)
 					}))), f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
