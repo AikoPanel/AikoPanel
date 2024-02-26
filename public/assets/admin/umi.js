@@ -71874,8 +71874,8 @@
 					className: "form-group"
 				}, d.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
-				}, "URL Cộng tác viên (Thanh Toán Cho CTV)"), d.a.createElement(v.a, {
-					placeholder: "Thanh toán riêng của CTV,Ex: https://aikopanel.com",
+				}, "URL Sử dụng thanh toán ( Để trống là hiện tất cả )"), d.a.createElement(v.a, {
+					placeholder: "Thanh toán riêng của CTV,Ex: aikopanel.com",
 					defaultValue: a.url_staff,
 					onChange: e => this.submitOnChange("url_staff", e.target.value)
 				})), d.a.createElement("div", {
