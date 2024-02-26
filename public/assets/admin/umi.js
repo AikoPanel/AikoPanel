@@ -5659,6 +5659,18 @@
 					})), f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
+						title: "Giới hạn tạo tài khoản của nhân viên",
+						description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+					}, f.a.createElement(a.a, {
+						addonAfter: "Account/day",
+						size: "large",
+						type: "number",
+						placeholder: "Vui lòng nhập",
+						defaultValue: div.staff_generate_user_limit,
+						onChange: e => this.set("div", "staff_generate_user_limit", e.target.value)
+					}))), f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
 						title: "Hiển thị Name Server để tạo web cho nhân viên",
 						description: "Sau khi kích hoạt, Name Server sẽ được hiển thị khi tạo web cho nhân viên"
 					}, f.a.createElement(c.a, {
@@ -6102,20 +6114,7 @@
 									defaultValue: staff.keyword_account,
 									onChange: e => this.set("staff", "keyword_account", e.target.value)
 								})
-							)),
-						f.a.createElement("div", {
-							className: ""
-						}, f.a.createElement(m, {
-							title: "Giới hạn tạo tài khoản của nhân viên",
-							description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
-						}, f.a.createElement(a.a, {
-							addonAfter: "Account/day",
-							size: "large",
-							type: "number",
-							placeholder: "Vui lòng nhập",
-							defaultValue: staff.staff_generate_user_limit,
-							onChange: e => this.set("staff", "staff_generate_user_limit", e.target.value)
-						}))),f.a.createElement("div", {
+							)),f.a.createElement("div", {
 							className: ""
 						}, f.a.createElement(m, {
 							title: "Trừ tiền hoa hồng sau khi có yêu cầu rút tiền",
