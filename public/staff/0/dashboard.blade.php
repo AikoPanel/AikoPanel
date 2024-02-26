@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/theme/{{$theme}}/assets/components.chunk.css?v={{$version}}">
+    <link rel="stylesheet" href="/theme/staff/{{$theme}}/assets/components.chunk.css?v={{$version}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/theme/{{$theme}}/assets/umi.css?v={{$version}}">
-    @if (file_exists(public_path("/theme/{{$theme}}/assets/custom.css")))
-        <link rel="stylesheet" href="/theme/{{$theme}}/assets/custom.css?v={{$version}}">
+    <link rel="stylesheet" href="/theme/staff/{{$theme}}/assets/umi.css?v={{$version}}">
+    @if (file_exists(public_path("/theme/staff/{{$theme}}/assets/custom.css")))
+        <link rel="stylesheet" href="/theme/staff/{{$theme}}/assets/custom.css?v={{$version}}">
     @endif
     <meta charset="utf-8">
     <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
     <script>
         window.settings = {
             title: '{{$title}}',
-            assets_path: '/theme/{{$theme}}/assets',
+            assets_path: '/theme/staff/{{$theme}}/assets',
             theme: {
                 sidebar: '{{$theme_config['theme_sidebar']}}',
                 header: '{{$theme_config['theme_header']}}',
@@ -49,23 +49,23 @@
             logo: '{{$logo}}'
         }
     </script>
-    <script src="/theme/{{$theme}}/assets/i18n/zh-CN.js?v={{$version}}"></script>
-    <script src="/theme/{{$theme}}/assets/i18n/zh-TW.js?v={{$version}}"></script>
-    <script src="/theme/{{$theme}}/assets/i18n/en-US.js?v={{$version}}"></script>
-    <script src="/theme/{{$theme}}/assets/i18n/ja-JP.js?v={{$version}}"></script>
-    <script src="/theme/{{$theme}}/assets/i18n/vi-VN.js?v={{$version}}"></script>
-    <script src="/theme/{{$theme}}/assets/i18n/ko-KR.js?v={{$version}}"></script>
-    <script src="/theme/{{$theme}}/assets/i18n/fa-IR.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/zh-CN.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/zh-TW.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/en-US.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/ja-JP.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/vi-VN.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/ko-KR.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/i18n/fa-IR.js?v={{$version}}"></script>
 </head>
 
 <body>
 <div id="root"></div>
 {!! $theme_config['custom_html'] !!}
-<script src="/theme/{{$theme}}/assets/vendors.async.js?v={{$version}}"></script>
-<script src="/theme/{{$theme}}/assets/components.async.js?v={{$version}}"></script>
-<script src="/theme/{{$theme}}/assets/umi.js?v={{$version}}"></script>
+<script src="/theme/staff/{{$theme}}/assets/vendors.async.js?v={{$version}}"></script>
+<script src="/theme/staff/{{$theme}}/assets/components.async.js?v={{$version}}"></script>
+<script src="/theme/staff/{{$theme}}/assets/umi.js?v={{$version}}"></script>
 @if (file_exists(public_path("/theme/{$theme}/assets/custom.js")))
-    <script src="/theme/{{$theme}}/assets/custom.js?v={{$version}}"></script>
+    <script src="/theme/staff/{{$theme}}/assets/custom.js?v={{$version}}"></script>
 @endif
 </body>
 
