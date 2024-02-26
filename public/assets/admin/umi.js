@@ -5664,7 +5664,26 @@
 					}, f.a.createElement(c.a, {
 						checked: parseInt(ctv.collaborator_enable),
 						onChange: e => this.set("ctv", "collaborator_enable", e ? 1 : 0)
-					}))), f.a.createElement("div", {
+					}))), ctv.collaborator_enable ? f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
+						title:"Thông tin Name Server",
+						description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+					}, f.a.createElement(a.a, {
+						addonAfter: "NS 1",
+						size: "large",
+						type: "text",
+						placeholder: "Vui lòng nhập",
+						defaultValue: staff.cloudflare_ns_1,
+						onChange: e => this.set("staff", "cloudflare_ns_1", e.target.value)
+					}), f.a.createElement(a.a, {
+						addonAfter: "NS 2",
+						size: "large",
+						type: "text",
+						placeholder: "Vui lòng nhập",
+						defaultValue: staff.cloudflare_ns_2,
+						onChange: e => this.set("staff", "cloudflare_ns_2", e.target.value)
+					}))): "" , f.a.createElement("div", {
 						className: ""
 					}, f.a.createElement(m, {
 						title: "Giao lưu giữa các web của nhân viên", 
@@ -6096,26 +6115,7 @@
 							placeholder: "Vui lòng nhập",
 							defaultValue: staff.staff_generate_user_limit,
 							onChange: e => this.set("staff", "staff_generate_user_limit", e.target.value)
-						}))), staff.collaborator_enable ? f.a.createElement("div", {
-							className: ""
-						}, f.a.createElement(m, {
-							title:"Thông tin Name Server",
-							description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
-						}, f.a.createElement(a.a, {
-							addonAfter: "NS 1",
-							size: "large",
-							type: "text",
-							placeholder: "Vui lòng nhập",
-							defaultValue: staff.cloudflare_ns_1,
-							onChange: e => this.set("staff", "cloudflare_ns_1", e.target.value)
-						}), f.a.createElement(a.a, {
-							addonAfter: "NS 2",
-							size: "large",
-							type: "text",
-							placeholder: "Vui lòng nhập",
-							defaultValue: staff.cloudflare_ns_2,
-							onChange: e => this.set("staff", "cloudflare_ns_2", e.target.value)
-						}))): "" ,f.a.createElement("div", {
+						}))),f.a.createElement("div", {
 							className: ""
 						}, f.a.createElement(m, {
 							title: "Trừ tiền hoa hồng sau khi có yêu cầu rút tiền",
