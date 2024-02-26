@@ -5552,16 +5552,26 @@
 						defaultValue: t.app_url,
 						onChange: e => this.set("site", "app_url", e.target.value)
 					})), f.a.createElement(m, {
-						title: "Địa chỉ SubDomain ( Nếu có )",
+						title: "Địa chỉ SubDomain ( Nếu có ) - ( Không có http:// hoặc https:// ) ",
 						description: "Địa chỉ subdomain của trang web, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
 					}, f.a.createElement("textarea", {
 						rows: "4",
 						type: "text",
 						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						placeholder: "Miền phụ của trang web, nếu cần nhiều địa chỉ subdomain, vui lòng sử dụng dấu phẩy để phân chia",
 						defaultValue: t.sub_app_url,
 						onChange: e => this.set("site", "sub_app_url", e.target.value.split(",")),
 					})), f.a.createElement(m, {
+						title: "URL gói đăng kí",
+						description: "Được sử dụng để cấp gói đăng kí, nếu trống thì sẽ là URL trang web. Nếu cần nhiều địa chỉ URL gói đăng kí, vui lòng sử dụng dấu phẩy để phân chia."
+					}, f.a.createElement("textarea", {
+						rows: "4",
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						defaultValue: t.subscribe_url,
+						onChange: e => this.set("site", "subscribe_url", e.target.value)
+					})),f.a.createElement(m, {
 						title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
 						description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
 					}, f.a.createElement(c.a, {
@@ -5576,16 +5586,6 @@
 						placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
 						defaultValue: t.logo,
 						onChange: e => this.set("site", "logo", e.target.value)
-					})), f.a.createElement(m, {
-						title: "URL gói đăng kí",
-						description: "Được sử dụng để cấp gói đăng kí, nếu trống thì sẽ là URL trang web. Nếu cần nhiều địa chỉ URL gói đăng kí, vui lòng sử dụng dấu phẩy để phân chia."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
-						defaultValue: t.subscribe_url,
-						onChange: e => this.set("site", "subscribe_url", e.target.value)
 					})), f.a.createElement(m, {
 						title: "URL Điều khoản Sử dụng (TOS) của người dùng",
 						description: "Được sử dụng để chuyển đến Điều khoản Sử dụng (TOS) của người dùng"
