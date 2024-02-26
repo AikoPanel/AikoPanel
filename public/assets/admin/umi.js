@@ -5488,6 +5488,7 @@
 			render() {
 				var e = this.props.config,
 					t = e.site,
+					ctv = e.ctv,
 					statistics = e.statistics,
 					n = e.invite,
 					staff = e.staff,
@@ -5551,15 +5552,15 @@
 						defaultValue: t.app_url,
 						onChange: e => this.set("site", "app_url", e.target.value)
 					})), f.a.createElement(m, {
-						title: "Địa chỉ Website - Web Phụ (Nếu có)",
-						description: "Hỗ trợ nhiều địa chỉ URL, nếu có nhiều địa chỉ URL, vui lòng sử dụng dấu phẩy để phân tách"
+						title: "Địa chỉ SubDomain ( Nếu có )",
+						description: "Địa chỉ subdomain của trang web, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
 					}, f.a.createElement("textarea", {
 						rows: "4",
 						type: "text",
 						className: "form-control",
 						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
-						defaultValue: t.sub_domain,
-						onChange: e => this.set("site", "sub_domain", e.target.value.split(","))
+						defaultValue: t.sub_app_url,
+						onChange: e => this.set("site", "sub_app_url", e.target.value.split(",")),
 					})), f.a.createElement(m, {
 						title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
 						description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
@@ -5640,7 +5641,30 @@
 						placeholder: "đ",
 						defaultValue: t.currency_symbol,
 						onChange: e => this.set("site", "currency_symbol", e.target.value)
-					})))), f.a.createElement(s.a.TabPane, {
+					})))),f.a.createElement(s.a.TabPane, {
+						tab: "Web con",
+						key: "ctv"
+					}, f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
+						title: "Địa chỉ Website CTV ( Không có http:// hoặc https:// )",
+						description: "Hỗ trợ nhiều địa chỉ URL, nếu có nhiều địa chỉ URL, vui lòng sử dụng dấu phẩy để phân tách"
+					}, f.a.createElement("textarea", {
+						rows: "5",
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						defaultValue: ctv.sub_domain,
+						onChange: e => this.set("ctv", "sub_domain", e.target.value.split(","))
+					})), f.a.createElement("div", {
+						className: ""
+					}, f.a.createElement(m, {
+						title: "Giao lưu giữa các web của nhân viên", 
+						description: "Sau khi kích hoạt, người dùng có thể login vào các web của nhân viên khác"
+					}, f.a.createElement(c.a, {
+						checked: parseInt(ctv.exchange_enable),
+						onChange: e => this.set("ctv", "exchange_enable", e ? 1 : 0)
+					}))))), f.a.createElement(s.a.TabPane, {
 						tab: "Thống kê",
 						key: "statistics"
 					}, f.a.createElement("div", {
@@ -6099,14 +6123,6 @@
 						}, f.a.createElement(c.a, {
 							checked: parseInt(staff.deduct_commission_enable),
 							onChange: e => this.set("staff", "deduct_commission_enable", e ? 1 : 0)
-						}))),f.a.createElement("div", {
-							className: ""
-						}, f.a.createElement(m, {
-							title: "Giao lưu giữa các web của nhân viên", 
-							description: "Sau khi kích hoạt, người dùng có thể login vào các web của nhân viên khác"
-						}, f.a.createElement(c.a, {
-							checked: parseInt(staff.exchange_enable),
-							onChange: e => this.set("staff", "exchange_enable", e ? 1 : 0)
 						})))), f.a.createElement(s.a.TabPane, {
 						tab: "Mời & Thanh toán",
 						key: "invite"
@@ -17216,6 +17232,7 @@
 			state: a()({}, {
 				invite: {},
 				site: {},
+				ctv: {},
 				statistics: {},
 				subscribe: {},
 				staff: {},
@@ -17245,7 +17262,7 @@
 					var n = e.key,
 						r = t.put;
 					return u().mark((function e() {
-						var t, o, sni, sub_domain, i;
+						var t, o, sni, sub_domain, sub_app_url, i;
 						return u().wrap((function(e) {
 							for (;;)
 								switch (e.prev = e.next) {
@@ -17280,8 +17297,9 @@
 									case 9:
 										return "string" == typeof(null === (t = i.data.invite) || void 0 === t ? void 0 : t.commission_withdraw_method) && (i.data.invite.commission_withdraw_method = i.data.invite.commission_withdraw_method.split(",")),
 											"string" == typeof(null === (o = i.data.site) || void 0 === o ? void 0 : o.email_whitelist_suffix) && (i.data.site.email_whitelist_suffix = i.data.site.email_whitelist_suffix.split(",")),
+											"string" == typeof(null === (o = i.data.site) || void 0 === sub_app_url ? void 0 : sub_app_url.sub_app_url) && (i.data.site.sub_app_url = i.data.site.sub_app_url.split(",")),
 											"string" == typeof(null === (sni = i.data.advanced) || void 0 === sni ? void 0 : sni.sni) && (i.data.advanced.sni = i.data.advanced.sni.split(",")),
-											"string" == typeof(null === (o = i.data.site) || void 0 === sub_domain ? void 0 : sub_domain.sub_domain) && (i.data.site.sub_domain = i.data.site.sub_domain.split(",")),
+											"string" == typeof(null === (o = i.data.ctv) || void 0 === sub_domain ? void 0 : sub_domain.sub_domain) && (i.data.ctv.sub_domain = i.data.ctv.sub_domain.split(",")),
 											e.next = 13,
 											r({
 												type: "setState",
