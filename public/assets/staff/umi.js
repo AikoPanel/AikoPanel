@@ -18556,13 +18556,6 @@
 							icon: i.a.createElement("i", {
 								className: "nav-main-link-icon si si-users"
 							})
-						}, {
-							title: "Quản Lý Hỗ Trợ",
-							type: "item",
-							href: "/ticket",
-							icon: i.a.createElement("i", {
-								className: "nav-main-link-icon si si-support"
-							})
 						}]
 					}
 			}
