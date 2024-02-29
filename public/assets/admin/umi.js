@@ -92138,7 +92138,7 @@
 							}, "Hủy"))
 						}, g.a.createElement("div", null, g.a.createElement(u.a, {
 							status: ["error", "processing", "default", "success", "default"][e]
-						}), g.a.createElement("span", null, y.a.orderStatusText[e], " "), 0 === e && g.a.createElement("a", {
+						}), g.a.createElement("span", null, y.a.orderStatusText[e], " "), (0 === e || 2 === e) && g.a.createElement("a", {
 							href: "javascript:void(0);"
 						}, "Đánh Dấu Là ", g.a.createElement(d.a, {
 							type: "caret-down"
