@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Danh sách Apple ID</h1>
+        <h1>Danh sách Apple ID Của AikoPanel</h1>
     </div>
 
     <div class="results-container">
