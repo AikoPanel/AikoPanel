@@ -49,6 +49,11 @@
     <div class="header">
         <h1>Danh sách Apple ID Của AikoPanel</h1>
     </div>
+    <div style="text-align: center; padding: 20px;">
+        <a href="{{ route('appleid.index') }}">Làm mới</a>
+    </div>
+    <!-- Results -->
+
 
     <div class="results-container">
         @foreach ($data as $item)
