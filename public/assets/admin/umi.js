@@ -92117,7 +92117,7 @@
 						dataIndex: "status",
 						key: "status",
 						render: (e, t) => g.a.createElement("div", null, g.a.createElement(l.a, {
-							disabled: 0 !== e,
+							disabled: !(0 === e || 2 === e),
 							trigger: ["click"],
 							overlay: g.a.createElement(h.a, null, g.a.createElement(h.a.Item, {
 								key: "1",
