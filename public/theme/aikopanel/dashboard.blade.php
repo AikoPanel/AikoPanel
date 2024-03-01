@@ -35,7 +35,7 @@
                 color: '{{$theme_config['theme_color']}}',
             },
             version: '{{$version}}',
-            background_url: '{{$tbackground_url}}',
+            background_url: '{{$background_url}}',
             description: '{{$description}}',
             i18n: [
                 'vi-VN',
