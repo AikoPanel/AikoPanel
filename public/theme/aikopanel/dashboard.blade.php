@@ -35,7 +35,7 @@
                 color: '{{$theme_config['theme_color']}}',
             },
             version: '{{$version}}',
-            background_url: '{{$theme_config['background_url']}}',
+            background_url: '{{$tbackground_url}}',
             description: '{{$description}}',
             i18n: [
                 'vi-VN',
@@ -60,7 +60,7 @@
 
 <body>
 <div id="root"></div>
-{!! $theme_config['custom_html'] !!}
+{!! $custom_html !!}
 <script src="/theme/{{$theme}}/assets/vendors.async.js?v={{$version}}"></script>
 <script src="/theme/{{$theme}}/assets/components.async.js?v={{$version}}"></script>
 <script src="/theme/{{$theme}}/assets/umi.js?v={{$version}}"></script>

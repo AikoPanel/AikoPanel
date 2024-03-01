@@ -16,11 +16,6 @@
         },
         "default_value": "default"
     }, {
-        "label": "Hình nền",
-        "placeholder": "Vui lòng nhập URL của hình nền",
-        "field_name": "background_url",
-        "field_type": "input"
-    }, {
         "label": "Phong cách thanh bên",
         "placeholder": "Vui lòng chọn phong cách thanh bên",
         "field_name": "theme_sidebar",
@@ -40,10 +35,5 @@
             "dark": "Tối"
         },
         "default_value": "dark"
-    }, {
-        "label": "HTML tùy chỉnh cho chân trang",
-        "placeholder": "Có thể thêm mã JS hỗ trợ khách hàng, v.v.",
-        "field_name": "custom_html",
-        "field_type": "textarea"
     }]
 }

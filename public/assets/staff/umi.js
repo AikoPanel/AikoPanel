@@ -4824,6 +4824,25 @@
 						placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
 						defaultValue: t.logo,
 						onChange: e => this.set("site", "logo", e.target.value)
+					})),f.a.createElement(m, {
+						title: "Background URL",
+						description: "Được sử dụng để hiển thị nơi cần thiết logo."
+					}, f.a.createElement("input", {
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
+						defaultValue: t.background_url,
+						onChange: e => this.set("site", "background_url", e.target.value)
+					})),f.a.createElement(m, {
+						title: "HTML tùy chỉnh cho chân trang",
+						description: "Có thể thêm mã JS hỗ trợ khách hàng, v.v."
+					}, f.a.createElement("textarea", {
+						rows: "4",
+						type: "text",
+						className: "form-control",
+						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						defaultValue: t.custom_html,
+						onChange: e => this.set("site", "custom_html", e.target.value)
 					})))), f.a.createElement(s.a.TabPane, {
 						tab: "Liên kết",
 						key: "connect"
