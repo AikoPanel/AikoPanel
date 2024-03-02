@@ -5592,7 +5592,7 @@
 					}, f.a.createElement("input", {
 						type: "text",
 						className: "form-control",
-						placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
+						placeholder: "Vui lòng nhập URL của Background, cuối cùng không có dấu gạch chéo (/)",
 						defaultValue: t.background_url,
 						onChange: e => this.set("site", "background_url", e.target.value)
 					})), f.a.createElement(m, {
@@ -5602,7 +5602,7 @@
 						rows: "4",
 						type: "text",
 						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+						placeholder: "Vui lòng nhập HTML tùy chỉnh cho chân trang",
 						defaultValue: t.custom_html,
 						onChange: e => this.set("site", "custom_html", e.target.value)
 					})), f.a.createElement(m, {
