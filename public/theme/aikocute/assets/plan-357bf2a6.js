@@ -1,0 +1,1 @@
+var _=(r=>(r.PERIOD="period",r.TRAFFIC="traffic",r))(_||{}),Y=(r=>(r.ONEDAY="one_day_price",r.MONTHLY="month_price",r.BIMONTHLY="two_month_price",r.QUARTERLY="quarter_price",r.HALF_YEARLY="half_year_price",r.YEARLY="year_price",r.TWO_YEARLY="two_year_price",r.THREE_YEARLY="three_year_price",r.ONETIME="onetime_price",r))(Y||{});export{_ as P,Y as a};
