@@ -31639,7 +31639,7 @@
 						complete: () => {
 							var e, t = (null === (e = this.props.notice) || void 0 === e ? void 0 : e.notices) || [];
 							if (t.length) {
-								var n = t.find((e => -1 !== e.tags.indexOf("弹窗")));
+								var n = t.find((e => -1 !== e.tags.indexOf("Pop-ups")));
 								n && this.modalVisible(n)
 							}
 						}
