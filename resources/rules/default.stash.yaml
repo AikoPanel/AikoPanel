@@ -1,0 +1,133 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver: null
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver: null
+  fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
+proxies:
+proxy-groups:
+  - {name: $app_name, type: select, proxies: [DIRECT, 𝐀𝐔𝐓𝐎 𝐒𝐄𝐋𝐄𝐂𝐓], hidden: null, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/VIP.png', ssid-policy: {cellular: 𝐀𝐔𝐓𝐎 𝐒𝐄𝐋𝐄𝐂𝐓, default: DIRECT, wifi: direct}, interval: null, lazy: true}
+  - {name: 𝐀𝐔𝐓𝐎 𝐒𝐄𝐋𝐄𝐂𝐓, type: select, proxies: [𝐅𝐔𝐋𝐋 𝐒𝐄𝐕𝐄𝐑, 𝐀𝐔𝐓𝐎 𝐀𝐋𝐋, 𝐀𝐔𝐓𝐎 𝐕𝐍], use: null, include-all: null, use-url: null, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png', interval: null, lazy: true}
+  - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png
+    name: 𝐅𝐔𝐋𝐋 𝐒𝐄𝐕𝐄𝐑
+    type: select
+    use:
+      - VPN
+    interval: 10
+    lazy: true
+  - {name: 𝐀𝐔𝐓𝐎 𝐕𝐍, type: url-test, proxies: null, url: 'http://www.gstatic.com/generate_204', interval: null, hidden: null, use-url: null, icon: 'https://cdn1.iconfinder.com/data/icons/ensign-11/512/280_Ensign_Flag_Nation_vietnam-1024.png', use: [VPN], filter: '🇻🇳', lazy: true}
+  - {name: 𝐀𝐔𝐓𝐎 𝐀𝐋𝐋, type: url-test, proxies: null, url: 'http://www.gstatic.com/generate_204', interval: null, hidden: null, use-url: null, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png', use: [VPN], filter: null, lazy: true}
+rules:
+  - DST-PORT,5223,𝐀𝐔𝐓𝐎 𝐒𝐄𝐋𝐄𝐂𝐓
+  - DOMAIN-SUFFIX,*.apple.com,𝐀𝐔𝐓𝐎 𝐒𝐄𝐋𝐄𝐂𝐓
+  - DOMAIN-KEYWORD,ads,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adjust,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,admarvel,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,admaster,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,admdfs,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,admicro,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adsage,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adsame,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adsensor,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adserver,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adservice,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adsmogo,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adsrvmedia,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adsystem,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adtima,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,advert,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,adwords,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,analysis,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,analysys,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,analytics,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,applovin,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,appsflyer,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,clkservice,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,domob,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,doubleclick,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,duapps,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,duomeng,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,dwtrack,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,float,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,fwmrm,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,googleads,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,googlesyndication,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,inmobi,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,lianmeng,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,log-hl,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,medialytics,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,mixpanel,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,mobaders,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,omgmta,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,openx,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,partnerad,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,polyad,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,popads,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,tongji,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,uedas,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,umeng,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,umtrack,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,usage,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN-KEYWORD,vclick,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - RULE-SET,ADSVN1,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - RULE-SET,ADSVN,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - RULE-SET,ADSG,𝐀𝐝𝐁𝐥𝐨𝐜𝐤
+  - DOMAIN,app-measurement.com,REJECT
+  - MATCH,$app_name
+rule-providers: {ADSG: {behavior: domain, format: yaml, interval: 0, url: 'https://github.com/lonely0811/olsd/raw/main/stash/ADSG.yml'}, ADSVN: {behavior: classical, format: yaml, interval: 0, url: 'https://github.com/lonely0811/olsd/raw/main/stash/ADSVN1.yml'}, ADSVN1: {behavior: classical, format: yaml, interval: 0, url: 'https://github.com/lonely0811/olsd/raw/main/stash/ADSVN2.yml'}}
+http:
+  mitm:
+    - "-redirector*.googlevideo.com"
+    - "*.googlevideo.com"
+    - "www.youtube.com"
+    - "s.youtube.com"
+    - "youtubei.googleapis.com"
+    - "mobile-api.adguard.org"
+  script:
+    - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?
+      name: YouTuberesponse
+      type: response
+      require-body: true
+      binary-mode: true
+      timeout: 10
+    - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\?
+      name: YouTuberequest
+      type: request
+      require-body: true
+      binary-mode: true
+      timeout: 10
+    - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt
+      name: AdGuard
+      type: response
+      require-body: true
+      timeout: 10
+  rewrite:
+    - (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+    - ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject-200
+    - ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject-200
+    - ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject-200
+    - ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject-200
+script-providers:
+  YouTuberesponse:
+    url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.beta.js
+    interval: 86400
+  YouTuberequest:
+    url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.beta.js
+    interval: 86400
+  AdGuard:
+    url: https://github.com/lonely0811/olsd/raw/main/ad.js
+    interval: 86400
+proxy-providers:
+  VPN:
+    interval: 0
+    url: $sub_url
