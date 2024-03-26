@@ -31561,7 +31561,6 @@
 			render() {
 				var e = this.props.notice,
 					t = e.notices,
-					S = e.staff,
 					n = e.fetchLoading,
 					r = [{
 						title: "#",
@@ -31707,8 +31706,9 @@
 							})
 						})
 					}
-				}, S && S.map(e => g.a.createElement(a.a.Option, {
-					key: e
+				}, e.staff && e.staff.map(e => g.a.createElement(a.a.Option, {
+					key: e,
+					value: e
 				}, e)))), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
