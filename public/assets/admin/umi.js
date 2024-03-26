@@ -31708,8 +31708,8 @@
 						})
 					}
 				}, S && S.map(e => g.a.createElement(a.a.Option, {
-					key: e.staff_url
-				}, e.staff_url)))), g.a.createElement("div", {
+					key: e
+				}, e)))), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
