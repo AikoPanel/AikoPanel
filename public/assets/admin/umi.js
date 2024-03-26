@@ -81893,7 +81893,8 @@
 											n({
 												type: "setState",
 												payload: {
-													notices: t.data
+													notices: t.data,
+													staff: t.staff
 												}
 											});
 									case 11:
