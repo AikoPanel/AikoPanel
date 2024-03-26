@@ -13137,8 +13137,8 @@
 				}, d.a.createElement("label", null, "Node SpeedLimit ( Mbps )"), d.a.createElement(s.a, {
 					addonAfter: "Mbps",
 					placeholder: "Speed Limit Node ( Mbps )",
-					value: e.speedlimit,
-					onChange: e => this.formChange("speedlimit", e.target.value)
+					value: e.speed_limit,
+					onChange: e => this.formChange("speed_limit", e.target.value)
 				}))), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", null, "Nhóm Định tuyến"), d.a.createElement(a.a, {
@@ -28670,8 +28670,8 @@
 				}, h.a.createElement("label", null, "Node SpeedLimit ( Mbps )"), h.a.createElement(s.a, {
 					addonAfter: "Mbps",
 					placeholder: "Speed Limit Node ( Mbps )",
-					value: e.speedlimit,
-					onChange: e => this.formChange("speedlimit", e.target.value)
+					value: e.speed_limit,
+					onChange: e => this.formChange("speed_limit", e.target.value)
 				}))), h.a.createElement("div", {
 					className: "form-group"
 				}, h.a.createElement("label", null, "Nhóm Định Tuyến"), h.a.createElement(a.a, {
@@ -100692,8 +100692,8 @@
 				}, y.a.createElement("label", null, "Node SpeedLimit ( Mbps )"), y.a.createElement(s.a, {
 					addonAfter: "Mbps",
 					placeholder: "Speed Limit Node ( Mbps )",
-					value: e.speedlimit,
-					onChange: e => this.formChange("speedlimit", e.target.value)
+					value: e.speed_limit,
+					onChange: e => this.formChange("speed_limit", e.target.value)
 				}))), y.a.createElement("div", {
 					className: "form-group"
 				}, y.a.createElement("label", null, "Nhóm Định Tuyến"), y.a.createElement(N.a, {
@@ -101181,8 +101181,8 @@
 				}, y.a.createElement("label", null, "Node SpeedLimit ( Mbps )"), y.a.createElement(s.a, {
 					addonAfter: "Mbps",
 					placeholder: "Speed Limit Node ( Mbps )",
-					value: e.speedlimit,
-					onChange: e => this.formChange("speedlimit", e.target.value)
+					value: e.speed_limit,
+					onChange: e => this.formChange("speed_limit", e.target.value)
 				}))), y.a.createElement("div", {
 					className: "form-group"
 				}, y.a.createElement("label", null, "Nhóm Định Tuyến"), y.a.createElement(N.a, {
@@ -108134,8 +108134,8 @@
 				}, f.a.createElement("label", null, "Node SpeedLimit ( Mbps )"), f.a.createElement(c.a, {
 					addonAfter: "Mbps",
 					placeholder: "Speed Limit Node ( Mbps )",
-					value: e.speedlimit,
-					onChange: e => this.formChange("speedlimit", e.target.value)
+					value: e.speed_limit,
+					onChange: e => this.formChange("speed_limit", e.target.value)
 				}))), f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", null, "Nhóm Định tuyến"), f.a.createElement(s.a, {
