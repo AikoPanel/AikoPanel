@@ -31526,7 +31526,8 @@
 					this.state = {
 						visible: !1,
 						submit: {},
-						notices: []
+						notices: [],
+						staff: [],
 					}
 			}
 			componentDidMount() {
