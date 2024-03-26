@@ -31561,6 +31561,7 @@
 			render() {
 				var e = this.props.notice,
 					t = e.notices,
+					S = e.staff,
 					n = e.fetchLoading,
 					r = [{
 						title: "#",
@@ -31706,7 +31707,7 @@
 							})
 						})
 					}
-				})), g.a.createElement("div", {
+				}, S.map((e) => g.a.createElement(a.a.Option, { key: e.staff_url, value: e.staff_url }, e.staff_url)))) , g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
