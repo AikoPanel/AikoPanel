@@ -31561,6 +31561,7 @@
 			render() {
 				var e = this.props.notice,
 					t = e.notices,
+					S = e.staff,
 					n = e.fetchLoading,
 					r = [{
 						title: "#",
@@ -31706,7 +31707,7 @@
 							})
 						})
 					}
-				}, e.staff && e.staff.map(e => g.a.createElement(a.a.Option, {
+				}, S && S.map(e => g.a.createElement(a.a.Option, {
 					key: e,
 					value: e
 				}, e)))), g.a.createElement("div", {
