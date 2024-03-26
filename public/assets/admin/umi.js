@@ -31707,7 +31707,9 @@
 							})
 						})
 					}
-				}, S.map((e) => g.a.createElement(a.a.Option, { key: e.staff_url, value: e.staff_url }, e.staff_url)))) , g.a.createElement("div", {
+				}, S.staff && S.staff.map(e => g.a.createElement(a.a.Option, {
+					key: e.staff_url
+				}, e.staff_url)))), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
