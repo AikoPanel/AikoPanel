@@ -91030,7 +91030,7 @@
 				1: "Đang Mở",
 				2: "Đã Hủy",
 				3: "Đã Thanh Toán",
-				4: "Đã Giảm Giá"
+				4: "Thanh toán số dư"
 			},
 			commissionStatusText: {
 				0: "Đang Chờ Xác Nhận",
