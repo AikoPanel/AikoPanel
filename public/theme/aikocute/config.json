@@ -51,15 +51,8 @@
       "default_value": "true"
     },
     {
-      "label": "Default Language",
-      "placeholder": "vi-VN",
-      "field_name": "default_language",
-      "field_type": "input",
-      "default_value": "vi-VN"
-    },
-    {
       "label": "Languages",
-      "placeholder": "vi-VN,en-US",
+      "placeholder": "vi-VN,en-US,zh-CN",
       "field_name": "languages",
       "field_type": "input",
       "default_value": "vi-VN,en-US,zh-CN"
@@ -76,7 +69,7 @@
       "placeholder": "2022",
       "field_name": "start_year",
       "field_type": "input",
-      "default_value": 2022
+      "default_value": 2021
     }
   ]
 }
