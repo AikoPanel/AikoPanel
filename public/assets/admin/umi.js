@@ -71895,10 +71895,14 @@
 					className: "form-group"
 				}, d.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
-				}, "URL Sử dụng thanh toán ( Để trống là hiện tất cả )"), d.a.createElement(v.a, {
+				}, "URL Sử dụng thanh toán ( Để trống là hiện tất cả )"), d.a.createElement(g.a, {
+					mode: "tags",
+					value: a.staff_urls || [],
+					style: {
+						width: "100%"
+					},
 					placeholder: "Thanh toán riêng của CTV,Ex: aikopanel.com",
-					defaultValue: a.url_staff,
-					onChange: e => this.submitOnChange("url_staff", e.target.value)
+					onChange: e => this.submitOnChange("staff_urls", e.length > 0 ? e : null)
 				})), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", {
