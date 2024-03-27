@@ -71836,7 +71836,7 @@
 					}
 				})
 			}
-			onSelectPaymentMethod(e, staff) {
+			onSelectPaymentMethod(e) {
 				this.props.dispatch({
 					type: "payment/getPaymentForm",
 					payment: e,
@@ -71844,7 +71844,7 @@
 					complete: t => {
 						this.setState({
 							form: t,
-							selectPaymentMethod: e,
+							selectPaymentMethod: e
 						})
 					}
 				})
@@ -71867,7 +71867,7 @@
 				var e = this.props.payment.fetchLoading,
 					t = this.state,
 					n = t.paymentMethods,
-					staff = e.staff,
+					staff = t.staff,
 					r = t.selectPaymentMethod,
 					o = t.form,
 					i = t.config,
@@ -71883,7 +71883,7 @@
 					onOk: () => this.save(),
 					okText: this.state.submit.id ? "Lưu" : "Thêm",
 					okButtonProps: {
-						loading: 	e
+						loading: e
 					},
 					cancelText: "Hủy bỏ"
 				}, d.a.createElement("div", null, d.a.createElement("div", {
