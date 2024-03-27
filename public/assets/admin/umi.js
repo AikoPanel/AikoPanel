@@ -80035,7 +80035,8 @@
 				super(e),
 					this.state = {
 						visible: !1,
-						selectedTab: !1
+						selectedTab: !1,
+						staff: []
 					}
 			}
 			componentDidMount() {}
@@ -80063,8 +80064,7 @@
 				this.props.dispatch({
 						type: "knowledge/setState",
 						payload: {
-							knowledge: {},
-							staff: {}
+							knowledge: {}
 						}
 					}),
 					this.setState({
