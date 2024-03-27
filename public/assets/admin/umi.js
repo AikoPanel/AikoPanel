@@ -80116,10 +80116,13 @@
 					className: "form-group"
 				}, f.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
-				}, "Domain hiển thị"), f.a.createElement(w.a, {
+				}, "Domain hiển thị"), f.a.createElement(b.a, {
 					mode: "tags",
-					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
 					value: n.staff_urls || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
 					onChange: e => this.formChange("staff_urls", e.length > 0 ? e : null)
 				})), f.a.createElement("div", {
 					className: "form-group"
