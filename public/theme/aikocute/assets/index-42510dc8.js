@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-e2f99b42.js";import{b as r}from"./index-f074c660.js";import{T as i,a as o}from"./EmojiPickerReact-5670e985.js";import"./constate.es-434fa02f.js";import"./useQuery-e9d508ad.js";import"./formik.esm-e8d245cc.js";import"./LoadingButton-a9b1cd00.js";import"./index.es-50e51192.js";const k=()=>(r("ticket"),t(i,{children:t(o,{})}));export{k as default};
