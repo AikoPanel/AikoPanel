@@ -37205,7 +37205,7 @@
 											n({
 												type: "setState",
 												payload: {
-													payments: t.data
+													payments: t.data, staff: t.staff
 												}
 											});
 									case 11:
@@ -37243,7 +37243,6 @@
 				getPaymentForm(e) {
 					var t = e.complete,
 						n = e.payment,
-						staff = e.staff,
 						r = e.id;
 					return a().mark((function e() {
 						var o;
@@ -37255,7 +37254,6 @@
 											Object(i.b)("/" + window.settings.secure_path + "/payment/getPaymentForm", {
 												payment: n,
 												id: r,
-												staff: staff,
 											});
 									case 2:
 										if (200 === (o = e.sent).code) {
@@ -71811,6 +71809,7 @@
 				var e = this.state,
 					t = e.config,
 					n = e.selectPaymentMethod,
+					staff = e.staff,
 					r = e.submit;
 				this.props.dispatch({
 					type: "payment/save",
@@ -71841,13 +71840,11 @@
 				this.props.dispatch({
 					type: "payment/getPaymentForm",
 					payment: e,
-					staff: staff,
 					id: this.state.submit.id,
 					complete: t => {
 						this.setState({
 							form: t,
 							selectPaymentMethod: e,
-							staff: staff
 						})
 					}
 				})
@@ -71870,7 +71867,7 @@
 				var e = this.props.payment.fetchLoading,
 					t = this.state,
 					n = t.paymentMethods,
-					staff = t.staff,
+					staff = e.staff,
 					r = t.selectPaymentMethod,
 					o = t.form,
 					i = t.config,
@@ -71886,7 +71883,7 @@
 					onOk: () => this.save(),
 					okText: this.state.submit.id ? "Lưu" : "Thêm",
 					okButtonProps: {
-						loading: e
+						loading: 	e
 					},
 					cancelText: "Hủy bỏ"
 				}, d.a.createElement("div", null, d.a.createElement("div", {
