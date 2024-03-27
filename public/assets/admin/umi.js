@@ -71866,6 +71866,7 @@
 				var e = this.props.payment.fetchLoading,
 					t = this.state,
 					n = t.paymentMethods,
+					staff = t.staff,
 					r = t.selectPaymentMethod,
 					o = t.form,
 					i = t.config,
@@ -71904,7 +71905,7 @@
 					},
 					placeholder: "Thanh toán riêng của CTV,Ex: aikopanel.com",
 					onChange: e => this.submitOnChange("staff_urls", e.length > 0 ? e : null)
-				})), d.a.createElement("div", {
+				}, staff && staff.map((e => d.a.createElement(g.a.Option, { key: e, value: e }, e))))), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
