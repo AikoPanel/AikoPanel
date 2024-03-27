@@ -7,7 +7,7 @@
     <meta property="og:image" content="{{$logo}}">
     <link rel="icon" href='{{$logo}}'>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <script type="module" crossorigin src="/theme/aikocute/assets/index-4623d8b1.js"></script>
+    <script type="module" crossorigin src="/theme/aikocute/assets/index-a10699ff.js"></script>
   <link rel="modulepreload" crossorigin href="/theme/aikocute/assets/vendor-4a4788c2.js">
   <link rel="stylesheet" href="/theme/aikocute/assets/index-a7f18825.css">
   <script type="module">try{import.meta.url;import("_").catch(()=>1);}catch(e){}window.__vite_is_modern_browser=true;</script>
@@ -33,8 +33,8 @@
       };
     </script>
       <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
-  <script nomodule crossorigin id="vite-legacy-polyfill" src="/theme/aikocute/assets/polyfills-legacy-7515eafe.js"></script>
-  <script nomodule crossorigin id="vite-legacy-entry" data-src="/theme/aikocute/assets/index-legacy-7f61068e.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+      <script nomodule crossorigin id="vite-legacy-polyfill" src="/theme/aikocute/assets/polyfills-legacy-7515eafe.js"></script>
+      <script nomodule crossorigin id="vite-legacy-entry" data-src="/theme/aikocute/assets/index-legacy-a76675cd.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
 </head>
 
 <body>
