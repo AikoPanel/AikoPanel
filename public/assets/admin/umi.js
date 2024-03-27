@@ -37205,7 +37205,7 @@
 											n({
 												type: "setState",
 												payload: {
-													payments: t.data
+													payments: t.data, staff: t.staff
 												}
 											});
 									case 11:
@@ -71801,7 +71801,8 @@
 						paymentMethods: [],
 						selectPaymentMethod: void 0,
 						form: {},
-						config: this.props.record && this.props.record.config || {}
+						config: this.props.record && this.props.record.config || {},
+						staff: []
 					}
 			}
 			save() {
