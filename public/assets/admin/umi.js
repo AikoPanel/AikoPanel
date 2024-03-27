@@ -37205,7 +37205,7 @@
 											n({
 												type: "setState",
 												payload: {
-													payments: t.data, staff: t.staff
+													payments: t.data
 												}
 											});
 									case 11:
@@ -37243,6 +37243,7 @@
 				getPaymentForm(e) {
 					var t = e.complete,
 						n = e.payment,
+						staff = e.staff,
 						r = e.id;
 					return a().mark((function e() {
 						var o;
@@ -37253,7 +37254,8 @@
 										return e.next = 2,
 											Object(i.b)("/" + window.settings.secure_path + "/payment/getPaymentForm", {
 												payment: n,
-												id: r
+												id: r,
+												staff: staff,
 											});
 									case 2:
 										if (200 === (o = e.sent).code) {
@@ -71839,11 +71841,13 @@
 				this.props.dispatch({
 					type: "payment/getPaymentForm",
 					payment: e,
+					staff: staff,
 					id: this.state.submit.id,
 					complete: t => {
 						this.setState({
 							form: t,
-							selectPaymentMethod: e
+							selectPaymentMethod: e,
+							staff: staff
 						})
 					}
 				})
