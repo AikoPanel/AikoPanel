@@ -80112,6 +80112,15 @@
 					placeholder: "Vui lòng nhập phân loại, phân loại sẽ tự động được nhóm lại.",
 					value: n.category,
 					onChange: e => this.formChange("category", e.target.value)
+				})),f.a.createElement("div", {
+					className: "form-group"
+				}, f.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Domain hiển thị"), f.a.createElement(w.a, {
+					mode: "tags",
+					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
+					value: n.staff_urls || [],
+					onChange: e => this.formChange("staff_urls", e.length > 0 ? e : null)
 				})), f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", {
