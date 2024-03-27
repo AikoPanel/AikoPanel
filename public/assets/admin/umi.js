@@ -80063,7 +80063,8 @@
 				this.props.dispatch({
 						type: "knowledge/setState",
 						payload: {
-							knowledge: {}
+							knowledge: {},
+							staff: {}
 						}
 					}),
 					this.setState({
@@ -80082,6 +80083,7 @@
 				var e = this.state.visible,
 					t = this.props.knowledge,
 					n = t.knowledge,
+					staff = t.staff,
 					r = (t.categorys,
 						t.fetchByIdLoading),
 					o = t.saveLoading,
@@ -80124,7 +80126,7 @@
 					},
 					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
 					onChange: e => this.formChange("staff_urls", e.length > 0 ? e : null)
-				})), f.a.createElement("div", {
+				}, staff && staff.map((e => f.a.createElement(b.a.Option, { key: e, value: e }, e))))), f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -83582,7 +83584,7 @@
 											n({
 												type: "setState",
 												payload: {
-													knowledges: t.data
+													knowledges: t.data, staff: t.staff
 												}
 											});
 									case 11:
