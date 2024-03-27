@@ -37205,7 +37205,7 @@
 											n({
 												type: "setState",
 												payload: {
-													payments: t.data, staff: t.staff
+													payments: t.data
 												}
 											});
 									case 11:
@@ -37253,7 +37253,7 @@
 										return e.next = 2,
 											Object(i.b)("/" + window.settings.secure_path + "/payment/getPaymentForm", {
 												payment: n,
-												id: r,
+												id: r
 											});
 									case 2:
 										if (200 === (o = e.sent).code) {
@@ -71801,15 +71801,13 @@
 						paymentMethods: [],
 						selectPaymentMethod: void 0,
 						form: {},
-						config: this.props.record && this.props.record.config || {},
-						staff: []
+						config: this.props.record && this.props.record.config || {}
 					}
 			}
 			save() {
 				var e = this.state,
 					t = e.config,
 					n = e.selectPaymentMethod,
-					staff = e.staff,
 					r = e.submit;
 				this.props.dispatch({
 					type: "payment/save",
@@ -71867,7 +71865,6 @@
 				var e = this.props.payment.fetchLoading,
 					t = this.state,
 					n = t.paymentMethods,
-					staff = t.staff,
 					r = t.selectPaymentMethod,
 					o = t.form,
 					i = t.config,
@@ -71906,7 +71903,7 @@
 					},
 					placeholder: "Thanh toán riêng của CTV,Ex: aikopanel.com",
 					onChange: e => this.submitOnChange("staff_urls", e.length > 0 ? e : null)
-				}, staff && staff.map((e => d.a.createElement(g.a.Option, { key: e, value: e }, e))))), d.a.createElement("div", {
+				})), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
