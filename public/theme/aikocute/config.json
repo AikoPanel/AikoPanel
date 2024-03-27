@@ -51,6 +51,13 @@
       "default_value": "true"
     },
     {
+      "label": "Default Language",
+      "placeholder": "vi-VN",
+      "field_name": "default_language",
+      "field_type": "input",
+      "default_value": "vi-VN"
+    },
+    {
       "label": "Languages",
       "placeholder": "vi-VN,en-US",
       "field_name": "languages",
