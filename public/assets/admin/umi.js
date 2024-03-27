@@ -71837,7 +71837,7 @@
 					}
 				})
 			}
-			onSelectPaymentMethod(e) {
+			onSelectPaymentMethod(e, staff) {
 				this.props.dispatch({
 					type: "payment/getPaymentForm",
 					payment: e,
