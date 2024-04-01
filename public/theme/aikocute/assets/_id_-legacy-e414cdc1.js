@@ -1,0 +1,1 @@
+System.register(["./vendor-legacy-21e846b5.js","./index-legacy-4d5357df.js","./index-legacy-19617319.js","./useQuery-legacy-84be3fc1.js"],(function(e,t){"use strict";var r,n,s,c,i;return{setters:[e=>{r=e.bN,n=e.j},e=>{s=e.b},e=>{c=e.T,i=e.a},null],execute:function(){e("default",(()=>{s("ticket");const e=r().id;return n(c,{id:parseInt(e??"0"),children:n(i,{})})}))}}}));

@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-4c8effbd.js";import{b as r}from"./index-efdad191.js";import{T as e,a as i}from"./index-831d0820.js";import"./useQuery-4151a8eb.js";const m=()=>(r("ticket"),t(e,{children:t(i,{})}));export{m as default};
