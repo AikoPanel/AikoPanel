@@ -1,7 +1,7 @@
 {
   "name": "AikoPanel",
   "description": "An alternative frontend use React & Vite for AikoPanel",
-  "version": "beta-1.4",
+  "version": "1.0",
   "images": "https://opengraph.githubassets.com/483f1441cef28814e23b5e3fed9acd1be671db0019d9b58e65d38afd16cca0ce/aikopanel/aikopanel",
   "configs": [
     {
