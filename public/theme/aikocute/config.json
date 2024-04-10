@@ -1,7 +1,7 @@
 {
   "name": "AikoPanel",
   "description": "An alternative frontend use React & Vite for AikoPanel",
-  "version": "1.0",
+  "version": "beta-1.4",
   "images": "https://opengraph.githubassets.com/483f1441cef28814e23b5e3fed9acd1be671db0019d9b58e65d38afd16cca0ce/aikopanel/aikopanel",
   "configs": [
     {
@@ -20,13 +20,6 @@
       "placeholder": "UA-XXXXXXX-X",
       "field_name": "google_analytics_measurement_id",
       "field_type": "input"
-    },
-    {
-      "label": "Font Family",
-      "placeholder": "Roboto, sans-serif",
-      "field_name": "font_family",
-      "field_type": "input",
-      "default_value": "Roboto, sans-serif"
     },
     {
       "label": "Mini Drawer",
@@ -56,13 +49,6 @@
       "field_name": "languages",
       "field_type": "input",
       "default_value": "vi-VN,en-US,zh-CN"
-    },
-    {
-      "label": "Emoji Endpoint",
-      "placeholder": "https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/{{code}}.png",
-      "field_name": "emoji_endpoint",
-      "field_type": "input",
-      "default_value": "https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/{{code}}.png"
     },
     {
       "label": "Start Year",
