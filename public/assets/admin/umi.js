@@ -68973,17 +68973,6 @@
 					}
 				})
 			}
-			allDel() {
-                p["a"].confirm({
-                    title: "Nhắc nhở",
-                    content: "Bạn có chắc chắn muốn xóa tất cả không?",
-                    onOk: ()=>{
-                        this.props.dispatch({
-                            type: "user/allDel"
-                        })
-                    }
-                })
-            }
 			userFilter(e, t, n) {
 				var r = arguments.length > 3 && void 0 !== arguments[3] && arguments[3];
 				this.props.dispatch({
@@ -69263,12 +69252,10 @@
 						title: "Gói Dịch Vụ",
 						condition: ["="],
 						type: "select",
-						options:[{
-                            key: "không có đăng ký",
-                            value: "null" }, ...R.map(e=>({
+						options: R.map((e => ({
 							key: e.name,
 							value: e.id
-						}))],
+						})))
 					}, {
 						key: "transfer_enable",
 						title: "Lưu Lượng",
@@ -69365,14 +69352,7 @@
 						onClick: () => this.ban()
 					}, g.a.createElement(u.a, {
 						type: "stop"
-					}), " Chặn Đồng Loạt")), g.a.createElement(c["a"].Item, {
-                        disabled: !E.length
-                    }, g.a.createElement("a", {
-                        disabled: !E.length,
-                        onClick: ()=>this.allDel()
-                    }, g.a.createElement(u["a"], {
-                        type: "delete"
-                    }), " Xóa hàng loạt")))
+					}), " Chặn Đồng Loạt")))
 				}, g.a.createElement(s.a, null, g.a.createElement(u.a, {
 					type: "select"
 				}), "Tùy Chọn")))), g.a.createElement(T.a, null, g.a.createElement(s.a, {
@@ -69454,13 +69434,7 @@
 					key: null === (p = this.record) || void 0 === p ? void 0 : p.email
 				}, g.a.createElement("a", null, g.a.createElement(u.a, {
 					type: "solution"
-                }), " Hồ sơ lưu lượng của TA"))), g.a.createElement("li", {
-                    className: "ant-dropdown-menu-item"
-                }, g.a.createElement("a", {
-                    onClick: ()=>this.delUser(this.record)
-                }, g.a.createElement(u["a"], {
-                    type: "delete"
-                }), " Xóa người dùng"))))))))
+				}), " Ghi Nhận Lưu Lượng Của Người Dùng")))))))))
 			}
 		}
 		t.default = Object(E.c)((e => ({
@@ -78364,43 +78338,6 @@
 								}
 						}), e)
 					}))()
-                },
-                allDel(e, t) {
-                    var n = t.select
-                      , r = t.put;
-                    return f().mark(function e() {
-                        var t, i, o;
-                        return f().wrap(function(e) {
-                            while (1)
-                                switch (e.prev = e.next) {
-                                case 0:
-                                    return e.next = 2,
-                                    n(e=>e.user);
-                                case 2:
-                                    return t = e.sent,
-                                    i = t.filter,
-                                    e.next = 6,
-                                    Object(a["b"])("/" + window.settings.secure_path + "/user/allDel", {
-                                        filter: i
-                                    });
-                                case 6:
-                                    if (o = e.sent,
-                                    200 === o.code) {
-                                        e.next = 9;
-                                        break
-                                    }
-                                    return e.abrupt("return");
-                                case 9:
-                                    return e.next = 11,
-                                    r({
-                                        type: "fetch"
-                                    });
-                                case 11:
-                                case "end":
-                                    return e.stop()
-                                }
-                        }, e)
-                    })()
 				}
 			}
 		}
