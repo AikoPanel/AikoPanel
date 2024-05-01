@@ -9,7 +9,7 @@
     <title>AppleID Web {{ $appname }}</title>
     <style>
         body {
-            background-color: #f4f4f4;
+            background-color: #92c5ff;
             font-family: 'Arial', sans-serif; /* Change the font for better compatibility */
         }
 
@@ -21,7 +21,7 @@
         }
 
         .card {
-            background-color: #fff;
+            background-color: #a6cfff;
             border: 1px solid #e5e5e5;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -89,8 +89,8 @@
 
             // Show success alert using SweetAlert2
             Swal.fire({
-                icon: 'success',
-                title: 'Copied to clipboard!',
+                icon: 'warning',
+                title: 'Sao Chép Thành Công!',
                 showConfirmButton: false,
                 timer: 1500
             });
@@ -110,15 +110,16 @@
 <body>
     <div class="container">
         <div class="card">
-            <h1>Lấy AppleID Web {{ $appname }}</h1>
+            <h1>AppleID Web {{ $appname }}</h1>
             <div class="text-center">
                 <p><strong>Số lần lấy còn lại:</strong> {{ $appleidlimit }}</p>
                 <p><strong>Trạng thái:</strong> {{ $statusid }}</p>
-                <p><strong>Username:</strong> <span id="username">{{ $username }}</span></p>
-                <p><strong>Password:</strong> <span id="password">{{ $password }}</span></p>
-                <button onclick="copyUsernameToClipboard()" class="btn btn-primary">Copy Username</button>
-                <button onclick="copyPasswordToClipboard()" class="btn btn-primary">Copy Password</button>
-                <p><strong>Lưu ý:</strong> App Shadowrocket và Quantumult X đều nằm trong mục gia đình nhé</p>
+                <p><strong>Tài Khoản:</strong> <span id="username">{{ $username }}</span></p>
+                <p hidden><strong>Password:</strong> <span id="password">{{ $password }}</span></p>
+                <button onclick="copyUsernameToClipboard()" class="btn btn-primary">Sao Chép Tài Khoản</button>
+                <button onclick="copyPasswordToClipboard()" class="btn btn-primary">Sao Chép Mật Khẩu</button><br><hr>⬇️ Lấy id tại đây nếu lỗi ⬇️
+                <a href="/appleid" class="btn btn-secondary">Id Shadowrocket</a>
+                <img src="../images/idapple_guide.jpg" alt="Hướng dẫn lấy ID Apple" style="width: 100%; max-width: 400px; margin-top: 1rem;">
                 <hr> <!-- Horizontal line -->
                 @if (!empty($quantumultx))
                     <p><strong>Quantumult X:</strong> Bấm vào để tải Quantumult X</p>

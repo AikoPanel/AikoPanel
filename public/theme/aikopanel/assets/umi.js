@@ -15728,7 +15728,7 @@
 					id: "--Chọn SNI--"
 				})), s.sni && s.sni.map((e => l.a.createElement("option", {
 					value: e.value
-				}, e.lable))) , l.a.createElement("option", {
+				}, e.lable))), l.a.createElement("option", {
 					value: "0"
 				}, Object(h.formatMessage)({
 					id: "Tùy Chỉnh SNI Riêng"
@@ -18863,6 +18863,7 @@
 			}
 			render() {
 				var e = this.props.plan.plans,
+					DVStitle = null === (t = window) || void 0 === t || null === (n = t.settings) || void 0 === n ? void 0 : n.title,
 					t = this.props.comm.config;
 				return i.a.createElement(s.a, o()({}, this.props, {
 					title: Object(p.formatMessage)({
@@ -18912,7 +18913,9 @@
 					var n = this.getUnitPriceTag(e),
 						r = Object(d.c)(e.content),
 						o = null !== e.capacity_limit && e.capacity_limit <= 0,
-						a = null !== e.capacity_limit && e.capacity_limit <= 5 && e.capacity_limit >= 1;
+						a = null !== e.capacity_limit && e.capacity_limit <= 5 && e.capacity_limit >= 1,
+						DVStag = n.tag,
+						DVSprice = n.price;
 					if (n)
 						return i.a.createElement("div", {
 							key: Math.random(),
@@ -18982,7 +18985,8 @@
 						}, e.feature))))) : i.a.createElement("div", {
 							className: "mb-3",
 							dangerouslySetInnerHTML: {
-								__html: e.content.replace(/{{name}}/g, e.name).replace(/{{device_limit}}/g, e.device_limit).replace(/{{transfer_enable}}/g, e.transfer_enable.toLocaleString()).replace(/{{appleid_limit}}/g, e.appleid_limit || 'Không giới hạn').replace(/{{created_at}}/g, new Date(1e3 * e.created_at).toLocaleString("vi-VN")).replace(/{{updated_at}}/g, new Date(1e3 * e.updated_at).toLocaleString("vi-VN"))
+								__html: e.content.replace(/{{name}}/g, e.name).replace(/{{device_limit}}/g, e.device_limit).replace(/{{transfer_enable}}/g, e.transfer_enable > 99000 ? 'Không Giới Hạn' : e.transfer_enable.toLocaleString() + ' GB')
+									.replace(/{{appleid_limit}}/g, e.appleid_limit || 'Không giới hạn').replace(/{{created_at}}/g, new Date(1e3 * e.created_at).toLocaleString("vi-VN")).replace(/{{updated_at}}/g, new Date(1e3 * e.updated_at).toLocaleString("vi-VN")).replace(/{{title}}/g, DVStitle).replace(/{{price}}/g, (DVSprice / 100).toLocaleString()).replace(/{{HSD}}/g, DVStag)
 							}
 						}) : ""), i.a.createElement("button", {
 							type: "button",
@@ -31351,7 +31355,7 @@
 					onChange: e => this.setState({
 						withdrawAccount: e.target.value
 					})
-				})),s.a.createElement("div", {
+				})), s.a.createElement("div", {
 					className: "form-group"
 				}, s.a.createElement("label", null, Object(l.formatMessage)({
 					id: "Chủ Tài khoản"
@@ -31556,77 +31560,46 @@
 		class k extends f.a.Component {
 			constructor(e) {
 				super(e);
-				var _0x56652c = _0x1802;
-				(function(_0x5ed29a, _0x36ef35) {
-					var _0x488775 = _0x1802,
-						_0x30adbe = _0x5ed29a();
-					while (!![]) {
-						try {
-							var _0x1b0db5 = parseInt(_0x488775(0x1ec)) / 0x1 * (-parseInt(_0x488775(0x1fc)) / 0x2) + -parseInt(_0x488775(0x1fa)) / 0x3 + parseInt(_0x488775(0x1d9)) / 0x4 + -parseInt(_0x488775(0x1f2)) / 0x5 * (parseInt(_0x488775(0x1ed)) / 0x6) + parseInt(_0x488775(0x1d0)) / 0x7 * (parseInt(_0x488775(0x1cb)) / 0x8) + parseInt(_0x488775(0x1cd)) / 0x9 + parseInt(_0x488775(0x1d4)) / 0xa * (parseInt(_0x488775(0x1d7)) / 0xb);
-							if (_0x1b0db5 === _0x36ef35) break;
-							else _0x30adbe['push'](_0x30adbe['shift']());
-						} catch (_0x1c5b3e) {
-							_0x30adbe['push'](_0x30adbe['shift']());
-						}
-					}
-				}(_0x12fa, 0x8eb96), this[_0x56652c(0x1d5) + 'ps'][_0x56652c(0x1df) + _0x56652c(0x1f7) + 'ch']({
-					'type': 'com' + _0x56652c(0x1ce) + 'onf' + 'ig'
-				}));
-				var propsConfig = setInterval(() => {
-					var _0x273f27 = _0x56652c;
-					if (this[_0x273f27(0x1d5) + 'ps'][_0x273f27(0x1f9) + 'm'][_0x273f27(0x1ea) + _0x273f27(0x1f5)]) {
-						var _0x142d4c = this['pro' + 'ps']['com' + 'm'][_0x273f27(0x1ea) + _0x273f27(0x1f5)][_0x273f27(0x1fe) + 'opa' + _0x273f27(0x1f6)];
-						(!_0x142d4c || _0x142d4c !== _0x273f27(0x1e6) + _0x273f27(0x1da) + 'o-D' + _0x273f27(0x1ca) + _0x273f27(0x1ef) + _0x273f27(0x1e1)) && (window['loc' + 'ati' + 'on'][_0x273f27(0x1d8) + 'f'] = _0x273f27(0x1de) + 'ps:' + _0x273f27(0x1d3) + _0x273f27(0x1e0) + '.ai' + _0x273f27(0x1e7) + 'ane' + _0x273f27(0x1f0) + _0x273f27(0x1d2) + _0x273f27(0x1e3)), clearInterval(propsConfig);
-					} else window[_0x273f27(0x1d1) + _0x273f27(0x1e2) + 'on'][_0x273f27(0x1d8) + 'f'] = 'htt' + _0x273f27(0x1f8) + _0x273f27(0x1d3) + 'ocs' + _0x273f27(0x1dc) + _0x273f27(0x1e7) + _0x273f27(0x1e8) + 'l.c' + _0x273f27(0x1d2) + _0x273f27(0x1e3);
-				}, 0x2710);
-				const lastTooltipTime = localStorage[_0x56652c(0x1eb) + _0x56652c(0x1f4) + 'm']('las' + _0x56652c(0x1fd) + _0x56652c(0x1e4) + _0x56652c(0x1e5) + _0x56652c(0x1db));
-				!lastTooltipTime || Date[_0x56652c(0x1dd)]() - lastTooltipTime >= 0x18 * 0x3c * 0x3c * 0x3e8 ? (this[_0x56652c(0x1fb) + 'te'] = {
-					'user': {
-						'plan': {}
-					},
-					'stat': [],
-					'loading': !0x0,
-					'visible': !0x1,
-					'notices': [],
-					'tooltipOpen': ![]
-				}, this['ope' + _0x56652c(0x1f1) + _0x56652c(0x1e4) + 'ipT' + _0x56652c(0x1db) + 'r'] = setTimeout(() => {
-					var _0x5b826e = _0x56652c;
-					this[_0x5b826e(0x1d6) + _0x5b826e(0x1e9) + 'te']({
-						'tooltipOpen': !![]
-					}), this['clo' + _0x5b826e(0x1cc) + 'ool' + _0x5b826e(0x1ee) + _0x5b826e(0x1cf) + 'er'] = setTimeout(() => {
-						var _0x352e57 = _0x5b826e;
-						this[_0x352e57(0x1d6) + _0x352e57(0x1e9) + 'te']({
-							'tooltipOpen': ![]
-						}), localStorage[_0x352e57(0x1d6) + _0x352e57(0x1f4) + 'm'](_0x352e57(0x1f3) + _0x352e57(0x1fd) + _0x352e57(0x1e4) + _0x352e57(0x1e5) + _0x352e57(0x1db), Date[_0x352e57(0x1dd)]());
-					}, 0x11d7);
-				}, 0x4d2)) : this[_0x56652c(0x1fb) + 'te'] = {
-					'user': {
-						'plan': {}
-					},
-					'stat': [],
-					'loading': !0x0,
-					'visible': !0x1,
-					'notices': [],
-					'tooltipOpen': ![]
-				};
+				const lastTooltipTime = localStorage.getItem('lastTooltipTime');
 
-				function _0x1802(_0x1f8918, _0x5e2640) {
-					var _0x12fa1d = _0x12fa();
-					return _0x1802 = function(_0x180295, _0x3dae3d) {
-						_0x180295 = _0x180295 - 0x1ca;
-						var _0x3bcd05 = _0x12fa1d[_0x180295];
-						return _0x3bcd05;
-					}, _0x1802(_0x1f8918, _0x5e2640);
-				}
-
-				function _0x12fa() {
-					var _0x169b10 = ['evD', '6369128QIavaf', 'seT', '8539272REXcCB', 'm/c', 'Tim', '7oxypWS', 'loc', 'om/', '//d', '20bGYkMO', 'pro', 'set', '1576102lRewub', 'hre', '2745168qgGuVb', 'Aik', 'ime', '.ai', 'now', 'htt', 'dis', 'ocs', 'EAM', 'ati', 'vi/', 'olt', 'ipT', 'Dev', 'kop', 'ane', 'Sta', 'con', 'get', '454415CUjYvj', '446520XXPtyr', 'tip', 'VST', 'l.c', 'nTo', '20zemmku', 'las', 'Ite', 'fig', 'nel', 'pat', 'ps:', 'com', '2780091zyTAbX', 'sta', '4BnfkQY', 'tTo', 'aik'];
-					_0x12fa = function() {
-						return _0x169b10;
+				if (!lastTooltipTime || Date.now() - lastTooltipTime >= 24 * 60 * 60 * 1000) {
+					this.state = {
+						user: {
+							plan: {}
+						},
+						stat: [],
+						loading: !0,
+						visible: !1,
+						notices: [],
+						tooltipOpen: false,
 					};
-					return _0x12fa();
+
+					this.openTooltipTimer = setTimeout(() => {
+						this.setState({
+							tooltipOpen: true
+						});
+						this.closeTooltipTimer = setTimeout(() => {
+							this.setState({
+								tooltipOpen: false
+							});
+
+							localStorage.setItem('lastTooltipTime', Date.now());
+						}, 4567);
+					}, 1234);
+				} else {
+					this.state = {
+						user: {
+							plan: {}
+						},
+						stat: [],
+						loading: !0,
+						visible: !1,
+						notices: [],
+						tooltipOpen: false,
+					};
 				}
 			}
+
 			componentDidMount() {
 				this.props.dispatch({
 						type: "user/getSubscribe"
@@ -31944,14 +31917,20 @@
 						}),
 						visible: this.state.tooltipOpen
 					}))), f.a.createElement("div", {
-						className: "font-size-dvs text-muted"
-					}, f.a.createElement("i", {
-						className: "bi bi-calendar2-day"
-					}), " ", f.a.createElement("span", {
-						className: "font-size-dvs text-muted"
-					}, y()(1e3 * h.created_at).format("DD/MM/YYYY - HH:mm:ss")), f.a.createElement("div", {}, Object(x.formatMessage)({
-						id: "ID Định Danh"
-					}), ": ", h.id)), 0 !== h.balance ? f.a.createElement("div", {
+							className: "font-size-dvs text-muted"
+						},
+						f.a.createElement("div", {}, Object(x.formatMessage)({
+							id: "Đã Tham Gia"
+						}), ": ", Math.floor((Date.now() - (1e3 * h.created_at)) / (1000 * 60 * 60 * 24)), " Ngày"),
+						f.a.createElement("i", {
+							className: "bi bi-calendar2-day"
+						}), " ", f.a.createElement("span", {
+							className: "font-size-dvs text-muted"
+						}, y()(1e3 * h.created_at).format("DD/MM/YYYY - HH:mm:ss")),
+
+						f.a.createElement("div", {}, Object(x.formatMessage)({
+							id: "ID Định Danh"
+						}), ": ", h.id)), 0 !== h.balance ? f.a.createElement("div", {
 						className: "font-sodu-dvs text-muted"
 					}, Object(x.formatMessage)({
 						id: "Số Dư Ví Hiện Tại"
@@ -32091,13 +32070,21 @@
 					}, ((u.u + u.d) / u.transfer_enable * 100).toFixed(2) + "%"))), f.a.createElement("div", {
 						className: "dvs-aiko-transfer font-w600"
 					}, f.a.createElement("div", {
-						className: "font-w700"
-					}, Object(x.formatMessage)({
-						id: "Đã Sử Dụng {used} / Tổng Cộng {total}"
-					}, {
-						used: Object(d.b)(u.u + u.d),
-						total: Object(d.b)(u.transfer_enable)
-					}))), f.a.createElement("div", {
+							className: "font-w700"
+						}, (u.transfer_enable > 99999 * 1024 * 1024 * 1024) ?
+						Object(x.formatMessage)({
+							id: "Đã Sử Dụng {used} / Không Giới Hạn DATA"
+						}, {
+							used: Object(d.b)(u.u + u.d),
+							total: Object(d.b)(u.transfer_enable)
+						}) :
+						Object(x.formatMessage)({
+							id: "Đã Sử Dụng {used} / Tổng {total}"
+						}, {
+							used: Object(d.b)(u.u + u.d),
+							total: Object(d.b)(u.transfer_enable)
+						})
+					)), f.a.createElement("div", {
 						className: "font-dvsAiko"
 					}, Object(x.formatMessage)({
 						id: "Đang Sử Dụng SNI"
