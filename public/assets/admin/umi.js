@@ -13123,7 +13123,6 @@
 				}, d.a.createElement("label", null, "LoadIPs"), d.a.createElement(a.a, {
 					mode: "tags",
 				    value: e.ips || [],
-				    style: { width: "100%" },
 				    placeholder: "Nhập và chọn để thêm IPs nút",
 				    onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
 				}))), d.a.createElement("div", {
@@ -28656,7 +28655,6 @@
 				}, h.a.createElement("label", null, "LoadIPs"), h.a.createElement(a.a, {
 					mode: "tags",
 				    value: e.ips || [],
-					style: { width: "100%" },
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
 				}))), h.a.createElement("div", {
@@ -100639,7 +100637,6 @@
 				}, y.a.createElement("label", null, "LoadIPs"), y.a.createElement(N.a, {
 					mode: "tags",
 					value: e.ips || [],
-					style: { width: "100%" },
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
 				}))), y.a.createElement("div", {
@@ -101201,7 +101198,6 @@
 				}, y.a.createElement("label", null, "LoadIPs"), y.a.createElement(N.a, {
 					mode: "tags",
 					value: e.ips || [],
-					style: { width: "100%" },
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
 				}))), y.a.createElement("div", {
@@ -108182,7 +108178,6 @@
 				}, f.a.createElement("label", null, "LoadIPs"), f.a.createElement(s.a, {
 					mode: "tags",
 					value: e.ips || [],
-					style: { width: "100%" },
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
 				}))), f.a.createElement("div", {
