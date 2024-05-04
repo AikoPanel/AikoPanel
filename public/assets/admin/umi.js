@@ -5972,7 +5972,48 @@
 						value: 4
 					}, "Thiết lập lại theo năm"), f.a.createElement("option", {
 						value: 5
-					}, "Thiết lập mỗi ngày"))), f.a.createElement(m, {
+					}, "Thiết lập mỗi ngày"))), 
+					
+					
+					f.a.createElement(
+						m,
+						{
+						  title: "Mở nạp tiền",
+						  description: "Sau khi bật, người dùng có thể nạp tiền vào tài khoản",
+						},
+						f.a.createElement(c.a, {
+						  checked: parseInt(r.naptien_on),
+						  onChange: (e) => this.set("subscribe", "naptien_on", e ? 1 : 0),
+						})
+					  ),
+					  parseInt(r.naptien_on) === 1 && f.a.createElement(
+						m,
+						{
+						  title: "Số tiền nạp tối thiểu",
+						  description: "Nhập Số tiền nạp tối thiểu",
+						},
+						f.a.createElement("input", {
+						  type: "text",
+						  className: "form-control",
+						  defaultValue: parseInt(r.min_recharge_amount).toLocaleString(),
+						  onChange: (e) => this.set("subscribe", "min_recharge_amount", e.target.value),
+						})
+					  ),
+					  parseInt(r.naptien_on) === 1 && f.a.createElement(
+						m,
+						{
+						  title: "Số tiền nạp tối đa",
+						  description: "Nhập Số tiền nạp tối đa",
+						},
+						f.a.createElement("input", {
+						  type: "text",
+						  className: "form-control",
+						  defaultValue: parseInt(r.max_recharge_amount).toLocaleString(),
+						  onChange: (e) => this.set("subscribe", "max_recharge_amount", e.target.value),
+						})
+					  ),
+					
+					f.a.createElement(m, {
 						title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
 						description: "Sau khi kích hoạt, người dùng có thể thay đổi đơn đặt hàng, chiết khấu sẽ được áp dụng bởi hệ thống đối với đơn đặt hàng gốc."
 					}, f.a.createElement(c.a, {
@@ -13021,15 +13062,34 @@
 					onChange: e => this.formChange("group_id", e)
 				}, l.map((e => d.a.createElement(a.a.Option, {
 					key: e.id
-				}, e.name))))), d.a.createElement("div", {
+				}, e.name))))), 
+				
+				d.a.createElement("div", {
 					className: "row"
-				}, d.a.createElement("div", {
+				}, 
+				d.a.createElement("div", {
 					className: "form-group col-md-8 col-xs-12"
 				}, d.a.createElement("label", null, "Địa Chỉ Server"), d.a.createElement(s.a, {
 					placeholder: "Vui lòng nhập địa chỉ kết nối.",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				})), d.a.createElement("div", {
+				})), 
+				
+				d.a.createElement(
+					"div",
+					{ className: "form-group" },
+					d.a.createElement("label", null, "LoadIP"),
+					d.a.createElement(a.a, {
+					  mode: "tags",
+					  value: e.ips || [],
+					  style: { width: "100%" },
+					  placeholder: "Nhập và chọn để thêm IPs nút",
+					  onChange: (e) =>
+						this.formChange("ips", e.length > 0 ? e : null),
+					})
+				  ),
+
+				d.a.createElement("div", {
 					className: "form-group col-md-4 col-xs-12"
 				}, d.a.createElement("label", null, "TLS ", d.a.createElement("a", {
 					href: "javascript:void(0);",
@@ -13063,7 +13123,9 @@
 					placeholder: "Không NAT Cổng Kết nối Tương tự",
 					value: e.server_port,
 					onChange: e => this.formChange("server_port", e.target.value)
-				}))), d.a.createElement("div", {
+				}))),
+
+				 d.a.createElement("div", {
 					className: "row"
 				}, d.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"
@@ -13072,7 +13134,9 @@
 					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
 					value: e.ip,
 					onChange: e => this.formChange("ip", e.target.value)
-				}))), d.a.createElement("div", {
+				}))), 
+				
+				d.a.createElement("div", {
 					className: "row"
 				}, d.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"
@@ -28568,7 +28632,23 @@
 					placeholder: "Địa chỉ hoặc IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				}))), h.a.createElement("div", {
+				}))), 
+				
+				h.a.createElement(
+					"div",
+					{ className: "form-group" },
+					h.a.createElement("label", null, "LoadIP"),
+					h.a.createElement(a.a, {
+					  mode: "tags",
+					  value: e.ips || [],
+					  style: { width: "100%" },
+					  placeholder: "Nhập và chọn để thêm IPs nút",
+					  onChange: (e) =>
+						this.formChange("ips", e.length > 0 ? e : null),
+					})
+				  ),
+				
+				h.a.createElement("div", {
 					className: "row"
 				}, h.a.createElement("div", {
 					className: "form-group col-md-6 col-xs-12"
@@ -100559,7 +100639,23 @@
 					placeholder: "Địa Chỉ Domain hoặc Địa Chỉ IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				}))), y.a.createElement("div", {
+				}))), 
+				
+				y.a.createElement(
+					"div",
+					{ className: "form-group" },
+					y.a.createElement("label", null, "LoadIP"),
+					y.a.createElement(N.a, {
+					  mode: "tags",
+					  value: e.ips || [],
+					  style: { width: "100%" },
+					  placeholder: "Nhập và chọn để thêm IPs nút",
+					  onChange: (e) =>
+						this.formChange("ips", e.length > 0 ? e : null),
+					})
+				  ),
+				
+				y.a.createElement("div", {
 					className: "row"
 				}, y.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"
@@ -101075,7 +101171,23 @@
 					placeholder: "Vui lòng nhập địa chỉ kết nối.",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				})), y.a.createElement("div", {
+				})), 
+				
+				y.a.createElement(
+					"div",
+					{ className: "form-group" },
+					y.a.createElement("label", null, "LoadIP"),
+					y.a.createElement(N.a, {
+					  mode: "tags",
+					  value: e.ips || [],
+					  style: { width: "100%" },
+					  placeholder: "Nhập và chọn để thêm IPs nút",
+					  onChange: (e) =>
+						this.formChange("ips", e.length > 0 ? e : null),
+					})
+				  ),
+
+				y.a.createElement("div", {
 					className: "form-group col-md-4 col-xs-12"
 				}, y.a.createElement("label", null, "An ninh ", 0 != parseInt(e.tls) && y.a.createElement("a", {
 					href: "javascript:void(0);",
@@ -101441,7 +101553,24 @@
 									l.a.success("Sao chép thành công")
 							}
 						}, t.host + ":" + t.port)
-					}, {
+					}, 
+					{
+						title: "IPs Server",
+						dataIndex: "ips",
+						key: "ips",
+						render: (e, t) =>
+						  y.a.createElement(
+							"span",
+							{
+							  style: { cursor: "pointer" },
+							  onClick: () => {
+								k()(t.ips), l.a.success("Sao chép thành công");
+							  },
+							},
+							t.ips
+						  ),
+					  },
+					{
 						title: y.a.createElement("span", null, y.a.createElement(u.a, {
 							placement: "top",
 							title: "Tùy theo tần suất báo cáo từ phía máy chủ dịch vụ mà quy định"
@@ -108039,7 +108168,23 @@
 					placeholder: "Địa chỉ hoặc Địa chỉ IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				}))), f.a.createElement("div", {
+				}))), 
+				
+				f.a.createElement(
+					"div",
+					{ className: "form-group" },
+					f.a.createElement("label", null, "LoadIP"),
+					f.a.createElement(s.a, {
+					  mode: "tags",
+					  value: e.ips || [],
+					  style: { width: "100%" },
+					  placeholder: "Nhập và chọn để thêm IPs nút",
+					  onChange: (e) =>
+						this.formChange("ips", e.length > 0 ? e : null),
+					})
+				  ),
+				
+				f.a.createElement("div", {
 					className: "row"
 				}, f.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"

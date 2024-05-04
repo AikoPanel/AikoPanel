@@ -6371,6 +6371,42 @@
 							}
 					}), n)
 				}))(),
+				reCharge: (e, t) =>
+					u().mark(function n() {
+					  var r, o, a;
+					  return u().wrap(function (n) {
+						for (;;)
+						  switch ((n.prev = n.next)) {
+							case 0:
+							  return (
+								(r = e.payload),
+								(o = t.put),
+								(n.next = 4),
+								o({ type: "setState", payload: { saveLoading: !0 } }) 
+							  );
+							case 4:
+							  return (n.next = 6), Object(i.b)("/user/order/reCharge", r); 
+							case 6:
+							  return (
+								(a = n.sent),
+								(n.next = 9),
+								o({ type: "setState", payload: { saveLoading: !1 } }) 
+							  );
+							case 9:
+							  if (200 === a.code) {
+								n.next = 11;
+								break;
+							  }
+							  return n.abrupt("return"); 
+							case 11:
+							  
+							  c.a.push("/order/" + a.data);
+							case 12:
+							case "end":
+							  return n.stop();
+						  }
+					  }, n);
+					})(),
 				detail: (e, t) => l().mark((function n() {
 					var r, o, a, s;
 					return l().wrap((function(n) {
@@ -17930,6 +17966,128 @@
 			user: e.user
 		})))(l)
 	},
+	NapT: function (e, t, n) {
+		"use strict";
+		n("2qtc");
+		var r = n("kLXV"),
+		  o = (n("5NDa"), n("5rEg")),
+		  a = n("q1tI"),
+		  i = n.n(a),
+		  s = n("/MKj"),
+		  c = n("Y2fQ");
+		class u extends i.a.Component {
+		  constructor(e) {
+			super(e), (this.state = { visible: !1, recharge_amount: void 0 });
+		  }
+		  
+		  show() {
+			this.setState({ visible: !this.state.visible, recharge_amount: void 0 });
+		  }
+		  
+		  ok() {
+			if (!this.state.recharge_amount) {
+			 
+			  return;
+			}
+			this.props.dispatch({
+			  type: "order/reCharge",
+			  payload: { 
+				recharge_amount: this.state.recharge_amount,
+			  },
+			  callback: () => {
+				this.show();
+			  },
+			});
+		  }
+		  render() {
+			var e = this.state.visible,
+			config = this.props.config,
+			  t = this.props.user.userInfo;
+			
+			return i.a.createElement(
+			  i.a.Fragment,
+			  null,
+			  i.a.cloneElement(this.props.children, { onClick: () => this.show() }),
+			  i.a.createElement(
+				r.a,
+				{
+				  title: Object(c.formatMessage)({ id: "充值" }),
+				  visible: e,
+				  onOk: () => this.ok(),
+				  onCancel: () => this.show(),
+				  okText: Object(c.formatMessage)({ id: "确认" }),
+				  cancelText: Object(c.formatMessage)({ id: "取消" }),
+				},
+				i.a.createElement(
+				  "div",
+				  {
+					className: "alert alert-danger d-flex align-items-center",
+					role: "alert",
+				  },
+				  i.a.createElement(
+					"div",
+					{ className: "flex-00-auto" },
+					i.a.createElement("i", { className: "fa fa-fw fa-info-circle" })
+				  ),
+				  i.a.createElement(
+					"div",
+					{ className: "flex-fill ml-3" },
+					i.a.createElement(
+					  "p",
+					  { className: "mb-0" },
+					  Object(c.formatMessage)(
+						{ id: "划转后的余额仅用于{title}消费使用" },
+						{ title: window.settings.title }
+					  )
+					)
+				  )
+				  
+				),
+				i.a.createElement(
+				  "div",
+				  {
+					className: "alert alert-info d-flex align-items-center",
+					role: "alert",
+				  },
+				i.a.createElement(
+				  "div",
+				  { className: "flex-fill ml-3" },
+				  i.a.createElement(
+					"p",
+					{ className: "mb-0" },
+					Object(c.formatMessage)(
+					  { id: "单笔充值金额区间 ({min} - {max})" },
+					  { min: parseInt(config.min_recharge_amount).toLocaleString(), 
+						max: parseInt(config.max_recharge_amount).toLocaleString() 
+					  }
+					  
+					)
+				  )
+				)),
+				i.a.createElement(
+				  "div",
+				  { className: "form-group" },
+				  i.a.createElement(
+					"label",
+					null,
+					Object(c.formatMessage)({ id: "划转金额" })
+				  ),
+				  i.a.createElement(o.a, {
+					type: "text",
+					className: "form-control",
+					placeholder: Object(c.formatMessage)({
+					  id: "请输入需要划转到余额的金额",
+					}),
+					onChange: (e) =>
+					  this.setState({ recharge_amount: e.target.value }),
+				  })
+				)
+			  )
+			);
+		  }
+		}
+		t.a = Object(s.c)((e) => ({ user: e.user,config: e.comm.config }))(u);
+	  },
 	E9nw: function(e, t) {
 		e.exports = function() {
 			var e = document.getSelection();
@@ -31555,6 +31713,7 @@
 				n("3S7+")),
 			w = n("/Ira"),
 			x = n("Y2fQ"),
+			N = n("NapT"),
 			O = n("v32e"),
 			E = n("t3Un");
 		class k extends f.a.Component {
@@ -31930,7 +32089,25 @@
 
 						f.a.createElement("div", {}, Object(x.formatMessage)({
 							id: "ID Định Danh"
-						}), ": ", h.id)), 0 !== h.balance ? f.a.createElement("div", {
+						}), ": ", h.id)),
+
+						
+                        f.a.createElement(
+                          N.a,
+                          null,
+                          f.a.createElement(
+                            a.a,
+                            { className: "Aiko-DVS DVS-Aiko-telegram" },
+
+                            " ",
+                            f.a.createElement(
+                              "span",
+                              null,
+                            Object(x.formatMessage)({ id: "Nạp Tiền" }))
+                          )
+                        ),
+						
+						0 !== h.balance ? f.a.createElement("div", {
 						className: "font-sodu-dvs text-muted"
 					}, Object(x.formatMessage)({
 						id: "Số Dư Ví Hiện Tại"
