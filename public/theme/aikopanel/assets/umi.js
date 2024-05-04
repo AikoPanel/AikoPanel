@@ -6372,9 +6372,9 @@
 					}), n)
 				}))(),
 				reCharge: (e, t) =>
-					u().mark(function n() {
+					l().mark(function n() {
 					  var r, o, a;
-					  return u().wrap(function (n) {
+					  return l().wrap(function (n) {
 						for (;;)
 						  switch ((n.prev = n.next)) {
 							case 0:
@@ -17086,6 +17086,7 @@
 			f = n("L12J"),
 			p = n("/MKj"),
 			d = n("t3Un"),
+			N = n("NapT"),
 			h = (n("E3Iv"),
 				n("Td40"),
 				n("yxnn")),
@@ -17184,7 +17185,25 @@
 					}
 				}, Object(m.formatMessage)({
 					id: "Số Dư Tài Khoản (Chỉ Sử Dụng cho Chi Tiêu)"
-				}))))))), u.a.createElement("div", {
+				})),
+				
+			
+			
+			),
+			1 === r.naptien_on ? u.a.createElement(
+				N.a,
+				null,
+				u.a.createElement(
+				  i.a,
+				  { className: "Aiko-DVS DVS-Aiko-telegram" },
+
+				  " ",
+				  u.a.createElement(
+					"span",
+					null,
+				  Object(m.formatMessage)({ id: "Nạp Tiền" }))
+				)
+			  ) : null,)))), u.a.createElement("div", {
 					className: "row mb-3 mb-md-0"
 				}, u.a.createElement("div", {
 					className: "col-md-12"
@@ -18011,12 +18030,12 @@
 			  i.a.createElement(
 				r.a,
 				{
-				  title: Object(c.formatMessage)({ id: "充值" }),
+				  title: Object(c.formatMessage)({ id: "Nạp Tiền" }),
 				  visible: e,
 				  onOk: () => this.ok(),
 				  onCancel: () => this.show(),
-				  okText: Object(c.formatMessage)({ id: "确认" }),
-				  cancelText: Object(c.formatMessage)({ id: "取消" }),
+				  okText: Object(c.formatMessage)({ id: "Xác Nhận" }),
+				  cancelText: Object(c.formatMessage)({ id: "Hủy Bỏ" }),
 				},
 				i.a.createElement(
 				  "div",
@@ -18036,7 +18055,7 @@
 					  "p",
 					  { className: "mb-0" },
 					  Object(c.formatMessage)(
-						{ id: "划转后的余额仅用于{title}消费使用" },
+						{ id: "Sau khi chuyển khoản, Số Dư Tài Khoản chỉ có thể được sử dụng cho {title}" },
 						{ title: window.settings.title }
 					  )
 					)
@@ -18056,7 +18075,7 @@
 					"p",
 					{ className: "mb-0" },
 					Object(c.formatMessage)(
-					  { id: "单笔充值金额区间 ({min} - {max})" },
+					  { id: "Phạm vi số tiền nạp ({min} - {max})" },
 					  { min: parseInt(config.min_recharge_amount).toLocaleString(), 
 						max: parseInt(config.max_recharge_amount).toLocaleString() 
 					  }
@@ -18070,13 +18089,13 @@
 				  i.a.createElement(
 					"label",
 					null,
-					Object(c.formatMessage)({ id: "划转金额" })
+					Object(c.formatMessage)({ id: "Chuyển Khoản" })
 				  ),
 				  i.a.createElement(o.a, {
 					type: "text",
 					className: "form-control",
 					placeholder: Object(c.formatMessage)({
-					  id: "请输入需要划转到余额的金额",
+					  id: "Vui lòng nhập số tiền cần chuyển khoản vào Số Dư Tài Khoản",
 					}),
 					onChange: (e) =>
 					  this.setState({ recharge_amount: e.target.value }),
@@ -32091,7 +32110,8 @@
 							id: "ID Định Danh"
 						}), ": ", h.id)),
 
-						
+						1 === g.naptien_on
+                        ?
                         f.a.createElement(
                           N.a,
                           null,
@@ -32105,7 +32125,7 @@
                               null,
                             Object(x.formatMessage)({ id: "Nạp Tiền" }))
                           )
-                        ),
+                        ) : null,
 						
 						0 !== h.balance ? f.a.createElement("div", {
 						className: "font-sodu-dvs text-muted"
@@ -53789,7 +53809,8 @@
 				}),
 				reset_price: () => Object(r.formatMessage)({
 					id: "Đặt Lại Làm Mới Lưu Lượng"
-				})
+				}),
+				recharge: () => Object(r.formatMessage)({ id: "Nạp Tiền" }),
 			},
 			tutorialCategoryText: {
 				1: "Windows",

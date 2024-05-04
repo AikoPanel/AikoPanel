@@ -101554,38 +101554,64 @@
 							}
 						}, t.host + ":" + t.port)
 					}, 
+					
 					{
-						title: "IPs Server",
-						dataIndex: "ips",
-						key: "ips",
-						render: (e, t) =>
-						  y.a.createElement(
-							"span",
-							{
-							  style: { cursor: "pointer" },
-							  onClick: () => {
-								k()(t.ips), l.a.success("Sao chép thành công");
-							  },
-							},
-							t.ips
-						  ),
-					  },
-					{
-						title: y.a.createElement("span", null, y.a.createElement(u.a, {
-							placement: "top",
-							title: "Tùy theo tần suất báo cáo từ phía máy chủ dịch vụ mà quy định"
-						}, "Số người ", y.a.createElement(m.a, {
-							type: "question-circle"
-						}))),
-						dataIndex: "online",
-						key: "online",
-						align: "left",
-						width: 130,
-						sorter: (e, t) => e.online - t.online,
-						render: e => y.a.createElement(y.a.Fragment, null, y.a.createElement(m.a, {
-							type: "user"
-						}), " ", e || 0)
-					}, {
+                        title: y.a.createElement(
+                          "span",
+                          null,
+                          y.a.createElement(
+                            u.a,
+                            {
+                              placement: "top",
+                              title: "Phụ thuộc vào tần suất báo cáo của máy chủ",
+                            },
+                            "Số lượng người ",
+                            y.a.createElement(m.a, { type: "question-circle" })
+                          )
+                        ),
+                        dataIndex: "online",
+                        key: "online",
+                        align: "left",
+                        width: 130,
+                        sorter: (e, t) => e.online - t.online,
+                        render: (e, t) => {
+							const totalCount = t.online_ip
+							  ? Object.values(t.online_ip).reduce((a, b) => Number(a) + Number(b), 0)
+							  : 0;
+						  
+							if (t.online_ip) {
+							  const tooltipContent = Object.entries(t.online_ip).map(([ip, count]) => y.a.createElement("div", null, ip, " - ", y.a.createElement(m.a, { type: "user" })," ", count));
+						  
+							  return y.a.createElement(
+								y.a.Fragment,
+								null,
+								y.a.createElement(
+								  u.a,
+								  {
+									placement: "top",
+									title: tooltipContent,
+								  },
+								  y.a.createElement(
+									"span",
+									{ style: { cursor: "pointer" } },
+									y.a.createElement(m.a, { type: "user" }),
+									" ",
+									totalCount
+								  )
+								)
+							  );
+							} else {
+							  return y.a.createElement(
+								"span",
+								{ style: { cursor: "pointer" } },
+								y.a.createElement(m.a, { type: "user" }),
+								" ",
+								totalCount
+							  );
+							}
+						  },
+                      },
+                    {
 						title: y.a.createElement(u.a, {
 							placement: "top",
 							title: "Số lượng người sử dụng sẽ bị trừ đi theo tỷ lệ nhân đôi lưu lượng sử dụng."

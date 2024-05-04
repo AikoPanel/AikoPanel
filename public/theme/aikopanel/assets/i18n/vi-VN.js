@@ -1,4 +1,6 @@
 window.settings.i18n['vi-VN'] = {
+  'Nạp Tiền' : 'Nạp Tiền',
+  'Phạm vi số tiền nạp ({min} - {max})' : 'Phạm vi số tiền nạp ({min} - {max})',
   'Yêu Cầu Thất Bại': 'Yêu Cầu Thất Bại',
   '1Ngày': '1 Ngày',
   '1Tháng': '1 Tháng',
