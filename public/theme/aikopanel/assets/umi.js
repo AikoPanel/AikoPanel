@@ -32110,7 +32110,30 @@
 							id: "ID Định Danh"
 						}), ": ", h.id)),
 
-						1 === g.naptien_on
+						0 !== h.balance ? f.a.createElement("div", {
+						className: "font-sodu-dvs text-muted"
+					}, Object(x.formatMessage)({
+						id: "Số Dư Ví Hiện Tại"
+					}), ": ", Math.round(h.balance / 100).toLocaleString(), " ", g.currency) : null, 
+					
+					f.a.createElement("div", {
+						className: "he-dieu text-muted"
+					}, f.a.createElement("span", {
+						className: "hdh-dvs text-muted"
+					}, Object(x.formatMessage)({
+						id: "Hệ Điều Hành Truy Cập"
+					}), ": "), this.getOperatingSystems().join(", ")), f.a.createElement("div", {
+						className: "he-dieu text-muted"
+					}, f.a.createElement("span", {
+						className: "hdh-dvs text-muted"
+					}, Object(x.formatMessage)({
+						id: "IP Đang Truy Cập"
+					}), ": "), h.last_login_ip)), 
+
+					f.a.createElement("div", {
+						className: "he-dieu text-muted"
+					},
+					1 === g.naptien_on
                         ?
                         f.a.createElement(
                           N.a,
@@ -32125,25 +32148,9 @@
                               null,
                             Object(x.formatMessage)({ id: "Nạp Tiền" }))
                           )
-                        ) : null,
-						
-						0 !== h.balance ? f.a.createElement("div", {
-						className: "font-sodu-dvs text-muted"
-					}, Object(x.formatMessage)({
-						id: "Số Dư Ví Hiện Tại"
-					}), ": ", Math.round(h.balance / 100).toLocaleString(), " ", g.currency) : null, f.a.createElement("div", {
-						className: "he-dieu text-muted"
-					}, f.a.createElement("span", {
-						className: "hdh-dvs text-muted"
-					}, Object(x.formatMessage)({
-						id: "Hệ Điều Hành Truy Cập"
-					}), ": "), this.getOperatingSystems().join(", ")), f.a.createElement("div", {
-						className: "he-dieu text-muted"
-					}, f.a.createElement("span", {
-						className: "hdh-dvs text-muted"
-					}, Object(x.formatMessage)({
-						id: "IP Đang Truy Cập"
-					}), ": "), h.last_login_ip)), null !== h.staff_zalo || g.zalo_discuss_link ? f.a.createElement("button", {
+                        ) : null,),
+					
+					null !== h.staff_zalo || g.zalo_discuss_link ? f.a.createElement("button", {
 						className: "Aiko-DVS DVS-Aiko-zalo",
 						onClick: () => window.location.href = h.staff_zalo || g.zalo_discuss_link
 					}, [f.a.createElement("img", {
