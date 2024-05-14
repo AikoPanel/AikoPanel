@@ -34201,7 +34201,7 @@
 				})), f.a.createElement("div", {
 					className: "block-content p-0"
 				}, Object.keys(h.a.periodText).map((e => {
-					if ("reset_price" !== e)
+					if ("reset_price" !== e && "recharge" !== e)
 						return null !== t[e] ? f.a.createElement("div", {
 							onClick: () => this.props.dispatch({
 								type: "plan/setState",

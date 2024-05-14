@@ -13113,16 +13113,7 @@
 					onChange: e => this.formChange("server_port", e.target.value)
 				}))), 
 				
-				d.a.createElement("div", {
-					className: "row"
-				}, d.a.createElement("div", {
-					className: "form-group col-md-12 col-xs-12"
-				}, d.a.createElement("label", null, "IP (IPv4)"), d.a.createElement(s.a, {
-					addonAfter: "IP",
-					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
-					value: e.ip,
-					onChange: e => this.formChange("ip", e.target.value)
-				}))),
+				
 				
 				d.a.createElement("div", {
 					className: "form-group"
@@ -28031,6 +28022,7 @@
 			name: "plan",
 			state: o()({}, {
 				plans: [],
+				idStaff: [],
 				fetchLoading: !1
 			}),
 			reducers: {
@@ -28083,7 +28075,8 @@
 											n({
 												type: "setState",
 												payload: {
-													plans: t.data
+													plans: t.data,
+													idStaff: t.idStaff
 												}
 											});
 									case 12:
@@ -28650,15 +28643,6 @@
 					onChange: e => {
 						this.formChange("server_port", e.target.value)
 					}
-				}))), h.a.createElement("div", {
-					className: "row"
-				}, h.a.createElement("div", {
-					className: "form-group col-md-12 col-xs-12"
-				}, h.a.createElement("label", null, "IP (IPv4)"), h.a.createElement(s.a, {
-					addonAfter: "IP",
-					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
-					value: e.ip,
-					onChange: e => this.formChange("ip", e.target.value)
 				}))), 
 				
 				h.a.createElement("div", { 
@@ -78813,7 +78797,9 @@
 			render() {
 				var e = this.props.config,
 					t = this.props.plan.saveLoading,
+					idS = this.props.plan.idStaff,
 					n = this.props.serverGroup.groups;
+					
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
 					onClick: () => this.setState({
 						visible: !0
@@ -79140,7 +79126,11 @@
 				}, "Gói CTV ( không bao gồm Web chính )"), m.a.createElement(_.a.Option, {
 					key: 3,
 					value: 3
-				}, "Gói CTV ( Có bao gồm web chính )"))), 2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
+				}, "Gói CTV ( Có bao gồm web chính )"))), 
+				
+				
+
+				2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
@@ -79156,10 +79146,12 @@
 							})
 						})
 					}
-				}, e.ctv.sub_domain && e.ctv.sub_domain.map((e => m.a.createElement(_.a.Option, {
-					key: e,
-					value: e
-				}, e))))) : "", m.a.createElement("div", {
+				}, idS && idS.map((e => m.a.createElement(_.a.Option, {
+					key: e.id.toString(), 
+					value: e.id.toString(), 
+				}, e.staff_url))))) : "",
+				
+				m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
@@ -100638,15 +100630,6 @@
 					placeholder: "Địa Chỉ Domain hoặc Địa Chỉ IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				}))), y.a.createElement("div", {
-					className: "row"
-				}, y.a.createElement("div", {
-					className: "form-group col-md-12 col-xs-12"
-				}, y.a.createElement("label", null, "IP (IPv4)"), y.a.createElement(s.a, {
-					addonAfter: "IP",
-					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
-					value: e.ip,
-					onChange: e => this.formChange("ip", e.target.value)
 				}))), 
 				
 				y.a.createElement("div", { 
@@ -101204,16 +101187,7 @@
 					placeholder: "Không NAT cổng kết nối giống nhau",
 					value: e.server_port,
 					onChange: e => this.formChange("server_port", e.target.value)
-				}))), y.a.createElement("div", {
-					className: "row"
-				}, y.a.createElement("div", {
-					className: "form-group col-md-12 col-xs-12"
-				}, y.a.createElement("label", null, "IP (IPv4)"), y.a.createElement(s.a, {
-					addonAfter: "IP",
-					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
-					value: e.ip,
-					onChange: e => this.formChange("ip", e.target.value)
-				}))),
+				}))), 
 				
 				y.a.createElement("div", { 
 					className: "form-group" 
@@ -108189,16 +108163,9 @@
 					placeholder: "Địa chỉ hoặc Địa chỉ IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
-				}))), f.a.createElement("div", {
-					className: "row"
-				}, f.a.createElement("div", {
-					className: "form-group col-md-12 col-xs-12"
-				}, f.a.createElement("label", null, "IP (IPv4)"), f.a.createElement(c.a, {
-					addonAfter: "IP",
-					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
-					value: e.ip,
-					onChange: e => this.formChange("ip", e.target.value)
 				}))), 
+				
+				
 				
 				f.a.createElement("div",{ 
 					className: "form-group" 
