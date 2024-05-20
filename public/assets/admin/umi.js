@@ -31753,25 +31753,38 @@
 							})
 						})
 					}
-				})), g.a.createElement("div", {
-					className: "form-group"
-				}, g.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "URL Cộng tác viên (Thông báo Cho CTV)"), g.a.createElement(a.a, {
-					mode: "tags",
-					value: this.state.submit.staff_urls || [],
-					style: {
-						width: "100%"
-					},
-					placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
-					onChange: e => {
-						this.setState({
+				})), 
+				
+				g.a.createElement(
+					"div",
+					{ className: "form-group" },
+					g.a.createElement(
+					  "label",
+					  null,
+					  "URL Cộng tác viên (Thông báo Cho CTV)"
+					),
+					g.a.createElement(
+					  a.a, 
+					  {
+						mode: "multiple",
+						style: { width: "100%" },
+						placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
+						value: this.state.submit.staff_urls || [],
+						onChange: (selectedIds) => {
+						  this.setState({
 							submit: p()({}, this.state.submit, {
-								staff_urls: e.length > 0 ? e : null
-							})
-						})
-					}
-				}, S && S.map((e => g.a.createElement(a.a.Option, { key: e, value: e }, e))))), g.a.createElement("div", {
+							  staff_urls: selectedIds, 
+							}),
+						  });
+						},
+					  },
+					  S && S.map((e) =>
+						g.a.createElement(a.a.Option, { key: e.id, value: e.id.toString() }, e.staff_url)
+					  )
+					)
+				  ),
+				
+				g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -80189,19 +80202,34 @@
 					placeholder: "Vui lòng nhập phân loại, phân loại sẽ tự động được nhóm lại.",
 					value: n.category,
 					onChange: e => this.formChange("category", e.target.value)
-				})),f.a.createElement("div", {
-					className: "form-group"
-				}, f.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "Domain hiển thị"), f.a.createElement(b.a, {
-					mode: "tags",
-					value: n.staff_urls || [],
-					style: {
-						width: "100%"
-					},
-					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
-					onChange: e => this.formChange("staff_urls", e.length > 0 ? e : null)
-				}, staff && staff.map((e => f.a.createElement(b.a.Option, { key: e, value: e }, e))))), f.a.createElement("div", {
+				})),
+
+				f.a.createElement(
+					"div",
+					{ className: "form-group" },
+					f.a.createElement(
+					  "label",
+					  null,
+					  "Domain Hiển Thị"
+					),
+					f.a.createElement(
+					  b.a,
+					  {
+						mode: "multiple",
+						style: { width: "100%" },
+						placeholder: "Vui lòng chọn domain",
+						value: n.staff_urls || [], 
+						onChange: (selectedIds) => {
+						  this.formChange('staff_urls', selectedIds); 
+						},
+					  },
+					  staff && staff.map((e) =>
+						f.a.createElement(b.a.Option, { key: e.id, value: e.id.toString() }, e.url)
+					  )
+					)
+				  ),
+				
+				f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
