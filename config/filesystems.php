@@ -1,69 +1,69 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-cPoR2qDMa01JkiSYkPhHiFAmeQloT0==
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default filesystem disk that should be used
+    | by the framework. The "local" disk, as well as a variety of cloud
+    | based disks are available to your application. Just store away!
+    |
+    */
+
+    'default' => env('FILESYSTEM_DRIVER', 'local'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Cloud Filesystem Disk
+    |--------------------------------------------------------------------------
+    |
+    | Many applications store files both locally and in the cloud. For this
+    | reason, you may specify a default "cloud" driver here. This driver
+    | will be bound as the Cloud disk implementation in the container.
+    |
+    */
+
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Filesystem Disks
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure as many filesystem "disks" as you wish, and you
+    | may even configure multiple disks of the same driver. Defaults have
+    | been setup for each driver as an example of the required options.
+    |
+    | Supported Drivers: "local", "ftp", "sftp", "s3"
+    |
+    */
+
+    'disks' => [
+
+        'local' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+        ],
+
+        'public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
+        's3' => [
+            'driver' => 's3',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_AIKOPANEL_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'url' => env('AWS_URL'),
+        ],
+
+    ],
+
+];

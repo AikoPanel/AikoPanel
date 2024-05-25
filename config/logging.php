@@ -1,89 +1,99 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
+<?php
+
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\SyslogUdpHandler;
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Log Channel
+    |--------------------------------------------------------------------------
+    |
+    | This option defines the default log channel that gets used when writing
+    | messages to the logs. The name specified in this option should match
+    | one of the channels defined in the "channels" configuration array.
+    |
+    */
+
+    'default' => 'mysql',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Log Channels
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the log channels for your application. Out of
+    | the box, Laravel uses the Monolog PHP logging library. This gives
+    | you a variety of powerful log handlers / formatters to utilize.
+    |
+    | Available Drivers: "single", "daily", "slack", "syslog",
+    |                    "errorlog", "monolog",
+    |                    "custom", "stack"
+    |
+    */
+
+    'channels' => [
+        'mysql' => [
+            'driver' => 'custom',
+            'via' => App\Logging\MysqlLogger::class,
+        ],
+
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['daily'],
+            'ignore_exceptions' => false,
+        ],
+
+        'single' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/laravel.log'),
+            'level' => 'debug',
+        ],
+
+        'daily' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/laravel.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
+
+        'slack' => [
+            'driver' => 'slack',
+            'url' => env('LOG_SLACK_WEBHOOK_URL'),
+            'username' => 'Laravel Log',
+            'emoji' => ':boom:',
+            'level' => 'critical',
+        ],
+
+        'papertrail' => [
+            'driver' => 'monolog',
+            'level' => 'debug',
+            'handler' => SyslogUdpHandler::class,
+            'handler_with' => [
+                'host' => env('PAPERTRAIL_URL'),
+                'port' => env('PAPERTRAIL_PORT'),
+            ],
+        ],
+
+        'stderr' => [
+            'driver' => 'monolog',
+            'handler' => StreamHandler::class,
+            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'with' => [
+                'stream' => 'php://stderr',
+            ],
+        ],
+
+        'syslog' => [
+            'driver' => 'syslog',
+            'level' => 'debug',
+        ],
+
+        'errorlog' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
+        ],
+    ],
+
+];

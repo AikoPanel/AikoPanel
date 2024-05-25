@@ -1,50 +1,59 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-YBdofGwV
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Broadcaster
+    |--------------------------------------------------------------------------
+    |
+    | This option controls the default broadcaster that will be used by the
+    | framework when an event needs to be broadcast. You may set this to
+    | any of the connections defined in the "connections" array below.
+    |
+    | Supported: "pusher", "redis", "log", "null"
+    |
+    */
+
+    'default' => env('BROADCAST_DRIVER', 'null'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Broadcast Connections
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define all of the broadcast connections that will be used
+    | to broadcast events to other systems or over websockets. Samples of
+    | each available type of connection are provided inside this array.
+    |
+    */
+
+    'connections' => [
+
+        'pusher' => [
+            'driver' => 'pusher',
+            'key' => env('PUSHER_APP_KEY'),
+            'secret' => env('PUSHER_APP_SECRET'),
+            'app_id' => env('PUSHER_APP_ID'),
+            'options' => [
+                'cluster' => env('PUSHER_APP_CLUSTER'),
+                'useTLS' => true,
+            ],
+        ],
+
+        'redis' => [
+            'driver' => 'redis',
+            'connection' => 'default',
+        ],
+
+        'log' => [
+            'driver' => 'log',
+        ],
+
+        'null' => [
+            'driver' => 'null',
+        ],
+
+    ],
+
+];

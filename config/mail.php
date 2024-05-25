@@ -1,67 +1,136 @@
-<?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-rV+Jjrl0gaMQFpW=
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Mail Driver
+    |--------------------------------------------------------------------------
+    |
+    | Laravel supports both SMTP and PHP's "mail" function as drivers for the
+    | sending of e-mail. You may specify which one you're using throughout
+    | your application here. By default, Laravel is setup for SMTP mail.
+    |
+    | Supported: "smtp", "sendmail", "mailgun", "ses",
+    |            "postmark", "log", "array"
+    |
+    */
+
+    'driver' => env('MAIL_DRIVER', 'smtp'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | SMTP Host Address
+    |--------------------------------------------------------------------------
+    |
+    | Here you may provide the host address of the SMTP server used by your
+    | applications. A default option is provided that is compatible with
+    | the Mailgun mail service which will provide reliable deliveries.
+    |
+    */
+
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | SMTP Host Port
+    |--------------------------------------------------------------------------
+    |
+    | This is the SMTP port used by your application to deliver e-mails to
+    | users of the application. Like the host we have set this value to
+    | stay compatible with the Mailgun e-mail application by default.
+    |
+    */
+
+    'port' => env('MAIL_PORT', 587),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global "From" Address
+    |--------------------------------------------------------------------------
+    |
+    | You may wish for all e-mails sent by your application to be sent from
+    | the same address. Here, you may specify a name and address that is
+    | used globally for all e-mails that are sent by your application.
+    |
+    */
+
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Example'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | E-Mail Encryption Protocol
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the encryption protocol that should be used when
+    | the application send e-mail messages. A sensible default using the
+    | transport layer security protocol should provide great security.
+    |
+    */
+
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | SMTP Server Username
+    |--------------------------------------------------------------------------
+    |
+    | If your SMTP server requires a username for authentication, you should
+    | set it here. This will get used to authenticate with your server on
+    | connection. You may also set the "password" value below this one.
+    |
+    */
+
+    'username' => env('MAIL_USERNAME'),
+
+    'password' => env('MAIL_PASSWORD'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Sendmail System Path
+    |--------------------------------------------------------------------------
+    |
+    | When using the "sendmail" driver to send e-mails, we will need to know
+    | the path to where Sendmail lives on this server. A default path has
+    | been provided here, which will work well on most of your systems.
+    |
+    */
+
+    'sendmail' => '/usr/sbin/sendmail -bs',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Markdown Mail Settings
+    |--------------------------------------------------------------------------
+    |
+    | If you are using Markdown based email rendering, you may configure your
+    | theme and component paths here, allowing you to customize the design
+    | of the emails. Or, you may simply stick with the Laravel defaults!
+    |
+    */
+
+    'markdown' => [
+        'theme' => 'default',
+
+        'paths' => [
+            resource_path('views/vendor/mail'),
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Log Channel
+    |--------------------------------------------------------------------------
+    |
+    | If you are using the "log" driver, you may specify the logging channel
+    | if you prefer to keep mail messages separate from other log entries
+    | for simpler reading. Otherwise, the default channel will be used.
+    |
+    */
+
+    'log_channel' => env('MAIL_LOG_CHANNEL'),
+
+];
