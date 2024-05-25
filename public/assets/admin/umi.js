@@ -28022,7 +28022,6 @@
 			name: "plan",
 			state: o()({}, {
 				plans: [],
-				idStaff: [],
 				fetchLoading: !1
 			}),
 			reducers: {
@@ -28075,8 +28074,7 @@
 											n({
 												type: "setState",
 												payload: {
-													plans: t.data,
-													idStaff: t.idStaff
+													plans: t.data
 												}
 											});
 									case 12:
@@ -31753,38 +31751,25 @@
 							})
 						})
 					}
-				})), 
-				
-				g.a.createElement(
-					"div",
-					{ className: "form-group" },
-					g.a.createElement(
-					  "label",
-					  null,
-					  "URL Cộng tác viên (Thông báo Cho CTV)"
-					),
-					g.a.createElement(
-					  a.a, 
-					  {
-						mode: "multiple",
-						style: { width: "100%" },
-						placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
-						value: this.state.submit.staff_urls || [],
-						onChange: (selectedIds) => {
-						  this.setState({
+				})), g.a.createElement("div", {
+					className: "form-group"
+				}, g.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "URL Cộng tác viên (Thông báo Cho CTV)"), g.a.createElement(a.a, {
+					mode: "tags",
+					value: this.state.submit.staff_urls || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
+					onChange: e => {
+						this.setState({
 							submit: p()({}, this.state.submit, {
-							  staff_urls: selectedIds, 
-							}),
-						  });
-						},
-					  },
-					  S && S.map((e) =>
-						g.a.createElement(a.a.Option, { key: e.id, value: e.id.toString() }, e.staff_url)
-					  )
-					)
-				  ),
-				
-				g.a.createElement("div", {
+								staff_urls: e.length > 0 ? e : null
+							})
+						})
+					}
+				}, S && S.map((e => g.a.createElement(a.a.Option, { key: e, value: e }, e))))), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -78810,9 +78795,7 @@
 			render() {
 				var e = this.props.config,
 					t = this.props.plan.saveLoading,
-					idS = this.props.plan.idStaff,
 					n = this.props.serverGroup.groups;
-					
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
 					onClick: () => this.setState({
 						visible: !0
@@ -79139,11 +79122,7 @@
 				}, "Gói CTV ( không bao gồm Web chính )"), m.a.createElement(_.a.Option, {
 					key: 3,
 					value: 3
-				}, "Gói CTV ( Có bao gồm web chính )"))), 
-				
-				
-
-				2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
+				}, "Gói CTV ( Có bao gồm web chính )"))), 2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
@@ -79159,12 +79138,10 @@
 							})
 						})
 					}
-				}, idS && idS.map((e => m.a.createElement(_.a.Option, {
-					key: e.id.toString(), 
-					value: e.id.toString(), 
-				}, e.staff_url))))) : "",
-				
-				m.a.createElement("div", {
+				}, e.ctv.sub_domain && e.ctv.sub_domain.map((e => m.a.createElement(_.a.Option, {
+					key: e,
+					value: e
+				}, e))))) : "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
@@ -80202,34 +80179,19 @@
 					placeholder: "Vui lòng nhập phân loại, phân loại sẽ tự động được nhóm lại.",
 					value: n.category,
 					onChange: e => this.formChange("category", e.target.value)
-				})),
-
-				f.a.createElement(
-					"div",
-					{ className: "form-group" },
-					f.a.createElement(
-					  "label",
-					  null,
-					  "Domain Hiển Thị"
-					),
-					f.a.createElement(
-					  b.a,
-					  {
-						mode: "multiple",
-						style: { width: "100%" },
-						placeholder: "Vui lòng chọn domain",
-						value: n.staff_urls || [], 
-						onChange: (selectedIds) => {
-						  this.formChange('staff_urls', selectedIds); 
-						},
-					  },
-					  staff && staff.map((e) =>
-						f.a.createElement(b.a.Option, { key: e.id, value: e.id.toString() }, e.url)
-					  )
-					)
-				  ),
-				
-				f.a.createElement("div", {
+				})),f.a.createElement("div", {
+					className: "form-group"
+				}, f.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Domain hiển thị"), f.a.createElement(b.a, {
+					mode: "tags",
+					value: n.staff_urls || [],
+					style: {
+						width: "100%"
+					},
+					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
+					onChange: e => this.formChange("staff_urls", e.length > 0 ? e : null)
+				}, staff && staff.map((e => f.a.createElement(b.a.Option, { key: e, value: e }, e))))), f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
