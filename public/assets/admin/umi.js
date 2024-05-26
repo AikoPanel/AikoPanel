@@ -31640,8 +31640,8 @@
 					  checked: e,
 					}),
 				},
-				{ title: "Tên SNI", dataIndex: "dname_sni", key: "dname_sni" },
-				{ title: "SNI", dataIndex: "network_settings", key: "network_settings" },
+				{ title: "Tên SNI", dataIndex: "label", key: "label" },
+				{ title: "SNI", dataIndex: "value", key: "value" },
 				{ title: "Tên rút gọn", dataIndex: "abbreviation", key: "abbreviation" },
 				{
 				  title: "Cập nhật",
