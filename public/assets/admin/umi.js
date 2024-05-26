@@ -13112,9 +13112,16 @@
 					value: e.server_port,
 					onChange: e => this.formChange("server_port", e.target.value)
 				}))), 
-				
-				
-				
+				d.a.createElement("div", {
+					className: "row"
+				}, d.a.createElement("div", {
+					className: "form-group col-md-12 col-xs-12"
+				}, d.a.createElement("label", null, "IP (IPv4)"), d.a.createElement(s.a, {
+					addonAfter: "IP",
+					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
+					value: e.ip,
+					onChange: e => this.formChange("ip", e.target.value)
+				}))),
 				d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", null, "LoadIPs"), d.a.createElement(a.a, {
@@ -21527,7 +21534,14 @@
 							icon: i.a.createElement("i", {
 								className: "nav-main-link-icon si si-layers"
 							})
-						}, {
+						},{
+							title: "Quản lý SNI",
+							type: "item",
+							href: "/sni",
+							icon: i.a.createElement("i", {
+							  className: "nav-main-link-icon si si-settings",
+							}),
+						  }, {
 							title: "Nhóm Máy Chủ",
 							type: "item",
 							href: "/server/group",
@@ -28022,6 +28036,7 @@
 			name: "plan",
 			state: o()({}, {
 				plans: [],
+				idStaff: [],
 				fetchLoading: !1
 			}),
 			reducers: {
@@ -28074,7 +28089,8 @@
 											n({
 												type: "setState",
 												payload: {
-													plans: t.data
+													plans: t.data,
+													idStaff: t.idStaff
 												}
 											});
 									case 12:
@@ -28641,7 +28657,16 @@
 					onChange: e => {
 						this.formChange("server_port", e.target.value)
 					}
-				}))), 
+				}))), h.a.createElement("div", {
+					className: "row"
+				}, h.a.createElement("div", {
+					className: "form-group col-md-12 col-xs-12"
+				}, h.a.createElement("label", null, "IP (IPv4)"), h.a.createElement(s.a, {
+					addonAfter: "IP",
+					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
+					value: e.ip,
+					onChange: e => this.formChange("ip", e.target.value)
+				}))),
 				
 				h.a.createElement("div", { 
 					className: "form-group" 
@@ -31551,6 +31576,258 @@
 			}, h)
 		}
 	},
+	JZE9z: function (e, t, n) {
+		"use strict";
+		n.r(t);
+		var r = n("jehZ"),
+		  i = n.n(r),
+		  o = (n("2qtc"), n("kLXV")),
+		  a = (n("OaEy"), n("2fM7")),
+		  s = (n("5NDa"), n("5rEg")),
+		  c = (n("g9YV"), n("wCAj")),
+		  l = (n("+L6B"), n("2/Rp")),
+		  u = (n("Pwec"), n("CtXQ")),
+		  h = (n("/zsF"), n("PArb")),
+		  f = (n("BoS7"), n("Sdc0")),
+		  d = n("p0pE"),
+		  p = n.n(d),
+		  m = n("q1tI"),
+		  g = n.n(m),
+		  v = n("Bl7J"),
+		  y = n("wd/R"),
+		  b = n.n(y),
+		  w = n("/MKj"),
+		  x = n("v32e");
+		class _ extends g.a.Component {
+		  constructor(e) {
+			super(e), (this.state = { visible: !1, submit: {}, notices: [] });
+		  }
+		  componentDidMount() {
+			this.props.dispatch({ type: "sni/fetch" });
+		  }
+		  modalVisible() {
+			this.setState({ visible: !this.state.visible }, () => {
+			  this.state.visible || this.setState({ submit: {} });
+			});
+		  }
+		  save() {
+			this.props.dispatch({
+			  type: "sni/save",
+			  params: p()({}, this.state.submit),
+			  callback: () => {
+				this.modalVisible();
+			  },
+			});
+		  }
+		  drop(e) {
+			this.props.dispatch({ type: "sni/drop", id: e.id });
+		  }
+		  render() {
+			var e = this.props.sni,
+			  t = e.notices,
+			  n = e.fetchLoading,
+			  r = [
+				{ title: "#", dataIndex: "id", key: "id" },
+				{
+				  title: "Hiện",
+				  dataIndex: "show",
+				  key: "show",
+				  render: (e, t) =>
+					g.a.createElement(f.a, {
+					  size: "small",
+					  onChange: () =>
+						this.props.dispatch({ type: "sni/show", id: t.id }),
+					  checked: e,
+					}),
+				},
+				{ title: "Tên SNI", dataIndex: "dname_sni", key: "dname_sni" },
+				{ title: "SNI", dataIndex: "network_settings", key: "network_settings" },
+				{ title: "Tên rút gọn", dataIndex: "abbreviation", key: "abbreviation" },
+				{
+				  title: "Cập nhật",
+				  dataIndex: "updated_at",
+				  key: "updated_at",
+				  align: "right",
+				  render: (e) => b()(1e3 * e).format("DD/MM/YYYY HH:mm"),
+				},
+				{
+				  title: "Chỉnh sửa",
+				  dataIndex: "action",
+				  key: "action",
+				  align: "right",
+				  fixed: "right",
+				  render: (e, n, r) =>
+					g.a.createElement(
+					  "div",
+					  null,
+					  g.a.createElement(
+						"a",
+						{
+						  onClick: () =>
+							this.setState({ submit: t[r] }, () =>
+							  this.modalVisible()
+							),
+						  href: "javascript:void(0);",
+						},
+						"Chỉnh sửa"
+					  ),
+					  g.a.createElement(h.a, { type: "vertical" }),
+					  g.a.createElement(
+						"a",
+						{
+						  onClick: () => this.drop(n),
+						  href: "javascript:void(0);",
+						},
+						"xóa bỏ"
+					  )
+					),
+				},
+			  ];
+			return g.a.createElement(
+			  v.a,
+			  i()({}, this.props, { title: "Quản lý SNI" }),
+			  g.a.createElement("div", {
+				className: "d-flex justify-content-between align-items-center",
+			  }),
+			  g.a.createElement(
+				x.a,
+				{ loading: n },
+				g.a.createElement(
+				  "div",
+				  { className: "block block-rounded" },
+				  g.a.createElement(
+					"div",
+					{ className: "bg-white" },
+					g.a.createElement(
+					  "div",
+					  { style: { padding: 15 } },
+					  g.a.createElement(
+						l.a,
+						{ onClick: () => this.modalVisible() },
+						g.a.createElement(u.a, { type: "plus" }),
+						" Thêm SNI"
+					  )
+					),
+					g.a.createElement(c.a, {
+					  tableLayout: "auto",
+					  dataSource: t,
+					  pagination: !1,
+					  columns: r,
+					  scroll: { x: 950 },
+					})
+				  )
+				)
+			  ),
+			  g.a.createElement(
+				o.a,
+				{
+				  title: "".concat(
+					this.state.submit.id
+					  ? "Chỉnh sửa SNI"
+					  : "Tạo SNI mới"
+				  ),
+				  visible: this.state.visible,
+				  onCancel: () => this.modalVisible(),
+				  onOk: () => this.state.saveLoading || this.save(),
+				  okText: this.state.saveLoading
+					? g.a.createElement(u.a, { type: "loading" })
+					: "Lưu",
+				  cancelText: "Hủy bỏ",
+				},
+				g.a.createElement(
+				  "div",
+				  null,
+				  g.a.createElement(
+					"div",
+					{ className: "form-group" },
+					g.a.createElement(
+					  "label",
+					  { for: "example-text-input-alt" },
+					  "Tên SNI"
+					),
+					g.a.createElement(s.a, {
+					  placeholder: "Vui lòng nhập Tên của SNI",
+					  value: this.state.submit.dname_sni,
+					  onChange: (e) => {
+						this.setState({
+						  submit: p()({}, this.state.submit, {
+							dname_sni: e.target.value,
+						  }),
+						});
+					  },
+					})
+				  ),
+				  g.a.createElement(
+					"div",
+					{ className: "form-group" },
+					g.a.createElement(
+					  "label",
+					  { for: "example-text-input-alt" },
+					  "Nhập SNI"
+					),
+					g.a.createElement(s.a, {
+					  placeholder: "Vui lòng nhập SNI vào đây",
+					  value: this.state.submit.network_settings,
+					  onChange: (e) => {
+						this.setState({
+						  submit: p()({}, this.state.submit, {
+							network_settings: e.target.value,
+						  }),
+						});
+					  },
+					})
+				  ),
+				  g.a.createElement(
+					"div",
+					{ className: "form-group" },
+					g.a.createElement(
+					  "label",
+					  { for: "example-text-input-alt" },
+					  "Tên rút gọn ( Fast Setup )"
+					),
+					g.a.createElement(s.a, {
+					  placeholder: "Vui lòng nhập Tên rút gọn vào đây",
+					  value: this.state.submit.abbreviation,
+					  onChange: (e) => {
+						this.setState({
+						  submit: p()({}, this.state.submit, {
+							abbreviation: e.target.value,
+						  }),
+						});
+					  },
+					})
+				  ),
+				//   g.a.createElement(
+				// 	"div",
+				// 	{ className: "form-group" },
+				// 	g.a.createElement(
+				// 	  "label",
+				// 	  { for: "example-text-input-alt" },
+				// 	  "Hướng Dẫn dùng SNI"
+				// 	),
+				// 	g.a.createElement(s.a.TextArea, {
+				// 	  rows: 12,
+				// 	  value: this.state.submit.content,
+				// 	  placeholder: "Vui lòng nhập nội dung hướng dẫn của SNI",
+				// 	  onChange: (e) => {
+				// 		this.setState({
+				// 		  submit: p()({}, this.state.submit, {
+				// 			content: e.target.value,
+				// 		  }),
+				// 		});
+				// 	  },
+				// 	})
+				//   )
+				
+				  
+				  
+				)
+			  )
+			);
+		  }
+		}
+		t.default = Object(w.c)((e) => ({ sni: e.sni }))(_);
+	  },
 	JZE9: function(e, t, n) {
 		"use strict";
 		n.r(t);
@@ -31645,7 +31922,25 @@
 						title: "Tiêu Đề",
 						dataIndex: "title",
 						key: "title"
-					}, {
+					},
+					
+					{
+						title: "Domain",
+						dataIndex: "staff_urls",
+						key: "staff_urls",
+						render: (staff_urls) => {
+							if (staff_urls) {
+								const staffUrls = staff_urls.map(id => {
+									const staff = S.find(s => s.id === Number(id));
+									return staff ? staff.staff_url : "All Web";
+								});
+								return staffUrls.join(', ');
+							}
+							return "All Web";
+						},
+					},
+
+					 {
 						title: "Thời Gian Tạo",
 						dataIndex: "created_at",
 						key: "created_at",
@@ -31751,25 +32046,38 @@
 							})
 						})
 					}
-				})), g.a.createElement("div", {
-					className: "form-group"
-				}, g.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "URL Cộng tác viên (Thông báo Cho CTV)"), g.a.createElement(a.a, {
-					mode: "tags",
-					value: this.state.submit.staff_urls || [],
-					style: {
-						width: "100%"
-					},
-					placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
-					onChange: e => {
-						this.setState({
+				})), 
+				
+				g.a.createElement(
+					"div",
+					{ className: "form-group" },
+					g.a.createElement(
+					  "label",
+					  null,
+					  "URL Cộng tác viên (Thông báo Cho CTV)"
+					),
+					g.a.createElement(
+					  a.a, 
+					  {
+						mode: "multiple",
+						style: { width: "100%" },
+						placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
+						value: this.state.submit.staff_urls || [],
+						onChange: (selectedIds) => {
+						  this.setState({
 							submit: p()({}, this.state.submit, {
-								staff_urls: e.length > 0 ? e : null
-							})
-						})
-					}
-				}, S && S.map((e => g.a.createElement(a.a.Option, { key: e, value: e }, e))))), g.a.createElement("div", {
+							  staff_urls: selectedIds, 
+							}),
+						  });
+						},
+					  },
+					  S && S.map((e) =>
+						g.a.createElement(a.a.Option, { key: e.id, value: e.id.toString() }, e.staff_url)
+					  )
+					)
+				  ),
+				
+				g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -78626,6 +78934,10 @@
 				path: "/plan",
 				exact: !0,
 				component: n("ih8c").default
+			},{
+				path: "/sni",
+				exact: !0,
+				component: n("JZE9z").default
 			}, {
 				path: "/queue",
 				exact: !0,
@@ -78795,7 +79107,9 @@
 			render() {
 				var e = this.props.config,
 					t = this.props.plan.saveLoading,
+					idS = this.props.plan.idStaff,
 					n = this.props.serverGroup.groups;
+					
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
 					onClick: () => this.setState({
 						visible: !0
@@ -79122,7 +79436,11 @@
 				}, "Gói CTV ( không bao gồm Web chính )"), m.a.createElement(_.a.Option, {
 					key: 3,
 					value: 3
-				}, "Gói CTV ( Có bao gồm web chính )"))), 2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
+				}, "Gói CTV ( Có bao gồm web chính )"))), 
+				
+				
+
+				2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
@@ -79138,10 +79456,12 @@
 							})
 						})
 					}
-				}, e.ctv.sub_domain && e.ctv.sub_domain.map((e => m.a.createElement(_.a.Option, {
-					key: e,
-					value: e
-				}, e))))) : "", m.a.createElement("div", {
+				}, idS && idS.map((e => m.a.createElement(_.a.Option, {
+					key: e.id.toString(), 
+					value: e.id.toString(), 
+				}, e.staff_url))))) : "",
+				
+				m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
@@ -80179,19 +80499,34 @@
 					placeholder: "Vui lòng nhập phân loại, phân loại sẽ tự động được nhóm lại.",
 					value: n.category,
 					onChange: e => this.formChange("category", e.target.value)
-				})),f.a.createElement("div", {
-					className: "form-group"
-				}, f.a.createElement("label", {
-					htmlFor: "example-text-input-alt"
-				}, "Domain hiển thị"), f.a.createElement(b.a, {
-					mode: "tags",
-					value: n.staff_urls || [],
-					style: {
-						width: "100%"
-					},
-					placeholder: "Domain sẽ hiển thị nội dung hướng dẫn này",
-					onChange: e => this.formChange("staff_urls", e.length > 0 ? e : null)
-				}, staff && staff.map((e => f.a.createElement(b.a.Option, { key: e, value: e }, e))))), f.a.createElement("div", {
+				})),
+
+				f.a.createElement(
+					"div",
+					{ className: "form-group" },
+					f.a.createElement(
+					  "label",
+					  null,
+					  "Domain Hiển Thị"
+					),
+					f.a.createElement(
+					  b.a,
+					  {
+						mode: "multiple",
+						style: { width: "100%" },
+						placeholder: "Vui lòng chọn domain",
+						value: n.staff_urls || [], 
+						onChange: (selectedIds) => {
+						  this.formChange('staff_urls', selectedIds); 
+						},
+					  },
+					  staff && staff.map((e) =>
+						f.a.createElement(b.a.Option, { key: e.id, value: e.id.toString() }, e.url)
+					  )
+					)
+				  ),
+				
+				f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -80287,6 +80622,7 @@
 			render() {
 				var e = this.props.knowledge,
 					t = e.knowledges,
+					S = e.staff,
 					n = e.fetchLoading,
 					r = (e.categorys,
 						[{
@@ -80300,7 +80636,7 @@
 								}
 							}))
 						}, {
-							title: "ID Bài Viết",
+							title: "ID",
 							dataIndex: "id",
 							key: "id"
 						}, {
@@ -80320,7 +80656,23 @@
 							title: "Phân Loại",
 							dataIndex: "category",
 							key: "category"
-						}, {
+						}, 
+						{
+							title: "Domain",
+							dataIndex: "staff_urls",
+							key: "staff_urls",
+							render: (staff_urls) => {
+								if (staff_urls) {
+									const staffUrls = staff_urls.map(id => {
+										const staff = S.find(s => s.id === Number(id));
+										return staff ? staff.url : "All Web";
+									});
+									return staffUrls.join(', ');
+								}
+								return "All Web";
+							},
+						},
+						{
 							title: "Thời Gian Cập Nhật",
 							dataIndex: "updated_at",
 							key: "updated_at",
@@ -82094,6 +82446,575 @@
 			}
 		}
 	},
+	lETvz: function (e, t, n) {
+		"use strict";
+		n.r(t);
+		var r = n("p0pE"),
+		  i = n.n(r),
+		  o = n("t3Un");
+		function a() {
+		  a = function () {
+			return e;
+		  };
+		  var e = {},
+			t = Object.prototype,
+			n = t.hasOwnProperty,
+			r =
+			  Object.defineProperty ||
+			  function (e, t, n) {
+				e[t] = n.value;
+			  },
+			i = "function" == typeof Symbol ? Symbol : {},
+			o = i.iterator || "@@iterator",
+			s = i.asyncIterator || "@@asyncIterator",
+			c = i.toStringTag || "@@toStringTag";
+		  function l(e, t, n) {
+			return (
+			  Object.defineProperty(e, t, {
+				value: n,
+				enumerable: !0,
+				configurable: !0,
+				writable: !0,
+			  }),
+			  e[t]
+			);
+		  }
+		  try {
+			l({}, "");
+		  } catch (e) {
+			l = function (e, t, n) {
+			  return (e[t] = n);
+			};
+		  }
+		  function u(e, t, n, i) {
+			var o = t && t.prototype instanceof d ? t : d,
+			  a = Object.create(o.prototype),
+			  s = new C(i || []);
+			return r(a, "_invoke", { value: _(e, n, s) }), a;
+		  }
+		  function h(e, t, n) {
+			try {
+			  return { type: "normal", arg: e.call(t, n) };
+			} catch (e) {
+			  return { type: "throw", arg: e };
+			}
+		  }
+		  e.wrap = u;
+		  var f = {};
+		  function d() {}
+		  function p() {}
+		  function m() {}
+		  var g = {};
+		  l(g, o, function () {
+			return this;
+		  });
+		  var v = Object.getPrototypeOf,
+			y = v && v(v(O([])));
+		  y && y !== t && n.call(y, o) && (g = y);
+		  var b = (m.prototype = d.prototype = Object.create(g));
+		  function w(e) {
+			["next", "throw", "return"].forEach(function (t) {
+			  l(e, t, function (e) {
+				return this._invoke(t, e);
+			  });
+			});
+		  }
+		  function x(e, t) {
+			function i(r, o, a, s) {
+			  var c = h(e[r], e, o);
+			  if ("throw" !== c.type) {
+				var l = c.arg,
+				  u = l.value;
+				return u && "object" == typeof u && n.call(u, "__await")
+				  ? t.resolve(u.__await).then(
+					  function (e) {
+						i("next", e, a, s);
+					  },
+					  function (e) {
+						i("throw", e, a, s);
+					  }
+					)
+				  : t.resolve(u).then(
+					  function (e) {
+						(l.value = e), a(l);
+					  },
+					  function (e) {
+						return i("throw", e, a, s);
+					  }
+					);
+			  }
+			  s(c.arg);
+			}
+			var o;
+			r(this, "_invoke", {
+			  value: function (e, n) {
+				function r() {
+				  return new t(function (t, r) {
+					i(e, n, t, r);
+				  });
+				}
+				return (o = o ? o.then(r, r) : r());
+			  },
+			});
+		  }
+		  function _(e, t, n) {
+			var r = "suspendedStart";
+			return function (i, o) {
+			  if ("executing" === r)
+				throw new Error("Generator is already running");
+			  if ("completed" === r) {
+				if ("throw" === i) throw o;
+				return { value: void 0, done: !0 };
+			  }
+			  for (n.method = i, n.arg = o; ; ) {
+				var a = n.delegate;
+				if (a) {
+				  var s = E(a, n);
+				  if (s) {
+					if (s === f) continue;
+					return s;
+				  }
+				}
+				if ("next" === n.method) n.sent = n._sent = n.arg;
+				else if ("throw" === n.method) {
+				  if ("suspendedStart" === r) throw ((r = "completed"), n.arg);
+				  n.dispatchException(n.arg);
+				} else "return" === n.method && n.abrupt("return", n.arg);
+				r = "executing";
+				var c = h(e, t, n);
+				if ("normal" === c.type) {
+				  if (((r = n.done ? "completed" : "suspendedYield"), c.arg === f))
+					continue;
+				  return { value: c.arg, done: n.done };
+				}
+				"throw" === c.type &&
+				  ((r = "completed"), (n.method = "throw"), (n.arg = c.arg));
+			  }
+			};
+		  }
+		  function E(e, t) {
+			var n = t.method,
+			  r = e.iterator[n];
+			if (void 0 === r)
+			  return (
+				(t.delegate = null),
+				("throw" === n &&
+				  e.iterator.return &&
+				  ((t.method = "return"),
+				  (t.arg = void 0),
+				  E(e, t),
+				  "throw" === t.method)) ||
+				  ("return" !== n &&
+					((t.method = "throw"),
+					(t.arg = new TypeError(
+					  "The iterator does not provide a '" + n + "' method"
+					)))),
+				f
+			  );
+			var i = h(r, e.iterator, t.arg);
+			if ("throw" === i.type)
+			  return (t.method = "throw"), (t.arg = i.arg), (t.delegate = null), f;
+			var o = i.arg;
+			return o
+			  ? o.done
+				? ((t[e.resultName] = o.value),
+				  (t.next = e.nextLoc),
+				  "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
+				  (t.delegate = null),
+				  f)
+				: o
+			  : ((t.method = "throw"),
+				(t.arg = new TypeError("iterator result is not an object")),
+				(t.delegate = null),
+				f);
+		  }
+		  function k(e) {
+			var t = { tryLoc: e[0] };
+			1 in e && (t.catchLoc = e[1]),
+			  2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])),
+			  this.tryEntries.push(t);
+		  }
+		  function S(e) {
+			var t = e.completion || {};
+			(t.type = "normal"), delete t.arg, (e.completion = t);
+		  }
+		  function C(e) {
+			(this.tryEntries = [{ tryLoc: "root" }]),
+			  e.forEach(k, this),
+			  this.reset(!0);
+		  }
+		  function O(e) {
+			if (e) {
+			  var t = e[o];
+			  if (t) return t.call(e);
+			  if ("function" == typeof e.next) return e;
+			  if (!isNaN(e.length)) {
+				var r = -1,
+				  i = function t() {
+					for (; ++r < e.length; )
+					  if (n.call(e, r)) return (t.value = e[r]), (t.done = !1), t;
+					return (t.value = void 0), (t.done = !0), t;
+				  };
+				return (i.next = i);
+			  }
+			}
+			return { next: T };
+		  }
+		  function T() {
+			return { value: void 0, done: !0 };
+		  }
+		  return (
+			(p.prototype = m),
+			r(b, "constructor", { value: m, configurable: !0 }),
+			r(m, "constructor", { value: p, configurable: !0 }),
+			(p.displayName = l(m, c, "GeneratorFunction")),
+			(e.isGeneratorFunction = function (e) {
+			  var t = "function" == typeof e && e.constructor;
+			  return (
+				!!t &&
+				(t === p || "GeneratorFunction" === (t.displayName || t.name))
+			  );
+			}),
+			(e.mark = function (e) {
+			  return (
+				Object.setPrototypeOf
+				  ? Object.setPrototypeOf(e, m)
+				  : ((e.__proto__ = m), l(e, c, "GeneratorFunction")),
+				(e.prototype = Object.create(b)),
+				e
+			  );
+			}),
+			(e.awrap = function (e) {
+			  return { __await: e };
+			}),
+			w(x.prototype),
+			l(x.prototype, s, function () {
+			  return this;
+			}),
+			(e.AsyncIterator = x),
+			(e.async = function (t, n, r, i, o) {
+			  void 0 === o && (o = Promise);
+			  var a = new x(u(t, n, r, i), o);
+			  return e.isGeneratorFunction(n)
+				? a
+				: a.next().then(function (e) {
+					return e.done ? e.value : a.next();
+				  });
+			}),
+			w(b),
+			l(b, c, "Generator"),
+			l(b, o, function () {
+			  return this;
+			}),
+			l(b, "toString", function () {
+			  return "[object Generator]";
+			}),
+			(e.keys = function (e) {
+			  var t = Object(e),
+				n = [];
+			  for (var r in t) n.push(r);
+			  return (
+				n.reverse(),
+				function e() {
+				  for (; n.length; ) {
+					var r = n.pop();
+					if (r in t) return (e.value = r), (e.done = !1), e;
+				  }
+				  return (e.done = !0), e;
+				}
+			  );
+			}),
+			(e.values = O),
+			(C.prototype = {
+			  constructor: C,
+			  reset: function (e) {
+				if (
+				  ((this.prev = 0),
+				  (this.next = 0),
+				  (this.sent = this._sent = void 0),
+				  (this.done = !1),
+				  (this.delegate = null),
+				  (this.method = "next"),
+				  (this.arg = void 0),
+				  this.tryEntries.forEach(S),
+				  !e)
+				)
+				  for (var t in this)
+					"t" === t.charAt(0) &&
+					  n.call(this, t) &&
+					  !isNaN(+t.slice(1)) &&
+					  (this[t] = void 0);
+			  },
+			  stop: function () {
+				this.done = !0;
+				var e = this.tryEntries[0].completion;
+				if ("throw" === e.type) throw e.arg;
+				return this.rval;
+			  },
+			  dispatchException: function (e) {
+				if (this.done) throw e;
+				var t = this;
+				function r(n, r) {
+				  return (
+					(a.type = "throw"),
+					(a.arg = e),
+					(t.next = n),
+					r && ((t.method = "next"), (t.arg = void 0)),
+					!!r
+				  );
+				}
+				for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+				  var o = this.tryEntries[i],
+					a = o.completion;
+				  if ("root" === o.tryLoc) return r("end");
+				  if (o.tryLoc <= this.prev) {
+					var s = n.call(o, "catchLoc"),
+					  c = n.call(o, "finallyLoc");
+					if (s && c) {
+					  if (this.prev < o.catchLoc) return r(o.catchLoc, !0);
+					  if (this.prev < o.finallyLoc) return r(o.finallyLoc);
+					} else if (s) {
+					  if (this.prev < o.catchLoc) return r(o.catchLoc, !0);
+					} else {
+					  if (!c)
+						throw new Error("try statement without catch or finally");
+					  if (this.prev < o.finallyLoc) return r(o.finallyLoc);
+					}
+				  }
+				}
+			  },
+			  abrupt: function (e, t) {
+				for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+				  var i = this.tryEntries[r];
+				  if (
+					i.tryLoc <= this.prev &&
+					n.call(i, "finallyLoc") &&
+					this.prev < i.finallyLoc
+				  ) {
+					var o = i;
+					break;
+				  }
+				}
+				o &&
+				  ("break" === e || "continue" === e) &&
+				  o.tryLoc <= t &&
+				  t <= o.finallyLoc &&
+				  (o = null);
+				var a = o ? o.completion : {};
+				return (
+				  (a.type = e),
+				  (a.arg = t),
+				  o
+					? ((this.method = "next"), (this.next = o.finallyLoc), f)
+					: this.complete(a)
+				);
+			  },
+			  complete: function (e, t) {
+				if ("throw" === e.type) throw e.arg;
+				return (
+				  "break" === e.type || "continue" === e.type
+					? (this.next = e.arg)
+					: "return" === e.type
+					? ((this.rval = this.arg = e.arg),
+					  (this.method = "return"),
+					  (this.next = "end"))
+					: "normal" === e.type && t && (this.next = t),
+				  f
+				);
+			  },
+			  finish: function (e) {
+				for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+				  var n = this.tryEntries[t];
+				  if (n.finallyLoc === e)
+					return this.complete(n.completion, n.afterLoc), S(n), f;
+				}
+			  },
+			  catch: function (e) {
+				for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+				  var n = this.tryEntries[t];
+				  if (n.tryLoc === e) {
+					var r = n.completion;
+					if ("throw" === r.type) {
+					  var i = r.arg;
+					  S(n);
+					}
+					return i;
+				  }
+				}
+				throw new Error("illegal catch attempt");
+			  },
+			  delegateYield: function (e, t, n) {
+				return (
+				  (this.delegate = { iterator: O(e), resultName: t, nextLoc: n }),
+				  "next" === this.method && (this.arg = void 0),
+				  f
+				);
+			  },
+			}),
+			e
+		  );
+		}
+		t.default = {
+		  name: "sni",
+		  state: i()({}, { notices: [], fetchLoading: !1 }),
+		  reducers: {
+			setState(e, t) {
+			  var n = t.payload;
+			  return i()({}, e, n);
+			},
+		  },
+		  effects: {
+			fetch(e, t) {
+			  var n = t.put;
+			  return a().mark(function e() {
+				var t;
+				return a().wrap(function (e) {
+				  for (;;)
+					switch ((e.prev = e.next)) {
+					  case 0:
+						return (
+						  (e.next = 2),
+						  n({ type: "setState", payload: { fetchLoading: !0 } })
+						);
+					  case 2:
+						return (
+						  (e.next = 4),
+						  Object(o.a)(
+							"/" + window.settings.secure_path + "/sni/fetch"
+						  )
+						);
+					  case 4:
+						return (
+						  (t = e.sent),
+						  (e.next = 7),
+						  n({ type: "setState", payload: { fetchLoading: !1 } })
+						);
+					  case 7:
+						if (200 === t.code) {
+						  e.next = 9;
+						  break;
+						}
+						return e.abrupt("return");
+					  case 9:
+						return (
+						  (e.next = 11),
+						  n({ type: "setState", payload: { notices: t.data } })
+						);
+					  case 11:
+					  case "end":
+						return e.stop();
+					}
+				}, e);
+			  })();
+			},
+			save(e, t) {
+			  var n = e.params,
+				r = e.callback,
+				i = t.put;
+			  return a().mark(function e() {
+				var t;
+				return a().wrap(function (e) {
+				  for (;;)
+					switch ((e.prev = e.next)) {
+					  case 0:
+						return (
+						  (e.next = 2),
+						  i({ type: "setState", payload: { saveLoading: !0 } })
+						);
+					  case 2:
+						return (
+						  (e.next = 4),
+						  Object(o.b)(
+							"/" + window.settings.secure_path + "/sni/save",
+							n
+						  )
+						);
+					  case 4:
+						return (
+						  (t = e.sent),
+						  (e.next = 7),
+						  i({ type: "setState", payload: { saveLoading: !1 } })
+						);
+					  case 7:
+						if (200 === t.code) {
+						  e.next = 9;
+						  break;
+						}
+						return e.abrupt("return");
+					  case 9:
+						return (e.next = 11), i({ type: "fetch" });
+					  case 11:
+						"function" == typeof r && r();
+					  case 12:
+					  case "end":
+						return e.stop();
+					}
+				}, e);
+			  })();
+			},
+			drop(e, t) {
+			  var n = e.id,
+				r = t.put;
+			  return a().mark(function e() {
+				return a().wrap(function (e) {
+				  for (;;)
+					switch ((e.prev = e.next)) {
+					  case 0:
+						return (
+						  (e.next = 2),
+						  Object(o.b)(
+							"/" + window.settings.secure_path + "/sni/drop",
+							{ id: n }
+						  )
+						);
+					  case 2:
+						if (200 === e.sent.code) {
+						  e.next = 5;
+						  break;
+						}
+						return e.abrupt("return");
+					  case 5:
+						return (e.next = 7), r({ type: "fetch" });
+					  case 7:
+					  case "end":
+						return e.stop();
+					}
+				}, e);
+			  })();
+			},
+			show(e, t) {
+			  var n = e.id,
+				r = t.put;
+			  return a().mark(function e() {
+				return a().wrap(function (e) {
+				  for (;;)
+					switch ((e.prev = e.next)) {
+					  case 0:
+						return (
+						  (e.next = 2),
+						  Object(o.b)(
+							"/" + window.settings.secure_path + "/sni/show",
+							{ id: n }
+						  )
+						);
+					  case 2:
+						if (200 === e.sent.code) {
+						  e.next = 5;
+						  break;
+						}
+						return e.abrupt("return");
+					  case 5:
+						return (e.next = 7), r({ type: "fetch" });
+					  case 7:
+					  case "end":
+						return e.stop();
+					}
+				}, e);
+			  })();
+			},
+		  },
+		};
+	  },
 	lFUy: function(e, t, n) {
 		"use strict";
 		var r = n("8Z/V"),
@@ -100620,7 +101541,17 @@
 					placeholder: "Địa Chỉ Domain hoặc Địa Chỉ IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
+				}))), y.a.createElement("div", {
+					className: "row"
+				}, y.a.createElement("div", {
+					className: "form-group col-md-12 col-xs-12"
+				}, y.a.createElement("label", null, "IP (IPv4)"), y.a.createElement(s.a, {
+					addonAfter: "IP",
+					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
+					value: e.ip,
+					onChange: e => this.formChange("ip", e.target.value)
 				}))), 
+
 				
 				y.a.createElement("div", { 
 					className: "form-group" 
@@ -101177,7 +102108,16 @@
 					placeholder: "Không NAT cổng kết nối giống nhau",
 					value: e.server_port,
 					onChange: e => this.formChange("server_port", e.target.value)
-				}))), 
+				}))), y.a.createElement("div", {
+					className: "row"
+				}, y.a.createElement("div", {
+					className: "form-group col-md-12 col-xs-12"
+				}, y.a.createElement("label", null, "IP (IPv4)"), y.a.createElement(s.a, {
+					addonAfter: "IP",
+					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
+					value: e.ip,
+					onChange: e => this.formChange("ip", e.target.value)
+				}))),
 				
 				y.a.createElement("div", { 
 					className: "form-group" 
@@ -106535,6 +107475,9 @@
 					namespace: "notice"
 				}, n("lETv").default)),
 				u.model(o()({
+					namespace: "sni"
+				}, n("lETvz").default)),
+				u.model(o()({
 					namespace: "order"
 				}, n("3moC").default)),
 				u.model(o()({
@@ -108153,10 +109096,16 @@
 					placeholder: "Địa chỉ hoặc Địa chỉ IP",
 					value: e.host,
 					onChange: e => this.formChange("host", e.target.value)
+				}))), f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "form-group col-md-12 col-xs-12"
+				}, f.a.createElement("label", null, "IP (IPv4)"), f.a.createElement(c.a, {
+					addonAfter: "IP",
+					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
+					value: e.ip,
+					onChange: e => this.formChange("ip", e.target.value)
 				}))), 
-				
-				
-				
 				f.a.createElement("div",{ 
 					className: "form-group" 
 				},  f.a.createElement("label", null, "LoadIPs"), f.a.createElement(s.a, {
