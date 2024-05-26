@@ -31747,11 +31747,11 @@
 					),
 					g.a.createElement(s.a, {
 					  placeholder: "Vui lòng nhập Tên của SNI",
-					  value: this.state.submit.dname_sni,
+					  value: this.state.submit.label,
 					  onChange: (e) => {
 						this.setState({
 						  submit: p()({}, this.state.submit, {
-							dname_sni: e.target.value,
+							label: e.target.value,
 						  }),
 						});
 					  },
@@ -31767,11 +31767,11 @@
 					),
 					g.a.createElement(s.a, {
 					  placeholder: "Vui lòng nhập SNI vào đây",
-					  value: this.state.submit.network_settings,
+					  value: this.state.submit.value,
 					  onChange: (e) => {
 						this.setState({
 						  submit: p()({}, this.state.submit, {
-							network_settings: e.target.value,
+							value: e.target.value,
 						  }),
 						});
 					  },
