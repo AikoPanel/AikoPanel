@@ -6231,8 +6231,9 @@
 						checked: parseInt(n.commission_auto_check_enable),
 						onChange: e => this.set("invite", "commission_auto_check_enable", e ? 1 : 0)
 					})),
-					parseInt(n.commission_auto_check_enable) === 1 && f.a.createElement(m, {
+					parseInt(n.commission_auto_check_enable) === 1 && f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 						title: "Thời gian hoa hồng tự xác nhận",
+						isChildren: !0,
 						description: "Hoa hồng sẽ tự động duyệt sau một khoảng thời gian, mặc định là 4320 phút (3 ngày)"
 					}, f.a.createElement("input", {
 						type: "text",
@@ -6241,7 +6242,7 @@
 						placeholder: "Bỏ trống mặc định là 4320 phút (3 ngày)",
 						defaultValue: n.commission_auto_check_min,
 						onChange: e => this.set("invite", "commission_auto_check_min", e.target.value)
-					})),
+					}))),
 					
 					f.a.createElement(m, {
 						title: "Hoa hồng tối thiểu",
@@ -93116,7 +93117,8 @@
 							1: "Mua Mới",
 							2: "Gia Hạn",
 							3: "Thay Đổi",
-							4: "Gói Dữ Liệu"
+							4: "Gói Dữ Liệu",
+							5: "Nạp Tiền"
 						} [e])
 					}, {
 						title: "Gói Dịch Vụ",
@@ -97957,6 +97959,7 @@
 				two_year_price: "2 Năm",
 				three_year_price: "3 Năm",
 				onetime_price: "Vĩnh Viễn",
+				recharge: "Nạp Tiền",
 				reset_price: "Gói Reset Lưu Lượng"
 			},
 			tutorialCategoryText: {

@@ -12,7 +12,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.0|^8.0",
-        "doctrine/dbal": "^3.7",
+        "doctrine/dbal": "^3.8",
         "fideloper/proxy": "^4.4",
         "firebase/php-jwt": "^6.3",
         "fruitcake/laravel-cors": "^2.0",
