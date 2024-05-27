@@ -6223,13 +6223,27 @@
 					}, f.a.createElement(c.a, {
 						checked: parseInt(n.commission_first_time_enable),
 						onChange: e => this.set("invite", "commission_first_time_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
+					})), 
+					f.a.createElement(m, {
 						title: "Hoa hồng tự động xác nhận",
-						description: "Sau khi kích hoạt, hoa hồng sẽ được tự động xác nhận sau 3 ngày kể từ khi đặt hàng hoàn thành."
+						description: "Sau khi kích hoạt, hoa hồng sẽ được tự động xác nhận dựa trên thời gian đã cài đặt."
 					}, f.a.createElement(c.a, {
 						checked: parseInt(n.commission_auto_check_enable),
 						onChange: e => this.set("invite", "commission_auto_check_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
+					})),
+					parseInt(n.commission_auto_check_enable) === 1 && f.a.createElement(m, {
+						title: "Thời gian hoa hồng tự xác nhận",
+						description: "Hoa hồng sẽ tự động duyệt sau một khoảng thời gian, mặc định là 4320 phút (3 ngày)"
+					}, f.a.createElement("input", {
+						type: "text",
+						addonAfter: "Phút",
+						className: "form-control",
+						placeholder: "Bỏ trống mặc định là 4320 phút (3 ngày)",
+						defaultValue: n.commission_auto_check_min,
+						onChange: e => this.set("invite", "commission_auto_check_min", e.target.value)
+					})),
+					
+					f.a.createElement(m, {
 						title: "Hoa hồng tối thiểu",
 						description: "Hoa hồng tối thiểu cần đạt được trước khi có thể rút tiền"
 					}, f.a.createElement("input", {
