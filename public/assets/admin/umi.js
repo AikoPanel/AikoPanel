@@ -5454,16 +5454,13 @@
 				this.props.dispatch({
 					type: "config/getThemeTemplate"
 				});
-				fetch('https://api.vietqr.io/v2/banks')
-					.then(response => response.json())
-					.then(data => {
-						this.setState({
-							banks: data.data
-						});
-					})
-					.catch((error) => {
-						console.error('Error:', error);
+				fetch('https://api.vietqr.io/v2/banks').then(response => response.json()).then(data => {
+					this.setState({
+						banks: data.data
 					});
+				}).catch((error) => {
+					console.error('Error:', error);
+				});
 			}
 			set(e, t, n) {
 				var r = this.props.config;
@@ -5514,1225 +5511,1194 @@
 				}), f.a.createElement("div", {
 					className: "mb-0 block border-bottom ".concat(p ? "block-mode-loading" : "")
 				}, f.a.createElement(s.a, {
-						onChange: e => this.setState({
-							tabs: e
-						}),
-						defaultActiveKey: h,
-						size: "large"
-					}, f.a.createElement(s.a.TabPane, {
-						tab: "Website",
-						key: "site"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Tên website",
-						description: "Sử dụng để hiển thị vị trí cụ thể của trang web"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập tên website",
-						defaultValue: t.app_name,
-						onChange: e => this.set("site", "app_name", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Mô tả website",
-						description: "Hiển thị mô tả website trên các công cụ tìm kiếm"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập mô tả website",
-						defaultValue: t.app_description,
-						onChange: e => this.set("site", "app_description", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Địa chỉ Website",
-						description: "Địa chỉ trang web hiện tại, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL của trang web, cuối cùng không có dấu gạch chéo (/)",
-						defaultValue: t.app_url,
-						onChange: e => this.set("site", "app_url", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Địa chỉ SubDomain ( Nếu có ) - ( Không có http:// hoặc https:// ) ",
-						description: "Địa chỉ subdomain của trang web, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Miền phụ của trang web, nếu cần nhiều địa chỉ subdomain, vui lòng sử dụng dấu phẩy để phân chia",
-						defaultValue: t.sub_app_url,
-						onChange: e => this.set("site", "sub_app_url", e.target.value.split(",")),
-					})), f.a.createElement(m, {
-						title: "URL gói đăng kí",
-						description: "Được sử dụng để cấp gói đăng kí, nếu trống thì sẽ là URL trang web. Nếu cần nhiều địa chỉ URL gói đăng kí, vui lòng sử dụng dấu phẩy để phân chia."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
-						defaultValue: t.subscribe_url,
-						onChange: e => this.set("site", "subscribe_url", e.target.value)
-					})),f.a.createElement(m, {
-						title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
-						description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(t.force_https),
-						onChange: e => this.set("site", "force_https", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "LOGO",
-						description: "Được sử dụng để hiển thị nơi cần thiết logo."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
-						defaultValue: t.logo,
-						onChange: e => this.set("site", "logo", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Background URL",
-						description: "Vui lòng nhập URL của hình nền"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL của Background, cuối cùng không có dấu gạch chéo (/)",
-						defaultValue: t.background_url,
-						onChange: e => this.set("site", "background_url", e.target.value)
-					})), f.a.createElement(m, {
-						title: "HTML tùy chỉnh cho chân trang",
-						description: "Có thể thêm mã JS hỗ trợ khách hàng, v.v."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập HTML tùy chỉnh cho chân trang",
-						defaultValue: t.custom_html,
-						onChange: e => this.set("site", "custom_html", e.target.value)
-					})), f.a.createElement(m, {
-						title: "URL Điều khoản Sử dụng (TOS) của người dùng",
-						description: "Được sử dụng để chuyển đến Điều khoản Sử dụng (TOS) của người dùng"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL Điều khoản Sử dụng của người dùng, cuối cùng không có dấu gạch chéo (/)",
-						defaultValue: t.tos_url,
-						onChange: e => this.set("site", "tos_url", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Ngừng đăng ký người dùng mới",
-						description: "Sau khi kích hoạt, không ai có thể đăng ký"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(t.stop_register),
-						onChange: e => this.set("site", "stop_register", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Thử nghiệm miễn phí",
-						description: "Chọn gói cần thử nghiệm. Nếu không có lựa chọn, vui lòng trước tiên đi đến quản lý gói để thêm."
-					}, f.a.createElement("select", {
-						onChange: e => this.set("site", "try_out_plan_id", e.target.value),
-						className: "form-control",
-						value: t.try_out_plan_id,
-						placeholder: "Vui lòng chọn gói thử nghiệm"
-					}, f.a.createElement("option", {
-						value: 0
-					}, "Không"), E.map((e => f.a.createElement("option", {
-						key: Math.random(),
-						value: e.id
-					}, e.name))))), 0 === t.try_out_plan_id || f.a.createElement(m, {
-						isChildren: !0,
-						title: "Thời gian thử nghiệm (giờ)"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập thời gian thử nghiệm (giờ)",
-						defaultValue: t.try_out_hour,
-						onChange: e => this.set("site", "try_out_hour", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Đơn vị tiền tệ",
-						description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "VNĐ",
-						defaultValue: t.currency,
-						onChange: e => this.set("site", "currency", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Ký hiệu tiền tệ",
-						description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "đ",
-						defaultValue: t.currency_symbol,
-						onChange: e => this.set("site", "currency_symbol", e.target.value)
-					})))),f.a.createElement(s.a.TabPane, {
-						tab: "Web con",
-						key: "ctv"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Địa chỉ Website CTV ( Không có http:// hoặc https:// )",
-						description: "Hỗ trợ nhiều địa chỉ URL, nếu có nhiều địa chỉ URL, vui lòng sử dụng dấu phẩy để phân tách"
-					}, f.a.createElement("textarea", {
-						rows: "5",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
-						defaultValue: ctv.sub_domain,
-						onChange: e => this.set("ctv", "sub_domain", e.target.value.split(","))
-					})), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Giới hạn tạo tài khoản của nhân viên",
-						description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Account/day",
-						size: "large",
-						type: "number",
-						placeholder: "Vui lòng nhập",
-						defaultValue: ctv.staff_generate_user_limit,
-						onChange: e => this.set("ctv", "staff_generate_user_limit", e.target.value)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Hiển thị Name Server để tạo web cho nhân viên",
-						description: "Sau khi kích hoạt, Name Server sẽ được hiển thị khi tạo web cho nhân viên"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(ctv.collaborator_enable),
-						onChange: e => this.set("ctv", "collaborator_enable", e ? 1 : 0)
-					}))), ctv.collaborator_enable ? f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title:"Thông tin Name Server",
-						description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
-					}, f.a.createElement(a.a, {
-						addonAfter: "NS 1",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập",
-						defaultValue: ctv.cloudflare_ns_1,
-						onChange: e => this.set("ctv", "cloudflare_ns_1", e.target.value)
-					}), f.a.createElement(a.a, {
-						addonAfter: "NS 2",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập",
-						defaultValue: ctv.cloudflare_ns_2,
-						onChange: e => this.set("ctv", "cloudflare_ns_2", e.target.value)
-					}))): "" , f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Giao lưu giữa các web của nhân viên", 
-						description: "Sau khi kích hoạt, người dùng có thể login vào các web của nhân viên khác"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(ctv.exchange_enable),
-						onChange: e => this.set("ctv", "exchange_enable", e ? 1 : 0)
-					}))))), f.a.createElement(s.a.TabPane, {
-						tab: "Thống kê",
-						key: "statistics"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thống kê Order và Doanh thu theo ngày",
-						description: "Sau khi kích hoạt, sẽ hiển thị thống kê Order và Doanh thu theo ngày"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(statistics.getorder_enable),
-						onChange: e => this.set("statistics", "getorder_enable", e ? 1 : 0)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thống kê lưu lượng truy cập của Node ngày hôm nay",
-						description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của Node ngày hôm nay"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(statistics.node_traffic_today),
-						onChange: e => this.set("statistics", "node_traffic_today", e ? 1 : 0)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thống kê lưu lượng truy cập của người dùng ngày hôm nay",
-						description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của người dùng ngày hôm nay"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(statistics.user_traffic_today),
-						onChange: e => this.set("statistics", "user_traffic_today", e ? 1 : 0)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thống kê lưu lượng node truy cập ngày hôm qua",
-						description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng node truy cập ngày hôm qua"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(statistics.node_traffic_yesterday),
-						onChange: e => this.set("statistics", "node_traffic_yesterday", e ? 1 : 0)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thống kê lưu lượng truy cập của người dùng ngày hôm qua",
-						description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của người dùng ngày hôm qua"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(statistics.user_traffic_yesterday),
-						onChange: e => this.set("statistics", "user_traffic_yesterday", e ? 1 : 0)
-					})))), f.a.createElement(s.a.TabPane, {
-						tab: "An toàn",
-						key: "safe"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Xác thực email",
-						description: "Sau khi kích hoạt, sẽ bắt buộc người dùng thực hiện xác thực email lúc đăng ký"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.email_verify),
-						onChange: e => this.set("safe", "email_verify", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Cấm sử dụng nhiều tên miền Gmail",
-						description: "Sau khi mở Gmail nhiều tên miền sẽ không thể đăng ký"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.email_gmail_limit_enable),
-						onChange: e => this.set("safe", "email_gmail_limit_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Chế độ an toàn",
-						description: "Sau khi mở, trừ URL trạm này, tất cả các lượt truy cập đến tên miền trang web này ngoài trang web sẽ bị chặn bằng lỗi 403."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.safe_mode_enable),
-						onChange: e => this.set("safe", "safe_mode_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Đường dẫn trang quản trị",
-						description: "Đường dẫn quản lý sau cùng, sau khi sửa đổi sẽ thay đổi đường dẫn quản trị ban đầu."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "admin",
-						defaultValue: _.secure_path,
-						onChange: e => this.set("safe", "secure_path", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Đường dẫn trang Cộng tác viên",
-						description: "Đường dẫn quản lý sau cùng, sau khi sửa đổi sẽ thay đổi đường dẫn cộng tác viên ban đầu."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Đường dẫn web cộng tác viên",
-						defaultValue: _.staff_path,
-						onChange: e => this.set("safe", "staff_path", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Danh sách cho phép hậu tố email",
-						description: "Sau khi kích hoạt, chỉ có thể đăng ký với hậu tố sau tên trong danh sách email"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.email_whitelist_enable),
-						onChange: e => this.set("safe", "email_whitelist_enable", e ? 1 : 0)
-					})), _.email_whitelist_enable ? f.a.createElement(m, {
-						isChildren: !0,
-						title: "Hậu tố email",
-						description: "Vui lòng sử dụng dấu phẩy để phân tách, ví dụ: icloud.com, gmail.com."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập tên miền sau hậu tố, sử dụng dấu phẩy để phân tách, ví dụ: icloud.com, gmail.com.",
-						defaultValue: _.email_whitelist_suffix,
-						onChange: e => this.set("safe", "email_whitelist_suffix", e.target.value.split(","))
-					})) : "", f.a.createElement(m, {
-						title: "Captcha",
-						description: "Sau khi mở, sẽ sử dụng Google reCAPTCHA để ngăn chặn bot."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.recaptcha_enable),
-						onChange: e => this.set("safe", "recaptcha_enable", e ? 1 : 0)
-					})), _.recaptcha_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Khóa bí mật",
-						description: "Mật khẩu được sử dụng trong đơn đăng ký Google reCAPTCHA."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: _.recaptcha_key,
-						onChange: e => this.set("safe", "recaptcha_key", e.target.value)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Mật khẩu của trang web",
-						description: "Mật khẩu trang web được sử dụng trong đơn đăng ký Google reCAPTCHA."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: _.recaptcha_site_key,
-						onChange: e => this.set("safe", "recaptcha_site_key", e.target.value)
-					}))) : "", f.a.createElement(m, {
-						title: "Hạn chế đăng ký theo địa chỉ IP",
-						description: "Sau khi kích hoạt, nếu tài khoản đăng ký theo địa chỉ IP đạt đến quy định, có thể bị hạn chế đăng ký. Vui lòng lưu ý rằng kiểm tra IP có thể gây ra sự cố do CDN hoặc proxy trung gian"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.register_limit_by_ip_enable),
-						onChange: e => this.set("safe", "register_limit_by_ip_enable", e ? 1 : 0)
-					})), _.register_limit_by_ip_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Lần thứ",
-						description: "Sau khi đạt đến số lần đăng ký, sẽ kích hoạt trạng thái chặn"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: _.register_limit_count,
-						onChange: e => this.set("safe", "register_limit_count", e.target.value)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Thời gian chặn (phút).",
-						description: "Cần phải chờ đợi sau khoảng thời gian chặn trước khi có thể đăng ký lại"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: _.register_limit_expire,
-						onChange: e => this.set("safe", "register_limit_expire", e.target.value)
-					}))) : "", f.a.createElement(m, {
-						title: "Kiểm soát chống Spam hoặc hack",
-						description: "Sau khi kích hoạt, nếu tài khoản này thử đăng nhập quá nhiều lần không thành công, sẽ bị hạn chế"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(_.password_limit_enable),
-						onChange: e => this.set("safe", "password_limit_enable", e ? 1 : 0)
-					})), _.password_limit_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Số lần thử",
-						description: "Sau khi đạt đến số lần thử đăng nhập không thành công, sẽ kích hoạt trạng thái chặn"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: _.password_limit_count,
-						onChange: e => this.set("safe", "password_limit_count", e.target.value)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Thời gian chặn (phút).",
-						description: "Cần phải chờ đợi sau khoảng thời gian nghi ngờ trước khi có thể đăng nhập lại"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: _.password_limit_expire,
-						onChange: e => this.set("safe", "password_limit_expire", e.target.value)
-					}))) : "", f.a.createElement(m, {
-						title: "Danh sách IP ưu tiên khi get Subcribe",
-						description: "Sau khi kích hoạt, IP trong danh sách này sẽ được ưu tiên và pass qua mọi kiểm tra."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập IP cần chặn, sử dụng dấu phẩy để phân tách, ví dụ: 123.123.123.123,123.123.123.124, để trống là cho phép tất cả các IP",
-						defaultValue: _.ip_blocklist,
-						onChange: e => this.set("safe", "ip_blocklist", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Danh sách IP bị chặn khi get Subcribe",
-						description: "Sau khi kích hoạt, IP trong danh sách này sẽ bị chặn khi get Subcribe."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập IP cần chặn, sử dụng dấu phẩy để phân tách, ví dụ: 123.123.123.123,123.123.123.124, để trống là cho phép tất cả các IP",
-						defaultValue: _.ip_blocklist,
-						onChange: e => this.set("safe", "ip_blocklist", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Danh sách User Agent bị chặn khi get Subcribe",
-						description: "Sau khi kích hoạt, User Agent trong danh sách này sẽ bị chặn khi get Subcribe."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập UserAgent cần chặn, mỗi UserAgent được cách nhau bởi dấu ( | ), ví dụ: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome, để trống là cho phép tất cả các UserAgent",
-						defaultValue: _.ua_blocklist,
-						onChange: e => this.set("safe", "ua_blocklist", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Danh sách quốc gia được phép get Subcribe",
-						description: "Sau khi kích hoạt, chỉ có thể get Subcribe từ quốc gia trong danh sách này."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập quốc gia được phép get Subcribe, mỗi quốc gia được cách nhau bởi dấu ( , ), ví dụ: VN,US,JP, để trống là cho phép tất cả các quốc gia",
-						defaultValue: _.country_allowlist,
-						onChange: e => this.set("safe", "country_allowlist", e.target.value)
-					})))), f.a.createElement(s.a.TabPane, {
-						tab: "Gói Dịch Vụ",
-						key: "subscribe"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
-						description: "Sau khi kích hoạt, người dùng có thể thay đổi gói đăng ki của mình"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.plan_change_enable),
-						onChange: e => this.set("subscribe", "plan_change_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Phương thức đặt lại lưu lượng",
-						description: "Chế độ thiết lập lại lưu lượng toàn cục, mặc định là hàng tháng mỗi ngày 1. Có thể được cấu hình riêng cho từng đơn đặt hàng trong quản lý đặt hàng"
-					}, f.a.createElement("select", {
-						onChange: e => this.set("subscribe", "reset_traffic_method", e.target.value),
-						className: "form-control",
-						value: r.reset_traffic_method,
-						placeholder: "Vui lòng chọn cách đặt lại đơn đặt hàng"
-					}, f.a.createElement("option", {
-						value: 0
-					}, "Mỗi ngày 1 hằng tháng"), f.a.createElement("option", {
-						value: 1
-					}, "Thiết lập lại theo tháng."), f.a.createElement("option", {
-						value: 2
-					}, "Không Reset"), f.a.createElement("option", {
-						value: 3
-					}, "Mỗi năm 1 lần vào ngày 1 tháng 1"), f.a.createElement("option", {
-						value: 4
-					}, "Thiết lập lại theo năm"), f.a.createElement("option", {
-						value: 5
-					}, "Thiết lập mỗi ngày"))), 
-					
-					
-					f.a.createElement(
-						m,
-						{
-						  title: "Mở nạp tiền",
-						  description: "Sau khi bật, người dùng có thể nạp tiền vào tài khoản",
-						},
-						f.a.createElement(c.a, {
-						  checked: parseInt(r.naptien_on),
-						  onChange: (e) => this.set("subscribe", "naptien_on", e ? 1 : 0),
+					onChange: e => this.setState({
+						tabs: e
+					}),
+					defaultActiveKey: h,
+					size: "large"
+				}, f.a.createElement(s.a.TabPane, {
+					tab: "Website",
+					key: "site"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Tên website",
+					description: "Sử dụng để hiển thị vị trí cụ thể của trang web"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tên website",
+					defaultValue: t.app_name,
+					onChange: e => this.set("site", "app_name", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Mô tả website",
+					description: "Hiển thị mô tả website trên các công cụ tìm kiếm"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập mô tả website",
+					defaultValue: t.app_description,
+					onChange: e => this.set("site", "app_description", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Địa chỉ Website",
+					description: "Địa chỉ trang web hiện tại, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL của trang web, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.app_url,
+					onChange: e => this.set("site", "app_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Địa chỉ SubDomain ( Nếu có ) - ( Không có http:// hoặc https:// ) ",
+					description: "Địa chỉ subdomain của trang web, sẽ xuất hiện trong địa chỉ email hoặc nơi cần sử dụng địa chỉ"
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Miền phụ của trang web, nếu cần nhiều địa chỉ subdomain, vui lòng sử dụng dấu phẩy để phân chia",
+					defaultValue: t.sub_app_url,
+					onChange: e => this.set("site", "sub_app_url", e.target.value.split(",")),
+				})), f.a.createElement(m, {
+					title: "URL gói đăng kí",
+					description: "Được sử dụng để cấp gói đăng kí, nếu trống thì sẽ là URL trang web. Nếu cần nhiều địa chỉ URL gói đăng kí, vui lòng sử dụng dấu phẩy để phân chia."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL gói đăng kí, cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+					defaultValue: t.subscribe_url,
+					onChange: e => this.set("site", "subscribe_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Yêu cầu trang web hoặc URL phải sử dụng HTTPS",
+					description: "Khi trang web không sử dụng HTTPS, cần phải kích hoạt HTTPS thông qua CDN hoặc chuyển đổi bắt buộc sang HTTPS."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(t.force_https),
+					onChange: e => this.set("site", "force_https", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "LOGO",
+					description: "Được sử dụng để hiển thị nơi cần thiết logo."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL của logo, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.logo,
+					onChange: e => this.set("site", "logo", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Background URL",
+					description: "Vui lòng nhập URL của hình nền"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL của Background, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.background_url,
+					onChange: e => this.set("site", "background_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "HTML tùy chỉnh cho chân trang",
+					description: "Có thể thêm mã JS hỗ trợ khách hàng, v.v."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập HTML tùy chỉnh cho chân trang",
+					defaultValue: t.custom_html,
+					onChange: e => this.set("site", "custom_html", e.target.value)
+				})), f.a.createElement(m, {
+					title: "URL Điều khoản Sử dụng (TOS) của người dùng",
+					description: "Được sử dụng để chuyển đến Điều khoản Sử dụng (TOS) của người dùng"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL Điều khoản Sử dụng của người dùng, cuối cùng không có dấu gạch chéo (/)",
+					defaultValue: t.tos_url,
+					onChange: e => this.set("site", "tos_url", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Ngừng đăng ký người dùng mới",
+					description: "Sau khi kích hoạt, không ai có thể đăng ký"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(t.stop_register),
+					onChange: e => this.set("site", "stop_register", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Thử nghiệm miễn phí",
+					description: "Chọn gói cần thử nghiệm. Nếu không có lựa chọn, vui lòng trước tiên đi đến quản lý gói để thêm."
+				}, f.a.createElement("select", {
+					onChange: e => this.set("site", "try_out_plan_id", e.target.value),
+					className: "form-control",
+					value: t.try_out_plan_id,
+					placeholder: "Vui lòng chọn gói thử nghiệm"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không"), E.map((e => f.a.createElement("option", {
+					key: Math.random(),
+					value: e.id
+				}, e.name))))), 0 === t.try_out_plan_id || f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thời gian thử nghiệm (giờ)"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập thời gian thử nghiệm (giờ)",
+					defaultValue: t.try_out_hour,
+					onChange: e => this.set("site", "try_out_hour", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Đơn vị tiền tệ",
+					description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "VNĐ",
+					defaultValue: t.currency,
+					onChange: e => this.set("site", "currency", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Ký hiệu tiền tệ",
+					description: "Chỉ sử dụng cho hiển thị, sau khi thay đổi, tất cả các đơn vị tiền tệ trong hệ thống sẽ bị thay đổi"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "đ",
+					defaultValue: t.currency_symbol,
+					onChange: e => this.set("site", "currency_symbol", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Web con",
+					key: "ctv"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Địa chỉ Website CTV ( Không có http:// hoặc https:// )",
+					description: "Hỗ trợ nhiều địa chỉ URL, nếu có nhiều địa chỉ URL, vui lòng sử dụng dấu phẩy để phân tách"
+				}, f.a.createElement("textarea", {
+					rows: "5",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập URL gói đăng kí, Ex: aikocute.tech,aikopanel.com ... , cuối cùng không có dấu gạch chéo (/). Dấu phẩy được hỗ trợ để phân tách nhiều tên miền",
+					defaultValue: ctv.sub_domain,
+					onChange: e => this.set("ctv", "sub_domain", e.target.value.split(","))
+				})), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Giới hạn tạo tài khoản của nhân viên",
+					description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Account/day",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: ctv.staff_generate_user_limit,
+					onChange: e => this.set("ctv", "staff_generate_user_limit", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Hiển thị Name Server để tạo web cho nhân viên",
+					description: "Sau khi kích hoạt, Name Server sẽ được hiển thị khi tạo web cho nhân viên"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(ctv.collaborator_enable),
+					onChange: e => this.set("ctv", "collaborator_enable", e ? 1 : 0)
+				}))), ctv.collaborator_enable ? f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thông tin Name Server",
+					description: "Sau khi kích hoạt, giới hạn nhân viên có thể tạo tài khoản trong một ngày"
+				}, f.a.createElement(a.a, {
+					addonAfter: "NS 1",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập",
+					defaultValue: ctv.cloudflare_ns_1,
+					onChange: e => this.set("ctv", "cloudflare_ns_1", e.target.value)
+				}), f.a.createElement(a.a, {
+					addonAfter: "NS 2",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập",
+					defaultValue: ctv.cloudflare_ns_2,
+					onChange: e => this.set("ctv", "cloudflare_ns_2", e.target.value)
+				}))) : "", f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Giao lưu giữa các web của nhân viên",
+					description: "Sau khi kích hoạt, người dùng có thể login vào các web của nhân viên khác"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(ctv.exchange_enable),
+					onChange: e => this.set("ctv", "exchange_enable", e ? 1 : 0)
+				}))))), f.a.createElement(s.a.TabPane, {
+					tab: "Thống kê",
+					key: "statistics"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê Order và Doanh thu theo ngày",
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê Order và Doanh thu theo ngày"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.getorder_enable),
+					onChange: e => this.set("statistics", "getorder_enable", e ? 1 : 0)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng truy cập của Node ngày hôm nay",
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của Node ngày hôm nay"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.node_traffic_today),
+					onChange: e => this.set("statistics", "node_traffic_today", e ? 1 : 0)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng truy cập của người dùng ngày hôm nay",
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của người dùng ngày hôm nay"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.user_traffic_today),
+					onChange: e => this.set("statistics", "user_traffic_today", e ? 1 : 0)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng node truy cập ngày hôm qua",
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng node truy cập ngày hôm qua"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.node_traffic_yesterday),
+					onChange: e => this.set("statistics", "node_traffic_yesterday", e ? 1 : 0)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thống kê lưu lượng truy cập của người dùng ngày hôm qua",
+					description: "Sau khi kích hoạt, sẽ hiển thị thống kê lưu lượng truy cập của người dùng ngày hôm qua"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(statistics.user_traffic_yesterday),
+					onChange: e => this.set("statistics", "user_traffic_yesterday", e ? 1 : 0)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "An toàn",
+					key: "safe"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Xác thực email",
+					description: "Sau khi kích hoạt, sẽ bắt buộc người dùng thực hiện xác thực email lúc đăng ký"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.email_verify),
+					onChange: e => this.set("safe", "email_verify", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Cấm sử dụng nhiều tên miền Gmail",
+					description: "Sau khi mở Gmail nhiều tên miền sẽ không thể đăng ký"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.email_gmail_limit_enable),
+					onChange: e => this.set("safe", "email_gmail_limit_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Chế độ an toàn",
+					description: "Sau khi mở, trừ URL trạm này, tất cả các lượt truy cập đến tên miền trang web này ngoài trang web sẽ bị chặn bằng lỗi 403."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.safe_mode_enable),
+					onChange: e => this.set("safe", "safe_mode_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Đường dẫn trang quản trị",
+					description: "Đường dẫn quản lý sau cùng, sau khi sửa đổi sẽ thay đổi đường dẫn quản trị ban đầu."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "admin",
+					defaultValue: _.secure_path,
+					onChange: e => this.set("safe", "secure_path", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Đường dẫn trang Cộng tác viên",
+					description: "Đường dẫn quản lý sau cùng, sau khi sửa đổi sẽ thay đổi đường dẫn cộng tác viên ban đầu."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Đường dẫn web cộng tác viên",
+					defaultValue: _.staff_path,
+					onChange: e => this.set("safe", "staff_path", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách cho phép hậu tố email",
+					description: "Sau khi kích hoạt, chỉ có thể đăng ký với hậu tố sau tên trong danh sách email"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.email_whitelist_enable),
+					onChange: e => this.set("safe", "email_whitelist_enable", e ? 1 : 0)
+				})), _.email_whitelist_enable ? f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hậu tố email",
+					description: "Vui lòng sử dụng dấu phẩy để phân tách, ví dụ: icloud.com, gmail.com."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tên miền sau hậu tố, sử dụng dấu phẩy để phân tách, ví dụ: icloud.com, gmail.com.",
+					defaultValue: _.email_whitelist_suffix,
+					onChange: e => this.set("safe", "email_whitelist_suffix", e.target.value.split(","))
+				})) : "", f.a.createElement(m, {
+					title: "Captcha",
+					description: "Sau khi mở, sẽ sử dụng Google reCAPTCHA để ngăn chặn bot."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.recaptcha_enable),
+					onChange: e => this.set("safe", "recaptcha_enable", e ? 1 : 0)
+				})), _.recaptcha_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Khóa bí mật",
+					description: "Mật khẩu được sử dụng trong đơn đăng ký Google reCAPTCHA."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.recaptcha_key,
+					onChange: e => this.set("safe", "recaptcha_key", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Mật khẩu của trang web",
+					description: "Mật khẩu trang web được sử dụng trong đơn đăng ký Google reCAPTCHA."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.recaptcha_site_key,
+					onChange: e => this.set("safe", "recaptcha_site_key", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					title: "Hạn chế đăng ký theo địa chỉ IP",
+					description: "Sau khi kích hoạt, nếu tài khoản đăng ký theo địa chỉ IP đạt đến quy định, có thể bị hạn chế đăng ký. Vui lòng lưu ý rằng kiểm tra IP có thể gây ra sự cố do CDN hoặc proxy trung gian"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.register_limit_by_ip_enable),
+					onChange: e => this.set("safe", "register_limit_by_ip_enable", e ? 1 : 0)
+				})), _.register_limit_by_ip_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Lần thứ",
+					description: "Sau khi đạt đến số lần đăng ký, sẽ kích hoạt trạng thái chặn"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.register_limit_count,
+					onChange: e => this.set("safe", "register_limit_count", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thời gian chặn (phút).",
+					description: "Cần phải chờ đợi sau khoảng thời gian chặn trước khi có thể đăng ký lại"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.register_limit_expire,
+					onChange: e => this.set("safe", "register_limit_expire", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					title: "Kiểm soát chống Spam hoặc hack",
+					description: "Sau khi kích hoạt, nếu tài khoản này thử đăng nhập quá nhiều lần không thành công, sẽ bị hạn chế"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(_.password_limit_enable),
+					onChange: e => this.set("safe", "password_limit_enable", e ? 1 : 0)
+				})), _.password_limit_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Số lần thử",
+					description: "Sau khi đạt đến số lần thử đăng nhập không thành công, sẽ kích hoạt trạng thái chặn"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.password_limit_count,
+					onChange: e => this.set("safe", "password_limit_count", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thời gian chặn (phút).",
+					description: "Cần phải chờ đợi sau khoảng thời gian nghi ngờ trước khi có thể đăng nhập lại"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: _.password_limit_expire,
+					onChange: e => this.set("safe", "password_limit_expire", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					title: "Danh sách IP ưu tiên khi get Subcribe",
+					description: "Sau khi kích hoạt, IP trong danh sách này sẽ được ưu tiên và pass qua mọi kiểm tra."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập IP cần chặn, sử dụng dấu phẩy để phân tách, ví dụ: 123.123.123.123,123.123.123.124, để trống là cho phép tất cả các IP",
+					defaultValue: _.ip_blocklist,
+					onChange: e => this.set("safe", "ip_blocklist", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách IP bị chặn khi get Subcribe",
+					description: "Sau khi kích hoạt, IP trong danh sách này sẽ bị chặn khi get Subcribe."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập IP cần chặn, sử dụng dấu phẩy để phân tách, ví dụ: 123.123.123.123,123.123.123.124, để trống là cho phép tất cả các IP",
+					defaultValue: _.ip_blocklist,
+					onChange: e => this.set("safe", "ip_blocklist", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách User Agent bị chặn khi get Subcribe",
+					description: "Sau khi kích hoạt, User Agent trong danh sách này sẽ bị chặn khi get Subcribe."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập UserAgent cần chặn, mỗi UserAgent được cách nhau bởi dấu ( | ), ví dụ: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome, để trống là cho phép tất cả các UserAgent",
+					defaultValue: _.ua_blocklist,
+					onChange: e => this.set("safe", "ua_blocklist", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Danh sách quốc gia được phép get Subcribe",
+					description: "Sau khi kích hoạt, chỉ có thể get Subcribe từ quốc gia trong danh sách này."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập quốc gia được phép get Subcribe, mỗi quốc gia được cách nhau bởi dấu ( , ), ví dụ: VN,US,JP, để trống là cho phép tất cả các quốc gia",
+					defaultValue: _.country_allowlist,
+					onChange: e => this.set("safe", "country_allowlist", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Gói Dịch Vụ",
+					key: "subscribe"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
+					description: "Sau khi kích hoạt, người dùng có thể thay đổi gói đăng ki của mình"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.plan_change_enable),
+					onChange: e => this.set("subscribe", "plan_change_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Phương thức đặt lại lưu lượng",
+					description: "Chế độ thiết lập lại lưu lượng toàn cục, mặc định là hàng tháng mỗi ngày 1. Có thể được cấu hình riêng cho từng đơn đặt hàng trong quản lý đặt hàng"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "reset_traffic_method", e.target.value),
+					className: "form-control",
+					value: r.reset_traffic_method,
+					placeholder: "Vui lòng chọn cách đặt lại đơn đặt hàng"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Mỗi ngày 1 hằng tháng"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại theo tháng."), f.a.createElement("option", {
+					value: 2
+				}, "Không Reset"), f.a.createElement("option", {
+					value: 3
+				}, "Mỗi năm 1 lần vào ngày 1 tháng 1"), f.a.createElement("option", {
+					value: 4
+				}, "Thiết lập lại theo năm"), f.a.createElement("option", {
+					value: 5
+				}, "Thiết lập mỗi ngày"))), f.a.createElement(m, {
+					title: "Mở nạp tiền",
+					description: "Sau khi bật, người dùng có thể nạp tiền vào tài khoản",
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.naptien_on),
+					onChange: (e) => this.set("subscribe", "naptien_on", e ? 1 : 0),
+				})), parseInt(r.naptien_on) === 1 && f.a.createElement(m, {
+					title: "Số tiền nạp tối thiểu",
+					description: "Nhập Số tiền nạp tối thiểu",
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					defaultValue: parseInt(r.min_recharge_amount).toLocaleString(),
+					onChange: (e) => this.set("subscribe", "min_recharge_amount", e.target.value),
+				})), parseInt(r.naptien_on) === 1 && f.a.createElement(m, {
+					title: "Số tiền nạp tối đa",
+					description: "Nhập Số tiền nạp tối đa",
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					defaultValue: parseInt(r.max_recharge_amount).toLocaleString(),
+					onChange: (e) => this.set("subscribe", "max_recharge_amount", e.target.value),
+				})), f.a.createElement(m, {
+					title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
+					description: "Sau khi kích hoạt, người dùng có thể thay đổi đơn đặt hàng, chiết khấu sẽ được áp dụng bởi hệ thống đối với đơn đặt hàng gốc."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.surplus_enable),
+					onChange: e => this.set("subscribe", "surplus_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Khi có đơn đặt hàng mới",
+					description: "Khi đặt hàng mới hoàn thành, nhiệm vụ sẽ được kích hoạt"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "new_order_event_id", e.target.value),
+					className: "form-control",
+					value: r.new_order_event_id,
+					placeholder: "Vui lòng chọn khi có đơn đặt hàng mới"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement(m, {
+					title: "Khi có đơn đặt hàng tiếp theo",
+					description: "Khi đặt hàng trả phí hoàn thành, nhiệm vụ sẽ được kích hoạt"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "renew_order_event_id", e.target.value),
+					className: "form-control",
+					value: r.renew_order_event_id,
+					placeholder: "Vui lòng chọn khi có đơn đặt hàng tiếp theo"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement(m, {
+					title: "Khi có đơn thay đổi đặt hàng",
+					description: "Khi đặt hàng thay đổi hoàn thành, nhiệm vụ sẽ được kích hoạt"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("subscribe", "change_order_event_id", e.target.value),
+					className: "form-control",
+					value: r.change_order_event_id,
+					placeholder: "Vui lòng chọn khi có đơn đặt hàng tiếp theo"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
+					value: 1
+				}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thời Gian Kết Thúc Đơn Hàng",
+					description: "Thiết lập thời gian hủy đơn khi khách hàng tạo đơn hàng mới"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập",
+					defaultValue: r.interval_order_time,
+					onChange: e => this.set("subscribe", "interval_order_time", e.target.value)
+				}))), f.a.createElement(m, {
+					title: "Hiển thị tổng số lượng người dùng đã mua gói",
+					description: "Sau khi mở, tổng số lượng người dùng đã mua gói sẽ được hiển thị trên người dùng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_total_user_enable),
+					onChange: e => this.set("subscribe", "show_total_user_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Sắp xếp thứ tự các Server",
+					description: "Sắp xếp lại các server của máy chủ theo thứ tự online từ nhỏ tới lớn"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.arrange_server_enable),
+					onChange: e => this.set("subscribe", "arrange_server_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hiển thị thông tin đặt hàng trong đơn đặt hàng",
+					description: "Sau khi mở, thông tin đặt hàng sẽ được xuất khi người dùng lấy link đặt hàng"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_info_to_server_enable),
+					onChange: e => this.set("subscribe", "show_info_to_server_enable", e ? 1 : 0)
+				})), r.show_info_to_server_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin Gói",
+					description: "Sẽ hiển thị thông tin gói sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_plan),
+					onChange: e => this.set("subscribe", "show_client_info_plan", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin Hạn sử dụng",
+					description: "Sẽ hiển thị thông tin Hạn sử dụng sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_expire_at),
+					onChange: e => this.set("subscribe", "show_client_info_expire_at", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin thời gian lấy link đặt hàng",
+					description: "Sẽ hiển thị thông tin thời gian lấy link đặt hàng sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_time_getsubscribe),
+					onChange: e => this.set("subscribe", "show_client_info_time_getsubscribe", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin Data sử dụng",
+					description: "Sẽ hiển thị thông tin Data sử dụng sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_used_traffic),
+					onChange: e => this.set("subscribe", "show_client_info_used_traffic", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Hiển thị thông tin SNI",
+					description: "Sẽ hiển thị thông tin SNI sau khi khách cập nhật"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(r.show_client_info_sni),
+					onChange: e => this.set("subscribe", "show_client_info_sni", e ? 1 : 0)
+				}))) : "", f.a.createElement(m, {
+					title: "Danh Sách máy chủ thông báo gói hết hạn",
+					description: "Sau khi mở, thông tin gói hết hạn sẽ được gửi đến máy chủ trong danh sách này Mỗi máy chủ cách nhau một dấu phẩy ."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "",
+					defaultValue: r.overdue_custom_message,
+					onChange: e => this.set("subscribe", "overdue_custom_message", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Nhân viên",
+					key: "staff"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thông tin thanh toán",
+					description: "Cài đặt thông tin thanh toán của cho nhân viên"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Tên tài khoản",
+					defaultValue: staff.name_account,
+					onChange: e => this.set("staff", "name_account", e.target.value)
+				}), f.a.createElement("select", {
+					className: "form-control",
+					defaultValue: staff.bank_id,
+					onChange: e => this.set("staff", "bank_id", e.target.value)
+				}, f.a.createElement("option", {
+					value: "",
+					disabled: true,
+					selected: true
+				}, "--Chọn ngân hàng--"), this.state.banks.sort((a, b) => a.shortName.localeCompare(b.shortName)).map(bank => f.a.createElement("option", {
+					value: bank.bin
+				}, `${bank.shortName} - ${bank.name}`))), f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Số tài khoản",
+					defaultValue: staff.number_account,
+					onChange: e => this.set("staff", "number_account", e.target.value)
+				}), f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Từ khoá thanh toán (Keyword)",
+					defaultValue: staff.keyword_account,
+					onChange: e => this.set("staff", "keyword_account", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Trừ tiền hoa hồng sau khi có yêu cầu rút tiền",
+					description: "Sau khi kích hoạt, tiền hoa hồng sẽ được trừ sau khi có yêu cầu rút tiền"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(staff.deduct_commission_enable),
+					onChange: e => this.set("staff", "deduct_commission_enable", e ? 1 : 0)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Mời & Thanh toán",
+					key: "invite"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Mở chế độ mời",
+					description: "Sau khi mở, chỉ có người dùng được mời mới có thể đăng ký."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.invite_force),
+					onChange: e => this.set("invite", "invite_force", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Mã mời",
+					description: "Mặc định, tỷ lệ phần trăm hoa hồng toàn cầu, bạn có thể cấu hình tỷ lệ phần trăm cho mỗi đơn đặt hàng trong quản lý đặt hàng."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: n.invite_commission,
+					onChange: e => this.set("invite", "invite_commission", parseInt(e.target.value))
+				})), f.a.createElement(m, {
+					title: "Người dùng có thể tạo mã mời giới hạn",
+					description: "Sau khi kích hoạt, người dùng có thể tạo mã mời giới hạn, vui lòng nhập số lượng giới hạn"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: n.invite_gen_limit,
+					onChange: e => this.set("invite", "invite_gen_limit", parseInt(e.target.value))
+				})), f.a.createElement(m, {
+					title: "Mã mời vĩnh viễn không hết hạn",
+					description: "Sau khi kích hoạt, mã mời sẽ không bao giờ hết hạn, nếu không, nó sẽ hết hiệu lực sau khi sử dụng."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.invite_never_expire),
+					onChange: e => this.set("invite", "invite_never_expire", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hoa hồng chỉ được kích hoạt lần đầu",
+					description: "Sau khi kích hoạt, hoa hồng chỉ được tạo ra lần đầu tiên khi người dùng thanh toán, có thể cấu hình riêng cho từng người dùng trong quản lý người dùng."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.commission_first_time_enable),
+					onChange: e => this.set("invite", "commission_first_time_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Hoa hồng tự động xác nhận",
+					description: "Sau khi kích hoạt, hoa hồng sẽ được tự động xác nhận dựa trên thời gian đã cài đặt."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.commission_auto_check_enable),
+					onChange: e => this.set("invite", "commission_auto_check_enable", e ? 1 : 0)
+				})), parseInt(n.commission_auto_check_enable) === 1 && f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					title: "Thời gian hoa hồng tự xác nhận",
+					isChildren: !0,
+					description: "Hoa hồng sẽ tự động duyệt sau một khoảng thời gian, mặc định là 4320 phút (3 ngày)"
+				}, f.a.createElement("input", {
+					type: "text",
+					addonAfter: "Phút",
+					className: "form-control",
+					placeholder: "Bỏ trống mặc định là 4320 phút (3 ngày)",
+					defaultValue: n.commission_auto_check_min,
+					onChange: e => this.set("invite", "commission_auto_check_min", e.target.value)
+				}))), f.a.createElement(m, {
+					title: "Hoa hồng tối thiểu",
+					description: "Hoa hồng tối thiểu cần đạt được trước khi có thể rút tiền"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: n.commission_withdraw_limit,
+					onChange: e => this.set("invite", "commission_withdraw_limit", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Phương thức thanh toán",
+					description: "Các phương thức thanh toán được hỗ trợ."
+				}, f.a.createElement("textarea", {
+					rows: "4",
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tên miền sau, phân tách bằng dấu phẩy, ví dụ: Alipay, USDT, Baidu",
+					defaultValue: n.commission_withdraw_method,
+					onChange: e => this.set("invite", "commission_withdraw_method", e.target.value.split(","))
+				})), f.a.createElement(m, {
+					title: "Thông báo đóng cửa",
+					description: "Sau khi đóng cửa, người dùng sẽ bị cấm đệ trình và mời gửi số dư trực tiếp vào tài khoản của người dùng."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.withdraw_close_enable),
+					onChange: e => this.set("invite", "withdraw_close_enable", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Phân phối theo tỷ lệ ba cấp",
+					description: "Sau khi kích hoạt, số tiền gửi sẽ được chia thành tỷ lệ ba cấp theo thiết lập, tỷ lệ ba cấp tổng cộng không nên vượt quá 100%."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(n.commission_distribution_enable),
+					onChange: e => this.set("invite", "commission_distribution_enable", e ? 1 : 0)
+				})), parseInt(n.commission_distribution_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tỷ lệ phân phối cấp 1"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tỷ lệ ví dụ: 50",
+					defaultValue: n.commission_distribution_l1,
+					onChange: e => this.set("invite", "commission_distribution_l1", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tỷ lệ phân phối cấp 2"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tỷ lệ ví dụ: 30",
+					defaultValue: n.commission_distribution_l2,
+					onChange: e => this.set("invite", "commission_distribution_l2", e.target.value)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tỷ lệ phân phối cấp 3"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập tỷ lệ ví dụ: 20",
+					defaultValue: n.commission_distribution_l3,
+					onChange: e => this.set("invite", "commission_distribution_l3", e.target.value)
+				}))) : "")), f.a.createElement(s.a.TabPane, {
+					tab: "Giao diện",
+					key: "frontend"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Nếu bạn triển khai giao diện quản lý AikoPanel bằng cách tách biệt phía trước và phía sau, thì cấu hình trang này sẽ không có hiệu lực.", f.a.createElement("b", null, f.a.createElement("a", {
+					href: "https://docs.v2board.com/use/advanced.html#%E5%89%8D%E7%AB%AF%E5%88%86%E7%A6%BB"
+				}, "phân tách phía trước và phía sau"))))))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Kiểu viền"
+				}, f.a.createElement(c.a, {
+					checkedChildren: "Sáng",
+					unCheckedChildren: "Tối",
+					checked: "light" === l.frontend_theme_sidebar ? 1 : 0,
+					onChange: e => this.set("site", "frontend_theme_sidebar", e ? "light" : "dark")
+				})), f.a.createElement(m, {
+					title: "Kiểu tiêu đề"
+				}, f.a.createElement(c.a, {
+					checkedChildren: "Sáng",
+					unCheckedChildren: "Tối",
+					checked: "light" === l.frontend_theme_header ? 1 : 0,
+					onChange: e => this.set("site", "frontend_theme_header", e ? "light" : "dark")
+				})), f.a.createElement(m, {
+					title: "Màu chủ đề"
+				}, f.a.createElement("select", {
+					className: "form-control",
+					defaultValue: l.frontend_theme_color,
+					onChange: e => this.set("frontend", "frontend_theme_color", e.target.value)
+				}, f.a.createElement("option", {
+					value: "default"
+				}, "Mặc định (default)"), f.a.createElement("option", {
+					value: "black"
+				}, "Màu đen"), f.a.createElement("option", {
+					value: "darkblue"
+				}, "Xanh đậm"), f.a.createElement("option", {
+					value: "green"
+				}, "Xanh lá cây"))), f.a.createElement(m, {
+					title: "Hình nền",
+					description: "Sẽ hiển thị trên trang đăng nhập sau khi đăng nhập"
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "https://xxxxx.com/wallpaper.png",
+					defaultValue: l.frontend_background_url,
+					onChange: e => this.set("frontend", "frontend_background_url", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Server",
+					key: "server"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoá kết nối API",
+					description: "Khóa của giao tiếp AikoPanel và nút để dữ liệu sẽ không được người khác lấy."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_token,
+					onChange: e => this.set("server", "server_token", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoảng thời gian truy vấn liên tục hành động của nút.",
+					description: "Tần suất lấy dữ liệu từ bảng điều khiển của nút."
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_pull_interval,
+					onChange: e => this.set("server", "server_pull_interval", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoảng thời gian truy vấn liên tục hành động gửi từ nút.",
+					description: "Tần suất gửi dữ liệu từ nút đến bảng điều khiển."
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_push_interval,
+					onChange: e => this.set("server", "server_push_interval", e.target.value)
+				}))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Khoảng thời gian xóa dữ liệu trực tuyến của nút đã hết hạn",
+					description: "Xoá dữ liệu trực tuyến của nút đã hết hạn ( Khuyến Nghị để giá trị là 120 giây )"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giây",
+					size: "large",
+					type: "number",
+					placeholder: "Vui lòng nhập",
+					defaultValue: u.server_alive_interval,
+					onChange: e => this.set("server", "server_alive_interval", e.target.value)
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Email",
+					key: "email"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Nếu bạn thay đổi cấu hình trang này, bạn cần khởi động lại dịch vụ hàng đợi. Ngoài ra, cấu hình trang này có ưu tiên cao hơn cấu hình email trong tệp .env."))))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Địa chỉ Máy Chủ SMTP",
+					description: "Địa chỉ Dịch Vụ được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_host,
+					onChange: e => this.set("email", "email_host", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Cổng Máy Chủ SMTP",
+					description: "Các cổng phổ biến cho dịch vụ SMTP là 25, 465 và 587."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_port,
+					onChange: e => this.set("email", "email_port", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Phương thức Mã Hóa SMTP",
+					description: "Thông thường, phương thức mã hóa SSL được sử dụng trên cổng 465 của dịch vụ SMTP, trong khi phương thức mã hóa TLS được sử dụng trên cổng 587."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_encryption,
+					onChange: e => this.set("email", "email_encryption", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Tài Khoản SMTP",
+					description: "Tài Khoản được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_username,
+					onChange: e => this.set("email", "email_username", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Mật Khẩu SMTP",
+					description: "Mật khẩu được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_password,
+					onChange: e => this.set("email", "email_password", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Địa Chỉ Gửi Thư",
+					description: "Địa chỉ gửi thư được cung cấp bởi nhà cung cấp dịch vụ email."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "Vui lòng nhập",
+					defaultValue: v.email_from_address,
+					onChange: e => this.set("email", "email_from_address", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Mẫu Email",
+					description: "Bạn có thể xem cách tùy chỉnh mẫu email trong tài liệu"
+				}, f.a.createElement("select", {
+					onChange: e => this.set("email", "email_template", e.target.value),
+					className: "form-control",
+					value: v.email_template
+				}, g.map((e => f.a.createElement("option", {
+					key: Math.random(),
+					value: e
+				}, e))))), f.a.createElement(m, {
+					title: "Gửi email kiểm tra",
+					description: "Thư sẽ được gửi đến hộp thư người dùng đăng nhập hiện tại"
+				}, f.a.createElement(i.a, {
+					loading: x,
+					type: "primary",
+					onClick: () => this.props.dispatch({
+						type: "config/testSendMail"
+					})
+				}, "Gửi email kiểm tra")), f.a.createElement(m, {
+					title: "Bật thông báo Report Payments Success",
+					description: "Sau khi mở khi khách hàng thanh toán thành công thì sẽ gửi mail thông báo cho khách hàng.",
+				}, f.a.createElement(c["a"], {
+					checked: parseInt(v.email_payments_success),
+					onChange: (e) => this.set("email", "email_payments_success", e ? 1 : 0),
+				})))), f.a.createElement(s.a.TabPane, {
+					tab: "Liên kết",
+					key: "connect"
+				}, f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Mã Token của Robot",
+					description: "Vui lòng cung cấp mã Token do Botfather cung cấp."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
+					defaultValue: y.telegram_bot_token,
+					onChange: e => this.set("telegram", "telegram_bot_token", e.target.value)
+				})), y.telegram_bot_token && f.a.createElement(m, {
+					title: "Thiết Lập Webhook",
+					description: "Đối với cài đặt webhook cho robot, thông báo Telegram sẽ không được nhận nếu không có cài đặt."
+				}, f.a.createElement(i.a, {
+					type: "primary",
+					onClick: () => {
+						this.props.dispatch({
+							type: "config/setTelegramWebhook"
 						})
-					  ),
-					  parseInt(r.naptien_on) === 1 && f.a.createElement(
-						m,
-						{
-						  title: "Số tiền nạp tối thiểu",
-						  description: "Nhập Số tiền nạp tối thiểu",
-						},
-						f.a.createElement("input", {
-						  type: "text",
-						  className: "form-control",
-						  defaultValue: parseInt(r.min_recharge_amount).toLocaleString(),
-						  onChange: (e) => this.set("subscribe", "min_recharge_amount", e.target.value),
-						})
-					  ),
-					  parseInt(r.naptien_on) === 1 && f.a.createElement(
-						m,
-						{
-						  title: "Số tiền nạp tối đa",
-						  description: "Nhập Số tiền nạp tối đa",
-						},
-						f.a.createElement("input", {
-						  type: "text",
-						  className: "form-control",
-						  defaultValue: parseInt(r.max_recharge_amount).toLocaleString(),
-						  onChange: (e) => this.set("subscribe", "max_recharge_amount", e.target.value),
-						})
-					  ),
-					
-					f.a.createElement(m, {
-						title: "Cho phép người dùng chỉnh sửa đơn đặt hàng",
-						description: "Sau khi kích hoạt, người dùng có thể thay đổi đơn đặt hàng, chiết khấu sẽ được áp dụng bởi hệ thống đối với đơn đặt hàng gốc."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.surplus_enable),
-						onChange: e => this.set("subscribe", "surplus_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Khi có đơn đặt hàng mới",
-						description: "Khi đặt hàng mới hoàn thành, nhiệm vụ sẽ được kích hoạt"
-					}, f.a.createElement("select", {
-						onChange: e => this.set("subscribe", "new_order_event_id", e.target.value),
-						className: "form-control",
-						value: r.new_order_event_id,
-						placeholder: "Vui lòng chọn khi có đơn đặt hàng mới"
-					}, f.a.createElement("option", {
-						value: 0
-					}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
-						value: 1
-					}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement(m, {
-						title: "Khi có đơn đặt hàng tiếp theo",
-						description: "Khi đặt hàng trả phí hoàn thành, nhiệm vụ sẽ được kích hoạt"
-					}, f.a.createElement("select", {
-						onChange: e => this.set("subscribe", "renew_order_event_id", e.target.value),
-						className: "form-control",
-						value: r.renew_order_event_id,
-						placeholder: "Vui lòng chọn khi có đơn đặt hàng tiếp theo"
-					}, f.a.createElement("option", {
-						value: 0
-					}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
-						value: 1
-					}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement(m, {
-						title: "Khi có đơn thay đổi đặt hàng",
-						description: "Khi đặt hàng thay đổi hoàn thành, nhiệm vụ sẽ được kích hoạt"
-					}, f.a.createElement("select", {
-						onChange: e => this.set("subscribe", "change_order_event_id", e.target.value),
-						className: "form-control",
-						value: r.change_order_event_id,
-						placeholder: "Vui lòng chọn khi có đơn đặt hàng tiếp theo"
-					}, f.a.createElement("option", {
-						value: 0
-					}, "Không thực hiện bất kỳ hành động nào"), f.a.createElement("option", {
-						value: 1
-					}, "Thiết lập lại lưu lượng người dùng"))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thời Gian Kết Thúc Đơn Hàng",
-						description: "Thiết lập thời gian hủy đơn khi khách hàng tạo đơn hàng mới"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập",
-						defaultValue: r.interval_order_time,
-						onChange: e => this.set("subscribe", "interval_order_time", e.target.value)
-					}))), f.a.createElement(m, {
-						title: "Hiển thị tổng số lượng người dùng đã mua gói",
-						description: "Sau khi mở, tổng số lượng người dùng đã mua gói sẽ được hiển thị trên người dùng"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_total_user_enable),
-						onChange: e => this.set("subscribe", "show_total_user_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Sắp xếp thứ tự các Server",
-						description: "Sắp xếp lại các server của máy chủ theo thứ tự online từ nhỏ tới lớn"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.arrange_server_enable),
-						onChange: e => this.set("subscribe", "arrange_server_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Hiển thị thông tin đặt hàng trong đơn đặt hàng",
-						description: "Sau khi mở, thông tin đặt hàng sẽ được xuất khi người dùng lấy link đặt hàng"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_info_to_server_enable),
-						onChange: e => this.set("subscribe", "show_info_to_server_enable", e ? 1 : 0)
-					})), r.show_info_to_server_enable ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Hiển thị thông tin Gói",
-						description: "Sẽ hiển thị thông tin gói sau khi khách cập nhật"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_client_info_plan),
-						onChange: e => this.set("subscribe", "show_client_info_plan", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Hiển thị thông tin Hạn sử dụng",
-						description: "Sẽ hiển thị thông tin Hạn sử dụng sau khi khách cập nhật"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_client_info_expire_at),
-						onChange: e => this.set("subscribe", "show_client_info_expire_at", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Hiển thị thông tin thời gian lấy link đặt hàng",
-						description: "Sẽ hiển thị thông tin thời gian lấy link đặt hàng sau khi khách cập nhật"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_client_info_time_getsubscribe),
-						onChange: e => this.set("subscribe", "show_client_info_time_getsubscribe", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Hiển thị thông tin Data sử dụng",
-						description: "Sẽ hiển thị thông tin Data sử dụng sau khi khách cập nhật"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_client_info_used_traffic),
-						onChange: e => this.set("subscribe", "show_client_info_used_traffic", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Hiển thị thông tin SNI",
-						description: "Sẽ hiển thị thông tin SNI sau khi khách cập nhật"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(r.show_client_info_sni),
-						onChange: e => this.set("subscribe", "show_client_info_sni", e ? 1 : 0)
-					}))) : "", f.a.createElement(m, {
-						title: "Danh Sách máy chủ thông báo gói hết hạn",
-						description: "Sau khi mở, thông tin gói hết hạn sẽ được gửi đến máy chủ trong danh sách này Mỗi máy chủ cách nhau một dấu phẩy ."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "",
-						defaultValue: r.overdue_custom_message,
-						onChange: e => this.set("subscribe", "overdue_custom_message", e.target.value)
-					})))), f.a.createElement(s.a.TabPane, {
-							tab: "Nhân viên",
-							key: "staff"
-						}, f.a.createElement("div", {
-								className: ""
-							},
-							f.a.createElement(m, {
-									title: "Thông tin thanh toán",
-									description: "Cài đặt thông tin thanh toán của cho nhân viên"
-								},
-								f.a.createElement("input", {
-									type: "text",
-									className: "form-control",
-									placeholder: "Tên tài khoản",
-									defaultValue: staff.name_account,
-									onChange: e => this.set("staff", "name_account", e.target.value)
-								}),
-								f.a.createElement("select", {
-										className: "form-control",
-										defaultValue: staff.bank_id,
-										onChange: e => this.set("staff", "bank_id", e.target.value)
-									},
-									f.a.createElement("option", {
-										value: "",
-										disabled: true,
-										selected: true
-									}, "--Chọn ngân hàng--"),
-									this.state.banks.sort((a, b) => a.shortName.localeCompare(b.shortName)).map(bank =>
-										f.a.createElement("option", {
-											value: bank.bin
-										}, `${bank.shortName} - ${bank.name}`)
-									)), f.a.createElement("input", {
-									type: "text",
-									className: "form-control",
-									placeholder: "Số tài khoản",
-									defaultValue: staff.number_account,
-									onChange: e => this.set("staff", "number_account", e.target.value)
-								}), f.a.createElement("input", {
-									type: "text",
-									className: "form-control",
-									placeholder: "Từ khoá thanh toán (Keyword)",
-									defaultValue: staff.keyword_account,
-									onChange: e => this.set("staff", "keyword_account", e.target.value)
-								})
-							)),f.a.createElement("div", {
-							className: ""
-						}, f.a.createElement(m, {
-							title: "Trừ tiền hoa hồng sau khi có yêu cầu rút tiền",
-							description: "Sau khi kích hoạt, tiền hoa hồng sẽ được trừ sau khi có yêu cầu rút tiền"
-						}, f.a.createElement(c.a, {
-							checked: parseInt(staff.deduct_commission_enable),
-							onChange: e => this.set("staff", "deduct_commission_enable", e ? 1 : 0)
-						})))), f.a.createElement(s.a.TabPane, {
-						tab: "Mời & Thanh toán",
-						key: "invite"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Mở chế độ mời",
-						description: "Sau khi mở, chỉ có người dùng được mời mới có thể đăng ký."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(n.invite_force),
-						onChange: e => this.set("invite", "invite_force", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Mã mời",
-						description: "Mặc định, tỷ lệ phần trăm hoa hồng toàn cầu, bạn có thể cấu hình tỷ lệ phần trăm cho mỗi đơn đặt hàng trong quản lý đặt hàng."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: n.invite_commission,
-						onChange: e => this.set("invite", "invite_commission", parseInt(e.target.value))
-					})), f.a.createElement(m, {
-						title: "Người dùng có thể tạo mã mời giới hạn",
-						description: "Sau khi kích hoạt, người dùng có thể tạo mã mời giới hạn, vui lòng nhập số lượng giới hạn"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: n.invite_gen_limit,
-						onChange: e => this.set("invite", "invite_gen_limit", parseInt(e.target.value))
-					})), f.a.createElement(m, {
-						title: "Mã mời vĩnh viễn không hết hạn",
-						description: "Sau khi kích hoạt, mã mời sẽ không bao giờ hết hạn, nếu không, nó sẽ hết hiệu lực sau khi sử dụng."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(n.invite_never_expire),
-						onChange: e => this.set("invite", "invite_never_expire", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Hoa hồng chỉ được kích hoạt lần đầu",
-						description: "Sau khi kích hoạt, hoa hồng chỉ được tạo ra lần đầu tiên khi người dùng thanh toán, có thể cấu hình riêng cho từng người dùng trong quản lý người dùng."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(n.commission_first_time_enable),
-						onChange: e => this.set("invite", "commission_first_time_enable", e ? 1 : 0)
-					})), 
-					f.a.createElement(m, {
-						title: "Hoa hồng tự động xác nhận",
-						description: "Sau khi kích hoạt, hoa hồng sẽ được tự động xác nhận dựa trên thời gian đã cài đặt."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(n.commission_auto_check_enable),
-						onChange: e => this.set("invite", "commission_auto_check_enable", e ? 1 : 0)
-					})),
-					parseInt(n.commission_auto_check_enable) === 1 && f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						title: "Thời gian hoa hồng tự xác nhận",
-						isChildren: !0,
-						description: "Hoa hồng sẽ tự động duyệt sau một khoảng thời gian, mặc định là 4320 phút (3 ngày)"
-					}, f.a.createElement("input", {
-						type: "text",
-						addonAfter: "Phút",
-						className: "form-control",
-						placeholder: "Bỏ trống mặc định là 4320 phút (3 ngày)",
-						defaultValue: n.commission_auto_check_min,
-						onChange: e => this.set("invite", "commission_auto_check_min", e.target.value)
-					}))),
-					
-					f.a.createElement(m, {
-						title: "Hoa hồng tối thiểu",
-						description: "Hoa hồng tối thiểu cần đạt được trước khi có thể rút tiền"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: n.commission_withdraw_limit,
-						onChange: e => this.set("invite", "commission_withdraw_limit", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Phương thức thanh toán",
-						description: "Các phương thức thanh toán được hỗ trợ."
-					}, f.a.createElement("textarea", {
-						rows: "4",
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập tên miền sau, phân tách bằng dấu phẩy, ví dụ: Alipay, USDT, Baidu",
-						defaultValue: n.commission_withdraw_method,
-						onChange: e => this.set("invite", "commission_withdraw_method", e.target.value.split(","))
-					})), f.a.createElement(m, {
-						title: "Thông báo đóng cửa",
-						description: "Sau khi đóng cửa, người dùng sẽ bị cấm đệ trình và mời gửi số dư trực tiếp vào tài khoản của người dùng."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(n.withdraw_close_enable),
-						onChange: e => this.set("invite", "withdraw_close_enable", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Phân phối theo tỷ lệ ba cấp",
-						description: "Sau khi kích hoạt, số tiền gửi sẽ được chia thành tỷ lệ ba cấp theo thiết lập, tỷ lệ ba cấp tổng cộng không nên vượt quá 100%."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(n.commission_distribution_enable),
-						onChange: e => this.set("invite", "commission_distribution_enable", e ? 1 : 0)
-					})), parseInt(n.commission_distribution_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Tỷ lệ phân phối cấp 1"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập tỷ lệ ví dụ: 50",
-						defaultValue: n.commission_distribution_l1,
-						onChange: e => this.set("invite", "commission_distribution_l1", e.target.value)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Tỷ lệ phân phối cấp 2"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập tỷ lệ ví dụ: 30",
-						defaultValue: n.commission_distribution_l2,
-						onChange: e => this.set("invite", "commission_distribution_l2", e.target.value)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Tỷ lệ phân phối cấp 3"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập tỷ lệ ví dụ: 20",
-						defaultValue: n.commission_distribution_l3,
-						onChange: e => this.set("invite", "commission_distribution_l3", e.target.value)
-					}))) : "")), f.a.createElement(s.a.TabPane, {
-						tab: "Giao diện",
-						key: "frontend"
-					}, f.a.createElement("div", {
-						className: "block-content"
-					}, f.a.createElement("div", {
-						className: "row"
-					}, f.a.createElement("div", {
-						className: "col-lg-12"
-					}, f.a.createElement("div", {
-						className: "alert alert-warning",
-						role: "alert"
-					}, f.a.createElement("p", {
-						className: "mb-0"
-					}, "Nếu bạn triển khai giao diện quản lý AikoPanel bằng cách tách biệt phía trước và phía sau, thì cấu hình trang này sẽ không có hiệu lực.", f.a.createElement("b", null, f.a.createElement("a", {
-						href: "https://docs.v2board.com/use/advanced.html#%E5%89%8D%E7%AB%AF%E5%88%86%E7%A6%BB"
-					}, "phân tách phía trước và phía sau"))))))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Kiểu viền"
-					}, f.a.createElement(c.a, {
-						checkedChildren: "Sáng",
-						unCheckedChildren: "Tối",
-						checked: "light" === l.frontend_theme_sidebar ? 1 : 0,
-						onChange: e => this.set("site", "frontend_theme_sidebar", e ? "light" : "dark")
-					})), f.a.createElement(m, {
-						title: "Kiểu tiêu đề"
-					}, f.a.createElement(c.a, {
-						checkedChildren: "Sáng",
-						unCheckedChildren: "Tối",
-						checked: "light" === l.frontend_theme_header ? 1 : 0,
-						onChange: e => this.set("site", "frontend_theme_header", e ? "light" : "dark")
-					})), f.a.createElement(m, {
-						title: "Màu chủ đề"
-					}, f.a.createElement("select", {
-						className: "form-control",
-						defaultValue: l.frontend_theme_color,
-						onChange: e => this.set("frontend", "frontend_theme_color", e.target.value)
-					}, f.a.createElement("option", {
-						value: "default"
-					}, "Mặc định (default)"), f.a.createElement("option", {
-						value: "black"
-					}, "Màu đen"), f.a.createElement("option", {
-						value: "darkblue"
-					}, "Xanh đậm"), f.a.createElement("option", {
-						value: "green"
-					}, "Xanh lá cây"))), f.a.createElement(m, {
-						title: "Hình nền",
-						description: "Sẽ hiển thị trên trang đăng nhập sau khi đăng nhập"
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "https://xxxxx.com/wallpaper.png",
-						defaultValue: l.frontend_background_url,
-						onChange: e => this.set("frontend", "frontend_background_url", e.target.value)
-					})))), f.a.createElement(s.a.TabPane, {
-						tab: "Server",
-						key: "server"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Khoá kết nối API",
-						description: "Khóa của giao tiếp AikoPanel và nút để dữ liệu sẽ không được người khác lấy."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: u.server_token,
-						onChange: e => this.set("server", "server_token", e.target.value)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Khoảng thời gian truy vấn liên tục hành động của nút.",
-						description: "Tần suất lấy dữ liệu từ bảng điều khiển của nút."
-					}, f.a.createElement(a.a, {
-						addonAfter: "Giây",
-						size: "large",
-						type: "number",
-						placeholder: "Vui lòng nhập",
-						defaultValue: u.server_pull_interval,
-						onChange: e => this.set("server", "server_pull_interval", e.target.value)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Khoảng thời gian truy vấn liên tục hành động gửi từ nút.",
-						description: "Tần suất gửi dữ liệu từ nút đến bảng điều khiển."
-					}, f.a.createElement(a.a, {
-						addonAfter: "Giây",
-						size: "large",
-						type: "number",
-						placeholder: "Vui lòng nhập",
-						defaultValue: u.server_push_interval,
-						onChange: e => this.set("server", "server_push_interval", e.target.value)
-					}))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Khoảng thời gian xóa dữ liệu trực tuyến của nút đã hết hạn",
-						description: "Xoá dữ liệu trực tuyến của nút đã hết hạn ( Khuyến Nghị để giá trị là 120 giây )"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Giây",
-						size: "large",
-						type: "number",
-						placeholder: "Vui lòng nhập",
-						defaultValue: u.server_alive_interval,
-						onChange: e => this.set("server", "server_alive_interval", e.target.value)
-					})))), f.a.createElement(s.a.TabPane, {
-						tab: "Email",
-						key: "email"
-					}, f.a.createElement("div", {
-						className: "block-content"
-					}, f.a.createElement("div", {
-						className: "row"
-					}, f.a.createElement("div", {
-						className: "col-lg-12"
-					}, f.a.createElement("div", {
-						className: "alert alert-warning",
-						role: "alert"
-					}, f.a.createElement("p", {
-						className: "mb-0"
-					}, "Nếu bạn thay đổi cấu hình trang này, bạn cần khởi động lại dịch vụ hàng đợi. Ngoài ra, cấu hình trang này có ưu tiên cao hơn cấu hình email trong tệp .env."))))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Địa chỉ Máy Chủ SMTP",
-						description: "Địa chỉ Dịch Vụ được cung cấp bởi nhà cung cấp dịch vụ email."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: v.email_host,
-						onChange: e => this.set("email", "email_host", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Cổng Máy Chủ SMTP",
-						description: "Các cổng phổ biến cho dịch vụ SMTP là 25, 465 và 587."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: v.email_port,
-						onChange: e => this.set("email", "email_port", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Phương thức Mã Hóa SMTP",
-						description: "Thông thường, phương thức mã hóa SSL được sử dụng trên cổng 465 của dịch vụ SMTP, trong khi phương thức mã hóa TLS được sử dụng trên cổng 587."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: v.email_encryption,
-						onChange: e => this.set("email", "email_encryption", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Tài Khoản SMTP",
-						description: "Tài Khoản được cung cấp bởi nhà cung cấp dịch vụ email."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: v.email_username,
-						onChange: e => this.set("email", "email_username", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Mật Khẩu SMTP",
-						description: "Mật khẩu được cung cấp bởi nhà cung cấp dịch vụ email."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: v.email_password,
-						onChange: e => this.set("email", "email_password", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Địa Chỉ Gửi Thư",
-						description: "Địa chỉ gửi thư được cung cấp bởi nhà cung cấp dịch vụ email."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "Vui lòng nhập",
-						defaultValue: v.email_from_address,
-						onChange: e => this.set("email", "email_from_address", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Mẫu Email",
-						description: "Bạn có thể xem cách tùy chỉnh mẫu email trong tài liệu"
-					}, f.a.createElement("select", {
-						onChange: e => this.set("email", "email_template", e.target.value),
-						className: "form-control",
-						value: v.email_template
-					}, g.map((e => f.a.createElement("option", {
-						key: Math.random(),
-						value: e
-					}, e))))), f.a.createElement(m, {
-						title: "Gửi email kiểm tra",
-						description: "Thư sẽ được gửi đến hộp thư người dùng đăng nhập hiện tại"
-					}, f.a.createElement(i.a, {
-						loading: x,
-						type: "primary",
-						onClick: () => this.props.dispatch({
-							type: "config/testSendMail"
-						})
-					}, "Gửi email kiểm tra")), f.a.createElement(m, {
-						title: "Bật thông báo Report Payments Success",
-						description: "Sau khi mở khi khách hàng thanh toán thành công thì sẽ gửi mail thông báo cho khách hàng.",
-					}, f.a.createElement(c["a"], {
-						checked: parseInt(v.email_payments_success),
-						onChange: (e) => this.set("email", "email_payments_success", e ? 1 : 0),
-					})))), f.a.createElement(s.a.TabPane, {
-						tab: "Liên kết",
-						key: "connect"
-					}, f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Mã Token của Robot",
-						description: "Vui lòng cung cấp mã Token do Botfather cung cấp."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-						defaultValue: y.telegram_bot_token,
-						onChange: e => this.set("telegram", "telegram_bot_token", e.target.value)
-					})), y.telegram_bot_token && f.a.createElement(m, {
-						title: "Thiết Lập Webhook",
-						description: "Đối với cài đặt webhook cho robot, thông báo Telegram sẽ không được nhận nếu không có cài đặt."
-					}, f.a.createElement(i.a, {
-						type: "primary",
-						onClick: () => {
-							this.props.dispatch({
-								type: "config/setTelegramWebhook"
-							})
-						},
-						loading: b,
-						disabled: b
-					}, "Cài đặt một 1 Click")), f.a.createElement(m, {
-						title: "Liên kết Nhóm Telegram",
-						description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "https://t.me/xxxxxx",
-						defaultValue: y.telegram_discuss_link,
-						onChange: e => this.set("telegram", "telegram_discuss_link", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Liên kết nhóm Zalo",
-						description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
-					}, f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "https://zalo.me/g/xxxxxx",
-						defaultValue: y.zalo_discuss_link,
-						onChange: e => this.set("telegram", "zalo_discuss_link", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Bật thông báo Telegram",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên và người dùng bị ràng buộc bởi Telegram."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.telegram_bot_enable),
-						onChange: e => this.set("telegram", "telegram_bot_enable", e ? 1 : 0)
-					})), parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						title: "Report thông tin hàng ngày",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hàng ngày, Ví dụ như doanh thu hôm nay , Tổng GB sử dụng là bao nhiêu v.v...."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.report_infomartion_daily),
-						onChange: e => this.set("telegram", "report_infomartion_daily", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						title: "Thông báo Lưu lượng người dùng hôm nay",
-						description: "Sau khi mở, bot sẽ thông báo về lưu lượng người dùng hôm nay thông qua telegram"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.report_user_traffic_today),
-						onChange: e => this.set("telegram", "report_user_traffic_today", e ? 1 : 0)
-					})), parseInt(y.report_user_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Thông báo lưu lượng user tới admin",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về lưu lượng người dùng hôm nay thông qua telegram"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_report_user_traffic_to_admin_today,
-						onChange: e => this.set("telegram", "interval_report_user_traffic_to_admin_today", e.target.value)
-					})), parseInt(y.interval_report_user_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "ID Admin Group Telegram",
-						description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "ID Admin Group",
-						size: "large",
-						type: "text",
-						placeholder: "-xxxxxxxxx",
-						defaultValue: y.id_group_admin_report_traffic_user_today,
-						onChange: e => this.set("telegram", "id_group_admin_report_traffic_user_today", e.target.value)
-					}))) : "", f.a.createElement(m, {
-						isChildren: !0,
-						title: "Thông báo lưu lượng user tới user",
-						description: "Sau khi mở, bot sẽ thông báo cho người dùng về lưu lượng người dùng hôm nay thông qua telegram"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_report_user_traffic_to_user_today,
-						onChange: e => this.set("telegram", "interval_report_user_traffic_to_user_today", e.target.value)
-					})), parseInt(y.interval_report_user_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "ID User Group Telegram",
-						description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "ID User Group",
-						size: "large",
-						type: "text",
-						placeholder: "-xxxxxxxxx",
-						defaultValue: y.id_group_user_report_traffic_user_today,
-						onChange: e => this.set("telegram", "id_group_user_report_traffic_user_today", e.target.value)
-					}))) : "") : "", f.a.createElement(m, {
-						title: "Thông báo lưu lượng node hôm nay",
-						description: "Sau khi mở, bot sẽ thông báo về lưu lượng node hôm nay thông qua telegram"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.report_node_traffic_today),
-						onChange: e => this.set("telegram", "report_node_traffic_today", e ? 1 : 0)
-					})), parseInt(y.report_node_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Report thông tin nút tới admin",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_report_node_traffic_to_admin_today,
-						onChange: e => this.set("telegram", "interval_report_node_traffic_to_admin_today", e.target.value)
-					})), parseInt(y.interval_report_node_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Admin Group ID Telegram",
-						description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "ID Admin Group",
-						size: "large",
-						type: "text",
-						placeholder: "-xxxxxxxxx",
-						defaultValue: y.id_group_admin_report_traffic_node_today,
-						onChange: e => this.set("telegram", "id_group_admin_report_traffic_node_today", e.target.value)
-					}))) : "", f.a.createElement(m, {
-						isChildren: !0,
-						title: "Report thông tin nút tới user",
-						description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_report_node_traffic_to_user_today,
-						onChange: e => this.set("telegram", "interval_report_node_traffic_to_user_today", e.target.value)
-					})), parseInt(y.interval_report_node_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "User Group ID Telegram",
-						description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "ID User Group",
-						size: "large",
-						type: "text",
-						placeholder: "-xxxxxxxxx",
-						defaultValue: y.id_group_user_report_traffic_node_today,
-						onChange: e => this.set("telegram", "id_group_user_report_traffic_node_today", e.target.value)
-					}))) : "") : "", f.a.createElement(m, {
-						title: "Report node online",
-						description: "Sau khi mở, bot sẽ thông báo về node đang online"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.report_node_online),
-						onChange: e => this.set("telegram", "report_node_online", e ? 1 : 0)
-					})), parseInt(y.report_node_online) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Report thông tin nút tới admin",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_report_node_online_to_admin_today,
-						onChange: e => this.set("telegram", "interval_report_node_online_to_admin_today", e.target.value)
-					})), parseInt(y.interval_report_node_online_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Admin Group ID Telegram",
-						description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "ID Admin Group",
-						size: "large",
-						type: "text",
-						placeholder: "-xxxxxxxxx",
-						defaultValue: y.id_group_admin_report_node_online_today,
-						onChange: e => this.set("telegram", "id_group_admin_report_node_online_today", e.target.value)
-					}))) : "", f.a.createElement(m, {
-						isChildren: !0,
-						title: "Report thông tin nút tới user",
-						description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_report_node_online_to_user_today,
-						onChange: e => this.set("telegram", "interval_report_node_online_to_user_today", e.target.value)
-					})), parseInt(y.interval_report_node_online_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "User Group ID Telegram",
-						description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(a.a, {
-						addonAfter: "ID User Group",
-						size: "large",
-						type: "text",
-						placeholder: "-xxxxxxxxx",
-						defaultValue: y.id_group_user_report_node_online_today,
-						onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
-					}))) : "") : "", parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						title: "Check Server",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hoạt động của server"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Nhập thời gian thông báo (phút)",
-						defaultValue: y.interval_check_server,
-						onChange: e => this.set("telegram", "interval_check_server", e.target.value)
-					})), parseInt(y.interval_check_server) > 0 ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Kiểm trạng thái nút gửi Admin",
-						description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.check_node_online_admin),
-						onChange: e => this.set("telegram", "check_node_online_admin", e ? 1 : 0)
-					})), f.a.createElement(m, {
-						isChildren: !0,
-						title: "Tự động tắt nút",
-						description: "Sau khi mở, bot sẽ tự động tắt nút không hoạt động trong thời gian quy định"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(y.auto_stop_node),
-						onChange: e => this.set("telegram", "auto_stop_node", e ? 1 : 0)
-					}))) : "") : "") : "")), f.a.createElement(s.a.TabPane, {
+					},
+					loading: b,
+					disabled: b
+				}, "Cài đặt một 1 Click")), f.a.createElement(m, {
+					title: "Liên kết Nhóm Telegram",
+					description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "https://t.me/xxxxxx",
+					defaultValue: y.telegram_discuss_link,
+					onChange: e => this.set("telegram", "telegram_discuss_link", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Liên kết nhóm Zalo",
+					description: "Sau khi điền vào, nó sẽ được hiển thị ở phần User Center của người dùng, hoặc được sử dụng ở những nơi cần thiết."
+				}, f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "https://zalo.me/g/xxxxxx",
+					defaultValue: y.zalo_discuss_link,
+					onChange: e => this.set("telegram", "zalo_discuss_link", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Bật thông báo Telegram",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên và người dùng bị ràng buộc bởi Telegram."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.telegram_bot_enable),
+					onChange: e => this.set("telegram", "telegram_bot_enable", e ? 1 : 0)
+				})), parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					title: "Report thông tin hàng ngày",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hàng ngày, Ví dụ như doanh thu hôm nay , Tổng GB sử dụng là bao nhiêu v.v...."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_infomartion_daily),
+					onChange: e => this.set("telegram", "report_infomartion_daily", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					title: "Thông báo Lưu lượng người dùng hôm nay",
+					description: "Sau khi mở, bot sẽ thông báo về lưu lượng người dùng hôm nay thông qua telegram"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_user_traffic_today),
+					onChange: e => this.set("telegram", "report_user_traffic_today", e ? 1 : 0)
+				})), parseInt(y.report_user_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thông báo lưu lượng user tới admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về lưu lượng người dùng hôm nay thông qua telegram"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_user_traffic_to_admin_today,
+					onChange: e => this.set("telegram", "interval_report_user_traffic_to_admin_today", e.target.value)
+				})), parseInt(y.interval_report_user_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "ID Admin Group Telegram",
+					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID Admin Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_admin_report_traffic_user_today,
+					onChange: e => this.set("telegram", "id_group_admin_report_traffic_user_today", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					isChildren: !0,
+					title: "Thông báo lưu lượng user tới user",
+					description: "Sau khi mở, bot sẽ thông báo cho người dùng về lưu lượng người dùng hôm nay thông qua telegram"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_user_traffic_to_user_today,
+					onChange: e => this.set("telegram", "interval_report_user_traffic_to_user_today", e.target.value)
+				})), parseInt(y.interval_report_user_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "ID User Group Telegram",
+					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID User Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_user_report_traffic_user_today,
+					onChange: e => this.set("telegram", "id_group_user_report_traffic_user_today", e.target.value)
+				}))) : "") : "", f.a.createElement(m, {
+					title: "Thông báo lưu lượng node hôm nay",
+					description: "Sau khi mở, bot sẽ thông báo về lưu lượng node hôm nay thông qua telegram"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_node_traffic_today),
+					onChange: e => this.set("telegram", "report_node_traffic_today", e ? 1 : 0)
+				})), parseInt(y.report_node_traffic_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_traffic_to_admin_today,
+					onChange: e => this.set("telegram", "interval_report_node_traffic_to_admin_today", e.target.value)
+				})), parseInt(y.interval_report_node_traffic_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Admin Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID Admin Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_admin_report_traffic_node_today,
+					onChange: e => this.set("telegram", "id_group_admin_report_traffic_node_today", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới user",
+					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_traffic_to_user_today,
+					onChange: e => this.set("telegram", "interval_report_node_traffic_to_user_today", e.target.value)
+				})), parseInt(y.interval_report_node_traffic_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "User Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID User Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_user_report_traffic_node_today,
+					onChange: e => this.set("telegram", "id_group_user_report_traffic_node_today", e.target.value)
+				}))) : "") : "", f.a.createElement(m, {
+					title: "Report node online",
+					description: "Sau khi mở, bot sẽ thông báo về node đang online"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.report_node_online),
+					onChange: e => this.set("telegram", "report_node_online", e ? 1 : 0)
+				})), parseInt(y.report_node_online) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot và gửi thêm vào group admin nếu bạn có group Admin và điền thông tin admin id ở dưới"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_online_to_admin_today,
+					onChange: e => this.set("telegram", "interval_report_node_online_to_admin_today", e.target.value)
+				})), parseInt(y.interval_report_node_online_to_admin_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Admin Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm admin này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID Admin Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_admin_report_node_online_today,
+					onChange: e => this.set("telegram", "id_group_admin_report_node_online_today", e.target.value)
+				}))) : "", f.a.createElement(m, {
+					isChildren: !0,
+					title: "Report thông tin nút tới user",
+					description: "Sau khi mở, bot sẽ thông báo cho người dùng về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_report_node_online_to_user_today,
+					onChange: e => this.set("telegram", "interval_report_node_online_to_user_today", e.target.value)
+				})), parseInt(y.interval_report_node_online_to_user_today) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "User Group ID Telegram",
+					description: "Bot Sẽ thông báo cho nhóm user này về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(a.a, {
+					addonAfter: "ID User Group",
+					size: "large",
+					type: "text",
+					placeholder: "-xxxxxxxxx",
+					defaultValue: y.id_group_user_report_node_online_today,
+					onChange: e => this.set("telegram", "id_group_user_report_node_online_today", e.target.value)
+				}))) : "") : "", parseInt(y.telegram_bot_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					title: "Check Server",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về thông tin hoạt động của server"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Nhập thời gian thông báo (phút)",
+					defaultValue: y.interval_check_server,
+					onChange: e => this.set("telegram", "interval_check_server", e.target.value)
+				})), parseInt(y.interval_check_server) > 0 ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Kiểm trạng thái nút gửi Admin",
+					description: "Sau khi mở, bot sẽ thông báo cho quản trị viên về số lượng người online trên mỗi node thông qua Telegram Bot"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.check_node_online_admin),
+					onChange: e => this.set("telegram", "check_node_online_admin", e ? 1 : 0)
+				})), f.a.createElement(m, {
+					isChildren: !0,
+					title: "Tự động tắt nút",
+					description: "Sau khi mở, bot sẽ tự động tắt nút không hoạt động trong thời gian quy định"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(y.auto_stop_node),
+					onChange: e => this.set("telegram", "auto_stop_node", e ? 1 : 0)
+				}))) : "") : "") : "")), f.a.createElement(s.a.TabPane, {
 						tab: "APP",
 						key: "app"
 					}, f.a.createElement("div", {
@@ -6898,7 +6864,7 @@
 					}, f.a.createElement(c.a, {
 						checked: parseInt(w.app_windows_v2rayn),
 						onChange: e => this.set("app", "app_windows_v2rayn", e ? 1 : 0)
-					}))) : " ",parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					}))) : " ", parseInt(w.app_windows_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 						isChildren: !0,
 						title: "Karing",
 						description: "Cho phép người dùng tải xuống Karing"
@@ -7056,8 +7022,7 @@
 					}, f.a.createElement(c.a, {
 						checked: parseInt(w.app_android_v2rayng),
 						onChange: e => this.set("app", "app_android_v2rayng", e ? 1 : 0)
-					}))) : " ", 
-					// Karing support comming soon
+					}))) : " ", // Karing support comming soon
 					// parseInt(w.app_android_enable) ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
 					// 	isChildren: !0,
 					// 	title: "Karing",
@@ -7066,7 +7031,7 @@
 					// 	checked: parseInt(w.app_android_karing),
 					// 	onChange: e => this.set("app", "app_android_karing", e ? 1 : 0)
 					// }))) : " "
-					), f.a.createElement(s.a.TabPane, {
+				), f.a.createElement(s.a.TabPane, {
 						tab: "Nâng cao",
 						key: "advanced"
 					}, f.a.createElement("div", {
@@ -7082,8 +7047,7 @@
 						className: "mb-0"
 					}, "Đây là bản điều khiển để sử dụng một số chức năng nâng cao của AikoPanel, Hãy tìm hiểu kỹ trước khi quyết định thay đổi một thứ gì. ", f.a.createElement("b", null, f.a.createElement("a", {
 						href: "https://docs.aikopanel.com/"
-					}, "Hướng đẫn của AikoPanel"))))))), 
-					// f.a.createElement(m, {
+					}, "Hướng đẫn của AikoPanel"))))))), // f.a.createElement(m, {
 					// 	title: "Tuỳ chọn cách config SNI của website (Bật là Admin) ",
 					// 	description: "Nếu tắt thì config SNI ở  /App/Utils/CustomSni.php bật thì trực tiếp tại admin"
 					// }, f.a.createElement(c.a, {
@@ -7103,8 +7067,7 @@
 					// })): "" , 
 					f.a.createElement("div", {
 							className: ""
-						},
-						f.a.createElement(m, {
+						}, f.a.createElement(m, {
 							title: "Sing-Box Config",
 							description: "Loại config sẽ được sử dụng cho Sing-Box, Lưu ý rằng bạn phải cập nhật lại config sing-box sau khi thay đổi loại config này"
 						}, f.a.createElement("select", {
@@ -7115,8 +7078,7 @@
 							value: "default"
 						}, "Mặc định (default) - Since sing-box v1.8.0 - AikoPanel"), f.a.createElement("option", {
 							value: "xb"
-						}, "XB ( cts.v1.mk ) - Config")))
-						// , f.a.createElement(m, {
+						}, "XB ( cts.v1.mk ) - Config"))) // , f.a.createElement(m, {
 						// 	title: "Hình nền",
 						// 	description: "Sẽ hiển thị trên trang đăng nhập sau khi đăng nhập"
 						// }, f.a.createElement("input", {
@@ -7126,168 +7088,167 @@
 						// 	defaultValue: l.frontend_background_url,
 						// 	onChange: e => this.set("frontend", "frontend_background_url", e.target.value)
 						// }))
-					)),
-					f.a.createElement(s.a.TabPane, {
-						tab: "AikoPanel",
-						key: "aikopanel"
-					}, f.a.createElement("div", {
-						className: "block-content"
-					}, f.a.createElement("div", {
-						className: "row"
-					}, f.a.createElement("div", {
-						className: "col-lg-12"
-					}, f.a.createElement("div", {
-						className: "alert alert-warning",
-						role: "alert"
-					}, f.a.createElement("p", {
-						className: "mb-0"
-					}, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "License AikoPanel",
-						description: "Vui lòng nhập mã giấy phép được cung cấp bởi AikoPanel"
-					}, f.a.createElement("input", {
-						type: "password",
-						className: "form-control",
-						placeholder: "Vui lòng nhập mã giấy phép AikoPanel",
-						defaultValue: aikopanel.license,
-						onChange: e => this.set("aikopanel", "license", e.target.value)
-					})), f.a.createElement(m, {
-						title: "Chế độ bảo trì",
-						description: "Sau khi mở, người dùng sẽ không thể đăng nhập vào bảng điều khiển, vui lòng sử dụng chức năng này khi bạn cần bảo trì bảng điều khiển."
-					}, f.a.createElement(c.a, {
-						checked: parseInt(aikopanel.maintenance_mode_enable),
-						onChange: e => this.set("aikopanel", "maintenance_mode_enable", e ? 1 : 0)
-					})), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Thời gian kết thúc phiên đăng nhập của người dùng",
-						description: "Sau khi config nó thì hãy xoá hết tất cả phiên đăng nhập của người dùng sau ... phút, sau khi config chức năng này thì hãy vào trong terminal gõ: redis-cli FLUSHALL để active ..."
-					}, f.a.createElement(a.a, {
-						addonAfter: "Phút",
-						size: "large",
-						type: "number",
-						placeholder: "Không nhập thì mặc định là không xoá phiên đăng nhập của người dùng",
-						defaultValue: aikopanel.session_ttl,
-						onChange: e => this.set("aikopanel", "session_ttl", e.target.value)
-					}))), aikopanel.session_ttl ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Ngoại lệ cho Admin",
-						description: "Sau khi mở, phiên đăng nhập của quản trị viên sẽ không bị xoá"
-					}, f.a.createElement(c.a, {
-						checked: parseInt(aikopanel.admin_session_ttl),
-						onChange: e => this.set("aikopanel", "admin_session_ttl", e ? 1 : 0)
-					}))) : "", f.a.createElement(m, {
-						title: "Xoá người dùng không hoạt động",
-						description: "Sau khi config nó thì hãy xoá hết tất cả người dùng không hoạt động. "
-					}, f.a.createElement("select", {
-						onChange: e => this.set("aikopanel", "interval_clear_user", e.target.value),
-						className: "form-control",
-						value: aikopanel.interval_clear_user,
-						placeholder: "Vui lòng chọn thời gian xoá người dùng không hoạt động"
-					}, f.a.createElement("option", {
-						value: 0
-					}, "Không"), f.a.createElement("option", {
-						value: 1
-					}, "Hằng ngày"), f.a.createElement("option", {
-						value: 2
-					}, "Hằng tuần"), f.a.createElement("option", {
-						value: 3
-					}, "Hằng tháng"), f.a.createElement("option", {
-						value: 4
-					}, "Hằng năm"))), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Auto backup database",
-						description: "Database sẽ được backup theo thời gian mà bạn đã config ở dưới đây -> gửi tới telegram và lưu ý backup theo giờ nhé nghĩa là max > 0 và max < 24"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Giờ",
-						size: "large",
-						type: "number",
-						placeholder: "Xin Nhập Vào",
-						defaultValue: aikopanel.interval_backup_database,
-						onChange: e => this.set("aikopanel", "interval_backup_database", e.target.value)
-					}), f.a.createElement("input", {
-						type: "text",
-						className: "form-control",
-						placeholder: "ID Telegram of Admin, Cách nhau bởi dấu phẩy (,) VD: 123456,654321",
-						defaultValue: aikopanel.database_telegram_id,
-						onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
-					}))), f.a.createElement(m, {
-						title: "Backup Database Ngay Lập Tức",
-						description: "Sau khi click sẽ backup database ngay lập tức, nếu có Telegram ID thì sẽ gửi tới Telegram còn không sẽ save vào mục /database/backup"
-					}, f.a.createElement(i.a, {
-						type: "primary",
-						onClick: () => {
-							this.props.dispatch({
-								type: "config/backupDataBase"
-							})
-						},
-						loading: bk,
-						disabled: bk
-					}, "Nhấn vào đây để Backup")), f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Cloudflare API",
-						description: "Cloudflare API sẽ được sử dụng để cập nhật IP của máy chủ của bạn vào Cloudflare"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Email Cloudflare",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập Email Cloudflare của bạn",
-						defaultValue: aikopanel.cloudflare_email,
-						onChange: e => this.set("aikopanel", "cloudflare_email", e.target.value)
-					}), f.a.createElement(a.a, {
-						addonAfter: "Global API Key",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
-						defaultValue: aikopanel.cloudflare_api_key,
-						onChange: e => this.set("aikopanel", "cloudflare_api_key", e.target.value)
-					}))), aikopanel.cloudflare_email && aikopanel.cloudflare_api_key ? f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						children: !0,
-						title: "Zone ID",
-						description: "Zone ID sẽ được sử dụng để cập nhật một số chức năng liên quan tới Cloudflare"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Zone ID",
-						size: "large",
-						type: "text",
-						placeholder: "Vui lòng nhập Zone ID của bạn",
-						defaultValue: aikopanel.cloudflare_zone_id,
-						onChange: e => this.set("aikopanel", "cloudflare_zone_id", e.target.value)
-					}))): "" , f.a.createElement("div", {
-						className: ""
-					}, f.a.createElement(m, {
-						title: "Kết nối AppleID",
-						description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
-					}, f.a.createElement(a.a, {
-						addonAfter: "URL",
-						size: "large",
-						type: "text",
-						placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
-						defaultValue: aikopanel.appleid_custom_url,
-						onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
-					}), f.a.createElement(a.a, {
-						addonAfter: "URL",
-						size: "large",
-						type: "text",
-						placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
-						defaultValue: aikopanel.appleid_api,
-						onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
-					})), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
-						isChildren: !0,
-						title: "Link cấp Ứng dụng Quantumult-X",
-						description: "Link cấp ứng dụng cho Quantumult-X"
-					}, f.a.createElement(a.a, {
-						addonAfter: "Quantumult-X",
-						size: "large",
-						type: "text",
-						placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
-						defaultValue: aikopanel.appleid_quanx,
-						onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
-					}))) : ""))))))
+					)), f.a.createElement(s.a.TabPane, {
+					tab: "AikoPanel",
+					key: "aikopanel"
+				}, f.a.createElement("div", {
+					className: "block-content"
+				}, f.a.createElement("div", {
+					className: "row"
+				}, f.a.createElement("div", {
+					className: "col-lg-12"
+				}, f.a.createElement("div", {
+					className: "alert alert-warning",
+					role: "alert"
+				}, f.a.createElement("p", {
+					className: "mb-0"
+				}, "Quản lý Quản lý và cập nhật phiên bản của AikoPanel , Chức năng được tích hợp riêng trên AikoPanel"))))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "License AikoPanel",
+					description: "Vui lòng nhập mã giấy phép được cung cấp bởi AikoPanel"
+				}, f.a.createElement("input", {
+					type: "password",
+					className: "form-control",
+					placeholder: "Vui lòng nhập mã giấy phép AikoPanel",
+					defaultValue: aikopanel.license,
+					onChange: e => this.set("aikopanel", "license", e.target.value)
+				})), f.a.createElement(m, {
+					title: "Chế độ bảo trì",
+					description: "Sau khi mở, người dùng sẽ không thể đăng nhập vào bảng điều khiển, vui lòng sử dụng chức năng này khi bạn cần bảo trì bảng điều khiển."
+				}, f.a.createElement(c.a, {
+					checked: parseInt(aikopanel.maintenance_mode_enable),
+					onChange: e => this.set("aikopanel", "maintenance_mode_enable", e ? 1 : 0)
+				})), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Thời gian kết thúc phiên đăng nhập của người dùng",
+					description: "Sau khi config nó thì hãy xoá hết tất cả phiên đăng nhập của người dùng sau ... phút, sau khi config chức năng này thì hãy vào trong terminal gõ: redis-cli FLUSHALL để active ..."
+				}, f.a.createElement(a.a, {
+					addonAfter: "Phút",
+					size: "large",
+					type: "number",
+					placeholder: "Không nhập thì mặc định là không xoá phiên đăng nhập của người dùng",
+					defaultValue: aikopanel.session_ttl,
+					onChange: e => this.set("aikopanel", "session_ttl", e.target.value)
+				}))), aikopanel.session_ttl ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Ngoại lệ cho Admin",
+					description: "Sau khi mở, phiên đăng nhập của quản trị viên sẽ không bị xoá"
+				}, f.a.createElement(c.a, {
+					checked: parseInt(aikopanel.admin_session_ttl),
+					onChange: e => this.set("aikopanel", "admin_session_ttl", e ? 1 : 0)
+				}))) : "", f.a.createElement(m, {
+					title: "Xoá người dùng không hoạt động",
+					description: "Sau khi config nó thì hãy xoá hết tất cả người dùng không hoạt động. "
+				}, f.a.createElement("select", {
+					onChange: e => this.set("aikopanel", "interval_clear_user", e.target.value),
+					className: "form-control",
+					value: aikopanel.interval_clear_user,
+					placeholder: "Vui lòng chọn thời gian xoá người dùng không hoạt động"
+				}, f.a.createElement("option", {
+					value: 0
+				}, "Không"), f.a.createElement("option", {
+					value: 1
+				}, "Hằng ngày"), f.a.createElement("option", {
+					value: 2
+				}, "Hằng tuần"), f.a.createElement("option", {
+					value: 3
+				}, "Hằng tháng"), f.a.createElement("option", {
+					value: 4
+				}, "Hằng năm"))), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Auto backup database",
+					description: "Database sẽ được backup theo thời gian mà bạn đã config ở dưới đây -> gửi tới telegram và lưu ý backup theo giờ nhé nghĩa là max > 0 và max < 24"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Giờ",
+					size: "large",
+					type: "number",
+					placeholder: "Xin Nhập Vào",
+					defaultValue: aikopanel.interval_backup_database,
+					onChange: e => this.set("aikopanel", "interval_backup_database", e.target.value)
+				}), f.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: "ID Telegram of Admin, Cách nhau bởi dấu phẩy (,) VD: 123456,654321",
+					defaultValue: aikopanel.database_telegram_id,
+					onChange: e => this.set("aikopanel", "database_telegram_id", e.target.value)
+				}))), f.a.createElement(m, {
+					title: "Backup Database Ngay Lập Tức",
+					description: "Sau khi click sẽ backup database ngay lập tức, nếu có Telegram ID thì sẽ gửi tới Telegram còn không sẽ save vào mục /database/backup"
+				}, f.a.createElement(i.a, {
+					type: "primary",
+					onClick: () => {
+						this.props.dispatch({
+							type: "config/backupDataBase"
+						})
+					},
+					loading: bk,
+					disabled: bk
+				}, "Nhấn vào đây để Backup")), f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Cloudflare API",
+					description: "Cloudflare API sẽ được sử dụng để cập nhật IP của máy chủ của bạn vào Cloudflare"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Email Cloudflare",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập Email Cloudflare của bạn",
+					defaultValue: aikopanel.cloudflare_email,
+					onChange: e => this.set("aikopanel", "cloudflare_email", e.target.value)
+				}), f.a.createElement(a.a, {
+					addonAfter: "Global API Key",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập API Cloudflare Token của bạn",
+					defaultValue: aikopanel.cloudflare_api_key,
+					onChange: e => this.set("aikopanel", "cloudflare_api_key", e.target.value)
+				}))), aikopanel.cloudflare_email && aikopanel.cloudflare_api_key ? f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					children: !0,
+					title: "Zone ID",
+					description: "Zone ID sẽ được sử dụng để cập nhật một số chức năng liên quan tới Cloudflare"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Zone ID",
+					size: "large",
+					type: "text",
+					placeholder: "Vui lòng nhập Zone ID của bạn",
+					defaultValue: aikopanel.cloudflare_zone_id,
+					onChange: e => this.set("aikopanel", "cloudflare_zone_id", e.target.value)
+				}))) : "", f.a.createElement("div", {
+					className: ""
+				}, f.a.createElement(m, {
+					title: "Kết nối AppleID",
+					description: "Hãy dán link share từ AppleID Aiko để kết nối với AikoPanel, nếu bạn không dùng của Aiko thì hãy sử dụng link API nhé, thứ tự ưu tiên sẽ là AppleID custom -> AppleID API"
+				}, f.a.createElement(a.a, {
+					addonAfter: "URL",
+					size: "large",
+					type: "text",
+					placeholder: "Link IDAPPLE Custom (Câu file PHP free hoặc từ 1 nguồn Free nào đó )",
+					defaultValue: aikopanel.appleid_custom_url,
+					onChange: e => this.set("aikopanel", "appleid_custom_url", e.target.value)
+				}), f.a.createElement(a.a, {
+					addonAfter: "URL",
+					size: "large",
+					type: "text",
+					placeholder: "AppleID LINK | https://idapple.aikocute.net/share/xxxxxx",
+					defaultValue: aikopanel.appleid_api,
+					onChange: e => this.set("aikopanel", "appleid_api", e.target.value)
+				})), aikopanel.appleid_api ? f.a.createElement(f.a.Fragment, null, f.a.createElement(m, {
+					isChildren: !0,
+					title: "Link cấp Ứng dụng Quantumult-X",
+					description: "Link cấp ứng dụng cho Quantumult-X"
+				}, f.a.createElement(a.a, {
+					addonAfter: "Quantumult-X",
+					size: "large",
+					type: "text",
+					placeholder: "itms-services://?action=download-manifest&url=https://xxxxxxxx.plist",
+					defaultValue: aikopanel.appleid_quanx,
+					onChange: e => this.set("aikopanel", "appleid_quanx", e.target.value)
+				}))) : ""))))))
 			}
 		}
 		t.default = Object(p.c)((e => ({
@@ -13053,9 +13014,7 @@
 					placeholder: "Vui lòng nhập tỷ lệ cho nút.",
 					value: e.rate,
 					onChange: e => this.formChange("rate", e.target.value)
-				}))), 
-				
-				d.a.createElement("div", {
+				}))), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", null, "Nhãn Server"), d.a.createElement(a.a, {
 					mode: "tags",
@@ -13065,9 +13024,7 @@
 					},
 					placeholder: "Nhập và nhấn Enter để thêm nhãn.",
 					onChange: e => this.formChange("tags", e.length > 0 ? e : null)
-				})), 
-				
-				d.a.createElement("div", {
+				})), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", null, "Nhóm Máy Chủ ", d.a.createElement(_.a, null, d.a.createElement("a", {
 					href: "javascript:(0);"
@@ -13081,12 +13038,9 @@
 					onChange: e => this.formChange("group_id", e)
 				}, l.map((e => d.a.createElement(a.a.Option, {
 					key: e.id
-				}, e.name))))), 
-				
-				d.a.createElement("div", {
+				}, e.name))))), d.a.createElement("div", {
 					className: "row"
-				}, 
-				d.a.createElement("div", {
+				}, d.a.createElement("div", {
 					className: "form-group col-md-8 col-xs-12"
 				}, d.a.createElement("label", null, "Địa Chỉ Server"), d.a.createElement(s.a, {
 					placeholder: "Vui lòng nhập địa chỉ kết nối.",
@@ -13126,8 +13080,7 @@
 					placeholder: "Không NAT Cổng Kết nối Tương tự",
 					value: e.server_port,
 					onChange: e => this.formChange("server_port", e.target.value)
-				}))), 
-				d.a.createElement("div", {
+				}))), d.a.createElement("div", {
 					className: "row"
 				}, d.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"
@@ -13136,8 +13089,7 @@
 					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
 					value: e.ip,
 					onChange: e => this.formChange("ip", e.target.value)
-				}))),
-				d.a.createElement("div", {
+				}))), d.a.createElement("div", {
 					className: "form-group"
 				}, d.a.createElement("label", null, "LoadIPs"), d.a.createElement(a.a, {
 					mode: "tags",
@@ -13147,9 +13099,7 @@
 					},
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: e => this.formChange("ips", e.length > 0 ? e : null)
-				})), 
-
-				d.a.createElement("div", {
+				})), d.a.createElement("div", {
 					className: "row"
 				}, d.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"
@@ -21549,14 +21499,14 @@
 							icon: i.a.createElement("i", {
 								className: "nav-main-link-icon si si-layers"
 							})
-						},{
+						}, {
 							title: "Quản lý SNI",
 							type: "item",
 							href: "/sni",
 							icon: i.a.createElement("i", {
-							  className: "nav-main-link-icon si si-settings",
+								className: "nav-main-link-icon si si-settings",
 							}),
-						  }, {
+						}, {
 							title: "Nhóm Máy Chủ",
 							type: "item",
 							href: "/server/group",
@@ -22991,7 +22941,7 @@
 					defaultValue: t.staff_url,
 					placeholder: "Nếu để trống, sẽ không có URL truy cập trang CTV.",
 					onChange: e => this.formChange("staff_url", e.target.value)
-				})) : "" , p.a.createElement("div", {
+				})) : "", p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -28681,22 +28631,17 @@
 					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
 					value: e.ip,
 					onChange: e => this.formChange("ip", e.target.value)
-				}))),
-				
-				h.a.createElement("div", { 
-					className: "form-group" 
-				},  h.a.createElement("label", null, "LoadIPs"), h.a.createElement(a.a, {
+				}))), h.a.createElement("div", {
+					className: "form-group"
+				}, h.a.createElement("label", null, "LoadIPs"), h.a.createElement(a.a, {
 					mode: "tags",
-				    value: e.ips || [],
+					value: e.ips || [],
 					style: {
 						width: "100%"
 					},
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
-				})), 
-				
-				
-				h.a.createElement("div", {
+				})), h.a.createElement("div", {
 					className: "form-group"
 				}, h.a.createElement("label", null, "Thuật Toán Mã Hóa"), h.a.createElement(a.a, {
 					value: e.cipher,
@@ -30839,8 +30784,9 @@
 								var t = this;
 								return f.a.createElement(e, C({}, this.props, k({}, r, this.context.intl), {
 									ref: i ? function(e) {
-										return t._wrappedInstance = e
-									} : null
+											return t._wrappedInstance = e
+										} :
+										null
 								}))
 							}
 						}]),
@@ -31591,258 +31537,236 @@
 			}, h)
 		}
 	},
-	JZE9z: function (e, t, n) {
+	JZE9z: function(e, t, n) {
 		"use strict";
 		n.r(t);
 		var r = n("jehZ"),
-		  i = n.n(r),
-		  o = (n("2qtc"), n("kLXV")),
-		  a = (n("OaEy"), n("2fM7")),
-		  s = (n("5NDa"), n("5rEg")),
-		  c = (n("g9YV"), n("wCAj")),
-		  l = (n("+L6B"), n("2/Rp")),
-		  u = (n("Pwec"), n("CtXQ")),
-		  h = (n("/zsF"), n("PArb")),
-		  f = (n("BoS7"), n("Sdc0")),
-		  d = n("p0pE"),
-		  p = n.n(d),
-		  m = n("q1tI"),
-		  g = n.n(m),
-		  v = n("Bl7J"),
-		  y = n("wd/R"),
-		  b = n.n(y),
-		  w = n("/MKj"),
-		  x = n("v32e");
+			i = n.n(r),
+			o = (n("2qtc"),
+				n("kLXV")),
+			a = (n("OaEy"),
+				n("2fM7")),
+			s = (n("5NDa"),
+				n("5rEg")),
+			c = (n("g9YV"),
+				n("wCAj")),
+			l = (n("+L6B"),
+				n("2/Rp")),
+			u = (n("Pwec"),
+				n("CtXQ")),
+			h = (n("/zsF"),
+				n("PArb")),
+			f = (n("BoS7"),
+				n("Sdc0")),
+			d = n("p0pE"),
+			p = n.n(d),
+			m = n("q1tI"),
+			g = n.n(m),
+			v = n("Bl7J"),
+			y = n("wd/R"),
+			b = n.n(y),
+			w = n("/MKj"),
+			x = n("v32e");
 		class _ extends g.a.Component {
-		  constructor(e) {
-			super(e), (this.state = { visible: !1, submit: {}, notices: [] });
-		  }
-		  componentDidMount() {
-			this.props.dispatch({ type: "sni/fetch" });
-		  }
-		  modalVisible() {
-			this.setState({ visible: !this.state.visible }, () => {
-			  this.state.visible || this.setState({ submit: {} });
-			});
-		  }
-		  save() {
-			this.props.dispatch({
-			  type: "sni/save",
-			  params: p()({}, this.state.submit),
-			  callback: () => {
-				this.modalVisible();
-			  },
-			});
-		  }
-		  drop(e) {
-			this.props.dispatch({ type: "sni/drop", id: e.id });
-		  }
-		  render() {
-			var e = this.props.sni,
-			  t = e.notices,
-			  n = e.fetchLoading,
-			  r = [
-				{ title: "#", dataIndex: "id", key: "id" },
-				{
-				  title: "Hiện",
-				  dataIndex: "show",
-				  key: "show",
-				  render: (e, t) =>
-					g.a.createElement(f.a, {
-					  size: "small",
-					  onChange: () =>
-						this.props.dispatch({ type: "sni/show", id: t.id }),
-					  checked: e,
-					}),
-				},
-				{ title: "Tên SNI", dataIndex: "label", key: "label" },
-				{ title: "SNI", dataIndex: "value", key: "value" },
-				{ title: "Tên rút gọn", dataIndex: "abbreviation", key: "abbreviation" },
-				{
-				  title: "Cập nhật",
-				  dataIndex: "updated_at",
-				  key: "updated_at",
-				  align: "right",
-				  render: (e) => b()(1e3 * e).format("DD/MM/YYYY HH:mm"),
-				},
-				{
-				  title: "Chỉnh sửa",
-				  dataIndex: "action",
-				  key: "action",
-				  align: "right",
-				  fixed: "right",
-				  render: (e, n, r) =>
-					g.a.createElement(
-					  "div",
-					  null,
-					  g.a.createElement(
-						"a",
-						{
-						  onClick: () =>
-							this.setState({ submit: t[r] }, () =>
-							  this.modalVisible()
-							),
-						  href: "javascript:void(0);",
+			constructor(e) {
+				super(e),
+					(this.state = {
+						visible: !1,
+						submit: {},
+						notices: []
+					});
+			}
+			componentDidMount() {
+				this.props.dispatch({
+					type: "sni/fetch"
+				});
+			}
+			modalVisible() {
+				this.setState({
+					visible: !this.state.visible
+				}, () => {
+					this.state.visible || this.setState({
+						submit: {}
+					});
+				});
+			}
+			save() {
+				this.props.dispatch({
+					type: "sni/save",
+					params: p()({}, this.state.submit),
+					callback: () => {
+						this.modalVisible();
+					},
+				});
+			}
+			drop(e) {
+				this.props.dispatch({
+					type: "sni/drop",
+					id: e.id
+				});
+			}
+			render() {
+				var e = this.props.sni,
+					t = e.notices,
+					n = e.fetchLoading,
+					r = [{
+						title: "#",
+						dataIndex: "id",
+						key: "id"
+					}, {
+						title: "Hiện",
+						dataIndex: "show",
+						key: "show",
+						render: (e, t) => g.a.createElement(f.a, {
+							size: "small",
+							onChange: () => this.props.dispatch({
+								type: "sni/show",
+								id: t.id
+							}),
+							checked: e,
+						}),
+					}, {
+						title: "Tên SNI",
+						dataIndex: "label",
+						key: "label"
+					}, {
+						title: "SNI",
+						dataIndex: "value",
+						key: "value"
+					}, {
+						title: "Tên rút gọn",
+						dataIndex: "abbreviation",
+						key: "abbreviation"
+					}, {
+						title: "Cập nhật",
+						dataIndex: "updated_at",
+						key: "updated_at",
+						align: "right",
+						render: (e) => b()(1e3 * e).format("DD/MM/YYYY HH:mm"),
+					}, {
+						title: "Chỉnh sửa",
+						dataIndex: "action",
+						key: "action",
+						align: "right",
+						fixed: "right",
+						render: (e, n, r) => g.a.createElement("div", null, g.a.createElement("a", {
+							onClick: () => this.setState({
+								submit: t[r]
+							}, () => this.modalVisible()),
+							href: "javascript:void(0);",
+						}, "Chỉnh sửa"), g.a.createElement(h.a, {
+							type: "vertical"
+						}), g.a.createElement("a", {
+							onClick: () => this.drop(n),
+							href: "javascript:void(0);",
+						}, "xóa bỏ")),
+					}, ];
+				return g.a.createElement(v.a, i()({}, this.props, {
+					title: "Quản lý SNI"
+				}), g.a.createElement("div", {
+					className: "d-flex justify-content-between align-items-center",
+				}), g.a.createElement(x.a, {
+					loading: n
+				}, g.a.createElement("div", {
+					className: "block block-rounded"
+				}, g.a.createElement("div", {
+					className: "bg-white"
+				}, g.a.createElement("div", {
+					style: {
+						padding: 15
+					}
+				}, g.a.createElement(l.a, {
+					onClick: () => this.modalVisible()
+				}, g.a.createElement(u.a, {
+					type: "plus"
+				}), " Thêm SNI")), g.a.createElement(c.a, {
+					tableLayout: "auto",
+					dataSource: t,
+					pagination: !1,
+					columns: r,
+					scroll: {
+						x: 950
+					},
+				})))), g.a.createElement(o.a, {
+					title: "".concat(this.state.submit.id ? "Chỉnh sửa SNI" : "Tạo SNI mới"),
+					visible: this.state.visible,
+					onCancel: () => this.modalVisible(),
+					onOk: () => this.state.saveLoading || this.save(),
+					okText: this.state.saveLoading ? g.a.createElement(u.a, {
+						type: "loading"
+					}) : "Lưu",
+					cancelText: "Hủy bỏ",
+				}, g.a.createElement("div", null, g.a.createElement("div", {
+						className: "form-group"
+					}, g.a.createElement("label", {
+						for: "example-text-input-alt"
+					}, "Tên SNI"), g.a.createElement(s.a, {
+						placeholder: "Vui lòng nhập Tên của SNI",
+						value: this.state.submit.label,
+						onChange: (e) => {
+							this.setState({
+								submit: p()({}, this.state.submit, {
+									label: e.target.value,
+								}),
+							});
 						},
-						"Chỉnh sửa"
-					  ),
-					  g.a.createElement(h.a, { type: "vertical" }),
-					  g.a.createElement(
-						"a",
-						{
-						  onClick: () => this.drop(n),
-						  href: "javascript:void(0);",
+					})), g.a.createElement("div", {
+						className: "form-group"
+					}, g.a.createElement("label", {
+						for: "example-text-input-alt"
+					}, "Nhập SNI"), g.a.createElement(s.a, {
+						placeholder: "Vui lòng nhập SNI vào đây",
+						value: this.state.submit.value,
+						onChange: (e) => {
+							this.setState({
+								submit: p()({}, this.state.submit, {
+									value: e.target.value,
+								}),
+							});
 						},
-						"xóa bỏ"
-					  )
-					),
-				},
-			  ];
-			return g.a.createElement(
-			  v.a,
-			  i()({}, this.props, { title: "Quản lý SNI" }),
-			  g.a.createElement("div", {
-				className: "d-flex justify-content-between align-items-center",
-			  }),
-			  g.a.createElement(
-				x.a,
-				{ loading: n },
-				g.a.createElement(
-				  "div",
-				  { className: "block block-rounded" },
-				  g.a.createElement(
-					"div",
-					{ className: "bg-white" },
-					g.a.createElement(
-					  "div",
-					  { style: { padding: 15 } },
-					  g.a.createElement(
-						l.a,
-						{ onClick: () => this.modalVisible() },
-						g.a.createElement(u.a, { type: "plus" }),
-						" Thêm SNI"
-					  )
-					),
-					g.a.createElement(c.a, {
-					  tableLayout: "auto",
-					  dataSource: t,
-					  pagination: !1,
-					  columns: r,
-					  scroll: { x: 950 },
-					})
-				  )
-				)
-			  ),
-			  g.a.createElement(
-				o.a,
-				{
-				  title: "".concat(
-					this.state.submit.id
-					  ? "Chỉnh sửa SNI"
-					  : "Tạo SNI mới"
-				  ),
-				  visible: this.state.visible,
-				  onCancel: () => this.modalVisible(),
-				  onOk: () => this.state.saveLoading || this.save(),
-				  okText: this.state.saveLoading
-					? g.a.createElement(u.a, { type: "loading" })
-					: "Lưu",
-				  cancelText: "Hủy bỏ",
-				},
-				g.a.createElement(
-				  "div",
-				  null,
-				  g.a.createElement(
-					"div",
-					{ className: "form-group" },
-					g.a.createElement(
-					  "label",
-					  { for: "example-text-input-alt" },
-					  "Tên SNI"
-					),
-					g.a.createElement(s.a, {
-					  placeholder: "Vui lòng nhập Tên của SNI",
-					  value: this.state.submit.label,
-					  onChange: (e) => {
-						this.setState({
-						  submit: p()({}, this.state.submit, {
-							label: e.target.value,
-						  }),
-						});
-					  },
-					})
-				  ),
-				  g.a.createElement(
-					"div",
-					{ className: "form-group" },
-					g.a.createElement(
-					  "label",
-					  { for: "example-text-input-alt" },
-					  "Nhập SNI"
-					),
-					g.a.createElement(s.a, {
-					  placeholder: "Vui lòng nhập SNI vào đây",
-					  value: this.state.submit.value,
-					  onChange: (e) => {
-						this.setState({
-						  submit: p()({}, this.state.submit, {
-							value: e.target.value,
-						  }),
-						});
-					  },
-					})
-				  ),
-				  g.a.createElement(
-					"div",
-					{ className: "form-group" },
-					g.a.createElement(
-					  "label",
-					  { for: "example-text-input-alt" },
-					  "Tên rút gọn ( Fast Setup )"
-					),
-					g.a.createElement(s.a, {
-					  placeholder: "Vui lòng nhập Tên rút gọn vào đây",
-					  value: this.state.submit.abbreviation,
-					  onChange: (e) => {
-						this.setState({
-						  submit: p()({}, this.state.submit, {
-							abbreviation: e.target.value,
-						  }),
-						});
-					  },
-					})
-				  ),
-				//   g.a.createElement(
-				// 	"div",
-				// 	{ className: "form-group" },
-				// 	g.a.createElement(
-				// 	  "label",
-				// 	  { for: "example-text-input-alt" },
-				// 	  "Hướng Dẫn dùng SNI"
-				// 	),
-				// 	g.a.createElement(s.a.TextArea, {
-				// 	  rows: 12,
-				// 	  value: this.state.submit.content,
-				// 	  placeholder: "Vui lòng nhập nội dung hướng dẫn của SNI",
-				// 	  onChange: (e) => {
-				// 		this.setState({
-				// 		  submit: p()({}, this.state.submit, {
-				// 			content: e.target.value,
-				// 		  }),
-				// 		});
-				// 	  },
-				// 	})
-				//   )
-				
-				  
-				  
-				)
-			  )
-			);
-		  }
+					})), g.a.createElement("div", {
+						className: "form-group"
+					}, g.a.createElement("label", {
+						for: "example-text-input-alt"
+					}, "Tên rút gọn ( Fast Setup )"), g.a.createElement(s.a, {
+						placeholder: "Vui lòng nhập Tên rút gọn vào đây",
+						value: this.state.submit.abbreviation,
+						onChange: (e) => {
+							this.setState({
+								submit: p()({}, this.state.submit, {
+									abbreviation: e.target.value,
+								}),
+							});
+						},
+					})), //   g.a.createElement(
+					// 	"div",
+					// 	{ className: "form-group" },
+					// 	g.a.createElement(
+					// 	  "label",
+					// 	  { for: "example-text-input-alt" },
+					// 	  "Hướng Dẫn dùng SNI"
+					// 	),
+					// 	g.a.createElement(s.a.TextArea, {
+					// 	  rows: 12,
+					// 	  value: this.state.submit.content,
+					// 	  placeholder: "Vui lòng nhập nội dung hướng dẫn của SNI",
+					// 	  onChange: (e) => {
+					// 		this.setState({
+					// 		  submit: p()({}, this.state.submit, {
+					// 			content: e.target.value,
+					// 		  }),
+					// 		});
+					// 	  },
+					// 	})
+					//   )
+
+				)));
+			}
 		}
-		t.default = Object(w.c)((e) => ({ sni: e.sni }))(_);
-	  },
+		t.default = Object(w.c)((e) => ({
+			sni: e.sni
+		}))(_);
+	},
 	JZE9: function(e, t, n) {
 		"use strict";
 		n.r(t);
@@ -31937,9 +31861,7 @@
 						title: "Tiêu Đề",
 						dataIndex: "title",
 						key: "title"
-					},
-					
-					{
+					}, {
 						title: "Domain",
 						dataIndex: "staff_urls",
 						key: "staff_urls",
@@ -31953,9 +31875,7 @@
 							}
 							return "All Web";
 						},
-					},
-
-					 {
+					}, {
 						title: "Thời Gian Tạo",
 						dataIndex: "created_at",
 						key: "created_at",
@@ -32061,38 +31981,26 @@
 							})
 						})
 					}
-				})), 
-				
-				g.a.createElement(
-					"div",
-					{ className: "form-group" },
-					g.a.createElement(
-					  "label",
-					  null,
-					  "URL Cộng tác viên (Thông báo Cho CTV)"
-					),
-					g.a.createElement(
-					  a.a, 
-					  {
-						mode: "multiple",
-						style: { width: "100%" },
-						placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
-						value: this.state.submit.staff_urls || [],
-						onChange: (selectedIds) => {
-						  this.setState({
+				})), g.a.createElement("div", {
+					className: "form-group"
+				}, g.a.createElement("label", null, "URL Cộng tác viên (Thông báo Cho CTV)"), g.a.createElement(a.a, {
+					mode: "multiple",
+					style: {
+						width: "100%"
+					},
+					placeholder: "Nếu để trống thì sẽ hiện thị cho tất cả mọi người",
+					value: this.state.submit.staff_urls || [],
+					onChange: (selectedIds) => {
+						this.setState({
 							submit: p()({}, this.state.submit, {
-							  staff_urls: selectedIds, 
+								staff_urls: selectedIds,
 							}),
-						  });
-						},
-					  },
-					  S && S.map((e) =>
-						g.a.createElement(a.a.Option, { key: e.id, value: e.id.toString() }, e.staff_url)
-					  )
-					)
-				  ),
-				
-				g.a.createElement("div", {
+						});
+					},
+				}, S && S.map((e) => g.a.createElement(a.a.Option, {
+					key: e.id,
+					value: e.id.toString()
+				}, e.staff_url)))), g.a.createElement("div", {
 					className: "form-group"
 				}, g.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -78949,7 +78857,7 @@
 				path: "/plan",
 				exact: !0,
 				component: n("ih8c").default
-			},{
+			}, {
 				path: "/sni",
 				exact: !0,
 				component: n("JZE9z").default
@@ -79124,7 +79032,7 @@
 					t = this.props.plan.saveLoading,
 					idS = this.props.plan.idStaff,
 					n = this.props.serverGroup.groups;
-					
+
 				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {
 					onClick: () => this.setState({
 						visible: !0
@@ -79451,11 +79359,7 @@
 				}, "Gói CTV ( không bao gồm Web chính )"), m.a.createElement(_.a.Option, {
 					key: 3,
 					value: 3
-				}, "Gói CTV ( Có bao gồm web chính )"))), 
-				
-				
-
-				2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
+				}, "Gói CTV ( Có bao gồm web chính )"))), 2 == this.state.record.plan_type || 3 == this.state.record.plan_type ? m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", null, "URL (Domain CTV) Bán gói này"), m.a.createElement(_.a, {
 					mode: "tags",
@@ -79472,11 +79376,9 @@
 						})
 					}
 				}, idS && idS.map((e => m.a.createElement(_.a.Option, {
-					key: e.id.toString(), 
-					value: e.id.toString(), 
-				}, e.staff_url))))) : "",
-				
-				m.a.createElement("div", {
+					key: e.id.toString(),
+					value: e.id.toString(),
+				}, e.staff_url))))) : "", m.a.createElement("div", {
 					className: "aikopanel-drawer-action"
 				}, m.a.createElement("div", {
 					style: {
@@ -79566,12 +79468,12 @@
 			}
 			jumpUserFilter(e, t, n) {
 				this.props.dispatch({
-				  type: "user/addFilter",
-				  key: e,
-				  condition: t,
-				  value: n,
-				}),
-				Z.a.push("/user")
+						type: "user/addFilter",
+						key: e,
+						condition: t,
+						value: n,
+					}),
+					Z.a.push("/user")
 			}
 			render() {
 				var e, t = this.props.plan,
@@ -79626,7 +79528,10 @@
 						key: "count",
 						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
 							type: "user",
-							style: { cursor: "pointer", color: "blue" },
+							style: {
+								cursor: "pointer",
+								color: "blue"
+							},
 							onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
 						}), " ", e + "\/" + t.total)
 					}, {
@@ -80514,34 +80419,22 @@
 					placeholder: "Vui lòng nhập phân loại, phân loại sẽ tự động được nhóm lại.",
 					value: n.category,
 					onChange: e => this.formChange("category", e.target.value)
-				})),
-
-				f.a.createElement(
-					"div",
-					{ className: "form-group" },
-					f.a.createElement(
-					  "label",
-					  null,
-					  "Domain Hiển Thị"
-					),
-					f.a.createElement(
-					  b.a,
-					  {
-						mode: "multiple",
-						style: { width: "100%" },
-						placeholder: "Vui lòng chọn domain",
-						value: n.staff_urls || [], 
-						onChange: (selectedIds) => {
-						  this.formChange('staff_urls', selectedIds); 
-						},
-					  },
-					  staff && staff.map((e) =>
-						f.a.createElement(b.a.Option, { key: e.id, value: e.id.toString() }, e.url)
-					  )
-					)
-				  ),
-				
-				f.a.createElement("div", {
+				})), f.a.createElement("div", {
+					className: "form-group"
+				}, f.a.createElement("label", null, "Domain Hiển Thị"), f.a.createElement(b.a, {
+					mode: "multiple",
+					style: {
+						width: "100%"
+					},
+					placeholder: "Vui lòng chọn domain",
+					value: n.staff_urls || [],
+					onChange: (selectedIds) => {
+						this.formChange('staff_urls', selectedIds);
+					},
+				}, staff && staff.map((e) => f.a.createElement(b.a.Option, {
+					key: e.id,
+					value: e.id.toString()
+				}, e.url)))), f.a.createElement("div", {
 					className: "form-group"
 				}, f.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -80671,8 +80564,7 @@
 							title: "Phân Loại",
 							dataIndex: "category",
 							key: "category"
-						}, 
-						{
+						}, {
 							title: "Domain",
 							dataIndex: "staff_urls",
 							key: "staff_urls",
@@ -80686,8 +80578,7 @@
 								}
 								return "All Web";
 							},
-						},
-						{
+						}, {
 							title: "Thời Gian Cập Nhật",
 							dataIndex: "updated_at",
 							key: "updated_at",
@@ -82461,575 +82352,620 @@
 			}
 		}
 	},
-	lETvz: function (e, t, n) {
+	lETvz: function(e, t, n) {
 		"use strict";
 		n.r(t);
 		var r = n("p0pE"),
-		  i = n.n(r),
-		  o = n("t3Un");
+			i = n.n(r),
+			o = n("t3Un");
+
 		function a() {
-		  a = function () {
-			return e;
-		  };
-		  var e = {},
-			t = Object.prototype,
-			n = t.hasOwnProperty,
-			r =
-			  Object.defineProperty ||
-			  function (e, t, n) {
-				e[t] = n.value;
-			  },
-			i = "function" == typeof Symbol ? Symbol : {},
-			o = i.iterator || "@@iterator",
-			s = i.asyncIterator || "@@asyncIterator",
-			c = i.toStringTag || "@@toStringTag";
-		  function l(e, t, n) {
-			return (
-			  Object.defineProperty(e, t, {
-				value: n,
-				enumerable: !0,
-				configurable: !0,
-				writable: !0,
-			  }),
-			  e[t]
-			);
-		  }
-		  try {
-			l({}, "");
-		  } catch (e) {
-			l = function (e, t, n) {
-			  return (e[t] = n);
+			a = function() {
+				return e;
 			};
-		  }
-		  function u(e, t, n, i) {
-			var o = t && t.prototype instanceof d ? t : d,
-			  a = Object.create(o.prototype),
-			  s = new C(i || []);
-			return r(a, "_invoke", { value: _(e, n, s) }), a;
-		  }
-		  function h(e, t, n) {
+			var e = {},
+				t = Object.prototype,
+				n = t.hasOwnProperty,
+				r = Object.defineProperty || function(e, t, n) {
+					e[t] = n.value;
+				},
+				i = "function" == typeof Symbol ? Symbol : {},
+				o = i.iterator || "@@iterator",
+				s = i.asyncIterator || "@@asyncIterator",
+				c = i.toStringTag || "@@toStringTag";
+
+			function l(e, t, n) {
+				return (Object.defineProperty(e, t, {
+						value: n,
+						enumerable: !0,
+						configurable: !0,
+						writable: !0,
+					}),
+					e[t]);
+			}
 			try {
-			  return { type: "normal", arg: e.call(t, n) };
+				l({}, "");
 			} catch (e) {
-			  return { type: "throw", arg: e };
+				l = function(e, t, n) {
+					return (e[t] = n);
+				};
 			}
-		  }
-		  e.wrap = u;
-		  var f = {};
-		  function d() {}
-		  function p() {}
-		  function m() {}
-		  var g = {};
-		  l(g, o, function () {
-			return this;
-		  });
-		  var v = Object.getPrototypeOf,
-			y = v && v(v(O([])));
-		  y && y !== t && n.call(y, o) && (g = y);
-		  var b = (m.prototype = d.prototype = Object.create(g));
-		  function w(e) {
-			["next", "throw", "return"].forEach(function (t) {
-			  l(e, t, function (e) {
-				return this._invoke(t, e);
-			  });
+
+			function u(e, t, n, i) {
+				var o = t && t.prototype instanceof d ? t : d,
+					a = Object.create(o.prototype),
+					s = new C(i || []);
+				return r(a, "_invoke", {
+						value: _(e, n, s)
+					}),
+					a;
+			}
+
+			function h(e, t, n) {
+				try {
+					return {
+						type: "normal",
+						arg: e.call(t, n)
+					};
+				} catch (e) {
+					return {
+						type: "throw",
+						arg: e
+					};
+				}
+			}
+			e.wrap = u;
+			var f = {};
+
+			function d() {}
+
+			function p() {}
+
+			function m() {}
+			var g = {};
+			l(g, o, function() {
+				return this;
 			});
-		  }
-		  function x(e, t) {
-			function i(r, o, a, s) {
-			  var c = h(e[r], e, o);
-			  if ("throw" !== c.type) {
-				var l = c.arg,
-				  u = l.value;
-				return u && "object" == typeof u && n.call(u, "__await")
-				  ? t.resolve(u.__await).then(
-					  function (e) {
-						i("next", e, a, s);
-					  },
-					  function (e) {
-						i("throw", e, a, s);
-					  }
-					)
-				  : t.resolve(u).then(
-					  function (e) {
-						(l.value = e), a(l);
-					  },
-					  function (e) {
-						return i("throw", e, a, s);
-					  }
+			var v = Object.getPrototypeOf,
+				y = v && v(v(O([])));
+			y && y !== t && n.call(y, o) && (g = y);
+			var b = (m.prototype = d.prototype = Object.create(g));
+
+			function w(e) {
+				["next", "throw", "return"].forEach(function(t) {
+					l(e, t, function(e) {
+						return this._invoke(t, e);
+					});
+				});
+			}
+
+			function x(e, t) {
+				function i(r, o, a, s) {
+					var c = h(e[r], e, o);
+					if ("throw" !== c.type) {
+						var l = c.arg,
+							u = l.value;
+						return u && "object" == typeof u && n.call(u, "__await") ? t.resolve(u.__await).then(function(e) {
+							i("next", e, a, s);
+						}, function(e) {
+							i("throw", e, a, s);
+						}) : t.resolve(u).then(function(e) {
+							(l.value = e),
+							a(l);
+						}, function(e) {
+							return i("throw", e, a, s);
+						});
+					}
+					s(c.arg);
+				}
+				var o;
+				r(this, "_invoke", {
+					value: function(e, n) {
+						function r() {
+							return new t(function(t, r) {
+								i(e, n, t, r);
+							});
+						}
+						return (o = o ? o.then(r, r) : r());
+					},
+				});
+			}
+
+			function _(e, t, n) {
+				var r = "suspendedStart";
+				return function(i, o) {
+					if ("executing" === r)
+						throw new Error("Generator is already running");
+					if ("completed" === r) {
+						if ("throw" === i)
+							throw o;
+						return {
+							value: void 0,
+							done: !0
+						};
+					}
+					for (n.method = i,
+						n.arg = o;;) {
+						var a = n.delegate;
+						if (a) {
+							var s = E(a, n);
+							if (s) {
+								if (s === f)
+									continue;
+								return s;
+							}
+						}
+						if ("next" === n.method)
+							n.sent = n._sent = n.arg;
+						else if ("throw" === n.method) {
+							if ("suspendedStart" === r)
+								throw ((r = "completed"),
+									n.arg);
+							n.dispatchException(n.arg);
+						} else
+							"return" === n.method && n.abrupt("return", n.arg);
+						r = "executing";
+						var c = h(e, t, n);
+						if ("normal" === c.type) {
+							if (((r = n.done ? "completed" : "suspendedYield"),
+									c.arg === f))
+								continue;
+							return {
+								value: c.arg,
+								done: n.done
+							};
+						}
+						"throw" === c.type && ((r = "completed"),
+							(n.method = "throw"),
+							(n.arg = c.arg));
+					}
+				};
+			}
+
+			function E(e, t) {
+				var n = t.method,
+					r = e.iterator[n];
+				if (void 0 === r)
+					return ((t.delegate = null),
+						("throw" === n && e.iterator.return && ((t.method = "return"),
+							(t.arg = void 0),
+							E(e, t),
+							"throw" === t.method)) || ("return" !== n && ((t.method = "throw"),
+							(t.arg = new TypeError("The iterator does not provide a '" + n + "' method")))),
+						f);
+				var i = h(r, e.iterator, t.arg);
+				if ("throw" === i.type)
+					return (t.method = "throw"),
+						(t.arg = i.arg),
+						(t.delegate = null),
+						f;
+				var o = i.arg;
+				return o ? o.done ? ((t[e.resultName] = o.value),
+					(t.next = e.nextLoc),
+					"return" !== t.method && ((t.method = "next"),
+						(t.arg = void 0)),
+					(t.delegate = null),
+					f) : o : ((t.method = "throw"),
+					(t.arg = new TypeError("iterator result is not an object")),
+					(t.delegate = null),
+					f);
+			}
+
+			function k(e) {
+				var t = {
+					tryLoc: e[0]
+				};
+				1 in e && (t.catchLoc = e[1]),
+					2 in e && ((t.finallyLoc = e[2]),
+						(t.afterLoc = e[3])),
+					this.tryEntries.push(t);
+			}
+
+			function S(e) {
+				var t = e.completion || {};
+				(t.type = "normal"),
+				delete t.arg,
+					(e.completion = t);
+			}
+
+			function C(e) {
+				(this.tryEntries = [{
+					tryLoc: "root"
+				}]),
+				e.forEach(k, this),
+					this.reset(!0);
+			}
+
+			function O(e) {
+				if (e) {
+					var t = e[o];
+					if (t)
+						return t.call(e);
+					if ("function" == typeof e.next)
+						return e;
+					if (!isNaN(e.length)) {
+						var r = -1,
+							i = function t() {
+								for (; ++r < e.length;)
+									if (n.call(e, r))
+										return (t.value = e[r]),
+											(t.done = !1),
+											t;
+								return (t.value = void 0),
+									(t.done = !0),
+									t;
+							};
+						return (i.next = i);
+					}
+				}
+				return {
+					next: T
+				};
+			}
+
+			function T() {
+				return {
+					value: void 0,
+					done: !0
+				};
+			}
+			return ((p.prototype = m),
+				r(b, "constructor", {
+					value: m,
+					configurable: !0
+				}),
+				r(m, "constructor", {
+					value: p,
+					configurable: !0
+				}),
+				(p.displayName = l(m, c, "GeneratorFunction")),
+				(e.isGeneratorFunction = function(e) {
+					var t = "function" == typeof e && e.constructor;
+					return (!!t && (t === p || "GeneratorFunction" === (t.displayName || t.name)));
+				}),
+				(e.mark = function(e) {
+					return (Object.setPrototypeOf ? Object.setPrototypeOf(e, m) : ((e.__proto__ = m),
+							l(e, c, "GeneratorFunction")),
+						(e.prototype = Object.create(b)),
+						e);
+				}),
+				(e.awrap = function(e) {
+					return {
+						__await: e
+					};
+				}),
+				w(x.prototype),
+				l(x.prototype, s, function() {
+					return this;
+				}),
+				(e.AsyncIterator = x),
+				(e.async = function(t, n, r, i, o) {
+					void 0 === o && (o = Promise);
+					var a = new x(u(t, n, r, i), o);
+					return e.isGeneratorFunction(n) ? a : a.next().then(function(e) {
+						return e.done ? e.value : a.next();
+					});
+				}),
+				w(b),
+				l(b, c, "Generator"),
+				l(b, o, function() {
+					return this;
+				}),
+				l(b, "toString", function() {
+					return "[object Generator]";
+				}),
+				(e.keys = function(e) {
+					var t = Object(e),
+						n = [];
+					for (var r in t)
+						n.push(r);
+					return (n.reverse(),
+						function e() {
+							for (; n.length;) {
+								var r = n.pop();
+								if (r in t)
+									return (e.value = r),
+										(e.done = !1),
+										e;
+							}
+							return (e.done = !0),
+								e;
+						}
 					);
-			  }
-			  s(c.arg);
-			}
-			var o;
-			r(this, "_invoke", {
-			  value: function (e, n) {
-				function r() {
-				  return new t(function (t, r) {
-					i(e, n, t, r);
-				  });
-				}
-				return (o = o ? o.then(r, r) : r());
-			  },
-			});
-		  }
-		  function _(e, t, n) {
-			var r = "suspendedStart";
-			return function (i, o) {
-			  if ("executing" === r)
-				throw new Error("Generator is already running");
-			  if ("completed" === r) {
-				if ("throw" === i) throw o;
-				return { value: void 0, done: !0 };
-			  }
-			  for (n.method = i, n.arg = o; ; ) {
-				var a = n.delegate;
-				if (a) {
-				  var s = E(a, n);
-				  if (s) {
-					if (s === f) continue;
-					return s;
-				  }
-				}
-				if ("next" === n.method) n.sent = n._sent = n.arg;
-				else if ("throw" === n.method) {
-				  if ("suspendedStart" === r) throw ((r = "completed"), n.arg);
-				  n.dispatchException(n.arg);
-				} else "return" === n.method && n.abrupt("return", n.arg);
-				r = "executing";
-				var c = h(e, t, n);
-				if ("normal" === c.type) {
-				  if (((r = n.done ? "completed" : "suspendedYield"), c.arg === f))
-					continue;
-				  return { value: c.arg, done: n.done };
-				}
-				"throw" === c.type &&
-				  ((r = "completed"), (n.method = "throw"), (n.arg = c.arg));
-			  }
-			};
-		  }
-		  function E(e, t) {
-			var n = t.method,
-			  r = e.iterator[n];
-			if (void 0 === r)
-			  return (
-				(t.delegate = null),
-				("throw" === n &&
-				  e.iterator.return &&
-				  ((t.method = "return"),
-				  (t.arg = void 0),
-				  E(e, t),
-				  "throw" === t.method)) ||
-				  ("return" !== n &&
-					((t.method = "throw"),
-					(t.arg = new TypeError(
-					  "The iterator does not provide a '" + n + "' method"
-					)))),
-				f
-			  );
-			var i = h(r, e.iterator, t.arg);
-			if ("throw" === i.type)
-			  return (t.method = "throw"), (t.arg = i.arg), (t.delegate = null), f;
-			var o = i.arg;
-			return o
-			  ? o.done
-				? ((t[e.resultName] = o.value),
-				  (t.next = e.nextLoc),
-				  "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
-				  (t.delegate = null),
-				  f)
-				: o
-			  : ((t.method = "throw"),
-				(t.arg = new TypeError("iterator result is not an object")),
-				(t.delegate = null),
-				f);
-		  }
-		  function k(e) {
-			var t = { tryLoc: e[0] };
-			1 in e && (t.catchLoc = e[1]),
-			  2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])),
-			  this.tryEntries.push(t);
-		  }
-		  function S(e) {
-			var t = e.completion || {};
-			(t.type = "normal"), delete t.arg, (e.completion = t);
-		  }
-		  function C(e) {
-			(this.tryEntries = [{ tryLoc: "root" }]),
-			  e.forEach(k, this),
-			  this.reset(!0);
-		  }
-		  function O(e) {
-			if (e) {
-			  var t = e[o];
-			  if (t) return t.call(e);
-			  if ("function" == typeof e.next) return e;
-			  if (!isNaN(e.length)) {
-				var r = -1,
-				  i = function t() {
-					for (; ++r < e.length; )
-					  if (n.call(e, r)) return (t.value = e[r]), (t.done = !1), t;
-					return (t.value = void 0), (t.done = !0), t;
-				  };
-				return (i.next = i);
-			  }
-			}
-			return { next: T };
-		  }
-		  function T() {
-			return { value: void 0, done: !0 };
-		  }
-		  return (
-			(p.prototype = m),
-			r(b, "constructor", { value: m, configurable: !0 }),
-			r(m, "constructor", { value: p, configurable: !0 }),
-			(p.displayName = l(m, c, "GeneratorFunction")),
-			(e.isGeneratorFunction = function (e) {
-			  var t = "function" == typeof e && e.constructor;
-			  return (
-				!!t &&
-				(t === p || "GeneratorFunction" === (t.displayName || t.name))
-			  );
-			}),
-			(e.mark = function (e) {
-			  return (
-				Object.setPrototypeOf
-				  ? Object.setPrototypeOf(e, m)
-				  : ((e.__proto__ = m), l(e, c, "GeneratorFunction")),
-				(e.prototype = Object.create(b)),
-				e
-			  );
-			}),
-			(e.awrap = function (e) {
-			  return { __await: e };
-			}),
-			w(x.prototype),
-			l(x.prototype, s, function () {
-			  return this;
-			}),
-			(e.AsyncIterator = x),
-			(e.async = function (t, n, r, i, o) {
-			  void 0 === o && (o = Promise);
-			  var a = new x(u(t, n, r, i), o);
-			  return e.isGeneratorFunction(n)
-				? a
-				: a.next().then(function (e) {
-					return e.done ? e.value : a.next();
-				  });
-			}),
-			w(b),
-			l(b, c, "Generator"),
-			l(b, o, function () {
-			  return this;
-			}),
-			l(b, "toString", function () {
-			  return "[object Generator]";
-			}),
-			(e.keys = function (e) {
-			  var t = Object(e),
-				n = [];
-			  for (var r in t) n.push(r);
-			  return (
-				n.reverse(),
-				function e() {
-				  for (; n.length; ) {
-					var r = n.pop();
-					if (r in t) return (e.value = r), (e.done = !1), e;
-				  }
-				  return (e.done = !0), e;
-				}
-			  );
-			}),
-			(e.values = O),
-			(C.prototype = {
-			  constructor: C,
-			  reset: function (e) {
-				if (
-				  ((this.prev = 0),
-				  (this.next = 0),
-				  (this.sent = this._sent = void 0),
-				  (this.done = !1),
-				  (this.delegate = null),
-				  (this.method = "next"),
-				  (this.arg = void 0),
-				  this.tryEntries.forEach(S),
-				  !e)
-				)
-				  for (var t in this)
-					"t" === t.charAt(0) &&
-					  n.call(this, t) &&
-					  !isNaN(+t.slice(1)) &&
-					  (this[t] = void 0);
-			  },
-			  stop: function () {
-				this.done = !0;
-				var e = this.tryEntries[0].completion;
-				if ("throw" === e.type) throw e.arg;
-				return this.rval;
-			  },
-			  dispatchException: function (e) {
-				if (this.done) throw e;
-				var t = this;
-				function r(n, r) {
-				  return (
-					(a.type = "throw"),
-					(a.arg = e),
-					(t.next = n),
-					r && ((t.method = "next"), (t.arg = void 0)),
-					!!r
-				  );
-				}
-				for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-				  var o = this.tryEntries[i],
-					a = o.completion;
-				  if ("root" === o.tryLoc) return r("end");
-				  if (o.tryLoc <= this.prev) {
-					var s = n.call(o, "catchLoc"),
-					  c = n.call(o, "finallyLoc");
-					if (s && c) {
-					  if (this.prev < o.catchLoc) return r(o.catchLoc, !0);
-					  if (this.prev < o.finallyLoc) return r(o.finallyLoc);
-					} else if (s) {
-					  if (this.prev < o.catchLoc) return r(o.catchLoc, !0);
-					} else {
-					  if (!c)
-						throw new Error("try statement without catch or finally");
-					  if (this.prev < o.finallyLoc) return r(o.finallyLoc);
-					}
-				  }
-				}
-			  },
-			  abrupt: function (e, t) {
-				for (var r = this.tryEntries.length - 1; r >= 0; --r) {
-				  var i = this.tryEntries[r];
-				  if (
-					i.tryLoc <= this.prev &&
-					n.call(i, "finallyLoc") &&
-					this.prev < i.finallyLoc
-				  ) {
-					var o = i;
-					break;
-				  }
-				}
-				o &&
-				  ("break" === e || "continue" === e) &&
-				  o.tryLoc <= t &&
-				  t <= o.finallyLoc &&
-				  (o = null);
-				var a = o ? o.completion : {};
-				return (
-				  (a.type = e),
-				  (a.arg = t),
-				  o
-					? ((this.method = "next"), (this.next = o.finallyLoc), f)
-					: this.complete(a)
-				);
-			  },
-			  complete: function (e, t) {
-				if ("throw" === e.type) throw e.arg;
-				return (
-				  "break" === e.type || "continue" === e.type
-					? (this.next = e.arg)
-					: "return" === e.type
-					? ((this.rval = this.arg = e.arg),
-					  (this.method = "return"),
-					  (this.next = "end"))
-					: "normal" === e.type && t && (this.next = t),
-				  f
-				);
-			  },
-			  finish: function (e) {
-				for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-				  var n = this.tryEntries[t];
-				  if (n.finallyLoc === e)
-					return this.complete(n.completion, n.afterLoc), S(n), f;
-				}
-			  },
-			  catch: function (e) {
-				for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-				  var n = this.tryEntries[t];
-				  if (n.tryLoc === e) {
-					var r = n.completion;
-					if ("throw" === r.type) {
-					  var i = r.arg;
-					  S(n);
-					}
-					return i;
-				  }
-				}
-				throw new Error("illegal catch attempt");
-			  },
-			  delegateYield: function (e, t, n) {
-				return (
-				  (this.delegate = { iterator: O(e), resultName: t, nextLoc: n }),
-				  "next" === this.method && (this.arg = void 0),
-				  f
-				);
-			  },
-			}),
-			e
-		  );
+				}),
+				(e.values = O),
+				(C.prototype = {
+					constructor: C,
+					reset: function(e) {
+						if (((this.prev = 0),
+								(this.next = 0),
+								(this.sent = this._sent = void 0),
+								(this.done = !1),
+								(this.delegate = null),
+								(this.method = "next"),
+								(this.arg = void 0),
+								this.tryEntries.forEach(S),
+								!e))
+							for (var t in this)
+								"t" === t.charAt(0) && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0);
+					},
+					stop: function() {
+						this.done = !0;
+						var e = this.tryEntries[0].completion;
+						if ("throw" === e.type)
+							throw e.arg;
+						return this.rval;
+					},
+					dispatchException: function(e) {
+						if (this.done)
+							throw e;
+						var t = this;
+
+						function r(n, r) {
+							return ((a.type = "throw"),
+								(a.arg = e),
+								(t.next = n),
+								r && ((t.method = "next"),
+									(t.arg = void 0)),
+								!!r);
+						}
+						for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+							var o = this.tryEntries[i],
+								a = o.completion;
+							if ("root" === o.tryLoc)
+								return r("end");
+							if (o.tryLoc <= this.prev) {
+								var s = n.call(o, "catchLoc"),
+									c = n.call(o, "finallyLoc");
+								if (s && c) {
+									if (this.prev < o.catchLoc)
+										return r(o.catchLoc, !0);
+									if (this.prev < o.finallyLoc)
+										return r(o.finallyLoc);
+								} else if (s) {
+									if (this.prev < o.catchLoc)
+										return r(o.catchLoc, !0);
+								} else {
+									if (!c)
+										throw new Error("try statement without catch or finally");
+									if (this.prev < o.finallyLoc)
+										return r(o.finallyLoc);
+								}
+							}
+						}
+					},
+					abrupt: function(e, t) {
+						for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+							var i = this.tryEntries[r];
+							if (i.tryLoc <= this.prev && n.call(i, "finallyLoc") && this.prev < i.finallyLoc) {
+								var o = i;
+								break;
+							}
+						}
+						o && ("break" === e || "continue" === e) && o.tryLoc <= t && t <= o.finallyLoc && (o = null);
+						var a = o ? o.completion : {};
+						return ((a.type = e),
+							(a.arg = t),
+							o ? ((this.method = "next"),
+								(this.next = o.finallyLoc),
+								f) : this.complete(a));
+					},
+					complete: function(e, t) {
+						if ("throw" === e.type)
+							throw e.arg;
+						return ("break" === e.type || "continue" === e.type ? (this.next = e.arg) : "return" === e.type ? ((this.rval = this.arg = e.arg),
+								(this.method = "return"),
+								(this.next = "end")) : "normal" === e.type && t && (this.next = t),
+							f);
+					},
+					finish: function(e) {
+						for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+							var n = this.tryEntries[t];
+							if (n.finallyLoc === e)
+								return this.complete(n.completion, n.afterLoc),
+									S(n),
+									f;
+						}
+					},
+					catch: function(e) {
+						for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+							var n = this.tryEntries[t];
+							if (n.tryLoc === e) {
+								var r = n.completion;
+								if ("throw" === r.type) {
+									var i = r.arg;
+									S(n);
+								}
+								return i;
+							}
+						}
+						throw new Error("illegal catch attempt");
+					},
+					delegateYield: function(e, t, n) {
+						return ((this.delegate = {
+								iterator: O(e),
+								resultName: t,
+								nextLoc: n
+							}),
+							"next" === this.method && (this.arg = void 0),
+							f);
+					},
+				}),
+				e);
 		}
 		t.default = {
-		  name: "sni",
-		  state: i()({}, { notices: [], fetchLoading: !1 }),
-		  reducers: {
-			setState(e, t) {
-			  var n = t.payload;
-			  return i()({}, e, n);
+			name: "sni",
+			state: i()({}, {
+				notices: [],
+				fetchLoading: !1
+			}),
+			reducers: {
+				setState(e, t) {
+					var n = t.payload;
+					return i()({}, e, n);
+				},
 			},
-		  },
-		  effects: {
-			fetch(e, t) {
-			  var n = t.put;
-			  return a().mark(function e() {
-				var t;
-				return a().wrap(function (e) {
-				  for (;;)
-					switch ((e.prev = e.next)) {
-					  case 0:
-						return (
-						  (e.next = 2),
-						  n({ type: "setState", payload: { fetchLoading: !0 } })
-						);
-					  case 2:
-						return (
-						  (e.next = 4),
-						  Object(o.a)(
-							"/" + window.settings.secure_path + "/sni/fetch"
-						  )
-						);
-					  case 4:
-						return (
-						  (t = e.sent),
-						  (e.next = 7),
-						  n({ type: "setState", payload: { fetchLoading: !1 } })
-						);
-					  case 7:
-						if (200 === t.code) {
-						  e.next = 9;
-						  break;
-						}
-						return e.abrupt("return");
-					  case 9:
-						return (
-						  (e.next = 11),
-						  n({ type: "setState", payload: { notices: t.data } })
-						);
-					  case 11:
-					  case "end":
-						return e.stop();
-					}
-				}, e);
-			  })();
+			effects: {
+				fetch(e, t) {
+					var n = t.put;
+					return a().mark(function e() {
+						var t;
+						return a().wrap(function(e) {
+							for (;;)
+								switch ((e.prev = e.next)) {
+									case 0:
+										return ((e.next = 2),
+											n({
+												type: "setState",
+												payload: {
+													fetchLoading: !0
+												}
+											}));
+									case 2:
+										return ((e.next = 4),
+											Object(o.a)("/" + window.settings.secure_path + "/sni/fetch"));
+									case 4:
+										return ((t = e.sent),
+											(e.next = 7),
+											n({
+												type: "setState",
+												payload: {
+													fetchLoading: !1
+												}
+											}));
+									case 7:
+										if (200 === t.code) {
+											e.next = 9;
+											break;
+										}
+										return e.abrupt("return");
+									case 9:
+										return ((e.next = 11),
+											n({
+												type: "setState",
+												payload: {
+													notices: t.data
+												}
+											}));
+									case 11:
+									case "end":
+										return e.stop();
+								}
+						}, e);
+					})();
+				},
+				save(e, t) {
+					var n = e.params,
+						r = e.callback,
+						i = t.put;
+					return a().mark(function e() {
+						var t;
+						return a().wrap(function(e) {
+							for (;;)
+								switch ((e.prev = e.next)) {
+									case 0:
+										return ((e.next = 2),
+											i({
+												type: "setState",
+												payload: {
+													saveLoading: !0
+												}
+											}));
+									case 2:
+										return ((e.next = 4),
+											Object(o.b)("/" + window.settings.secure_path + "/sni/save", n));
+									case 4:
+										return ((t = e.sent),
+											(e.next = 7),
+											i({
+												type: "setState",
+												payload: {
+													saveLoading: !1
+												}
+											}));
+									case 7:
+										if (200 === t.code) {
+											e.next = 9;
+											break;
+										}
+										return e.abrupt("return");
+									case 9:
+										return (e.next = 11),
+											i({
+												type: "fetch"
+											});
+									case 11:
+										"function" == typeof r && r();
+									case 12:
+									case "end":
+										return e.stop();
+								}
+						}, e);
+					})();
+				},
+				drop(e, t) {
+					var n = e.id,
+						r = t.put;
+					return a().mark(function e() {
+						return a().wrap(function(e) {
+							for (;;)
+								switch ((e.prev = e.next)) {
+									case 0:
+										return ((e.next = 2),
+											Object(o.b)("/" + window.settings.secure_path + "/sni/drop", {
+												id: n
+											}));
+									case 2:
+										if (200 === e.sent.code) {
+											e.next = 5;
+											break;
+										}
+										return e.abrupt("return");
+									case 5:
+										return (e.next = 7),
+											r({
+												type: "fetch"
+											});
+									case 7:
+									case "end":
+										return e.stop();
+								}
+						}, e);
+					})();
+				},
+				show(e, t) {
+					var n = e.id,
+						r = t.put;
+					return a().mark(function e() {
+						return a().wrap(function(e) {
+							for (;;)
+								switch ((e.prev = e.next)) {
+									case 0:
+										return ((e.next = 2),
+											Object(o.b)("/" + window.settings.secure_path + "/sni/show", {
+												id: n
+											}));
+									case 2:
+										if (200 === e.sent.code) {
+											e.next = 5;
+											break;
+										}
+										return e.abrupt("return");
+									case 5:
+										return (e.next = 7),
+											r({
+												type: "fetch"
+											});
+									case 7:
+									case "end":
+										return e.stop();
+								}
+						}, e);
+					})();
+				},
 			},
-			save(e, t) {
-			  var n = e.params,
-				r = e.callback,
-				i = t.put;
-			  return a().mark(function e() {
-				var t;
-				return a().wrap(function (e) {
-				  for (;;)
-					switch ((e.prev = e.next)) {
-					  case 0:
-						return (
-						  (e.next = 2),
-						  i({ type: "setState", payload: { saveLoading: !0 } })
-						);
-					  case 2:
-						return (
-						  (e.next = 4),
-						  Object(o.b)(
-							"/" + window.settings.secure_path + "/sni/save",
-							n
-						  )
-						);
-					  case 4:
-						return (
-						  (t = e.sent),
-						  (e.next = 7),
-						  i({ type: "setState", payload: { saveLoading: !1 } })
-						);
-					  case 7:
-						if (200 === t.code) {
-						  e.next = 9;
-						  break;
-						}
-						return e.abrupt("return");
-					  case 9:
-						return (e.next = 11), i({ type: "fetch" });
-					  case 11:
-						"function" == typeof r && r();
-					  case 12:
-					  case "end":
-						return e.stop();
-					}
-				}, e);
-			  })();
-			},
-			drop(e, t) {
-			  var n = e.id,
-				r = t.put;
-			  return a().mark(function e() {
-				return a().wrap(function (e) {
-				  for (;;)
-					switch ((e.prev = e.next)) {
-					  case 0:
-						return (
-						  (e.next = 2),
-						  Object(o.b)(
-							"/" + window.settings.secure_path + "/sni/drop",
-							{ id: n }
-						  )
-						);
-					  case 2:
-						if (200 === e.sent.code) {
-						  e.next = 5;
-						  break;
-						}
-						return e.abrupt("return");
-					  case 5:
-						return (e.next = 7), r({ type: "fetch" });
-					  case 7:
-					  case "end":
-						return e.stop();
-					}
-				}, e);
-			  })();
-			},
-			show(e, t) {
-			  var n = e.id,
-				r = t.put;
-			  return a().mark(function e() {
-				return a().wrap(function (e) {
-				  for (;;)
-					switch ((e.prev = e.next)) {
-					  case 0:
-						return (
-						  (e.next = 2),
-						  Object(o.b)(
-							"/" + window.settings.secure_path + "/sni/show",
-							{ id: n }
-						  )
-						);
-					  case 2:
-						if (200 === e.sent.code) {
-						  e.next = 5;
-						  break;
-						}
-						return e.abrupt("return");
-					  case 5:
-						return (e.next = 7), r({ type: "fetch" });
-					  case 7:
-					  case "end":
-						return e.stop();
-					}
-				}, e);
-			  })();
-			},
-		  },
 		};
-	  },
+	},
 	lFUy: function(e, t, n) {
 		"use strict";
 		var r = n("8Z/V"),
@@ -84585,7 +84521,8 @@
 											n({
 												type: "setState",
 												payload: {
-													knowledges: t.data, staff: t.staff
+													knowledges: t.data,
+													staff: t.staff
 												}
 											});
 									case 11:
@@ -93022,14 +92959,20 @@
 					span: 6
 				}, "Số Tiền Hoa Hồng"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.commission_balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}))), this.state.order.actual_commission_balance && g.a.createElement(E.a, {
+				}, (this.state.order.commission_balance / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), this.state.order.actual_commission_balance && g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
 					span: 6
 				}, "Số Tiền Thực Tế Được Cấp"), g.a.createElement(S.a, {
 					span: 18
-				}, (this.state.order.actual_commission_balance / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}))), g.a.createElement(E.a, {
+				}, (this.state.order.actual_commission_balance / 100).toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				}))), g.a.createElement(E.a, {
 					gutter: [16, 16],
 					style: n
 				}, g.a.createElement(S.a, {
@@ -93097,7 +93040,7 @@
 					r = e.pagination,
 					a = e.filter,
 					m = [{
-						title: "# Số Đơn Hàng",
+						title: "# Mã Đơn Hàng",
 						dataIndex: "trade_no",
 						key: "trade_no",
 						render: (e, t) => g.a.createElement(M, {
@@ -93106,45 +93049,9 @@
 							href: "javascript:void(0);"
 						}, e.substr(0, 3), "...", e.substr(-3)))
 					}, {
-						title: "Mã đơn hàng",
+						title: "Số Đơn Hàng",
 						dataIndex: "id",
 						key: "id"
-					}, {
-						title: "Loại",
-						dataIndex: "type",
-						key: "type",
-						render: e => ({
-							1: "Mua Mới",
-							2: "Gia Hạn",
-							3: "Thay Đổi",
-							4: "Gói Dữ Liệu",
-							5: "Nạp Tiền"
-						} [e])
-					}, {
-						title: "Gói Dịch Vụ",
-						dataIndex: "plan_name",
-						key: "plan_name"
-					}, {
-						title: "Chu Kỳ",
-						dataIndex: "period",
-						key: "period",
-						align: "center",
-						render: (e, t) => g.a.createElement(p.a, null, y.a.periodText[t.period])
-					}, {
-						title: "Mã giảm giá",
-						dataIndex: "coupon_name",
-						key: "coupon_name",
-						align: "center",
-						render: (e, t) => g.a.createElement(p.a, null, t.coupon_name ? t.coupon_name : "-")
-					}, {
-						title: "Số Tiền Thanh Toán",
-						dataIndex: "total_amount",
-						key: "total_amount",
-						align: "right",
-						render: e => (e / 100).toLocaleString('vi-VN', {
-							style: 'currency',
-							currency: 'VND'
-						})
 					}, {
 						title: g.a.createElement("span", null, g.a.createElement(f.a, {
 							placement: "top",
@@ -93182,11 +93089,50 @@
 							type: "caret-down"
 						})))))
 					}, {
+						title: "Loại",
+						dataIndex: "type",
+						key: "type",
+						render: e => ({
+							1: "Mua Mới",
+							2: "Gia Hạn",
+							3: "Thay Đổi",
+							4: "Gói Dữ Liệu",
+							5: "Nạp Tiền"
+						} [e])
+					}, {
+						title: "Gói Dịch Vụ",
+						dataIndex: "plan_name",
+						key: "plan_name"
+					}, {
+						title: "Chu Kỳ",
+						dataIndex: "period",
+						key: "period",
+						align: "center",
+						render: (e, t) => g.a.createElement(p.a, null, y.a.periodText[t.period])
+					}, {
+						title: "Mã giảm giá",
+						dataIndex: "coupon_name",
+						key: "coupon_name",
+						align: "center",
+						render: (e, t) => g.a.createElement(p.a, null, t.coupon_name ? t.coupon_name : "-")
+					}, {
+						title: "Số Tiền Thanh Toán",
+						dataIndex: "total_amount",
+						key: "total_amount",
+						align: "right",
+						render: e => (e / 100).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						})
+					}, {
 						title: "Số Tiền Hoa Hồng",
 						dataIndex: "commission_balance",
 						key: "commission_balance",
 						align: "right",
-						render: (e, t) => 0 === t.status || 2 === t.status ? "-" : e ? (e / 100).toLocaleString('vi-VN', {style : 'currency', currency : 'VND'}) : "-"
+						render: (e, t) => 0 === t.status || 2 === t.status ? "-" : e ? (e / 100).toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
 					}, {
 						title: g.a.createElement("span", null, "Trạng Thái Hoa Hồng ", g.a.createElement(f.a, {
 							placement: "top",
@@ -101567,11 +101513,8 @@
 					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
 					value: e.ip,
 					onChange: e => this.formChange("ip", e.target.value)
-				}))), 
-
-				
-				y.a.createElement("div", { 
-					className: "form-group" 
+				}))), y.a.createElement("div", {
+					className: "form-group"
 				}, y.a.createElement("label", null, "LoadIPs"), y.a.createElement(N.a, {
 					mode: "tags",
 					value: e.ips || [],
@@ -101580,9 +101523,7 @@
 					},
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
-				})),
-				
-				y.a.createElement("div", {
+				})), y.a.createElement("div", {
 					className: "row"
 				}, y.a.createElement("div", {
 					className: "form-group col-md-4 col-xs-12"
@@ -102134,11 +102075,9 @@
 					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
 					value: e.ip,
 					onChange: e => this.formChange("ip", e.target.value)
-				}))),
-				
-				y.a.createElement("div", { 
-					className: "form-group" 
-				},  y.a.createElement("label", null, "LoadIPs"), y.a.createElement(N.a, {
+				}))), y.a.createElement("div", {
+					className: "form-group"
+				}, y.a.createElement("label", null, "LoadIPs"), y.a.createElement(N.a, {
 					mode: "tags",
 					value: e.ips || [],
 					style: {
@@ -102146,9 +102085,7 @@
 					},
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
-				})), 
-				
-				y.a.createElement("div", {
+				})), y.a.createElement("div", {
 					className: "row"
 				}, y.a.createElement("div", {
 					className: "form-group col-md-12 col-xs-12"
@@ -102430,7 +102367,7 @@
 							onClick: () => this.update(t, "show", parseInt(e) ? 0 : 1)
 						})
 					}, {
-						title: "Report",
+						title: "Kiểm Tra",
 						dataIndex: "report",
 						key: "report",
 						render: (e, t) => y.a.createElement(f.a, {
@@ -102438,7 +102375,9 @@
 							checked: parseInt(e),
 							onClick: () => this.update(t, "report", parseInt(e) ? 0 : 1)
 						})
-					}, {
+					},
+					
+					{
 						title: y.a.createElement("span", null, y.a.createElement(u.a, {
 							placement: "top",
 							title: y.a.createElement("div", null, y.a.createElement(h.a, {
@@ -102448,16 +102387,34 @@
 							}), " Không có người sử dụng hoặc báo cáo lỗi từ máy chủ.", y.a.createElement("br", null), y.a.createElement(h.a, {
 								status: "processing"
 							}), " Hoạt động bình thường.", y.a.createElement("br", null))
-						}, "Server ", y.a.createElement(m.a, {
+						}, "Máy Chủ ", y.a.createElement(m.a, {
 							type: "question-circle"
 						}))),
 						dataIndex: "name",
 						key: "name",
-						render: (e, t) => y.a.createElement(y.a.Fragment, null, y.a.createElement(h.a, {
-							status: D[t.available_status]
-						}), y.a.createElement("span", null, e))
-					}, {
-						title: "Địa Chỉ",
+						render: (e, t) => {
+              const tooltipContent = t.status_ip && Object.entries(t.status_ip).map(([ip, status]) => y.a.createElement("div", null, y.a.createElement(h.a, {
+                  status: D[status]
+              }),ip));
+          
+              return y.a.createElement(y.a.Fragment, null, y.a.createElement(h.a, {
+                  status: D[t.available_status]
+              }), tooltipContent ? y.a.createElement(u.a, {
+                  placement: "top",
+                  title: tooltipContent,
+              }, y.a.createElement("span", {
+                  style: {
+                      cursor: "pointer"
+                  }
+              }, y.a.createElement("i", {
+                  className: "fa fa-sitemap",
+                  "aria-hidden": "true"
+              }))) : null, y.a.createElement("span", null," ", e))
+          }
+					},
+					
+					{
+						title: "Địa Chỉ Máy Chủ",
 						dataIndex: "host",
 						key: "host",
 						render: (e, t) => y.a.createElement("span", {
@@ -102469,65 +102426,43 @@
 									l.a.success("Sao chép thành công")
 							}
 						}, t.host + ":" + t.port)
-					}, 
-					
-					{
-                        title: y.a.createElement(
-                          "span",
-                          null,
-                          y.a.createElement(
-                            u.a,
-                            {
-                              placement: "top",
-                              title: "Phụ thuộc vào tần suất báo cáo của máy chủ",
-                            },
-                            "Số lượng người ",
-                            y.a.createElement(m.a, { type: "question-circle" })
-                          )
-                        ),
-                        dataIndex: "online",
-                        key: "online",
-                        align: "left",
-                        width: 130,
-                        sorter: (e, t) => e.online - t.online,
-                        render: (e, t) => {
-							const totalCount = t.online_ip
-							  ? Object.values(t.online_ip).reduce((a, b) => Number(a) + Number(b), 0)
-							  : 0;
-						  
-							if (t.online_ip) {
-							  const tooltipContent = Object.entries(t.online_ip).map(([ip, count]) => y.a.createElement("div", null, ip, " - ", y.a.createElement(m.a, { type: "user" })," ", count));
-						  
-							  return y.a.createElement(
-								y.a.Fragment,
-								null,
-								y.a.createElement(
-								  u.a,
-								  {
-									placement: "top",
-									title: tooltipContent,
-								  },
-								  y.a.createElement(
-									"span",
-									{ style: { cursor: "pointer" } },
-									y.a.createElement(m.a, { type: "user" }),
-									" ",
-									totalCount
-								  )
-								)
-							  );
-							} else {
-							  return y.a.createElement(
-								"span",
-								{ style: { cursor: "pointer" } },
-								y.a.createElement(m.a, { type: "user" }),
-								" ",
-								e || 0
-							  );
-							}
-						  },
-                      },
-                    {
+					}, {
+						title: y.a.createElement(u.a, {
+							placement: "top",
+							title: "Phụ thuộc vào tần suất báo cáo của máy chủ",
+						}, "Số lượng người ", y.a.createElement(m.a, {
+							type: "question-circle"
+						})),
+						dataIndex: "online",
+						key: "online",
+						align: "left",
+						width: 130,
+						sorter: (e, t) => e.online - t.online,
+						render: (e, t) => {
+							const totalCount = t.online_ip ? Object.values(t.online_ip).reduce((a, b) => Number(a) + Number(b), 0) : 0;
+							const tooltipContent = t.online_ip && Object.entries(t.online_ip).map(([ip, count]) => y.a.createElement("div", null, ip, " - ", y.a.createElement(m.a, {
+								type: "user"
+							}), " ", count));
+
+							return y.a.createElement(y.a.Fragment, null, tooltipContent ? y.a.createElement(u.a, {
+								placement: "top",
+								title: tooltipContent,
+							}, y.a.createElement("span", {
+								style: {
+									cursor: "pointer"
+								}
+							}, y.a.createElement("i", {
+								className: "fa fa-sitemap",
+								"aria-hidden": "true"
+							}), " ", totalCount)) : y.a.createElement("span", {
+								style: {
+									cursor: "pointer"
+								}
+							}, y.a.createElement(m.a, {
+								type: "user"
+							}), " ", e || 0));
+						},
+					}, {
 						title: y.a.createElement(u.a, {
 							placement: "top",
 							title: "Số lượng người sử dụng sẽ bị trừ đi theo tỷ lệ nhân đôi lưu lượng sử dụng."
@@ -102629,9 +102564,59 @@
 					dataSource: N ? E.filter((e => -1 !== JSON.stringify(e).indexOf(N))) : E,
 					renderItem: e => y.a.createElement(i.a.Item, {
 						className: "aikopanel_node_mobile ".concat(e.parent_id ? "child_node" : ""),
-						actions: [y.a.createElement(y.a.Fragment, null, this.getTypeTag(e.type, e.parent_id ? e.id + " => " + e.parent_id : e.id), y.a.createElement(g.a, null, y.a.createElement(m.a, {
+						actions: [y.a.createElement(y.a.Fragment, null, this.getTypeTag(e.type, e.parent_id ? e.id + " => " + e.parent_id : e.id), y.a.createElement("div", {
+							style: {
+								cursor: "pointer",
+								display: "inline-block"
+							}
+						}, y.a.createElement(g.a, null, e.online_ip && Object.keys(e.online_ip).length > 0 ? y.a.createElement(u.a, {
+							placement: "top",
+							trigger: "click",
+							title: y.a.createElement("div", null, Object.entries(e.online_ip || {}).map(([ip, count]) => y.a.createElement("div", {
+								key: ip
+							}, ip, " - ", y.a.createElement(m.a, {
+								type: "user"
+							}), " ", count))),
+						}, y.a.createElement("span", {
+							style: {
+								fontWeight: "400",
+								fontSize: "15px",
+								display: "inline-flex",
+								alignItems: "center"
+							}
+						}, Object.keys(e.online_ip).length, y.a.createElement("span", {
+							style: {
+								margin: "0 1.2px"
+							}
+						}), y.a.createElement("i", {
+							className: "fa fa-sitemap",
+							"aria-hidden": "true",
+							style: {
+								fontSize: "10px",
+							}
+						}), y.a.createElement("span", {
+							style: {
+								fontWeight: "normal",
+								margin: "0px 4px 0px 6px"
+							}
+						}, " - "), y.a.createElement("span", {
+							style: {
+								fontWeight: "500",
+								fontSize: "12px",
+								display: "inline-flex",
+								alignItems: "center"
+							}
+						}, y.a.createElement(m.a, {
 							type: "user"
-						}), " ", e.online || 0), y.a.createElement(g.a, null, e.rate, " x"))],
+						}), y.a.createElement("span", {
+							style: {
+								margin: "0 0 0 2px",
+								fontSize: "14px",
+								fontWeight: "normal",
+							}
+						}, e.online || 0)))) : y.a.createElement("span", null, y.a.createElement(m.a, {
+							type: "user"
+						}), " ", e.online || 0)), y.a.createElement(g.a, null, e.rate, " x")))],
 						extra: y.a.createElement(y.a.Fragment, null, y.a.createElement(f.a, {
 							size: "small",
 							checked: parseInt(e.show),
@@ -109122,10 +109107,9 @@
 					placeholder: "Web sẽ Auto điền nếu dùng AutoDNS",
 					value: e.ip,
 					onChange: e => this.formChange("ip", e.target.value)
-				}))), 
-				f.a.createElement("div",{ 
-					className: "form-group" 
-				},  f.a.createElement("label", null, "LoadIPs"), f.a.createElement(s.a, {
+				}))), f.a.createElement("div", {
+					className: "form-group"
+				}, f.a.createElement("label", null, "LoadIPs"), f.a.createElement(s.a, {
 					mode: "tags",
 					value: e.ips || [],
 					style: {
@@ -109133,9 +109117,7 @@
 					},
 					placeholder: "Nhập và chọn để thêm IPs nút",
 					onChange: (e) => this.formChange("ips", e.length > 0 ? e : null),
-				})), 
-				
-				f.a.createElement("div", {
+				})), f.a.createElement("div", {
 					className: "row"
 				}, f.a.createElement("div", {
 					className: "form-group col-md-4 col-xs-12"
