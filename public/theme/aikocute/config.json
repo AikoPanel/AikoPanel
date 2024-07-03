@@ -1,0 +1,61 @@
+{
+  "name": "AikoPanel",
+  "description": "An alternative frontend use React & Vite for AikoPanel",
+  "version": "beta-1.4",
+  "images": "https://opengraph.githubassets.com/483f1441cef28814e23b5e3fed9acd1be671db0019d9b58e65d38afd16cca0ce/aikopanel/aikopanel",
+  "configs": [
+    {
+      "label": "Theme Direction",
+      "placeholder": "ltr",
+      "field_name": "theme_direction",
+      "field_type": "select",
+      "select_options": {
+        "ltr": "ltr",
+        "rtl": "rtl"
+      },
+      "default_value": "ltr"
+    },
+    {
+      "label": "Google Analytics Measurement ID",
+      "placeholder": "UA-XXXXXXX-X",
+      "field_name": "google_analytics_measurement_id",
+      "field_type": "input"
+    },
+    {
+      "label": "Mini Drawer",
+      "placeholder": "false",
+      "field_name": "mini_drawer",
+      "field_type": "select",
+      "select_options": {
+        "false": "false",
+        "true": "true"
+      },
+      "default_value": "false"
+    },
+    {
+      "label": "Container",
+      "placeholder": "true",
+      "field_name": "container",
+      "field_type": "select",
+      "select_options": {
+        "false": "false",
+        "true": "true"
+      },
+      "default_value": "true"
+    },
+    {
+      "label": "Languages",
+      "placeholder": "vi-VN,en-US,zh-CN",
+      "field_name": "languages",
+      "field_type": "input",
+      "default_value": "vi-VN,en-US,zh-CN"
+    },
+    {
+      "label": "Start Year",
+      "placeholder": "2022",
+      "field_name": "start_year",
+      "field_type": "input",
+      "default_value": 2021
+    }
+  ]
+}
