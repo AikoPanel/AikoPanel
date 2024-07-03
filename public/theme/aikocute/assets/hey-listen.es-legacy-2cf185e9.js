@@ -1,0 +1,1 @@
+System.register([],(function(e,t){"use strict";return{execute:function(){var t=e("w",(function(){})),n=e("i",(function(){}));const r=Object.freeze(Object.defineProperty({__proto__:null,invariant:n,warning:t},Symbol.toStringTag,{value:"Module"}));e("h",r)}}}));
