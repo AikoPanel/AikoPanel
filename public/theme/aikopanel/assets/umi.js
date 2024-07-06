@@ -19086,7 +19086,7 @@
 					className: "sr-only"
 				}, "Loading...")) : i.a.createElement("div", {
 					className: "row"
-				}, e.filter((e => !this.state.tabs || !(1 !== this.state.tabs || !(e.one_day_price || e.month_price || e.two_month_price || e.quarter_price || e.half_year_price || e.year_price || e.two_year_price || e.three_year_price)) || !(2 !== this.state.tabs || !e.onetime_price) || void 0)).map((e => {
+				}, e.filter((e => !this.state.tabs || !(1 !== this.state.tabs || !(e.one_day_price || e.week_price || e.month_price || e.two_month_price || e.quarter_price || e.half_year_price || e.year_price || e.two_year_price || e.three_year_price)) || !(2 !== this.state.tabs || !e.onetime_price) || void 0)).map((e => {
 					var n = this.getUnitPriceTag(e),
 						r = Object(d.c)(e.content),
 						o = null !== e.capacity_limit && e.capacity_limit <= 0,
@@ -53789,6 +53789,9 @@
 			periodText: {
 				one_day_price: () => Object(r.formatMessage)({
 					id: "1Ngày"
+				}),
+				week_price: () => Object(r.formatMessage)({
+					id: "1Tuần"
 				}),
 				month_price: () => Object(r.formatMessage)({
 					id: "1Tháng"
