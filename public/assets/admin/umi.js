@@ -78984,6 +78984,7 @@
 							group_id: void 0,
 							one_day_price: null,
 							month_price: null,
+							week_price: null,
 							two_month_price: null,
 							quarter_price: null,
 							half_year_price: null,
@@ -79082,14 +79083,24 @@
 					title: "Nếu bạn để trống số tiền, thì không có giao dịch bán hàng sẽ được thực hiện."
 				}, m.a.createElement(h.a, {
 					type: "info-circle"
-				}))), m.a.createElement("div", {
+				}))), 
+				m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Ngày"), m.a.createElement(C.a, {
 					value: null !== this.state.record.one_day_price ? this.state.record.one_day_price : void 0,
 					onChange: e => this.priceOnChange("one_day_price", e.target.value)
-				})), m.a.createElement("div", {
+				})),
+				m.a.createElement("div", {
+					className: "form-group"
+				}, m.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "1 Tuần"), m.a.createElement(C.a, {
+					value: null !== this.state.record.week_price ? this.state.record.week_price : void 0,
+					onChange: e => this.priceOnChange("week_price", e.target.value)
+				})),
+				 m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -79553,6 +79564,14 @@
 							currency: 'VND'
 						}) : "-"
 					}, {
+						title: "1 Tuần",
+						dataIndex: "week_price",
+						key: "week_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					},{
 						title: "1 Tháng",
 						dataIndex: "month_price",
 						key: "month_price",
@@ -97897,6 +97916,7 @@
 			},
 			periodText: {
 				one_day_price: "1 Ngày",
+				week_price: "1 Tuần",
 				month_price: "1 Tháng",
 				two_month_price: "2 Tháng",
 				quarter_price: "3 Tháng",

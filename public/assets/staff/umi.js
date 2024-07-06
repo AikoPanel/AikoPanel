@@ -73849,6 +73849,7 @@
 							group_id: void 0,
 							one_day_price: null,
 							month_price: null,
+							week_price: null,
 							two_month_price: null,
 							quarter_price: null,
 							half_year_price: null,
@@ -73967,6 +73968,14 @@
 						title: "1 Ngày",
 						dataIndex: "one_day_price",
 						key: "one_day_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					},{
+						title: "1 Tuần",
+						dataIndex: "week_price",
+						key: "week_price",
 						render: e => null !== e ? e.toLocaleString('vi-VN', {
 							style: 'currency',
 							currency: 'VND'
@@ -90999,6 +91008,7 @@
 			},
 			periodText: {
 				one_day_price: "1 Ngày",
+				week_price: "1 Tuần",
 				month_price: "1 Tháng",
 				two_month_price: "2 Tháng",
 				quarter_price: "3 Tháng",
