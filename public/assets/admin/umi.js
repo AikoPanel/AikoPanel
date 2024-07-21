@@ -6376,7 +6376,7 @@
 				})), f.a.createElement(m, {
                     title: "Chế độ giới hạn thiết bị ( Đơn giản - Nâng cao )",
                     description: "Sau khi kích hoạt, nhiều nút sử dụng cùng một địa chỉ IP chỉ được tính là một thiết bị"
-                }, f.a.createElement(a.a, {
+                }, f.a.createElement(c.a, {
                     checked: parseInt(u.device_limit_mode),
                     onChange: e=>this.set("server", "device_limit_mode", e ? 1 : 0)
                 })))), f.a.createElement(s.a.TabPane, {
