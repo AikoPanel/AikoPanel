@@ -6361,7 +6361,7 @@
 					placeholder: "Vui lòng nhập",
 					defaultValue: u.server_push_interval,
 					onChange: e => this.set("server", "server_push_interval", e.target.value)
-				}))), f.a.createElement("div", {
+				}))),f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Khoảng thời gian xóa dữ liệu trực tuyến của nút đã hết hạn",
@@ -6373,7 +6373,13 @@
 					placeholder: "Vui lòng nhập",
 					defaultValue: u.server_alive_interval,
 					onChange: e => this.set("server", "server_alive_interval", e.target.value)
-				})))), f.a.createElement(s.a.TabPane, {
+				})), f.a.createElement(m, {
+                    title: "Chế độ giới hạn thiết bị ( Đơn giản - Nâng cao )",
+                    description: "Sau khi kích hoạt, nhiều nút sử dụng cùng một địa chỉ IP chỉ được tính là một thiết bị"
+                }, f.a.createElement(a.a, {
+                    checked: parseInt(u.device_limit_mode),
+                    onChange: e=>this.set("server", "device_limit_mode", e ? 1 : 0)
+                })))), f.a.createElement(s.a.TabPane, {
 					tab: "Email",
 					key: "email"
 				}, f.a.createElement("div", {
