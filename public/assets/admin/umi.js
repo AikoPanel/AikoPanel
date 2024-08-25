@@ -6361,7 +6361,7 @@
 					placeholder: "Vui lòng nhập",
 					defaultValue: u.server_push_interval,
 					onChange: e => this.set("server", "server_push_interval", e.target.value)
-				}))), f.a.createElement("div", {
+				}))),f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Khoảng thời gian xóa dữ liệu trực tuyến của nút đã hết hạn",
@@ -6373,7 +6373,13 @@
 					placeholder: "Vui lòng nhập",
 					defaultValue: u.server_alive_interval,
 					onChange: e => this.set("server", "server_alive_interval", e.target.value)
-				})))), f.a.createElement(s.a.TabPane, {
+				})), f.a.createElement(m, {
+                    title: "Chế độ giới hạn thiết bị ( Đơn giản - Nâng cao )",
+                    description: "Sau khi kích hoạt, nhiều nút sử dụng cùng một địa chỉ IP chỉ được tính là một thiết bị"
+                }, f.a.createElement(c.a, {
+                    checked: parseInt(u.device_limit_mode),
+                    onChange: e=>this.set("server", "device_limit_mode", e ? 1 : 0)
+                })))), f.a.createElement(s.a.TabPane, {
 					tab: "Email",
 					key: "email"
 				}, f.a.createElement("div", {
@@ -22760,7 +22766,7 @@
 					defaultValue: t.transfer_enable,
 					placeholder: "Vui lòng nhập lưu lượng.",
 					onChange: e => this.formChange("transfer_enable", e.target.value)
-				})), t.expired_at ? p.a.createElement("div", {
+				})), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -22791,7 +22797,7 @@
 				}, "Reset Theo Năm"), p.a.createElement(c.a.Option, {
 					key: 5,
 					value: 5
-				}, "Reset Mỗi ngày"))) : " ", p.a.createElement("div", {
+				}, "Reset Mỗi ngày"))), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -22807,6 +22813,14 @@
 					placeholder: "Nếu để trống, sẽ không có giới hạn về số lần lấy AppleID.",
 					defaultValue: t.appleid_limit,
 					onChange: e => this.formChange("appleid_limit", e.target.value)
+				})),p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "URL APPLEID"), p.a.createElement(u.a, {
+					placeholder: "Link AppleID riêng biệt",
+					defaultValue: t.appleid_url,
+					onChange: e => this.formChange("appleid_url", e.target.value)
 				})), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
@@ -22925,14 +22939,19 @@
 				}, "Cho Phép Email Này Làm Quản Trị Viên"), p.a.createElement("div", null, p.a.createElement(i.a, {
 					checked: t.is_admin,
 					onChange: e => this.formChange("is_admin", e ? 1 : 0)
-				}))), p.a.createElement("div", {
+				}))), 
+				p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
 				}, "Cho Phép Email Này Truy Cập Trang CTV "), p.a.createElement("div", null, p.a.createElement(i.a, {
 					checked: t.is_staff,
 					onChange: e => this.formChange("is_staff", e ? 1 : 0)
-				}))), t.is_staff ? p.a.createElement("div", {
+				}))), 
+				
+				t.is_staff ? p.a.createElement("div", null,
+				
+				p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -22941,7 +22960,19 @@
 					defaultValue: t.staff_url,
 					placeholder: "Nếu để trống, sẽ không có URL truy cập trang CTV.",
 					onChange: e => this.formChange("staff_url", e.target.value)
-				})) : "", p.a.createElement("div", {
+				})),
+				p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Cho Phép Sửa Giá Của Gói Dịch Vu "), p.a.createElement("div", null, p.a.createElement(i.a, {
+					checked: t.custom_price,
+					onChange: e => this.formChange("custom_price", e ? 1 : 0)
+				}))) 
+				)
+				: "", 
+				
+				p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -79084,33 +79115,43 @@
 				}, m.a.createElement(h.a, {
 					type: "info-circle"
 				}))), 
-				m.a.createElement("div", {
+				
+				
+				m.a.createElement(E.a, {
+					gutter: 10
+				}, 
+				m.a.createElement(S.a, {
+					md: 8
+				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Ngày"), m.a.createElement(C.a, {
 					value: null !== this.state.record.one_day_price ? this.state.record.one_day_price : void 0,
 					onChange: e => this.priceOnChange("one_day_price", e.target.value)
-				})),
-				m.a.createElement("div", {
+				}))),
+				m.a.createElement(S.a, {
+					md: 8
+				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Tuần"), m.a.createElement(C.a, {
 					value: null !== this.state.record.week_price ? this.state.record.week_price : void 0,
 					onChange: e => this.priceOnChange("week_price", e.target.value)
-				})),
-				 m.a.createElement("div", {
+				}))),
+				m.a.createElement(S.a, {
+					md: 8
+				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Tháng"), m.a.createElement(C.a, {
 					value: null !== this.state.record.month_price ? this.state.record.month_price : void 0,
 					onChange: e => this.priceOnChange("month_price", e.target.value)
-				})), m.a.createElement(E.a, {
-					gutter: 10
-				}, m.a.createElement(S.a, {
-					md: 4
+				}))),
+				m.a.createElement(S.a, {
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79118,8 +79159,9 @@
 				}, "2 Tháng"), m.a.createElement(C.a, {
 					value: null !== this.state.record.two_month_price ? this.state.record.two_month_price : void 0,
 					onChange: e => this.priceOnChange("two_month_price", e.target.value)
-				}))), m.a.createElement(S.a, {
-					md: 4
+				}))), 
+				m.a.createElement(S.a, {
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79128,7 +79170,7 @@
 					value: null !== this.state.record.quarter_price ? this.state.record.quarter_price : void 0,
 					onChange: e => this.priceOnChange("quarter_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79137,7 +79179,7 @@
 					value: null !== this.state.record.half_year_price ? this.state.record.half_year_price : void 0,
 					onChange: e => this.priceOnChange("half_year_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79146,7 +79188,7 @@
 					value: null !== this.state.record.year_price ? this.state.record.year_price : void 0,
 					onChange: e => this.priceOnChange("year_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79155,7 +79197,7 @@
 					value: null !== this.state.record.two_year_price ? this.state.record.two_year_price : void 0,
 					onChange: e => this.priceOnChange("two_year_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79163,7 +79205,9 @@
 				}, "3 Năm"), m.a.createElement(C.a, {
 					value: null !== this.state.record.three_year_price ? this.state.record.three_year_price : void 0,
 					onChange: e => this.priceOnChange("three_year_price", e.target.value)
-				})))), m.a.createElement(E.a, {
+				})))), 
+				
+				m.a.createElement(E.a, {
 					gutter: 10
 				}, m.a.createElement(S.a, {
 					md: 12
@@ -79185,7 +79229,9 @@
 					addonAfter: e.currency_symbol,
 					value: null !== this.state.record.reset_price ? this.state.record.reset_price : void 0,
 					onChange: e => this.priceOnChange("reset_price", e.target.value)
-				})))), m.a.createElement(k.a, null), m.a.createElement("div", {
+				})))), m.a.createElement(k.a, null), 
+				
+				m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -79227,6 +79273,21 @@
 						this.setState({
 							record: d()({}, this.state.record, {
 								appleid_limit: e.target.value
+							})
+						})
+					}
+				})),m.a.createElement("div", {
+					className: "form-group"
+				}, m.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "APPLEID Cá Nhân"), m.a.createElement(C.a, {
+					addonAfter: "URL",
+					placeholder: "Nếu để trống, sẽ không có giới hạn về số lần lấy AppleID.",
+					value: this.state.record.appleid_url,
+					onChange: e => {
+						this.setState({
+							record: d()({}, this.state.record, {
+								appleid_url: e.target.value
 							})
 						})
 					}
