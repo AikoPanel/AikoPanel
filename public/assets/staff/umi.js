@@ -73795,912 +73795,305 @@
 					throw new TypeError("Cannot call a class as a function")
 			}
 	},
-	ih8c: function (e, t, n) {
+	ih8c: function(e, t, n) {
 		"use strict";
 		n.r(t);
 		var r = n("jehZ"),
-		  i = n.n(r),
-		  o = (n("+L6B"), n("2/Rp")),
-		  a = (n("qVdP"), n("jsC+")),
-		  s = (n("lUTK"), n("BvKs")),
-		  c = (n("+BJd"), n("mr32")),
-		  l = (n("5Dmo"), n("3S7+")),
-		  u = (n("BoS7"), n("Sdc0")),
-		  h = (n("Pwec"), n("CtXQ")),
-		  f = n("p0pE"),
-		  d = n.n(f),
-		  p = n("q1tI"),
-		  m = n.n(p),
-		  g = n("Bl7J"),
-		  v = n("/MKj"),
-		  y = n("tI4l"),
-		  b = n("qqou"),
-		  w = (n("bbsP"), n("/wGt")),
-		  x = (n("sRBo"), n("kaz8")),
-		  _ = (n("OaEy"), n("2fM7")),
-		  E = (n("14J3"), n("BMrR")),
-		  k = (n("jCWc"), n("kPKH")),
-		  S = (n("/zsF"), n("PArb")),
-		  C = (n("5NDa"), n("5rEg")),
-		  O = n("8zNj");
+			o = n.n(r),
+			i = (n("+L6B"),
+				n("2/Rp")),
+			a = (n("qVdP"),
+				n("jsC+")),
+			s = (n("lUTK"),
+				n("BvKs")),
+			c = (n("+BJd"),
+				n("mr32")),
+			l = (n("5Dmo"),
+				n("3S7+")),
+			u = (n("BoS7"),
+				n("Sdc0")),
+			h = (n("Pwec"),
+				n("CtXQ")),
+			f = n("p0pE"),
+			d = n.n(f),
+			p = n("q1tI"),
+			m = n.n(p),
+			g = n("Bl7J"),
+			v = n("/MKj"),
+			y = n("tI4l"),
+			b = n("qqou"),
+			w = (n("bbsP"),
+				n("/wGt")),
+			x = (n("sRBo"),
+				n("kaz8")),
+			_ = (n("OaEy"),
+				n("2fM7")),
+			E = (n("14J3"),
+				n("BMrR")),
+			S = (n("jCWc"),
+				n("kPKH")),
+			k = (n("/zsF"),
+				n("PArb")),
+			C = (n("5NDa"),
+				n("5rEg")),
+			O = n("8zNj");
 		class T extends m.a.Component {
 			constructor(e) {
-				super(e);
-				const initialRecord = e.record || {
-					show: 0,
-					name: null,
-					transfer_enable: null,
-					group_id: void 0,
-					one_day_price: null,
-					week_price: null,
-					month_price: null,
-					two_month_price: null,
-					quarter_price: null,
-					half_year_price: null,
-					year_price: null,
-					two_year_price: null,
-					three_year_price: null,
-					onetime_price: null,
-					reset_price: null,
-				};
-			
-				this.state = {
-					visible: !1,
-					record: { ...initialRecord },
-					initialRecord: initialRecord,
-				};
-			  (this.show = () => {
-				this.setState({ visible: !this.state.visible });
-			  });
-		  }
-		  componentDidMount() {
-			this.props.dispatch({ type: "config/fetch", key: "site" }),
-			  this.props.dispatch({ type: "serverGroup/fetch" });
-		  }
-		  priceOnChange(e, t) {
-			this.setState({
-			  record: d()({}, this.state.record, { [e]: "" !== t ? t : null }),
-			});
-		  }
-		  save() {
-			this.props.dispatch({
-			  type: "plan/save",
-			  params: d()({}, this.state.record),
-			  callback: () => {
-				this.setState({ visible: !1 });
-			  },
-			});
-		  }
-		  render() {
-			var e = this.props.config.site,
-			  t = this.props.plan.saveLoading,
-			  n = this.props.serverGroup.groups;
-			return m.a.createElement(
-			  m.a.Fragment,
-			  null,
-			  m.a.cloneElement(this.props.children, {
-				onClick: () => this.setState({ visible: !0 }),
-			  }),
-			  m.a.createElement(
-				w.a,
-				{
-				  id: "plan",
-				  maskClosable: !0,
-				  onClose: () => this.setState({ visible: !1 }),
-				  title: "".concat(
-					this.state.record.id ? "Chỉnh sửa đăng ký" : "Đăng ký mới"
-				  ),
-				  visible: this.state.visible,
-				  width: "80%",
-				},
-				m.a.createElement(
-				  "div",
-				  null,
-				  m.a.createElement(
-					"div",
-					{ className: "form-group" },
-					m.a.createElement(
-					  "label",
-					  { for: "example-text-input-alt" },
-					  "Tên gói hàng"
-					),
-					m.a.createElement(C.a, {
-					  placeholder: "Vui lòng nhập tên gói",
-					  value: this.state.record.name,
-					  onChange: (e) => {
+				super(e),
+					this.state = {
+						visible: !1,
+						record: e.record || {
+							show: 0,
+							name: null,
+							transfer_enable: null,
+							group_id: void 0,
+							one_day_price: null,
+							month_price: null,
+							week_price: null,
+							two_month_price: null,
+							quarter_price: null,
+							half_year_price: null,
+							year_price: null,
+							two_year_price: null,
+							three_year_price: null,
+							onetime_price: null,
+							reset_price: null
+						}
+					},
+					this.show = () => {
 						this.setState({
-						  record: d()({}, this.state.record, {
-							name: e.target.value,
-						  }),
-						});
-					  },
+							visible: !this.state.visible
+						})
+					}
+			}
+			componentDidMount() {
+				this.props.dispatch({
+					type: "serverGroup/fetch"
+				})
+			}
+			priceOnChange(e, t) {
+				this.setState({
+					record: d()({}, this.state.record, {
+						[e]: "" !== t ? t : null
 					})
-				  ),
-				  m.a.createElement(
-					"div",
-					{ className: "form-group" },
-					m.a.createElement(
-					  "label",
-					  { for: "example-text-input-alt" },
-					  "Mô tả gói"
-					),
-					m.a.createElement(C.a.TextArea, {
-					  rows: 4,
-					  value: this.state.record.content,
-					  placeholder: "Vui lòng nhập mô tả gói, HTML được hỗ trợ",
-					  onChange: (e) => {
-						this.setState({
-						  record: d()({}, this.state.record, {
-							content: e.target.value,
-						  }),
-						});
-					  },
-					})
-				  ),
-				  m.a.createElement(
-					S.a,
-					{ orientation: "center" },
-					"Thiết lập giá bán ",
-					m.a.createElement(
-					  l.a,
-					  {
-						placement: "top",
-						title: "Để trống số tiền và việc bán hàng sẽ không xảy ra",
-					  },
-					  m.a.createElement(h.a, { type: "info-circle" })
-					)
-				  ),
-				  m.a.createElement(
-					E.a,
-					{ gutter: 10 },
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "Ngày"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.one_day_price
-							  ? this.state.record.one_day_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("one_day_price", e.target.value),
-						  disabled: this.state.initialRecord.one_day_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "Tuần"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.week_price
-							  ? this.state.record.week_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("week_price", e.target.value),
-						  disabled: this.state.initialRecord.week_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "Tháng"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.month_price
-							  ? this.state.record.month_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("month_price", e.target.value),
-						  disabled: this.state.initialRecord.month_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-						k.a,
-						{ md: 4 },
-						m.a.createElement(
-						  "div",
-						  { className: "form-group" },
-						  m.a.createElement(
-							"label",
-							{ for: "example-text-input-alt" },
-							"2 Tháng"
-						  ),
-						  m.a.createElement(C.a, {
-							value:
-							  null !== this.state.record.two_month_price
-								? this.state.record.two_month_price
-								: void 0,
-							onChange: (e) =>
-							  this.priceOnChange("two_month_price", e.target.value),
-							disabled: this.state.initialRecord.two_month_price === null
-						  })
-						)
-					  ),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "3 tháng"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.quarter_price
-							  ? this.state.record.quarter_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("quarter_price", e.target.value),
-						  disabled: this.state.initialRecord.quarter_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "nửa năm"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.half_year_price
-							  ? this.state.record.half_year_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("half_year_price", e.target.value),
-						  disabled: this.state.initialRecord.half_year_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "1 năm"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.year_price
-							  ? this.state.record.year_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("year_price", e.target.value),
-						  disabled: this.state.initialRecord.year_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "2 năm"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.two_year_price
-							  ? this.state.record.two_year_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("two_year_price", e.target.value),
-						  disabled: this.state.initialRecord.two_year_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 4 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "3 năm"
-						),
-						m.a.createElement(C.a, {
-						  value:
-							null !== this.state.record.three_year_price
-							  ? this.state.record.three_year_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("three_year_price", e.target.value),
-						  disabled: this.state.initialRecord.three_year_price === null
-						})
-					  )
-					)
-				  ),
-				  m.a.createElement(
-					E.a,
-					{ gutter: 10 },
-					m.a.createElement(
-					  k.a,
-					  { md: 12 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "Vĩnh viễn"
-						),
-						m.a.createElement(C.a, {
-						  addonAfter: e.currency_symbol,
-						  value:
-							null !== this.state.record.onetime_price
-							  ? this.state.record.onetime_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("onetime_price", e.target.value),
-						  disabled: this.state.initialRecord.onetime_price === null
-						})
-					  )
-					),
-					m.a.createElement(
-					  k.a,
-					  { md: 12 },
-					  m.a.createElement(
-						"div",
-						{ className: "form-group" },
-						m.a.createElement(
-						  "label",
-						  { for: "example-text-input-alt" },
-						  "đặt lại gói"
-						),
-						m.a.createElement(C.a, {
-						  addonAfter: e.currency_symbol,
-						  value:
-							null !== this.state.record.reset_price
-							  ? this.state.record.reset_price
-							  : void 0,
-						  onChange: (e) =>
-							this.priceOnChange("reset_price", e.target.value),
-						  disabled: this.state.initialRecord.reset_price === null
-						})
-					  )
-					)
-	
-				  ),
-				  m.a.createElement("div", {
-					className: "form-group"
-				}, m.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Lưu Lượng Gói Cước"), m.a.createElement(C.a, {
-					addonAfter: "GB",
-					placeholder: "Vui lòng nhập lượng dữ liệu cho gói cước.",
-					value: this.state.record.transfer_enable,
-					onChange: e => {
-						this.setState({
-							record: d()({}, this.state.record, {
-								transfer_enable: e.target.value
-							})
-						})
-					},
-					disabled: true
-				})), m.a.createElement("div", {
-					className: "form-group"
-				}, m.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Giới Hạn Số Lượng Thiết Bị"), m.a.createElement(C.a, {
-					addonAfter: "Thiết bị",
-					placeholder: "Nếu để trống, sẽ không có giới hạn về số lượng thiết bị.",
-					value: this.state.record.device_limit,
-					onChange: e => {
-						this.setState({
-							record: d()({}, this.state.record, {
-								device_limit: e.target.value
-							})
-						})
-					},
-					disabled: true
-				})), m.a.createElement("div", {
-					className: "form-group"
-				}, m.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Giới Hạn Số Lượng lần lấy AppleID"), m.a.createElement(C.a, {
-					addonAfter: "Lần",
-					placeholder: "Nếu để trống, sẽ không có giới hạn về số lần lấy AppleID.",
-					value: this.state.record.appleid_limit,
-					onChange: e => {
-						this.setState({
-							record: d()({}, this.state.record, {
-								appleid_limit: e.target.value
-							})
-						})
-					},
-					disabled: true
-				})), 
-				  m.a.createElement("div", {
-					className: "form-group"
-				}, m.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "SNI của gói"), m.a.createElement(C.a, {
-					addonAfter: "SNI",
-					placeholder: "Nếu để trống, thì sử dụng SNI của node",
-					value: this.state.record.sni,
-					onChange: e => {
-						this.setState({
-							record: d()({}, this.state.record, {
-								sni: e.target.value
-							})
-						})
-					},
-					disabled: true
-				})), m.a.createElement("div", {
-					className: "form-group"
-				}, m.a.createElement("label", {
-					for: "example-text-input-alt"
-				}, "Giới Hạn Tốc Độ"), m.a.createElement(C.a, {
-					addonAfter: "Mbps",
-					placeholder: "Nếu để trống, không có giới hạn về tốc độ.",
-					value: this.state.record.speed_limit,
-					onChange: e => {
-						this.setState({
-							record: d()({}, this.state.record, {
-								speed_limit: e.target.value
-							})
-						})
-					},
-					disabled: true
-				})), 
-
-				  m.a.createElement(
-					"div",
-					{ className: "alert alert-warning" },
-					m.a.createElement(
-					  "span",
-					  null,
-					  "Nếu sửa giá hoa hồng sẽ tính như sau: Ví dụ: Giá gốc 10k giá mới 12k. % hoa hồng của ban là 50%. lúc này Hoa hồng = 10,000*50% + 2,000 = 7,000"
-					)
-				  ),
-				  m.a.createElement(S.a, null),
-	
-				),
-
-				
-	
-				m.a.createElement(
-					"div",
-					{ className: "v2board-drawer-action" },
-				m.a.createElement(
-						"div",
-						{ style: { float: "left", marginTop: 5 } },
-						m.a.createElement(
-						  l.a,
-						  {
-							title:
-							  "Khi bạn chọn mục này. giá của bạn sẽ bằng với giá gốc của gói dịch vụ",
-							placement: "top",
-						  },
-						  m.a.createElement(
-							x.a,
-							{
-							  onChange: (e) =>
-								this.setState({
-								  record: d()({}, this.state.record, {
-									force_update: e.target.checked,
-								  }),
-								}),
-							},
-							"Trở về giá gốc"
-						  )
-						)
-					  ),
-				m.a.createElement(
-					"div",
-					{ className: "v2board-drawer-action", style: { textAlign: 'right' } }, 
-					m.a.createElement(
-					  o.a,
-					  {
-						style: { marginRight: 8 },
-						onClick: () => this.setState({ visible: !1 }),
-					  },
-					  "Hủy bỏ"
-					),
-					m.a.createElement(
-					  o.a,
-					  {
-						loading: t,
-						onClick: () => t || this.save(),
-						type: "primary",
-					  },
-					  "Lưu"
-					)
-				  )
-				)
-	
-	
-			  )
-			);
-		  }
+				})
+			}
+			render() {
+				var e = this.props.config.site,
+					t = this.props.plan.saveLoading,
+					n = this.props.serverGroup.groups;
+				return m.a.createElement(m.a.Fragment, null, m.a.cloneElement(this.props.children, {}))
+			}
 		}
-		var L = Object(v.c)((e) => ({
-			plan: e.plan,
-			serverGroup: e.serverGroup,
-			config: e.config,
-		  }))(T),
-		  A = n("Oa6W"),
-		  P = (n("H9LU"), n("3XVG"), n("ykC2"), n("v32e"));
+		var L = Object(v.c)((e => ({
+				plan: e.plan,
+				serverGroup: e.serverGroup,
+				config: e.config
+			})))(T),
+			A = n("Oa6W"),
+			I = n("3a4m"),
+			Z = n.n(I),
+			P = (n("H9LU"),
+				n("3XVG"),
+				n("ykC2"),
+				n("v32e"));
 		class j extends m.a.Component {
-		  constructor(e) {
-			super(e),
-			  (this.state = { visible: !1, submit: { show: 0 } }),
-			  (this.jumpUserFilter = this.jumpUserFilter.bind(this));
-		  }
-		  componentDidMount() {
-			this.props.dispatch({ type: "plan/fetch" }),
-			  this.props.dispatch({ type: "serverGroup/fetch" });
-		  }
-		  balanceFormat(e) {
-			var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-			return (
-			  Object.keys(y.a.periodText).map((n) => {
-				0 !== e[n] &&
-				  (e[n]
-					? (e[n] = t ? Math.round(100 * e[n]) : e[n] / 100)
-					: (e[n] = null));
-			  }),
-			  e
-			);
-		  }
-		  drop(e) {
-			this.props.dispatch({ type: "plan/drop", id: e });
-		  }
-		  edit(e) {
-			var t = this.props.plan.plans;
-			this.setState({ submit: d()({}, t[e]), visible: !0 });
-		  }
-		  update(e, t, n) {
-			this.props.dispatch({ type: "plan/update", id: e, key: t, value: n });
-		  }
-		  jumpUserFilter(e, t, n) {
-			this.props.dispatch({
-			  type: "user/addFilter",
-			  key: e,
-			  condition: t,
-			  value: n,
-			}),
-			  (window.location.href = "#/user");
-		  }
-		  render() {
-			var e,
-			  t = this.props.plan,
-			  n = t.plans,
-			  r = t.fetchLoading,
-			  f = this.props.serverGroup.groups,
-			  d = [
-				{
-				  title: "loại",
-				  dataIndex: "sort",
-				  key: "sort",
-				  render: (e, t) =>
-					m.a.createElement(
-					  m.a.Fragment,
-					  null,
-					  m.a.createElement(h.a, {
-						type: "menu",
-						style: { cursor: "move" },
-					  })
-					),
-				},
-				{
-				  title: "Mở bán",
-				  dataIndex: "show",
-				  key: "show",
-				  render: (e, t) =>
-					m.a.createElement(u.a, {
-					  size: "small",
-					  checked: parseInt(e),
-					  onClick: () => this.update(t.id, "show", parseInt(e) ? 0 : 1),
+			constructor(e) {
+				super(e),
+					this.state = {
+						visible: !1,
+						submit: {
+							show: 0
+						}
+					}
+			}
+			componentDidMount() {
+				this.props.dispatch({
+						type: "plan/fetch"
 					}),
-				},
-				
-				{ title: "tên", dataIndex: "name", key: "name" },
-				{
-				  title: "Người Mua",
-				  dataIndex: "count",
-				  key: "count",
-				  render: (e, t) =>
-					m.a.createElement(
-					  m.a.Fragment,
-					  null,
-					  m.a.createElement(h.a, {
-						type: "user",
-						style: { cursor: "pointer", color: "blue" },
-						onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
-					  }),
-					  " ",
-					  e
-					),
-				},
-				{
-				  title: "Data",
-				  dataIndex: "transfer_enable",
-				  key: "transfer_enable",
-				  render: (e) => m.a.createElement(m.a.Fragment, null, e, " GB"),
-				},
-				{
-				  title: "Giới hạn IP",
-				  dataIndex: "device_limit",
-				  key: "device_limit",
-				  render: (e) => (null !== e ? e : "-"),
-				},
-				{
-				  title: "Ngày",
-				  dataIndex: "one_day_price",
-				  key: "one_day_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "Tuần",
-				  dataIndex: "week_price",
-				  key: "week_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "Tháng",
-				  dataIndex: "month_price",
-				  key: "month_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-					title: "2 Tháng",
-					dataIndex: "two_month_price",
-					key: "two_month_price",
-					render: e => null !== e ? e.toLocaleString('vi-VN', {
-						style: 'currency',
-						currency: 'VND'
-					}) : "-"
-				},
-				{
-				  title: "3 Tháng",
-				  dataIndex: "quarter_price",
-				  key: "quarter_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "6 Tháng",
-				  dataIndex: "half_year_price",
-				  key: "half_year_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "1 Năm",
-				  dataIndex: "year_price",
-				  key: "year_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "2 Năm",
-				  dataIndex: "two_year_price",
-				  key: "two_year_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "3 Năm",
-				  dataIndex: "three_year_price",
-				  key: "three_year_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "Vĩnh Viễn",
-				  dataIndex: "onetime_price",
-				  key: "onetime_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "đặt lại data",
-				  dataIndex: "reset_price",
-				  key: "reset_price",
-				  render: e => null !== e ? e.toLocaleString('vi-VN', {
-								style: 'currency',
-								currency: 'VND'
-							}) : "-"
-				},
-				{
-				  title: "Nhóm quyền",
-				  dataIndex: "group_id",
-				  key: "group_id",
-				  render: (e, t) => {
-					var n = [];
-					return (
-					  f.map((t) => {
-						t.id === parseInt(e) &&
-						  n.push(m.a.createElement(c.a, null, t.name));
-					  }),
-					  n
-					);
-				  },
-				},
-				{
-				  title: "Chỉnh sửa",
-				  dataIndex: "action",
-				  key: "action",
-				  fixed: "right",
-				  align: "right",
-				  render: (e, t) =>
-					m.a.createElement(
-						L,
-						{ record: t, key: null == t ? void 0 : t.id },
-						m.a.createElement(
-							"a",
-							{ href: "javascript:void(0);" },
-							m.a.createElement(h.a, { type: "edit" }),
-							" Chỉnh sửa"
-						)
-					),
-				},
-			  ],
-			  p = this;
-			return m.a.createElement(
-			  g.a,
-			  i()({}, this.props, { title: "Quản lý đăng ký" }),
-			  m.a.createElement("div", {
-				className: "d-flex justify-content-between align-items-center",
-			  }),
-			  m.a.createElement(
-				P.a,
-				{ loading: r },
-				m.a.createElement(
-				  "div",
-				  { className: "block block-rounded" },
-				  m.a.createElement(
-					"div",
-					{ className: "bg-white" },
-					m.a.createElement(
-					  "div",
-					  { style: { padding: 15 } },
-					  
-					),
-					m.a.createElement(
-					  b.a,
-					  {
-						onDragEnd: (e, t) => {
-						  p.props.dispatch({
+					this.props.dispatch({
+						type: "serverGroup/fetch"
+					})
+			}
+			balanceFormat(e) {
+				var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+				return Object.keys(y.a.periodText).map((n => {
+						0 !== e[n] && (e[n] ? e[n] = t ? Math.round(100 * e[n]) : e[n] / 100 : e[n] = null)
+					})),
+					e
+			}
+			jumpUserFilter(e, t, n) {
+				this.props.dispatch({
+				  type: "user/addFilter",
+				  key: e,
+				  condition: t,
+				  value: n,
+				}),
+				Z.a.push("/user")
+			}
+			render() {
+				var e, t = this.props.plan,
+					n = t.plans,
+					r = t.fetchLoading,
+					f = this.props.serverGroup.groups,
+					d = [{
+						title: "Tên",
+						dataIndex: "name",
+						key: "name"
+					}, {
+						title: m.a.createElement("span", null, "Thống kê ", m.a.createElement(l.a, {
+							placement: "top",
+							title: "Tổng số người đã mua gói của bạn"
+						}, m.a.createElement(h.a, {
+							type: "question-circle"
+						}))),
+						dataIndex: "count",
+						key: "count",
+						render: (e, t) => m.a.createElement(m.a.Fragment, null, m.a.createElement(h.a, {
+							type: "user",
+							style: { cursor: "pointer", color: "blue" },
+							onClick: () => this.jumpUserFilter("plan_id", "=", t.id),
+						}), " ", t.total)
+					}, {
+						title: "Lưu Lượng",
+						dataIndex: "transfer_enable",
+						key: "transfer_enable",
+						render: e => m.a.createElement(m.a.Fragment, null, e.toLocaleString(), " GB")
+					}, {
+						title: "Giới hạn IP",
+						dataIndex: "device_limit",
+						key: "device_limit",
+						render: e => null !== e ? e : "-"
+					}, {
+						title: "1 Ngày",
+						dataIndex: "one_day_price",
+						key: "one_day_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					},{
+						title: "1 Tuần",
+						dataIndex: "week_price",
+						key: "week_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "1 Tháng",
+						dataIndex: "month_price",
+						key: "month_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "2 Tháng",
+						dataIndex: "two_month_price",
+						key: "two_month_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "3 Tháng",
+						dataIndex: "quarter_price",
+						key: "quarter_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "6 Tháng",
+						dataIndex: "half_year_price",
+						key: "half_year_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "1 Năm",
+						dataIndex: "year_price",
+						key: "year_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "2 Năm",
+						dataIndex: "two_year_price",
+						key: "two_year_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "3 Năm",
+						dataIndex: "three_year_price",
+						key: "three_year_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "Vĩnh Viễn",
+						dataIndex: "onetime_price",
+						key: "onetime_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}, {
+						title: "Đặt Lại Gói",
+						dataIndex: "reset_price",
+						key: "reset_price",
+						render: e => null !== e ? e.toLocaleString('vi-VN', {
+							style: 'currency',
+							currency: 'VND'
+						}) : "-"
+					}],
+					p = this;
+				return m.a.createElement(g.a, o()({}, this.props, {
+					title: "Quản lý Gói Dịch Vụ"
+				}), m.a.createElement("div", {
+					className: "d-flex justify-content-between align-items-center"
+				}), m.a.createElement(P.a, {
+					loading: r
+				}, m.a.createElement("div", {
+					className: "block block-rounded"
+				}, m.a.createElement("div", {
+					className: "bg-white"
+				}, m.a.createElement(b.a, {
+					onDragEnd: (e, t) => {
+						p.props.dispatch({
 							type: "plan/sort",
 							fromIndex: e,
-							toIndex: t,
-						  });
-						},
-						nodeSelector: "tr",
-						handleSelector: "i",
-					  },
-					  m.a.createElement(
-						A.a,
-						{
-						  onContextMenu: (e) => {
-							(this.record = e), this.forceUpdate();
-						  },
-						  tableLayout: "auto",
-						  dataSource: n,
-						  columns: d,
-						  pagination: !1,
-						  scroll: { x: 1300 },
-						},
-						m.a.createElement(
-						  "ul",
-						  {
-							className:
-							  "ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical",
-						  },
-						  m.a.createElement(
-							"li",
-							{ className: "ant-dropdown-menu-item" },
-							m.a.createElement(
-							  L,
-							  {
-								record: this.record,
-								key:
-								  null === (e = this.record) || void 0 === e
-									? void 0
-									: e.id,
-							  },
-							  m.a.createElement(
-								"a",
-								null,
-								m.a.createElement(h.a, { type: "edit" }),
-								" Chỉnh sửa"
-							  )
-							)
-						  ),
-						  m.a.createElement(
-							"li",
-							{
-							  className: "ant-dropdown-menu-item",
-							  onClick: () => {
-								var e;
-								return this.drop(
-								  null === (e = this.record) || void 0 === e
-									? void 0
-									: e.id
-								);
-							  },
-							},
-							
-						  )
-						)
-					  )
-					)
-				  )
-				)
-			  )
-			);
-		  }
+							toIndex: t
+						})
+					},
+					nodeSelector: "tr",
+					handleSelector: "i"
+				}, m.a.createElement(A.a, {
+					onContextMenu: e => {
+						this.record = e,
+							this.forceUpdate()
+					},
+					tableLayout: "auto",
+					dataSource: n,
+					columns: d,
+					pagination: !1,
+					scroll: {
+						x: 1300
+					}
+				}))))))
+			}
 		}
-		t.default = Object(v.c)((e) => ({
-		  plan: e.plan,
-		  serverGroup: e.serverGroup,
-		}))(j);
-	  },
+		t.default = Object(v.c)((e => ({
+			plan: e.plan,
+			serverGroup: e.serverGroup
+		})))(j)
+	},
 	il4q: function(e, t, n) {
 		var r = n("ZDr/");
 		e.exports = function(e) {
