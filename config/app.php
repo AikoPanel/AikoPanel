@@ -238,5 +238,5 @@ return [
     | The only modification by laravel config
     |
     */
-    'version' => 'AikoPanel v3.6.0',
+    'version' => 'AikoPanel v3.6.0 - DEV',
 ];
