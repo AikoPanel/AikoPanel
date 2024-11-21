@@ -987,6 +987,9 @@
 				var e = this.props.subscribeUrl,
 					t = [];
 				return t.push({
+						title: "Hiddify",
+						href: "hiddify://import/" + e + "&flag=sing-box" + "#" + window.settings.title
+                	}), t.push({
 						title: "Sing-box",
 						href: "sing-box://import-remote-profile?url=" + encodeURIComponent(e + "&flag=sing-box") + "#" + window.settings.title
 					}),
@@ -15511,7 +15514,7 @@
 			constructor(e) {
 				super(e),
 					this.state = {
-						customSNI: !1
+						customSNI: !1, giftcard: ""
 					},
 					this.handleSelectChange = this.handleSelectChange.bind(this),
 					this.changeSNI = this.changeSNI.bind(this),
@@ -15529,6 +15532,7 @@
 					customSNI: "0" === e.target.value
 				})
 			}
+		
 			componentDidMount() {
 				this.props.dispatch({
 					type: "user/getUserInfo"
@@ -15548,6 +15552,15 @@
 						id: message
 					}));
 				};
+			}
+			redeemgiftcard() {
+				if (!this.refs.giftcard.value)
+					return i.a.error("Vui lòng nhập thẻ quà tặng");
+				this.props.dispatch({
+					type: "user/redeemgiftcard",
+					giftcard: this.refs.giftcard.value,
+					callback: () => {componentDidMount()}
+				})
 			}
 			changeSNI() {
 				const selectedSNI = this.selectRef.value;
@@ -15720,6 +15733,7 @@
 					n = (e.subscribe,
 						e.changeSNILoading),
 					r = e.changeAvatarLoading,
+					D = e.redeemgiftcardLoading,
 					i = e.changeUserNameLoading,
 					s = this.props.comm.config;
 				return l.a.createElement(u.a, o()({}, this.props, {
@@ -15781,7 +15795,52 @@
 					loading: n
 				}, Object(h.formatMessage)({
 					id: "Lưu"
-				})))))))), l.a.createElement("div", {
+				})))))))), 
+				//zzzzzzzzzzzzzzzzzzz
+				l.a.createElement(
+					"div",
+					{ className: "row mb-3 mb-md-0" },
+					l.a.createElement(
+					  "div",
+					  { className: "col-md-12" },
+					  l.a.createElement(
+						"div",
+						{ className: "block block-rounded " },
+				  l.a.createElement(
+						  "div",
+						  { className: "block-header block-header-default" },
+						  l.a.createElement(
+							"h3",
+							{ className: "block-title" },
+							Object(h.formatMessage)({ id: "Thẻ Quà Tặng" })
+						  )
+						),
+				  l.a.createElement("div", {
+					className: "block-content text-center"
+				  }, l.a.createElement("div", {
+					className: "row push"
+				  }, l.a.createElement("div", {
+					className: "col-md-12"
+				  }, l.a.createElement("div", {
+					className: "form-group"
+				  },  l.a.createElement("input", {
+					type: "text",
+					className: "form-control",
+					placeholder: Object(h.formatMessage)({
+					  id: "Vui lòng nhập Thẻ của bạn"
+					}),
+					ref: "giftcard",
+					autocomplete: "one-time-code"
+				  })), l.a.createElement(a.a, {
+					type: "primary",
+					onClick: ()=>this.redeemgiftcard(),
+					loading: D,
+				  }, Object(h.formatMessage)({
+					id: "Đổi Thẻ"
+				  })))))))), 
+				  // zzzzzzzzzzzzzzzzzz
+				
+				l.a.createElement("div", {
 					className: "dvs-row mb-3 mb-md-0"
 				}, s.collaborator_enable === 1 && l.a.createElement("div", {
 					className: "col-md-12"
@@ -45616,6 +45675,7 @@
 				changeSNILoading: !1,
 				changeAvatarLoading: !1,
 				changeUserNameLoading: !1,
+				redeemgiftcardLoading: !1,
 				resetSecurityLoading: !1,
 				events: []
 			},
@@ -45975,6 +46035,69 @@
 							}
 					}), n)
 				}))(),
+				redeemgiftcard: (e, t) =>
+					p().mark(function n() {
+					   var o, a, s, u;
+					   return p().wrap(function(n) {
+						   while (1)
+							   switch (n.prev = n.next) {
+							   case 0:
+								   return o = e.giftcard,
+								   s = t.put,
+								   n.next = 4,
+								   s({
+									   type: "setState",
+									   payload: {
+										   redeemgiftcardLoading: !0
+									   }
+								   });
+							   case 4:
+								   return n.next = 6,
+								   Object(i.b)("/user/redeemgiftcard", {
+									   giftcard: o
+								   });
+							   case 6:
+								   return u = n.sent,
+								   n.next = 9,
+								   s({
+									   type: "setState",
+									   payload: {
+										   redeemgiftcardLoading: !1
+									   }
+								   });
+							   case 9:
+								   if (200 === u.code) {
+									   n.next = 11;
+									   break
+								   }
+								   return n.abrupt("return");
+							   case 11:
+								   return n.next = 13,
+								   s({
+									   type: "user/getUserInfo"
+								   });
+							   case 13:
+									r.a.success("Đổi thẻ thành công: " + (() => {
+									   switch (u.type) {
+										   case 1:
+											   return "Số dư tài khoản " + (u.value / 100).toLocaleString() + " đ";
+										   case 2:
+											   return "Thời hạn đăng ký " + u.value + " Ngày";
+										   case 3:
+											   return "Lưu lượng gói " + u.value + " GB";
+										   case 4:
+											   return "Dung lượng đã được đặt lại";
+										   case 5:
+											   return "Gói đăng ký " + u.value + " Ngày";
+										   default:
+											   return "Không xác định";
+									   }
+								   })());
+							   case "end":
+								   return n.stop()
+							   }
+					   }, n)
+				   })(),
 				changeAvatar: (e, t) => p().mark((function n() {
 					var o, a, s;
 					return p().wrap((function(n) {

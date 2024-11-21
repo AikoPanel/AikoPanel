@@ -6361,7 +6361,7 @@
 					placeholder: "Vui lòng nhập",
 					defaultValue: u.server_push_interval,
 					onChange: e => this.set("server", "server_push_interval", e.target.value)
-				}))), f.a.createElement("div", {
+				}))),f.a.createElement("div", {
 					className: ""
 				}, f.a.createElement(m, {
 					title: "Khoảng thời gian xóa dữ liệu trực tuyến của nút đã hết hạn",
@@ -6373,7 +6373,13 @@
 					placeholder: "Vui lòng nhập",
 					defaultValue: u.server_alive_interval,
 					onChange: e => this.set("server", "server_alive_interval", e.target.value)
-				})))), f.a.createElement(s.a.TabPane, {
+				})), f.a.createElement(m, {
+                    title: "Chế độ giới hạn thiết bị ( Đơn giản - Nâng cao )",
+                    description: "Sau khi kích hoạt, nhiều nút sử dụng cùng một địa chỉ IP chỉ được tính là một thiết bị"
+                }, f.a.createElement(c.a, {
+                    checked: parseInt(u.device_limit_mode),
+                    onChange: e=>this.set("server", "device_limit_mode", e ? 1 : 0)
+                })))), f.a.createElement(s.a.TabPane, {
 					tab: "Email",
 					key: "email"
 				}, f.a.createElement("div", {
@@ -21544,7 +21550,16 @@
 							icon: i.a.createElement("i", {
 								className: "nav-main-link-icon si si-present"
 							})
-						}, {
+						}, 
+						{
+							title: "Quản lý Thẻ quà",
+							type: "item",
+							href: "/giftcard",
+							icon: i.a.createElement("i", {
+								className: "nav-main-link-icon si si-star"
+							})
+						  },
+						{
 							title: "Người dùng",
 							type: "heading"
 						}, {
@@ -22760,7 +22775,7 @@
 					defaultValue: t.transfer_enable,
 					placeholder: "Vui lòng nhập lưu lượng.",
 					onChange: e => this.formChange("transfer_enable", e.target.value)
-				})), t.expired_at ? p.a.createElement("div", {
+				})), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -22791,7 +22806,7 @@
 				}, "Reset Theo Năm"), p.a.createElement(c.a.Option, {
 					key: 5,
 					value: 5
-				}, "Reset Mỗi ngày"))) : " ", p.a.createElement("div", {
+				}, "Reset Mỗi ngày"))), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -22807,6 +22822,14 @@
 					placeholder: "Nếu để trống, sẽ không có giới hạn về số lần lấy AppleID.",
 					defaultValue: t.appleid_limit,
 					onChange: e => this.formChange("appleid_limit", e.target.value)
+				})),p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "URL APPLEID"), p.a.createElement(u.a, {
+					placeholder: "Link AppleID riêng biệt",
+					defaultValue: t.appleid_url,
+					onChange: e => this.formChange("appleid_url", e.target.value)
 				})), p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
@@ -22925,14 +22948,19 @@
 				}, "Cho Phép Email Này Làm Quản Trị Viên"), p.a.createElement("div", null, p.a.createElement(i.a, {
 					checked: t.is_admin,
 					onChange: e => this.formChange("is_admin", e ? 1 : 0)
-				}))), p.a.createElement("div", {
+				}))), 
+				p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
 				}, "Cho Phép Email Này Truy Cập Trang CTV "), p.a.createElement("div", null, p.a.createElement(i.a, {
 					checked: t.is_staff,
 					onChange: e => this.formChange("is_staff", e ? 1 : 0)
-				}))), t.is_staff ? p.a.createElement("div", {
+				}))), 
+				
+				t.is_staff ? p.a.createElement("div", null,
+				
+				p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -22941,7 +22969,19 @@
 					defaultValue: t.staff_url,
 					placeholder: "Nếu để trống, sẽ không có URL truy cập trang CTV.",
 					onChange: e => this.formChange("staff_url", e.target.value)
-				})) : "", p.a.createElement("div", {
+				})),
+				p.a.createElement("div", {
+					className: "form-group"
+				}, p.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Cho Phép Sửa Giá Của Gói Dịch Vu "), p.a.createElement("div", null, p.a.createElement(i.a, {
+					checked: t.custom_price,
+					onChange: e => this.formChange("custom_price", e ? 1 : 0)
+				}))) 
+				)
+				: "", 
+				
+				p.a.createElement("div", {
 					className: "form-group"
 				}, p.a.createElement("label", {
 					htmlFor: "example-text-input-alt"
@@ -78829,7 +78869,9 @@
 				path: "/coupon",
 				exact: !0,
 				component: n("Q55k").default
-			}, {
+			}, 
+			{ path: "/giftcard", exact: !0, component: n("showgiftcardpage").default },
+			{
 				path: "/dashboard",
 				exact: !0,
 				component: n("sFYk").default
@@ -79084,33 +79126,43 @@
 				}, m.a.createElement(h.a, {
 					type: "info-circle"
 				}))), 
-				m.a.createElement("div", {
+				
+				
+				m.a.createElement(E.a, {
+					gutter: 10
+				}, 
+				m.a.createElement(S.a, {
+					md: 8
+				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Ngày"), m.a.createElement(C.a, {
 					value: null !== this.state.record.one_day_price ? this.state.record.one_day_price : void 0,
 					onChange: e => this.priceOnChange("one_day_price", e.target.value)
-				})),
-				m.a.createElement("div", {
+				}))),
+				m.a.createElement(S.a, {
+					md: 8
+				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Tuần"), m.a.createElement(C.a, {
 					value: null !== this.state.record.week_price ? this.state.record.week_price : void 0,
 					onChange: e => this.priceOnChange("week_price", e.target.value)
-				})),
-				 m.a.createElement("div", {
+				}))),
+				m.a.createElement(S.a, {
+					md: 8
+				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
 				}, "1 Tháng"), m.a.createElement(C.a, {
 					value: null !== this.state.record.month_price ? this.state.record.month_price : void 0,
 					onChange: e => this.priceOnChange("month_price", e.target.value)
-				})), m.a.createElement(E.a, {
-					gutter: 10
-				}, m.a.createElement(S.a, {
-					md: 4
+				}))),
+				m.a.createElement(S.a, {
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79118,8 +79170,9 @@
 				}, "2 Tháng"), m.a.createElement(C.a, {
 					value: null !== this.state.record.two_month_price ? this.state.record.two_month_price : void 0,
 					onChange: e => this.priceOnChange("two_month_price", e.target.value)
-				}))), m.a.createElement(S.a, {
-					md: 4
+				}))), 
+				m.a.createElement(S.a, {
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79128,7 +79181,7 @@
 					value: null !== this.state.record.quarter_price ? this.state.record.quarter_price : void 0,
 					onChange: e => this.priceOnChange("quarter_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79137,7 +79190,7 @@
 					value: null !== this.state.record.half_year_price ? this.state.record.half_year_price : void 0,
 					onChange: e => this.priceOnChange("half_year_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79146,7 +79199,7 @@
 					value: null !== this.state.record.year_price ? this.state.record.year_price : void 0,
 					onChange: e => this.priceOnChange("year_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79155,7 +79208,7 @@
 					value: null !== this.state.record.two_year_price ? this.state.record.two_year_price : void 0,
 					onChange: e => this.priceOnChange("two_year_price", e.target.value)
 				}))), m.a.createElement(S.a, {
-					md: 4
+					md: 8
 				}, m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
@@ -79163,7 +79216,9 @@
 				}, "3 Năm"), m.a.createElement(C.a, {
 					value: null !== this.state.record.three_year_price ? this.state.record.three_year_price : void 0,
 					onChange: e => this.priceOnChange("three_year_price", e.target.value)
-				})))), m.a.createElement(E.a, {
+				})))), 
+				
+				m.a.createElement(E.a, {
 					gutter: 10
 				}, m.a.createElement(S.a, {
 					md: 12
@@ -79185,7 +79240,9 @@
 					addonAfter: e.currency_symbol,
 					value: null !== this.state.record.reset_price ? this.state.record.reset_price : void 0,
 					onChange: e => this.priceOnChange("reset_price", e.target.value)
-				})))), m.a.createElement(k.a, null), m.a.createElement("div", {
+				})))), m.a.createElement(k.a, null), 
+				
+				m.a.createElement("div", {
 					className: "form-group"
 				}, m.a.createElement("label", {
 					for: "example-text-input-alt"
@@ -79227,6 +79284,21 @@
 						this.setState({
 							record: d()({}, this.state.record, {
 								appleid_limit: e.target.value
+							})
+						})
+					}
+				})),m.a.createElement("div", {
+					className: "form-group"
+				}, m.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "APPLEID Cá Nhân"), m.a.createElement(C.a, {
+					addonAfter: "URL",
+					placeholder: "Nếu để trống, sẽ không có giới hạn về số lần lấy AppleID.",
+					value: this.state.record.appleid_url,
+					onChange: e => {
+						this.setState({
+							record: d()({}, this.state.record, {
+								appleid_url: e.target.value
 							})
 						})
 					}
@@ -107487,6 +107559,8 @@
 				u.model(o()({
 					namespace: "coupon"
 				}, n("eOCx").default)),
+				u.model(o()({ namespace: "giftcard" }, n("callgiftcardpage").default)),
+				
 				u.model(o()({
 					namespace: "knowledge"
 				}, n("mHNb").default)),
@@ -109891,5 +109965,1087 @@
 				}
 			}),
 			n("gRqi")(v)
+	},
+	showgiftcardpage: function(e, t, n) {
+		"use strict";
+		n.r(t);
+		var r = n("jehZ")
+		  , i = n.n(r)
+		  , o = (n("iQDF"),
+		n("+eQT"))
+		  , a = (n("OaEy"),
+		n("2fM7"))
+		  , s = (n("5NDa"),
+		n("5rEg"))
+		  , l = (n("g9YV"),
+		n("wCAj"))
+		  , c = (n("+L6B"),
+		n("2/Rp"))
+		  , u = (n("Pwec"),
+		n("CtXQ"))
+		  , h = (n("2qtc"),
+		n("kLXV"))
+		  , f = (n("/zsF"),
+		n("PArb"))
+		  , d = (n("+BJd"),
+		n("mr32"))
+		  , p = (n("miYZ"),
+		n("tsqr"))
+		  , m = (n("BoS7"),
+		n("Sdc0"))
+		  , g = n("p0pE")
+		  , v = n.n(g)
+		  , y = n("q1tI")
+		  , b = n.n(y)
+		  , w = n("Bl7J")
+		  , x = n("wd/R")
+		  , _ = n.n(x)
+		  , E = n("+QRC")
+		  , S = n.n(E)
+		  , k = n("/MKj")
+		  , C = n("tI4l")
+		  , O = n("v32e");
+		class T extends b.a.Component {
+			constructor(e) {
+				super(e),
+				this.defaultValue = {
+					type: 1
+				},
+				this.state = {
+					visible: !1,
+					submit: v()({}, this.defaultValue)
+				}
+			}
+			componentDidMount() {
+				this.props.dispatch({
+					type: "giftcard/fetch"
+				})
+				,
+				this.props.dispatch({
+					type: "plan/fetch"
+				})
+			}
+			modalVisible() {
+				this.setState({
+					visible: !this.state.visible
+				}, ()=>{
+					this.state.visible || this.setState({
+						submit: this.defaultValue
+					})
+				}
+				)
+			}
+			generate() {
+				var e = v()({}, this.state.submit);
+				this.props.dispatch({
+					type: "giftcard/generate",
+					params: e,
+					callback: ()=>{
+						this.modalVisible()
+					}
+				})
+			}
+			drop(e) {
+				this.props.dispatch({
+					type: "giftcard/drop",
+					id: e.id
+				})
+			}
+			tableOnChange(e, t) {
+				this.props.dispatch({
+					type: "giftcard/changeTable",
+					pagination: e,
+					sort: {
+						sort_type: "ascend" === t.order ? "ASC" : "DESC",
+						sort: t.columnKey
+					}
+				})
+			}
+			render() {
+				var e = this.props.giftcard
+				  , t = e.giftcards
+				  , n = e.fetchLoading
+				  , r = e.saveLoading
+				  , g = e.pagination
+				  , y = this.props.plan.plans
+				  , x = [{
+					title: "#",
+					dataIndex: "id",
+					key: "id"
+				}, {
+					title: "Tên",
+					dataIndex: "name",
+					key: "name"
+				}, {
+					title: "Loại",
+					dataIndex: "type",
+					key: "type",
+					render: e=>{
+						switch (e) {
+							case 1:
+								return "Số dư";
+							case 2:
+								return "Thời hạn";
+							case 3:
+								return "Lưu lượng";
+							case 4:
+								return "Đặt lại";
+							case 5:
+								return "Gói";
+							default:
+								return "";
+						}
+					}
+				}, {
+					title: "Giá trị",
+					dataIndex: "value",
+					key: "value",
+					render: (e,t)=>{
+						switch (t.type) {
+							case 1:
+								return e.toLocaleString('vi-VN', {
+								  style: 'currency',
+								  currency: 'VND'
+							  });
+							case 2:
+								return e + " Ngày";
+							case 3:
+								return e + " GB";
+							case 4:
+								return "-";
+							case 5:
+								return e + " Ngày";
+							default:
+								return e;
+						}
+					}
+				}, {
+					title: "Gói dịch vụ",
+					dataIndex: "plan_id",
+					key: "plan_id",
+					render: e=>{
+						const foundplan = y.find((item) => item.id === e);
+						const name = foundplan ? foundplan.name : "-";
+						return name;
+					}
+				}, {
+					title: "Mã",
+					dataIndex: "code",
+					key: "code",
+					render: e=>{
+						return b.a.createElement(d["a"], {
+							style: {
+								cursor: "pointer"
+							},
+							onClick: ()=>{
+								S()(e),
+								p["a"].success("Sao chép thành công")
+							}
+						}, e)
+					}
+				}, {
+					title: "Số lượng còn lại",
+					dataIndex: "limit_use",
+					key: "limit_use",
+					render: e=>{
+						return b.a.createElement(d["a"], null, null !== e ? e : "Không giới hạn")
+					}
+				}, {
+					title: "Bắt đầu từ",
+					dataIndex: "started_at",
+					key: "started_at",
+					align: "left",
+					render: (e,t)=>{
+						return "".concat(_()(1e3 * t.started_at).format("YYYY/MM/DD HH:mm"), " ~ ").concat(_()(1e3 * t.ended_at).format("YYYY/MM/DD HH:mm"))
+					}
+				}, {
+					title: "Chỉnh Sửa",
+					dataIndex: "action",
+					key: "action",
+					align: "right",
+					fixed: "right",
+					render: (e,n,r)=>{
+						return b.a.createElement("div", null, b.a.createElement("a", {
+							onClick: ()=>{
+								this.setState({
+									submit: t[r]
+								}, ()=>{
+									this.modalVisible()
+								}
+								)
+							}
+							,
+							href: "javascript:void(0);"
+						}, "Chỉnh sửa"), b.a.createElement(f["a"], {
+							type: "vertical"
+						}), b.a.createElement("a", {
+							onClick: ()=>{
+								h["a"].confirm({
+									title: "Cảnh báo",
+									content: "Bạn có chắc chắn muốn xóa mục này?",
+									onOk: ()=>this.drop(n),
+									okText: "Đúng",
+									cancelText: "Hủy"
+								})
+							}
+							,
+							href: "javascript:void(0);"
+						}, "Xóa bỏ"))
+					}
+				}];
+				return b.a.createElement(w["a"], i()({}, this.props, {
+					title: "Quản lý thẻ quà tặng"
+				}), b.a.createElement(O["a"], {
+					loading: n
+				}, b.a.createElement("div", {
+					className: "block border-bottom"
+				}, b.a.createElement("div", {
+					className: "bg-white"
+				}, b.a.createElement("div", {
+					style: {
+						padding: 15
+					}
+				}, b.a.createElement(c["a"], {
+					onClick: ()=>this.modalVisible()
+				}, b.a.createElement(u["a"], {
+					type: "plus"
+				}), "Thêm thẻ quà tặng")), b.a.createElement(l["a"], {
+					tableLayout: "auto",
+					dataSource: t,
+					columns: x,
+					scroll: {
+						x: 1050
+					},
+					pagination: v()({}, g, {
+						size: "small",
+						showSizeChanger: !0,
+						pageSizeOptions: [10, 50, 100, 150]
+					}),
+					onChange: (e,t,n)=>this.tableOnChange(e, n)
+				})))), b.a.createElement(h["a"], {
+					title: "".concat(this.state.submit.id ? "Chỉnh sửa thẻ quà tặng" : "Thẻ quà tặng mới"),
+					visible: this.state.visible,
+					onCancel: ()=>this.modalVisible(),
+					onOk: ()=>this.generate(),
+					okText: "Tạo",
+					cancelText: "Hủy",
+					okButtonProps: {
+						loading: r
+					},
+					key: this.key
+				}, b.a.createElement("div", null, b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Tên"), b.a.createElement(s["a"], {
+					placeholder: "Vui lòng nhập tên thẻ quà tặng",
+					value: this.state.submit.name,
+					onChange: e=>{
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								name: e.target.value
+							})
+						})
+					}
+				})), !this.state.submit.generate_count && b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Mã giftcard"), b.a.createElement(s["a"], {
+					placeholder: "Tạo Giftcard (để trống để tạo ngẫu nhiên)",
+					value: this.state.submit.code,
+					onChange: e=>{
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								code: e.target.value,
+								generate_count: void 0
+							})
+						})
+					}
+				})), b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Loại thẻ tăng"), b.a.createElement(s["a"], {
+					type: "number",
+					addonBefore: b.a.createElement(a["a"], {
+						style: {
+							width: 140
+						},
+						value: this.state.submit.type,
+						onChange: e=>{
+							this.setState({
+								submit: v()({}, this.state.submit, {
+									type: e
+								})
+							})
+						}
+					}, b.a.createElement(a["a"].Option, {
+						value: 1
+					}, "Số dư tài khoản"), b.a.createElement(a["a"].Option, {
+						value: 2
+					}, "Thời gian gói"), b.a.createElement(a["a"].Option, {
+						value: 3
+					}, "Lưu lượng gói"), b.a.createElement(a["a"].Option, {
+						value: 4
+					}, "Đặt lại dung lượng"), b.a.createElement(a["a"].Option, {
+						value: 5
+					}, "Tặng gói")),
+					addonAfter: (() => {
+						switch (this.state.submit.type) {
+							case 1:
+								return "đ";
+							case 2:
+								return "Ngày";
+							case 3:
+								return "GB";
+							case 4:
+								return "";
+							case 5:
+								return "Ngày";
+							default:
+								return "";
+						}
+					})(),
+					disabled: this.state.submit.type === 4,
+					placeholder: "Nhập giá trị",
+					value: this.state.submit.type === 4 ? 0 : this.state.submit.value,
+					onChange: e=>{
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								value: e.target.value
+							})
+						})
+					}
+				})), (this.state.submit.type === 5) && b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Chỉ định đăng ký"), b.a.createElement("div", null, b.a.createElement(a["a"], {
+					value: this.state.submit.plan_id,
+					onChange: e=>{
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								plan_id: e.length ? e : null
+							})
+						})
+					},
+					mode: "single",
+					placeholder: "Chỉ định đăng ký",
+					style: {
+						width: "100%"
+					}
+				}, y.map(e=>{
+					return b.a.createElement(a["a"].Option, {
+						key: Math.random(),
+						value: "".concat(e.id)
+					}, e.name)
+				}
+				)))), b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Thời gian hoạt động của thẻ"), b.a.createElement(o["a"].RangePicker, {
+					style: {
+						width: "100%"
+					},
+					showTime: {
+						format: "HH:mm"
+					},
+					format: "YYYY-MM-DD HH:mm",
+					placeholder: ["Bắt đầu", "kết thúc"],
+					value: [this.state.submit.started_at ? _()(1e3 * this.state.submit.started_at) : null, this.state.submit.ended_at ? _()(1e3 * this.state.submit.ended_at) : null],
+					onChange: e=>this.setState({
+						submit: v()({}, this.state.submit, {
+							started_at: e[0] ? e[0].format("X") : null,
+							ended_at: e[1] ? e[1].format("X") : null
+						})
+					}),
+					onOk: e=>this.setState({
+						submit: v()({}, this.state.submit, {
+							started_at: e[0] ? e[0].format("X") : null,
+							ended_at: e[1] ? e[1].format("X") : null
+						})
+					})
+				})), b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					for: "example-text-input-alt"
+				}, "Số lần dùng tối đa"), b.a.createElement(s["a"], {
+					placeholder: "giới hạn số lần dùng thẻ (để trống là không giới hạn)",
+					value: this.state.submit.limit_use,
+					onChange: e=>{
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								limit_use: e.target.value
+							})
+						})
+					}
+				})), !this.state.submit.code && !this.state.submit.id && b.a.createElement("div", {
+					className: "form-group"
+				}, b.a.createElement("label", {
+					htmlFor: "example-text-input-alt"
+				}, "Tạo số lượng lớn"), b.a.createElement(s["a"], {
+					placeholder: "Nhập số lượng cần tạo",
+					value: this.state.submit.generate_count,
+					onChange: e=>{
+						this.setState({
+							submit: v()({}, this.state.submit, {
+								generate_count: e.target.value,
+								code: void 0
+							})
+						})
+					}
+				})))))
+			}
+		}
+		t["default"] = Object(k["c"])(e=>{
+			var t = e.giftcard
+			  , n = e.plan;
+			return {
+				giftcard: t,
+				plan: n
+			}
+		}
+		)(T)
+	},
+	callgiftcardpage: function(e, t, n) {
+		"use strict";
+		n.r(t);
+		var r = n("p0pE")
+		  , i = n.n(r)
+		  , o = n("t3Un")
+		  , a = n("wd/R")
+		  , s = n.n(a);
+		function l() {
+			l = function() {
+				return e
+			}
+			;
+			var e = {}
+			  , t = Object.prototype
+			  , n = t.hasOwnProperty
+			  , r = Object.defineProperty || function(e, t, n) {
+				e[t] = n.value
+			}
+			  , i = "function" == typeof Symbol ? Symbol : {}
+			  , o = i.iterator || "@@iterator"
+			  , a = i.asyncIterator || "@@asyncIterator"
+			  , s = i.toStringTag || "@@toStringTag";
+			function c(e, t, n) {
+				return Object.defineProperty(e, t, {
+					value: n,
+					enumerable: !0,
+					configurable: !0,
+					writable: !0
+				}),
+				e[t]
+			}
+			try {
+				c({}, "")
+			} catch (e) {
+				c = function(e, t, n) {
+					return e[t] = n
+				}
+			}
+			function u(e, t, n, i) {
+				var o = t && t.prototype instanceof d ? t : d
+				  , a = Object.create(o.prototype)
+				  , s = new C(i || []);
+				return r(a, "_invoke", {
+					value: _(e, n, s)
+				}),
+				a
+			}
+			function h(e, t, n) {
+				try {
+					return {
+						type: "normal",
+						arg: e.call(t, n)
+					}
+				} catch (e) {
+					return {
+						type: "throw",
+						arg: e
+					}
+				}
+			}
+			e.wrap = u;
+			var f = {};
+			function d() {}
+			function p() {}
+			function m() {}
+			var g = {};
+			c(g, o, function() {
+				return this
+			});
+			var v = Object.getPrototypeOf
+			  , y = v && v(v(O([])));
+			y && y !== t && n.call(y, o) && (g = y);
+			var b = m.prototype = d.prototype = Object.create(g);
+			function w(e) {
+				["next", "throw", "return"].forEach(function(t) {
+					c(e, t, function(e) {
+						return this._invoke(t, e)
+					})
+				})
+			}
+			function x(e, t) {
+				function i(r, o, a, s) {
+					var l = h(e[r], e, o);
+					if ("throw" !== l.type) {
+						var c = l.arg
+						  , u = c.value;
+						return u && "object" == typeof u && n.call(u, "__await") ? t.resolve(u.__await).then(function(e) {
+							i("next", e, a, s)
+						}, function(e) {
+							i("throw", e, a, s)
+						}) : t.resolve(u).then(function(e) {
+							c.value = e,
+							a(c)
+						}, function(e) {
+							return i("throw", e, a, s)
+						})
+					}
+					s(l.arg)
+				}
+				var o;
+				r(this, "_invoke", {
+					value: function(e, n) {
+						function r() {
+							return new t(function(t, r) {
+								i(e, n, t, r)
+							}
+							)
+						}
+						return o = o ? o.then(r, r) : r()
+					}
+				})
+			}
+			function _(e, t, n) {
+				var r = "suspendedStart";
+				return function(i, o) {
+					if ("executing" === r)
+						throw new Error("Generator is already running");
+					if ("completed" === r) {
+						if ("throw" === i)
+							throw o;
+						return T()
+					}
+					for (n.method = i,
+					n.arg = o; ; ) {
+						var a = n.delegate;
+						if (a) {
+							var s = E(a, n);
+							if (s) {
+								if (s === f)
+									continue;
+								return s
+							}
+						}
+						if ("next" === n.method)
+							n.sent = n._sent = n.arg;
+						else if ("throw" === n.method) {
+							if ("suspendedStart" === r)
+								throw r = "completed",
+								n.arg;
+							n.dispatchException(n.arg)
+						} else
+							"return" === n.method && n.abrupt("return", n.arg);
+						r = "executing";
+						var l = h(e, t, n);
+						if ("normal" === l.type) {
+							if (r = n.done ? "completed" : "suspendedYield",
+							l.arg === f)
+								continue;
+							return {
+								value: l.arg,
+								done: n.done
+							}
+						}
+						"throw" === l.type && (r = "completed",
+						n.method = "throw",
+						n.arg = l.arg)
+					}
+				}
+			}
+			function E(e, t) {
+				var n = t.method
+				  , r = e.iterator[n];
+				if (void 0 === r)
+					return t.delegate = null,
+					"throw" === n && e.iterator.return && (t.method = "return",
+					t.arg = void 0,
+					E(e, t),
+					"throw" === t.method) || "return" !== n && (t.method = "throw",
+					t.arg = new TypeError("The iterator does not provide a '" + n + "' method")),
+					f;
+				var i = h(r, e.iterator, t.arg);
+				if ("throw" === i.type)
+					return t.method = "throw",
+					t.arg = i.arg,
+					t.delegate = null,
+					f;
+				var o = i.arg;
+				return o ? o.done ? (t[e.resultName] = o.value,
+				t.next = e.nextLoc,
+				"return" !== t.method && (t.method = "next",
+				t.arg = void 0),
+				t.delegate = null,
+				f) : o : (t.method = "throw",
+				t.arg = new TypeError("iterator result is not an object"),
+				t.delegate = null,
+				f)
+			}
+			function S(e) {
+				var t = {
+					tryLoc: e[0]
+				};
+				1 in e && (t.catchLoc = e[1]),
+				2 in e && (t.finallyLoc = e[2],
+				t.afterLoc = e[3]),
+				this.tryEntries.push(t)
+			}
+			function k(e) {
+				var t = e.completion || {};
+				t.type = "normal",
+				delete t.arg,
+				e.completion = t
+			}
+			function C(e) {
+				this.tryEntries = [{
+					tryLoc: "root"
+				}],
+				e.forEach(S, this),
+				this.reset(!0)
+			}
+			function O(e) {
+				if (e) {
+					var t = e[o];
+					if (t)
+						return t.call(e);
+					if ("function" == typeof e.next)
+						return e;
+					if (!isNaN(e.length)) {
+						var r = -1
+						  , i = function t() {
+							for (; ++r < e.length; )
+								if (n.call(e, r))
+									return t.value = e[r],
+									t.done = !1,
+									t;
+							return t.value = void 0,
+							t.done = !0,
+							t
+						};
+						return i.next = i
+					}
+				}
+				return {
+					next: T
+				}
+			}
+			function T() {
+				return {
+					value: void 0,
+					done: !0
+				}
+			}
+			return p.prototype = m,
+			r(b, "constructor", {
+				value: m,
+				configurable: !0
+			}),
+			r(m, "constructor", {
+				value: p,
+				configurable: !0
+			}),
+			p.displayName = c(m, s, "GeneratorFunction"),
+			e.isGeneratorFunction = function(e) {
+				var t = "function" == typeof e && e.constructor;
+				return !!t && (t === p || "GeneratorFunction" === (t.displayName || t.name))
+			}
+			,
+			e.mark = function(e) {
+				return Object.setPrototypeOf ? Object.setPrototypeOf(e, m) : (e.__proto__ = m,
+				c(e, s, "GeneratorFunction")),
+				e.prototype = Object.create(b),
+				e
+			}
+			,
+			e.awrap = function(e) {
+				return {
+					__await: e
+				}
+			}
+			,
+			w(x.prototype),
+			c(x.prototype, a, function() {
+				return this
+			}),
+			e.AsyncIterator = x,
+			e.async = function(t, n, r, i, o) {
+				void 0 === o && (o = Promise);
+				var a = new x(u(t, n, r, i),o);
+				return e.isGeneratorFunction(n) ? a : a.next().then(function(e) {
+					return e.done ? e.value : a.next()
+				})
+			}
+			,
+			w(b),
+			c(b, s, "Generator"),
+			c(b, o, function() {
+				return this
+			}),
+			c(b, "toString", function() {
+				return "[object Generator]"
+			}),
+			e.keys = function(e) {
+				var t = Object(e)
+				  , n = [];
+				for (var r in t)
+					n.push(r);
+				return n.reverse(),
+				function e() {
+					for (; n.length; ) {
+						var r = n.pop();
+						if (r in t)
+							return e.value = r,
+							e.done = !1,
+							e
+					}
+					return e.done = !0,
+					e
+				}
+			}
+			,
+			e.values = O,
+			C.prototype = {
+				constructor: C,
+				reset: function(e) {
+					if (this.prev = 0,
+					this.next = 0,
+					this.sent = this._sent = void 0,
+					this.done = !1,
+					this.delegate = null,
+					this.method = "next",
+					this.arg = void 0,
+					this.tryEntries.forEach(k),
+					!e)
+						for (var t in this)
+							"t" === t.charAt(0) && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0)
+				},
+				stop: function() {
+					this.done = !0;
+					var e = this.tryEntries[0].completion;
+					if ("throw" === e.type)
+						throw e.arg;
+					return this.rval
+				},
+				dispatchException: function(e) {
+					if (this.done)
+						throw e;
+					var t = this;
+					function r(n, r) {
+						return a.type = "throw",
+						a.arg = e,
+						t.next = n,
+						r && (t.method = "next",
+						t.arg = void 0),
+						!!r
+					}
+					for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+						var o = this.tryEntries[i]
+						  , a = o.completion;
+						if ("root" === o.tryLoc)
+							return r("end");
+						if (o.tryLoc <= this.prev) {
+							var s = n.call(o, "catchLoc")
+							  , l = n.call(o, "finallyLoc");
+							if (s && l) {
+								if (this.prev < o.catchLoc)
+									return r(o.catchLoc, !0);
+								if (this.prev < o.finallyLoc)
+									return r(o.finallyLoc)
+							} else if (s) {
+								if (this.prev < o.catchLoc)
+									return r(o.catchLoc, !0)
+							} else {
+								if (!l)
+									throw new Error("try statement without catch or finally");
+								if (this.prev < o.finallyLoc)
+									return r(o.finallyLoc)
+							}
+						}
+					}
+				},
+				abrupt: function(e, t) {
+					for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+						var i = this.tryEntries[r];
+						if (i.tryLoc <= this.prev && n.call(i, "finallyLoc") && this.prev < i.finallyLoc) {
+							var o = i;
+							break
+						}
+					}
+					o && ("break" === e || "continue" === e) && o.tryLoc <= t && t <= o.finallyLoc && (o = null);
+					var a = o ? o.completion : {};
+					return a.type = e,
+					a.arg = t,
+					o ? (this.method = "next",
+					this.next = o.finallyLoc,
+					f) : this.complete(a)
+				},
+				complete: function(e, t) {
+					if ("throw" === e.type)
+						throw e.arg;
+					return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg,
+					this.method = "return",
+					this.next = "end") : "normal" === e.type && t && (this.next = t),
+					f
+				},
+				finish: function(e) {
+					for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+						var n = this.tryEntries[t];
+						if (n.finallyLoc === e)
+							return this.complete(n.completion, n.afterLoc),
+							k(n),
+							f
+					}
+				},
+				catch: function(e) {
+					for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+						var n = this.tryEntries[t];
+						if (n.tryLoc === e) {
+							var r = n.completion;
+							if ("throw" === r.type) {
+								var i = r.arg;
+								k(n)
+							}
+							return i
+						}
+					}
+					throw new Error("illegal catch attempt")
+				},
+				delegateYield: function(e, t, n) {
+					return this.delegate = {
+						iterator: O(e),
+						resultName: t,
+						nextLoc: n
+					},
+					"next" === this.method && (this.arg = void 0),
+					f
+				}
+			},
+			e
+		}
+		var c = {
+			giftcards: [],
+			fetchLoading: !1,
+			saveLoading: !1,
+			pagination: {
+				pageSize: 10,
+				current: 1
+			},
+			sort: {}
+		};
+		t["default"] = {
+			name: "giftcard",
+			state: i()({}, c),
+			reducers: {
+				setState(e, t) {
+					var n = t.payload;
+					return i()({}, e, n)
+				}
+			},
+			effects: {
+				fetch(e, t) {
+					var n = t.put
+					  , r = t.select;
+					return l().mark(function e() {
+						var t, a;
+						return l().wrap(function(e) {
+							while (1)
+								switch (e.prev = e.next) {
+								case 0:
+									return e.next = 2,
+									r(e=>e.giftcard);
+								case 2:
+									return t = e.sent,
+									e.next = 5,
+									n({
+										type: "setState",
+										payload: {
+											fetchLoading: !0
+										}
+									});
+								case 5:
+									return e.next = 7,
+									Object(o["a"])("/" + window.settings.secure_path + "/giftcard/fetch", i()({}, t.pagination, t.sort));
+								case 7:
+									return a = e.sent,
+									e.next = 10,
+									n({
+										type: "setState",
+										payload: {
+											fetchLoading: !1
+										}
+									});
+								case 10:
+									if (200 === a.code) {
+										e.next = 12;
+										break
+									}
+									return e.abrupt("return");
+								case 12:
+									return a.data.forEach(e=>{
+										1 === e.type && (e.value = e.value / 100)
+									}
+									),
+									e.next = 15,
+									n({
+										type: "setState",
+										payload: {
+											giftcards: a.data,
+											pagination: i()({}, t.pagination, {
+												total: a.total
+											})
+										}
+									});
+								case 15:
+								case "end":
+									return e.stop()
+								}
+						}, e)
+					})()
+				},
+				generate(e, t) {
+					var n = e.params
+					  , r = e.callback
+					  , i = t.put;
+					return l().mark(function e() {
+						var t, a, c, u;
+						return l().wrap(function(e) {
+							while (1)
+								switch (e.prev = e.next) {
+								case 0:
+									return e.next = 2,
+									i({
+										type: "setState",
+										payload: {
+											saveLoading: !0
+										}
+									});
+								case 2:
+									return (1 === n.type) && (n.value = 100 * n.value),
+									e.next = 5,
+									Object(o["b"])("/" + window.settings.secure_path + "/giftcard/generate", n);
+								case 5:
+									return t = e.sent,
+									e.next = 8,
+									i({
+										type: "setState",
+										payload: {
+											saveLoading: !1
+										}
+									});
+								case 8:
+									if (200 === t.code) {
+										e.next = 10;
+										break
+									}
+									return e.abrupt("return");
+								case 10:
+									return n.generate_count && (a = new Blob([t.buffer],{
+										type: "text/plain,charset=UTF-8"
+									}),
+									c = window.URL.createObjectURL(a),
+									u = document.createElement("a"),
+									u.href = c,
+									u.style.display = "none",
+									u.download = "GIFTCARD ".concat(s()().format("YYYY-MM-DD HH:mm:ss"), ".csv"),
+									u.click(),
+									window.URL.revokeObjectURL(c)),
+									e.next = 13,
+									i({
+										type: "fetch"
+									});
+								case 13:
+									"function" === typeof r && r();
+								case 14:
+								case "end":
+									return e.stop()
+								}
+						}, e)
+					})()
+				},
+				drop(e, t) {
+					var n = e.id
+					  , r = t.put;
+					return l().mark(function e() {
+						var t;
+						return l().wrap(function(e) {
+							while (1)
+								switch (e.prev = e.next) {
+								case 0:
+									return e.next = 2,
+									Object(o["b"])("/" + window.settings.secure_path + "/giftcard/drop", {
+										id: n
+									});
+								case 2:
+									if (t = e.sent,
+									200 === t.code) {
+										e.next = 5;
+										break
+									}
+									return e.abrupt("return");
+								case 5:
+									return e.next = 7,
+									r({
+										type: "fetch"
+									});
+								case 7:
+								case "end":
+									return e.stop()
+								}
+						}, e)
+					})()
+				},
+				changeTable(e, t) {
+					var n = e.pagination
+					  , r = e.sort
+					  , o = t.select
+					  , a = t.put;
+					return l().mark(function e() {
+						var t;
+						return l().wrap(function(e) {
+							while (1)
+								switch (e.prev = e.next) {
+								case 0:
+									return e.next = 2,
+									o(e=>e.giftcard);
+								case 2:
+									return t = e.sent,
+									e.next = 5,
+									a({
+										type: "setState",
+										payload: {
+											pagination: i()({}, t.pagination, n),
+											sort: r
+										}
+									});
+								case 5:
+									return e.next = 7,
+									a({
+										type: "fetch"
+									});
+								case 7:
+								case "end":
+									return e.stop()
+								}
+						}, e)
+					})()
+				}
+			}
+		}
 	}
 });
