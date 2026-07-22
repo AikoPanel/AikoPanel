@@ -181,6 +181,7 @@ class ConfigController extends Controller
                 'server_push_interval' => config('aikopanel.server_push_interval', 60),
                 'server_alive_interval' => config('aikopanel.server_alive_interval', 120),
                 'device_limit_mode' => config('aikopanel.device_limit_mode', 0),
+                'device_limit_grace_period' => config('aikopanel.device_limit_grace_period', 60),
             ],
             'email' => [
                 'email_template' => config('aikopanel.email_template', 'default'),

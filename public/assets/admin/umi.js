@@ -6379,6 +6379,16 @@
                 }, f.a.createElement(c.a, {
                     checked: parseInt(u.device_limit_mode),
                     onChange: e=>this.set("server", "device_limit_mode", e ? 1 : 0)
+                })), f.a.createElement(m, {
+                    title: "Thời gian cho phép vượt giới hạn thiết bị",
+                    description: "Số giây mà người dùng có thể sử dụng nhiều thiết bị hơn giới hạn trước khi bị khóa"
+                }, f.a.createElement(a.a, {
+                    addonAfter: "Giây",
+                    size: "large",
+                    type: "number",
+                    placeholder: "Vui lòng nhập",
+                    defaultValue: u.device_limit_grace_period,
+                    onChange: e => this.set("server", "device_limit_grace_period", e.target.value)
                 })))), f.a.createElement(s.a.TabPane, {
 					tab: "Email",
 					key: "email"

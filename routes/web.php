@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 Route::get('/', function (Request $request) {
     $url = $request->server('HTTP_HOST');
-    $main_domain = parse_url(config('aikopanel.app_url'))['host'] ?? 'aikopanel.com';
+    $appUrl = config('aikopanel.app_url');
+    $parsedUrl = $appUrl ? parse_url($appUrl) : false;
+    $main_domain = ($parsedUrl && isset($parsedUrl['host'])) ? $parsedUrl['host'] : 'aikopanel.com';
     $sub_app_url = config('aikopanel.sub_app_url') ?? [];
     $staff_sub_domain = config('aikopanel.sub_domain') ?? [];
 
